@@ -1,3 +1,11 @@
+@font-face {
+  font-family: TheSeasons;
+  src: url(/fonts/Fontspring-DEMO-theseasons-reg.otf);
+
+  font-family: CormorantGaramond;
+  src: url(/fonts/CormorantGaramond-Regular.ttf);
+}
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -113,6 +121,8 @@ nav menu a:active {
   #menuToggle a {
     text-decoration: none;
     color: black;
+    font-family: TheSeasons;
+
   }
   #menuToggle input {
     display: block;
