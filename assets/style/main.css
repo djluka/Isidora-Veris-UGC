@@ -33,8 +33,8 @@ section.header {
 
 section.header .proffile_wrapper {
   position: relative;
-  max-width: 470px;
-  max-height: 470px;
+  max-width: 500px;
+  max-height: 500px;
   display: block;
 
   margin: 50px auto;
@@ -53,8 +53,7 @@ section.header .proffile_wrapper::after {
   display: block;
 
   width: 100%;
-    height: 100%;
-
+  height: 100%;
 
   display: block;
   background-color: #e8e3de;
@@ -195,3 +194,10 @@ annimations
 .blur {
   filter: blur(5px);
 }
+@import "about_me.css";
+@import "burger_menu.css";
+@import "clients.css";
+@import "footer.css";
+@import "lightbox.css";
+@import "photos.css";
+@import "scroll_to_top.css";
