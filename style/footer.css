@@ -1,5 +1,5 @@
 
-.page-wrapper-footer{
+.page_wrapper_footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -17,7 +17,7 @@
     max-width: 490px;
     margin: 0 auto;
 }
-.footer .txt-box{
+.footer .txt_box{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@
     align-items: center;
     flex-wrap: wrap;
 }
-.footer .txt-box p:nth-child(1){
+.footer .txt_box p:nth-child(1){
     margin-top: 30px;
 
     font-size: 3em;
@@ -34,11 +34,11 @@
 
 
 }
-.footer .txt-box p:nth-child(2){
+.footer .txt_box p:nth-child(2){
     font-size: 2em;
     margin-top: 30px;
 }
-.footer .txt-box a{
+.footer .txt_box a{
     text-decoration: none;
     color: black;
     border: 1px solid black;
@@ -49,12 +49,12 @@
     transition: 0.2s;
     
 }
-.footer .txt-box a:hover{
+.footer .txt_box a:hover{
     background-color: black;
     color: white;
     transition: 0.2s;
 }
-.footer .txt-box a:active{
+.footer .txt_box a:active{
     transform: scale(1.1);
     background-color: black;
 
@@ -65,13 +65,13 @@
        max-width: 320px;
         margin: 0 auto;
     }
-    .footer .txt-box p:nth-child(1){
+    .footer .txt_box p:nth-child(1){
         font-size: 2em;
     }
-    .footer .txt-box p:nth-child(2){
+    .footer .txt_box p:nth-child(2){
         font-size: 1.5em;
     }
-    .footer .txt-box a{
+    .footer .txt_box a{
         padding: 20px;
         font-size: 1.5em;
 

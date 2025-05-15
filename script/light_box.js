@@ -12,7 +12,7 @@ closeButton.innerHTML = "&times"
 
 
 
-const images = document.querySelectorAll('.img-holder img')
+const images = document.querySelectorAll('.img_holder img')
 images.forEach(image =>{
     image.addEventListener('click' , e =>{
         lightbox.classList.add('active')

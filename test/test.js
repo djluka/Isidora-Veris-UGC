@@ -8,7 +8,7 @@ const clientsContent = [
 ];
 
 const content = clientsContent.map(clientContent => {
-    return `            <div class="klijenti-card">
+    return `            <div class="clients_card">
               <video
                 src="${clientContent.video}"
                 muted

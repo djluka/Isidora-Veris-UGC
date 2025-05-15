@@ -1,4 +1,4 @@
-.scroll-to-top{
+.scroll_to_top{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,6 +8,7 @@
     background-color: #e8e3de;
     box-sizing: border-box;
     border: 5px solid #faf9f8;
+    top: 70%;
 
     border-radius: 100px;
     padding: 20px;
@@ -19,17 +20,17 @@
     pointer-events: none;
     transition: .4s all;
 }
-.scroll-to-top img{
+.scroll_to_top img{
     position: relative;
     width: 40px;
     height: 40px;
 }
-.scroll-to-top:hover img{
+.scroll_to_top:hover img{
     position: relative;
     animation: bouncing 0.5s linear infinite;
     transform:scale(1.1);
 }
-.showBtn{
+.show_btn{
     opacity: 1;
     pointer-events: auto;
     top: 80%;
@@ -43,11 +44,11 @@
   }
 
   @media only screen and (max-width: 600px) {
-    .scroll-to-top{
+    .scroll_to_top{
         left: 73%;
         top: 88%;
     }
-    .scroll-to-top img{
+    .scroll_to_top img{
         position: relative;
         width: 20px;
         height: 20px;

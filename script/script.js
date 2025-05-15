@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   hiddenElements.forEach((e) => observer.observe(e));
   hiddenElements1.forEach((e) => observer.observe(e));
   //animation delay
-  let boxes = document.querySelectorAll(".animationBox");
+  let boxes = document.querySelectorAll(".animation_box");
   let start = 0.1;
 
   boxes.forEach((boxes) => {
@@ -25,24 +25,24 @@ document.addEventListener("DOMContentLoaded", function () {
       start = 0.1;
     }
   });
-
-  const scrollToTopButton = document.querySelector(".scroll-to-top");
   //scroll to top
+
+  const scrollToTopButton = document.querySelector(".scroll_to_top");
   scrollToTopButton.addEventListener("click", () => {
     window.scrollTo(0, 0);
   });
 
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 150) {
-      scrollToTopButton.classList.add("showBtn");
+      scrollToTopButton.classList.add("show_btn");
     } else {
-      scrollToTopButton.classList.remove("showBtn");
+      scrollToTopButton.classList.remove("show_btn");
     }
   });
 
   // burger menu
-  const menu = document.querySelector("#menuToggle");
-  const checkBox = document.querySelector("#menuCheckbox");
+  const menu = document.querySelector("#menu_toggle");
+  const checkBox = document.querySelector("#menu_checkbox");
   const body = document.querySelector("body");
 
   checkBox.addEventListener("change", function () {

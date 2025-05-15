@@ -1,19 +1,19 @@
-.o-meni {
+.about_me {
   margin-top: 200px;
 }
 
-p.o-meni-header {
+p.about_me_header {
   text-align: center;
   font-size: 4em;
   font-family: TheSeasons;
 
 }
-.o-meni .o-meni-content {
+.about_me .about_me_content {
   width: 100%;
   background-color: #e8e3de;
   
 }
-.o-meni .o-meni-content p:nth-child(1) {
+.about_me .about_me_content p:nth-child(1) {
   text-align: center;
   font-size: 1.5em;
   line-height: 35px;
@@ -24,16 +24,16 @@ p.o-meni-header {
 
 }
 
-.o-meni .o-meni-content .comments {
+.about_me .about_me_content .comments {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px auto;
+  margin: 10px auto;
   max-width: 1200px;
 }
 
-.o-meni .o-meni-content .comments .comment-box {
+.about_me .about_me_content .comments .comment_box {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -41,8 +41,10 @@ p.o-meni-header {
   align-items: center;
   max-width: 100%;
 }
-
-.o-meni .o-meni-content .comments .single-comment {
+.about_me .about_me_content .comments .comment_box  .single_comment{
+  margin-bottom: 10px;
+}
+.about_me .about_me_content .comments .single_comment {
 
   max-width: 500px;
   display: flex;
@@ -59,7 +61,7 @@ p.o-meni-header {
 
 
 }
-.o-meni .o-meni-content .comments .single-comment .img-profile {
+.about_me .about_me_content .comments .single_comment .img_profile {
   width: 150px;
   height: 150px;
   position: absolute;
@@ -70,20 +72,20 @@ p.o-meni-header {
 
 
 }
-.o-meni .o-meni-content .comments .single-comment .stars {
+.about_me .about_me_content .comments .single_comment .stars {
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 400px;
   margin: 20px auto;
 }
-.o-meni .o-meni-content .comments .single-comment .stars img {
+.about_me .about_me_content .comments .single_comment .stars img {
   width: 30px;
   height: 30px;
   margin: 10px;
 }
 /* responsive font size */
-.o-meni .o-meni-content .comments .single-comment p{
+.about_me .about_me_content .comments .single_comment p{
     text-align: center;
     line-height: 25px;
     font-size: 1.2em;
@@ -92,10 +94,10 @@ p.o-meni-header {
 
 }
 @media only screen and (max-width: 600px) {
-  .o-meni .o-meni-content p:nth-child(1) {
+.about_me .about_me_content p:nth-child(1) {
     font-size: 1.2em;
   }
-  p.o-meni-header {
+  p.about_me_header {
     font-size: 3em;
   }
 }

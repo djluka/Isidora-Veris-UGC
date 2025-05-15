@@ -57,40 +57,40 @@ nav menu a:active {
   background-color: #b9b5b0;
 }
 
-#menuToggle {
+#menu_toggle {
   display: none;
 }
 
-#menuToggle input {
+#menu_toggle input {
   display: none;
 }
 
-#menuToggle span {
+#menu_toggle span {
   display: none;
 }
 #burger_menu {
   display: none;
 }
-#menuToggle span:first-child {
+#menu_toggle span:first-child {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2) {
+#menu_toggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked ~ span:nth-child(4) {
+#menu_toggle input:checked ~ span:nth-child(4) {
   transform: rotate(-45deg) translate(3px, 4px);
   background: #232323;
 }
 
-#menuToggle input:checked ~ span:nth-child(3) {
+#menu_toggle input:checked ~ span:nth-child(3) {
   transform: rotate(0deg) scale(0.2, 0.2);
   opacity: 0;
   background: #232323;
 }
 
-#menuToggle input:checked ~ span:nth-child(2) {
+#menu_toggle input:checked ~ span:nth-child(2) {
   transform: rotate(45deg) translate(3px, -3px);
   background: #232323;
 }
@@ -108,7 +108,7 @@ nav menu a:active {
     max-width: 500px;
   }
 
-  #menuToggle {
+  #menu_toggle {
     display: block;
     position: absolute;
     right: 30px;
@@ -118,13 +118,13 @@ nav menu a:active {
     -webkit-user-select: none;
     user-select: none;
   }
-  #menuToggle a {
+  #menu_toggle a {
     text-decoration: none;
     color: black;
     font-family: TheSeasons;
 
   }
-  #menuToggle input {
+  #menu_toggle input {
     display: block;
     width: 40px;
     height: 32px;
@@ -137,7 +137,7 @@ nav menu a:active {
     -webkit-touch-callout: none;
   }
 
-  #menuToggle span {
+  #menu_toggle span {
     display: block;
     width: 33px;
     height: 4px;
@@ -154,11 +154,11 @@ nav menu a:active {
                 background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1), 
                 opacity 0.2s ease;
   }
-  #menuToggle span:first-child
+  #menu_toggle span:first-child
 {
   transform-origin: 0% 0%;
 }
-#menuToggle span:nth-last-child(2)
+#menu_toggle span:nth-last-child(2)
 {
   transform-origin: 0% 100%;
 }
@@ -197,7 +197,7 @@ nav menu a:active {
   #burger_menu li label {
     cursor: pointer;
   }
-  #menuToggle input:checked ~ #burger_menu {
+  #menu_toggle input:checked ~ #burger_menu {
     transform: none;
   }
 }

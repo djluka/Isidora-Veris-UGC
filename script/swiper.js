@@ -3,34 +3,34 @@ document.addEventListener("DOMContentLoaded", function () {
   setVideo();
 });
 function updateButtonStates() {
-  const slider = document.querySelector(".klijenti-slider");
-  const preBtn = document.querySelector(".pre-btn");
-  const nxtBtn = document.querySelector(".nxt-btn");
+  const slider = document.querySelector(".clients_slider");
+  const preBtn = document.querySelector(".pre_btn");
+  const nxtBtn = document.querySelector(".nxt_btn");
 
   const scrollLeft = slider.scrollLeft;
   const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
 
   if (scrollLeft <= 0) {
     preBtn.disabled = true;
-    preBtn.classList.add("opacity-low");
+    preBtn.classList.add("opacity_low");
   } else {
     preBtn.disabled = false;
-    preBtn.classList.remove("opacity-low");
+    preBtn.classList.remove("opacity_low");
   }
 
   if (scrollLeft >= maxScrollLeft - 5) {
     nxtBtn.disabled = true;
-    nxtBtn.classList.add("opacity-low");
+    nxtBtn.classList.add("opacity_low");
   } else {
     nxtBtn.disabled = false;
-    nxtBtn.classList.remove("opacity-low");
+    nxtBtn.classList.remove("opacity_low");
   }
 }
 function sliderInit() {
-  const slider = document.querySelector(".klijenti-slider");
-  const nextBtn = document.querySelector(".nxt-btn");
-  const prevBtn = document.querySelector(".pre-btn");
-  const card = document.querySelector(".klijenti-card");
+  const slider = document.querySelector(".clients_slider");
+  const nextBtn = document.querySelector(".nxt_btn");
+  const prevBtn = document.querySelector(".pre_btn");
+  const card = document.querySelector(".clients_card");
 
   const cardStyle = getComputedStyle(card);
   const cardSpacing =
@@ -58,7 +58,7 @@ function sliderInit() {
 
 function setVideo() {
   
-  const videoElements = document.querySelectorAll(".klijenti-slider video");
+  const videoElements = document.querySelectorAll(".clients_slider video");
   videoElements.forEach((videoElement) => {
     videoElement.addEventListener("click", () => {
       if (videoElement.requestFullscreen) {

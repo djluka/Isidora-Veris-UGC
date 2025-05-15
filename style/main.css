@@ -17,7 +17,7 @@ body {
   background-color: #faf9f8;
 }
 
-.page-wrapper {
+.page_wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 5px;
@@ -31,7 +31,7 @@ section.header {
   flex-wrap: wrap;
 }
 
-section.header .proffile-wrapper {
+section.header .proffile_wrapper {
   position: relative;
   max-width: 470px;
   max-height: 470px;
@@ -48,7 +48,7 @@ section.header img.profile {
   z-index: 1;
 }
 
-section.header .proffile-wrapper::after {
+section.header .proffile_wrapper::after {
   content: "";
   display: block;
 
@@ -123,7 +123,7 @@ section.header .text .boo p {
   font-family: CormorantGaramond;
 }
 @media only screen and (max-width: 600px) {
-  section.header .proffile-wrapper {
+  section.header .proffile_wrapper {
     position: relative;
     max-width: 300px;
     max-height: 330px;
@@ -136,7 +136,7 @@ section.header .text .boo p {
     display: block;
   }
 
-  section.header .proffile-wrapper::after {
+  section.header .proffile_wrapper::after {
     content: "";
     display: block;
 
@@ -162,7 +162,7 @@ section.header .text .boo p {
     font-family: Georgia, Times New Roman, serif;
   }
 
-  section.header .text p.header-txt {
+  section.header .text p.header_txt {
     margin: 50px auto;
     font-size: 2em;
     text-align: center;
