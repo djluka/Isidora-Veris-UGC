@@ -57,10 +57,10 @@ function sliderInit() {
 }
 
 function setVideo() {
+  
   const videoElements = document.querySelectorAll(".klijenti-slider video");
   videoElements.forEach((videoElement) => {
     videoElement.addEventListener("click", () => {
-      console.log("hey");
       if (videoElement.requestFullscreen) {
         videoElement.requestFullscreen();
       } else if (videoElement.webkitRequestFullscreen) {
@@ -73,9 +73,4 @@ function setVideo() {
     });
   });
 
-  const video = document.querySelector("video");
-
-  if (video) {
-    video.volume = 0.25;
-  }
 }
