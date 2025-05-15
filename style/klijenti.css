@@ -35,6 +35,12 @@ body {
   border-radius: 50%;
   background-color: #e8e3de;
   margin: 10px;
+  transition: 0.2s all;
+}
+.pre-btn:hover,
+.nxt-btn:hover {
+  background-color: #aca8a5;
+  transition: 0.2s all;
 }
 .pre-btn {
   left: -60px;
@@ -90,7 +96,7 @@ body {
   border-radius: 10px;
   margin-bottom: 10px;
 }
-.klijenti-card video:hover + p{
+.klijenti-card video:hover + p {
   top: -0%;
   transition: 0.2s ease-in-out all;
 }
@@ -159,15 +165,14 @@ body {
     max-width: 100%;
     gap: 20px;
   }
-.klijenti-card video {
-  width: 250px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
+  .klijenti-card video {
+    width: 250px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
   .klijenti-card {
     flex: 0 0 100%;
     padding: 10px;
-
   }
 
   .klijenti-wrap {
