@@ -135,11 +135,11 @@ body {
   }
   .pre-btn {
     left: 35%;
-    bottom: -7%;
+    bottom: -10%;
   }
   .nxt-btn {
     right: 35%;
-    bottom: -7%;
+    bottom: -10%;
   }
 
   .pre-btn img {
@@ -159,10 +159,15 @@ body {
     max-width: 100%;
     gap: 20px;
   }
-
+.klijenti-card video {
+  width: 250px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
   .klijenti-card {
     flex: 0 0 100%;
-    padding: 20px;
+    padding: 10px;
+
   }
 
   .klijenti-wrap {

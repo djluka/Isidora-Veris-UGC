@@ -1,58 +1,81 @@
-const slider = document.querySelector(".klijenti-slider");
-const nextBtn = document.querySelector(".nxt-btn");
-const prevBtn = document.querySelector(".pre-btn");
-const card = document.querySelector(".klijenti-card");
+document.addEventListener("DOMContentLoaded", function () {
+  sliderInit();
+  setVideo();
+});
+function updateButtonStates() {
+  const slider = document.querySelector(".klijenti-slider");
+  const preBtn = document.querySelector(".pre-btn");
+  const nxtBtn = document.querySelector(".nxt-btn");
 
-if (slider && nextBtn && prevBtn && card) {
+  const scrollLeft = slider.scrollLeft;
+  const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+  if (scrollLeft <= 0) {
+    preBtn.disabled = true;
+    preBtn.classList.add("opacity-low");
+  } else {
+    preBtn.disabled = false;
+    preBtn.classList.remove("opacity-low");
+  }
+
+  if (scrollLeft >= maxScrollLeft - 5) {
+    nxtBtn.disabled = true;
+    nxtBtn.classList.add("opacity-low");
+  } else {
+    nxtBtn.disabled = false;
+    nxtBtn.classList.remove("opacity-low");
+  }
+}
+function sliderInit() {
+  const slider = document.querySelector(".klijenti-slider");
+  const nextBtn = document.querySelector(".nxt-btn");
+  const prevBtn = document.querySelector(".pre-btn");
+  const card = document.querySelector(".klijenti-card");
+
   const cardStyle = getComputedStyle(card);
-  const cardMargin =
-    parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
-  const cardWidth = card.offsetWidth + cardMargin;
+  const cardSpacing =
+    parseInt(cardStyle.marginLeft) +
+    parseInt(cardStyle.marginRight) +
+    parseInt(cardStyle.paddingLeft || 0) +
+    parseInt(cardStyle.paddingRight || 0);
+  const cardWidth = card.offsetWidth + cardSpacing;
 
   const scrollCount = window.innerWidth <= 768 ? 1 : 3;
   const scrollAmount = cardWidth * scrollCount;
 
-  function updateButtonStates() {
-    const scrollLeft = slider.scrollLeft;
-    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-
-    if (scrollLeft <= 0) {
-      prevBtn.disabled = true;
-      prevBtn.classList.add('opacity-low')
-    } else {
-      prevBtn.disabled = false;
-      prevBtn.classList.remove('opacity-low')
-
-    }
-
-    if (scrollLeft >= maxScrollLeft - 5) {
-      nextBtn.disabled = true;
-      nextBtn.classList.add('opacity-low')
-
-    } else {
-      nextBtn.disabled = false;
-      nextBtn.classList.remove('opacity-low')
-    }
-  }
   updateButtonStates();
-  slider.addEventListener('scroll', updateButtonStates);
 
   nextBtn.addEventListener("click", () => {
     slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    setTimeout(updateButtonStates, 100);
   });
 
   prevBtn.addEventListener("click", () => {
     slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    setTimeout(updateButtonStates, 100);
   });
 
+  slider.addEventListener("scroll", updateButtonStates);
 }
 
-/////////////////////////////////////////////////////////////////////////
-document.addEventListener("DOMContentLoaded", function () {
+function setVideo() {
+  const videoElements = document.querySelectorAll(".klijenti-slider video");
+  videoElements.forEach((videoElement) => {
+    videoElement.addEventListener("click", () => {
+      console.log("hey");
+      if (videoElement.requestFullscreen) {
+        videoElement.requestFullscreen();
+      } else if (videoElement.webkitRequestFullscreen) {
+        videoElement.webkitRequestFullscreen(); // Safari desktop
+      } else if (videoElement.webkitEnterFullscreen) {
+        videoElement.webkitEnterFullscreen(); // Safari on iOS
+      } else if (videoElement.msRequestFullscreen) {
+        videoElement.msRequestFullscreen(); // IE
+      }
+    });
+  });
+
   const video = document.querySelector("video");
+
   if (video) {
     video.volume = 0.25;
   }
-});
+}

@@ -37,15 +37,15 @@
   flex-wrap: wrap;
 }
 .fotografije .img-holder span{
-  width: 323px;
-  height: 329px;
+  max-width: 323px;
+  max-height: 329px;
   margin: 15px;
   overflow: hidden;
 
 }
 .fotografije .img-holder img {
-  width: 323px;
-  height: 329px;
+  max-width: 323px;
+  max-height: 329px;
   transition: 0.2s all ease;
 }
 .fotografije .img-holder img:hover {
