@@ -40,17 +40,14 @@ section.header {
 
 section.header .proffile_wrapper {
   position: relative;
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 400px;
   display: block;
-
   margin: 50px auto;
 }
 
-section.header img.profile {
+section.header video.profile {
   width: 100%;
   height: 100%;
-
   display: block;
   z-index: 1;
 }
@@ -58,16 +55,13 @@ section.header img.profile {
 section.header .proffile_wrapper::after {
   content: "";
   display: block;
-
   width: 100%;
   height: 100%;
-
   display: block;
   background-color: #e8e3de;
   position: absolute;
-  top: 70px;
-  left: -70px;
-
+  top: 50px;
+  left: -50px;
   z-index: -1;
 }
 
@@ -82,13 +76,12 @@ section.header .text {
   transition-delay: 0.2s;
 }
 
-section.header .text p.header-txt {
+section.header .text p.header_txt {
   margin: 50px auto;
   font-size: 3em;
   text-align: center;
   letter-spacing: 5px;
   line-height: 45px;
-
   font-family: TheSeasons;
 }
 
@@ -132,11 +125,10 @@ section.header .text .boo p {
   section.header .proffile_wrapper {
     position: relative;
     max-width: 300px;
-    max-height: 330px;
     margin: 50px auto;
   }
 
-  section.header img.profile {
+  section.header video.profile {
     width: 100%;
     height: 100%;
     display: block;
@@ -174,6 +166,7 @@ section.header .text .boo p {
     text-align: center;
     letter-spacing: 5px;
     line-height: 45px;
+
   }
 }
 /* 
