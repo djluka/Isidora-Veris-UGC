@@ -55,3 +55,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+///
+document.addEventListener("DOMContentLoaded", function () {
+  videoPoster();
+});
+
+function videoPoster() {
+  const videoElements = document.querySelectorAll(".proffile_wrapper video");
+  videoElements.forEach((videoElement) => {
+    videoElement.addEventListener("click", () => {
+      if (videoElement.requestFullscreen) {
+        videoElement.requestFullscreen();
+      } else if (videoElement.webkitRequestFullscreen) {
+        videoElement.webkitRequestFullscreen();
+        // Safari desktop
+      } else if (videoElement.webkitEnterFullscreen) {
+        videoElement.webkitEnterFullscreen();
+        // Safari on iOS
+      } else if (videoElement.msRequestFullscreen) {
+        videoElement.msRequestFullscreen();
+        // IE
+      }
+
+      videoElement.addEventListener("fullscreenchange", () => {
+        if (!document.fullscreenElement) {
+          videoElement.muted = true;
+          videoElement.controls = false;
+        } else {
+          videoElement.muted = false;
+          videoElement.controls = true;
+        }
+      });
+    });
+  });
+}

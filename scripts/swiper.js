@@ -57,7 +57,6 @@ function sliderInit() {
 }
 
 function setVideo() {
-  
   const videoElements = document.querySelectorAll(".clients_slider video");
   videoElements.forEach((videoElement) => {
     videoElement.addEventListener("click", () => {
@@ -70,7 +69,17 @@ function setVideo() {
       } else if (videoElement.msRequestFullscreen) {
         videoElement.msRequestFullscreen(); // IE
       }
+      
+      
+      videoElement.addEventListener("fullscreenchange", () => {
+        if (!document.fullscreenElement) {
+          videoElement.muted = true;
+          videoElement.controls = false;
+        } else {
+          videoElement.muted = false;
+          videoElement.controls = true;
+        }
+      });
     });
   });
-
 }
