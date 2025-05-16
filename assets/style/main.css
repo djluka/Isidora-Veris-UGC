@@ -1,3 +1,10 @@
+@import "about_me.css";
+@import "burger_menu.css";
+@import "clients.css";
+@import "footer.css";
+@import "lightbox.css";
+@import "photos.css";
+@import "scroll_to_top.css";
 @font-face {
   font-family: TheSeasons;
   src: url(/fonts/Fontspring-DEMO-theseasons-reg.otf);
@@ -194,10 +201,4 @@ annimations
 .blur {
   filter: blur(5px);
 }
-@import "about_me.css";
-@import "burger_menu.css";
-@import "clients.css";
-@import "footer.css";
-@import "lightbox.css";
-@import "photos.css";
-@import "scroll_to_top.css";
+
