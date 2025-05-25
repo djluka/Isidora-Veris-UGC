@@ -56,10 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+
 ///
 document.addEventListener("DOMContentLoaded", function () {
   videoPoster();
 });
+
+
 
 function videoPoster() {
   const videoElements = document.querySelectorAll(".proffile_wrapper video");

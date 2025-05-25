@@ -5,54 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Isidoraverisugc</title>
     <link rel="stylesheet" href="assets/style/main.css" />
-<link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/style/burger_menu.css" />
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
   </head>
 
   <body>
-    <div class="page_wrapper">
-      <nav>
-        <p>UGC PORTFOLIO</p>
-<!-- ugc
- kontent
- rezultati -->
-        <menu>
-          <a href="#clients">KLIJENTI</a>
-          <a href="#about_me">O MENI</a>
-          <a href="#contacts">KONTAKT</a>
-        </menu>
-
+    <nav>        
+      <ul class="menu">
+        <li>
+          <p class="site_title">UGC PORTFOLIO</p>
+        </li>
+        <li>
+          <a href="#ugc">UGC</label></a>
+          <a href="#content">KONTENT</label></a>
+          <a href="#results">REZULTATI</label></a>
+          <a href="#about_me">O MENI</label></a>
+          <a href="#contacts">KONTAKT</label></a>
+        </li>
+      </ul>
+      <div class="mobile_menu">
+        <p class="site_title">UGC PORTFOLIO</p>
         <div id="menu_toggle">
-          <input type="checkbox" id="menu_checkbox" />
 
-          <span></span>
-          <span></span>
-          <span></span>
-
+            <input type="checkbox" id="menu_checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            
           <ul id="burger_menu">
             <li>
-              <a href="#clients">
+              <a href="#ugc">
                 <label for="menu_checkbox" onclick="this.parentNode.click();"
-                  >KLIJENTI</label
-                >
+                  >UGC</label>
+              </a>
+            </li>
+            <li>
+              <a href="#content">
+                <label for="menu_checkbox" onclick="this.parentNode.click();"
+                  >KONTENT</label>
+              </a>
+            </li>
+            <li>
+              <a href="#results">
+                <label for="menu_checkbox" onclick="this.parentNode.click();"
+                  >REZULTATI</label>
               </a>
             </li>
             <li>
               <a href="#about_me">
                 <label for="menu_checkbox" onclick="this.parentNode.click();"
-                  >O MENI</label
-                >
+                  >O MENI</label>
               </a>
             </li>
             <li>
               <a href="#contacts">
                 <label for="menu_checkbox" onclick="this.parentNode.click();"
-                  >KONTAKT</label
-                >
+                  >KONTAKT</label>
               </a>
             </li>
           </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+    <div class="page_wrapper">
 
       <section class="header">
         <div class="proffile_wrapper hidden">
@@ -103,17 +118,17 @@
         <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
       </div>
 
-      <div class="clients hidden animation_box" id="clients">
-       <!-- UGC  -->
+      <div class="ugc hidden animation_box" id="ugc">
+        <!-- UGC  -->
         <!-- smanjiti -->
-        <p class="clients_header">UGC</p>
-        <div class="clients_wrap">
+        <p class="ugc_header">UGC</p>
+        <div class="ugc_wrap">
           <button class="pre_btn">
             <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
           </button>
 
-          <div class="clients_slider">
-            <div class="clients_card">
+          <div class="ugc_slider">
+            <div class="ugc_card">
               <video
                 src="/content/videos/SpeltAnimal.mp4"
                 muted
@@ -129,7 +144,7 @@
                 drže pažnju gledaoca.
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/Shelly’s Smash Burgers.mp4"
                 muted
@@ -144,7 +159,7 @@
                 vizualima i efektima za privlačenje pažnje gledaoca
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/Multiaktiv.mp4"
                 muted
@@ -159,7 +174,7 @@
                 autentičnog storytellinga implementacijom sopstvenog lica
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/NaturalWay.mp4"
                 muted
@@ -175,7 +190,7 @@
                 drže pažnju gledaoca
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/Ellie&Mo.mp4"
                 muted
@@ -190,7 +205,7 @@
                 estetičnog načina snimanja
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/Content.mp4"
                 muted
@@ -205,7 +220,7 @@
                 scenes”
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/MIKOS.mp4"
                 muted
@@ -221,7 +236,7 @@
                 drže pažnju gledaoca
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/SOPPY.mp4"
                 muted
@@ -236,7 +251,7 @@
                 vizualima i efektima za privlačenje pažnje gledaoca
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/Ellie&Mo (2).mp4"
                 muted
@@ -251,7 +266,7 @@
                 estetičnog načina snimanja
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="#"
                 muted
@@ -263,7 +278,7 @@
               <p>Ellie&Mo</p>
               <p>Predstavljanje proizvoda u estetičnom okruženju.</p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/Professional.mp4"
                 muted
@@ -278,7 +293,7 @@
                 scena pomoću storytellinga.
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/HelloKids.mp4"
                 muted
@@ -293,7 +308,7 @@
                 profesionalnog editovanja videa koji drže pažnju gledaoca
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/SOPPY (2).mp4"
                 muted
@@ -308,7 +323,7 @@
                 vizualima i efektima za privlačenje pažnje gledaoca
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/Multiaktiv (2).mp4"
                 muted
@@ -323,7 +338,7 @@
                 autentičnog storytellinga implementacijom sopstvenog lica
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="#"
                 muted
@@ -338,7 +353,7 @@
                 editovanjem dobijenog materijala
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/SOPPY (3).mp4"
                 muted
@@ -353,7 +368,7 @@
                 vizualima i efektima za privlačenje pažnje gledaoca
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/Ellie&Mo.mp4"
                 muted
@@ -368,7 +383,7 @@
                 reakcija publike i zajednice
               </p>
             </div>
-            <div class="clients_card">
+            <div class="ugc_card">
               <video
                 src="/content/videos/Professional (2).mp4"
                 muted
@@ -479,11 +494,10 @@
       </div>
     </div>
 
-    
     <div class="about_me" id="about_me">
       <!-- O MENI  pisanim iskrivljenim slovima ROMATE HOOD -->
-       <!-- video u pozadini pozadina fiksa itd  -->
-        <!-- isidoa veris pisano ravno -->
+      <!-- video u pozadini pozadina fiksa itd  -->
+      <!-- isidoa veris pisano ravno -->
       <p class="about_me_header hidden">o meni</p>
       <div class="about_me_content hidden">
         <div class="page_wrapper">

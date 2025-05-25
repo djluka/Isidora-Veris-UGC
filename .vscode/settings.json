@@ -1,7 +1,0 @@
-{
-      "liveServer.settings.fullReload": true,
-  "liveServer.settings.wait": 100,
-  "liveServer.settings.root": "/",
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 500
-}

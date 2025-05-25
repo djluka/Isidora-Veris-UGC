@@ -6,19 +6,19 @@ body {
   font-family: sans-serif;
 }
 
-.clients {
+.ugc {
   margin-top: 150px;
   text-align: left;
 }
 
-.clients p.clients_header {
+.ugc p.ugc_header {
   padding: 20px;
   font-size: 3em;
   font-weight: normal;
   font-family: TheSeasons;
 }
 
-.clients_wrap {
+.ugc_wrap {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +61,7 @@ body {
   width: 30px;
 }
 
-.clients_slider {
+.ugc_slider {
   display: flex;
   gap: 20px;
   overflow-x: auto;
@@ -73,11 +73,11 @@ body {
   max-width: 1050px;
 }
 
-.clients_slider::-webkit-scrollbar {
+.ugc_slider::-webkit-scrollbar {
   display: none;
 }
 
-.clients_card {
+.ugc_card {
   flex: 0 0 calc((100% - 40px) / 3);
   scroll-snap-align: start;
   display: flex;
@@ -91,17 +91,17 @@ body {
   box-sizing: border-box;
 }
 
-.clients_card video {
+.ugc_card video {
   width: 290px;
   border-radius: 10px;
   margin-bottom: 10px;
 }
-.clients_card video:hover + p {
+.ugc_card video:hover + p {
   top: -0%;
   transition: 0.2s ease-in-out all;
 }
 
-.clients_card p:nth-child(2) {
+.ugc_card p:nth-child(2) {
   background-color: white;
   font-size: 15pt;
   max-width: 200px;
@@ -115,7 +115,7 @@ body {
   top: -5%;
 }
 
-.clients_card p:nth-child(3) {
+.ugc_card p:nth-child(3) {
   font-size: 13pt;
   font-family: CormorantGaramond;
   padding: 10px;
@@ -161,27 +161,27 @@ body {
     width: 20px;
   }
 
-  .clients_slider {
+  .ugc_slider {
     max-width: 100%;
     gap: 20px;
   }
-  .clients_card video {
+  .ugc_card video {
     width: 250px;
     border-radius: 10px;
     margin-bottom: 10px;
   }
-  .clients_card {
+  .ugc_card {
     flex: 0 0 100%;
     padding: 10px;
   }
 
-  .clients_wrap {
+  .ugc_wrap {
     margin: 30px auto;
     flex-direction: column;
 
     max-width: 350px;
   }
-  .clients_card video:focus + p {
+  .ugc_card video:focus + p {
     margin-top: 0%;
     transition: 0.2s ease-in-out all;
   }
