@@ -38,10 +38,11 @@ function sliderInit() {
     parseInt(cardStyle.marginRight) +
     parseInt(cardStyle.paddingLeft || 0) +
     parseInt(cardStyle.paddingRight || 0);
-  const cardWidth = card.offsetWidth + cardSpacing;
+  const cardWidth = card.offsetWidth + cardSpacing ;
 
   const scrollCount = window.innerWidth <= 768 ? 1 : 3;
   const scrollAmount = cardWidth * scrollCount;
+    console.log(cardWidth)
 
   updateButtonStates();
 
