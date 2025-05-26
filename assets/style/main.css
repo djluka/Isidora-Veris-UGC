@@ -64,7 +64,6 @@ section.header {
   align-items: center;
   flex-wrap: wrap;
   position: relative;
-  max-height: 150vh;
 }
 
 section.header .proffile_wrapper {
