@@ -1,85 +1,123 @@
+// Kada se HTML potpuno učita (DOM spreman), pokreni inicijalizaciju slajdera i fullscreen videa
 document.addEventListener("DOMContentLoaded", function () {
-  sliderInit();
-  setVideo();
+  sliderInit(); // Pokreni slider logiku
+  setVideo(); // Postavi ponašanje za fullscreen video
 });
-function updateButtonStates() {
-  const slider = document.querySelector(".ugc_slider");
-  const preBtn = document.querySelector(".pre_btn");
-  const nxtBtn = document.querySelector(".nxt_btn");
 
-  const scrollLeft = slider.scrollLeft;
-  const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-
-  if (scrollLeft <= 0) {
-    preBtn.disabled = true;
-    preBtn.classList.add("opacity_low");
-  } else {
-    preBtn.disabled = false;
-    preBtn.classList.remove("opacity_low");
-  }
-
-  if (scrollLeft >= maxScrollLeft - 5) {
-    nxtBtn.disabled = true;
-    nxtBtn.classList.add("opacity_low");
-  } else {
-    nxtBtn.disabled = false;
-    nxtBtn.classList.remove("opacity_low");
-  }
-}
 function sliderInit() {
+  // Dohvata osnovne elemente slidera i dugmića
   const slider = document.querySelector(".ugc_slider");
+  const cards = document.querySelectorAll(".ugc_card");
   const nextBtn = document.querySelector(".nxt_btn");
   const prevBtn = document.querySelector(".pre_btn");
-  const card = document.querySelector(".ugc_card");
+  // Ako nešto nedostaje – prekini (sigurnosna provera)
+  if (!slider || cards.length === 0) return;
 
-  const cardStyle = getComputedStyle(card);
-  const cardSpacing =
-    parseInt(cardStyle.marginLeft) +
-    parseInt(cardStyle.marginRight) +
-    parseInt(cardStyle.paddingLeft || 0) +
-    parseInt(cardStyle.paddingRight || 0);
-  const cardWidth = card.offsetWidth + cardSpacing ;
-// ovde treba dodati pomeranje za responsive 
-  const scrollCount = window.innerWidth <= 768 ? 1 : 3;
-  const scrollAmount = cardWidth * scrollCount;
-    console.log(cardWidth)
+  let currentIndex = 0; // prati indeks prve vidljive kartice
 
-  updateButtonStates();
+  function getVisibleCardsCount() {
+    const sliderWidth = slider.offsetWidth; // širina vidljive oblasti slidera
+    const cardWidth = cards[0].offsetWidth; // širina jedne kartice
+    return Math.max(1, Math.round(sliderWidth / cardWidth)); // broj kartica koje "stanu" unutra
+  }
+
+  function scrollToCurrentCard() {
+    const targetCard = cards[currentIndex]; // kartica koju želimo da poravnamo
+    if (targetCard) {
+      slider.scrollTo({
+        left: targetCard.offsetLeft, // udaljenost kartice od početka slidera
+        behavior: "smooth", // animirano skrolovanje
+      });
+    }
+  }
+
+  function updateButtons() {
+    // Ako si na početku – disable prev
+    const visible = getVisibleCardsCount();
+    prevBtn.disabled = currentIndex === 0;
+    // Ako si na kraju – disable next
+    nextBtn.disabled = currentIndex >= cards.length - visible;
+    // Dodaj ili ukloni klasu za vizuelno slabiji izgled dugmadi
+    prevBtn.classList.toggle("opacity_low", prevBtn.disabled);
+    nextBtn.classList.toggle("opacity_low", nextBtn.disabled);
+  }
 
   nextBtn.addEventListener("click", () => {
-    slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    const visible = getVisibleCardsCount();
+    if (currentIndex < cards.length - visible) {
+      currentIndex += visible; // idi za ceo "set" kartica
+      if (currentIndex > cards.length - visible) {
+        currentIndex = cards.length - visible;
+      }
+      scrollToCurrentCard();
+      updateButtons();
+    }
   });
 
   prevBtn.addEventListener("click", () => {
-    slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    const visible = getVisibleCardsCount();
+    if (currentIndex > 0) {
+      currentIndex -= visible;
+      if (currentIndex < 0) currentIndex = 0;
+      scrollToCurrentCard();
+      updateButtons();
+    }
   });
 
-  slider.addEventListener("scroll", updateButtonStates);
+  slider.addEventListener("scroll", () => {
+    const cardWidth =
+      cards[0].offsetLeft - (cards[1]?.offsetLeft || 0) === 0
+        ? cards[0].offsetWidth
+        : cards[1].offsetLeft - cards[0].offsetLeft;
+    // Preračunaj trenutni indeks na osnovu scroll pozicije
+    currentIndex = Math.round(slider.scrollLeft / cardWidth);
+    updateButtons();
+  });
+
+  // Pokreni na početku
+  scrollToCurrentCard(); // centriraj prvu karticu
+  updateButtons(); // proveri da li treba isključiti dugmad
 }
 
 function setVideo() {
   const videoElements = document.querySelectorAll(".ugc_slider video");
+
   videoElements.forEach((videoElement) => {
     videoElement.addEventListener("click", () => {
       if (videoElement.requestFullscreen) {
         videoElement.requestFullscreen();
       } else if (videoElement.webkitRequestFullscreen) {
-        videoElement.webkitRequestFullscreen(); // Safari desktop
+        // Safari desktop
+        videoElement.webkitRequestFullscreen();
       } else if (videoElement.webkitEnterFullscreen) {
-        videoElement.webkitEnterFullscreen(); // Safari on iOS
+        // Safari iOS
+        videoElement.webkitEnterFullscreen();
       } else if (videoElement.msRequestFullscreen) {
-        videoElement.msRequestFullscreen(); // IE
+        // Safari iOS
+        videoElement.msRequestFullscreen();
       }
-      
-      
-      videoElement.addEventListener("fullscreenchange", () => {
-        if (!document.fullscreenElement) {
-          videoElement.muted = true;
-          videoElement.controls = false;
-        } else {
-          videoElement.muted = false;
-          videoElement.controls = true;
-        }
+
+      const handleFullscreenChange = () => {
+        const isFullscreen =
+          document.fullscreenElement ||
+          document.webkitFullscreenElement ||
+          document.mozFullScreenElement ||
+          document.msFullscreenElement;
+          
+        // Ako smo u fullscreenu – pusti zvuk i kontrole
+        videoElement.muted = !isFullscreen;
+        videoElement.controls = isFullscreen;
+      };
+
+      [
+        "fullscreenchange",
+        "webkitfullscreenchange",
+        "mozfullscreenchange",
+        "MSFullscreenChange",
+      ].forEach((eventName) => {
+        document.addEventListener(eventName, handleFullscreenChange, {
+          once: true,
+        });
       });
     });
   });

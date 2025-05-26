@@ -43,17 +43,32 @@ document.addEventListener("DOMContentLoaded", function () {
   // burger menu
   const menu = document.querySelector("#menu_toggle");
   const checkBox = document.querySelector("#menu_checkbox");
-  const body = document.querySelector("body");
 
+  const mobileMenuButtons = menu.querySelectorAll(`a`)
+  mobileMenuButtons.forEach((mobileMenuButton) =>{
+    mobileMenuButton.addEventListener('click', ()=>{
+      console.log(mobileMenuButton)
+      checkBox.checked = false;
+      console.log(checkBox.checked )
+      if (checkBox.checked) {
+        document.body.classList.add('no_scroll')
+        
+    } else {
+      document.body.classList.remove('no_scroll')
+    }
+    })
+  });
+  
   checkBox.addEventListener("change", function () {
     if (checkBox.checked) {
-      menu.style.position = "fixed";
-      scrollToTopButton.style.display = "none";
+        document.body.classList.add('no_scroll')
+        
     } else {
-      menu.style.position = "absolute";
-      scrollToTopButton.style.display = "flex";
+      document.body.classList.remove('no_scroll')
     }
   });
+
+  
 });
 
 

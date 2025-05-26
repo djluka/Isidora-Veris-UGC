@@ -6,20 +6,20 @@ body {
   overflow-x: hidden;
 }
 
-.ugc {
+.content {
   margin-top: 50px;
   text-align: left;
   max-height: 90vh;
 }
 
-.ugc p.ugc_header {
+.content p.content_header {
   margin-bottom: 5px;
   font-size: 2em;
   font-weight: normal;
   font-family: TheSeasons;
 }
 
-.ugc_wrap {
+.content_wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +69,7 @@ body {
   width: 20px;
 }
 
-.ugc_slider {
+.content_slider {
   display: flex;
   max-width: 100%;
   overflow-x: auto;
@@ -81,11 +81,11 @@ body {
   position: relative;
 }
 
-.ugc_slider::-webkit-scrollbar {
+.content_slider::-webkit-scrollbar {
   display: none;
 }
 
-.ugc_card {
+.content_card {
   flex: 0 0 100%;
   scroll-snap-align: start;
   display: flex;
@@ -96,23 +96,20 @@ body {
   border-radius: 16px;
   overflow: hidden;
   background-color: #e8e3de94;
+  transition: transform 0.3s ease;
   padding: 0;
   margin: 0;
   position: relative;
-  transition: 0.3s all;
 }
-
-/* svi sem tog */
-.ugc_card:hover video{
-  filter: blur(0) brightness(1);
-  transition: 0.3s all;
+.content_card:hover {
+  transform: translateY(-5px);
 }
-.ugc_card video {
+.content_card video {
   width: 90%;
   aspect-ratio: 9 / 16;
   object-fit: cover;
   display: block;
-  filter: blur(0.7px) brightness(0.8);
+  filter: blur(0.5px) brightness(0.9);
 }
 p.title {
   font-family: CormorantGaramond;
@@ -162,7 +159,7 @@ p.desc {
 
 /* Veći ekran (npr. tablet) */
 @media (min-width: 768px) {
-  .ugc_wrap {
+  .content_wrap {
     max-width: 650px;
   }
 
@@ -179,30 +176,30 @@ p.desc {
   .nxt_btn {
     right: -11%;
   }
-  .ugc_slider {
+  .content_slider {
     max-width: 100%;
     position: relative;
     gap: 20px;
   }
 
-  .ugc_card {
+  .content_card {
     flex: 0 0 calc(50% - 10px); /* 2 kartice po redu, - gap/2 */
   }
 }
 
 /* Još veći ekran (npr. desktop) */
 @media (min-width: 1200px) {
-  .ugc {
+  .content {
     margin-top: 80px;
     max-height: 100vh;
   }
 
-  .ugc p.ugc_header {
+  .content p.content_header {
     padding: 20px;
     font-size: 3em;
   }
 
-  .ugc_wrap {
+  .content_wrap {
     max-width: 1100px;
   }
   .pre_btn,
@@ -219,11 +216,11 @@ p.desc {
     right: -10%;
   }
 
-  .ugc_card {
+  .content_card {
     flex: 0 0 calc((100% - 40px) / 3); /* 3 kartice + 2x20px gap */
   }
 
-  .ugc_card {
+  .content_card {
     flex: 0 0 calc((100% / 3 - 20px));
   }
 }

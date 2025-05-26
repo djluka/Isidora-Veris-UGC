@@ -1,349 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Isidoraverisugc</title>
-  <link rel="stylesheet" href="assets/style/main.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isidoraverisugc</title>
+    <link rel="stylesheet" href="assets/style/main.css" />
     <link rel="stylesheet" href="assets/style/ugc.css" />
 
-  <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
-</head>
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+  </head>
 
-<body>
-  <nav>
-    <ul class="menu">
-      <li>
+  <body>
+    <nav>
+      <ul class="menu">
+        <li>
+          <p class="site_title">UGC PORTFOLIO</p>
+        </li>
+        <li>
+          <a href="#ugc">UGC</a>
+          <a href="#content">KONTENT</a>
+          <a href="#results">REZULTATI</a>
+          <a href="#about_me">O MENI</a>
+          <a href="#contacts">KONTAKT</a>
+        </li>
+      </ul>
+      <div class="mobile_menu">
         <p class="site_title">UGC PORTFOLIO</p>
-      </li>
-      <li>
-        <a href="#ugc">UGC</a>
-        <a href="#content">KONTENT</a>
-        <a href="#results">REZULTATI</a>
-        <a href="#about_me">O MENI</a>
-        <a href="#contacts">KONTAKT</a>
-      </li>
-    </ul>
-    <div class="mobile_menu">
-      <p class="site_title">UGC PORTFOLIO</p>
-      <div id="menu_toggle">
 
-        <input type="checkbox" id="menu_checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-
-        <ul id="burger_menu">
-          <li>
-            <a href="#ugc">
-              <label for="menu_checkbox" onclick="this.parentNode.click();">UGC</label>
-            </a>
-          </li>
-          <li>
-            <a href="#content">
-              <label for="menu_checkbox" onclick="this.parentNode.click();">KONTENT</label>
-            </a>
-          </li>
-          <li>
-            <a href="#results">
-              <label for="menu_checkbox" onclick="this.parentNode.click();">REZULTATI</label>
-            </a>
-          </li>
-          <li>
-            <a href="#about_me">
-              <label for="menu_checkbox" onclick="this.parentNode.click();">O MENI</label>
-            </a>
-          </li>
-          <li>
-            <a href="#contacts">
-              <label for="menu_checkbox" onclick="this.parentNode.click();">KONTAKT</label>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="page_wrapper">
-
-    <section class="header">
-      <div class="proffile_wrapper hidden">
-        <video src="/content/videos/profile_video.mp4" class="profile" muted autoplay playsinline loop
-          loading="lazy"></video>
-      </div>
-      <div class="text hidden">
-        <p class="header_txt">ISIDORA VERIŠ <br/>UGC <span>CREATOR</span></p>
-        <p class="hidden description_txt">
-          Pomažem brendovima da se povežu sa publikom kroz autentičan
-          storytelling i estetičan sadržaj. Fokusiram se na predstavljanje
-          proizvoda i vrednosti brenda na način koji povećava vidljivost,
-          gradi poverenje i podstiče prodaju, prilagođavajući svoj rad
-          njihovim ciljevima i publici.
-        </p>
-
-        <a class="contact_me hidden1" href="mailto:isidoraverisugc@gmail.com">
-          <img class="mail" src="/assets/mail.webp" loading="lazy" alt="Loading..." />
-          <p>isidoraverisugc@gmail.com</p>
-        </a>
-
-        <div class="contact_me hidden1">
-          <img class="location" src="/assets/location.webp" loading="lazy" alt="Loading..." />
-          <p>Novi Sad, Srbija</p>
-        </div>
-
-        <a class="contact_me hidden1" href="https://www.instagram.com/isidoraverisugc/" target="_blank">
-          <img class="instagram" src="/assets/instagram.webp" loading="lazy" alt="Loading..." />
-          <p>isidoraverisugc</p>
-        </a>
-      </div>
-    </section>
-    <!-- smanjiti i optimizovati -->
-    <div class="scroll_to_top">
-      <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
-    </div>
-
-    <div class="ugc hidden animation_box" id="ugc" >
-
-      <p class="ugc_header">UGC</p>
-      <div class="ugc_wrap">
-        <button class="pre_btn">
-          <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
-        </button>
-
-        <div class="ugc_slider">
-          <div class="ugc_card">
-            <video src="/content/videos/SpeltAnimal.mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>SpeltAnimal</p>
-            <p>
-              Predstavljanje proizvoda implementacijom sopstvenog lica,
-              storytellinga, vizuala i profesionalnog editovanja videa koji
-              drže pažnju gledaoca.
-            </p>
+        <div id="menu_toggle">
+          <input type="checkbox" id="menu_checkbox" />
+          <div class="burger_line">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-          <div class="ugc_card">
-            <video src="/content/videos/Shelly’s Smash Burgers.mp4" muted autoplay playsinline loop
-              loading="lazy"></video>
-            <p>Shelly’s Smash Burgers</p>
-            <p>
-              Predstavljanje proizvoda realnom pričom, autentičnim snimcima,
-              vizualima i efektima za privlačenje pažnje gledaoca
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/Multiaktiv.mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>Multiaktiv</p>
-            <p>
-              Predstavljanje proizvoda i brenda ličnim iskstvom i recenzijom
-              autentičnog storytellinga implementacijom sopstvenog lica
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/NaturalWay.mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>NaturalWay</p>
-            <p>
-              Predstavljanje proizvoda implementacijom sopstvenog lica,
-              storytellinga, vizuala i profesionalnog editovanja videa koji
-              drže pažnju gledaoca
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/Ellie&Mo.mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>Ellie&Mo</p>
-            <p>
-              Predstavljanje proizvoda i brenda pomoću storytellinga i
-              estetičnog načina snimanja
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/Content.mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>Content</p>
-            <p>
-              Storytelling sopstvenog iskustva i događaja u vidu “behind the
-              scenes”
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/MIKOS.mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>MIKOS</p>
-            <p>
-              Predstavljanje proizvoda implementacijom sopstvenog lica,
-              storytellinga, vizuala i profesionalnog editovanja videa koji
-              drže pažnju gledaoca
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/SOPPY.mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>SOPPY</p>
-            <p>
-              Predstavljanje proizvoda realnom pričom, autentičnim snimcima,
-              vizualima i efektima za privlačenje pažnje gledaoca
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/Ellie&Mo (2).mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>Ellie&Mo</p>
-            <p>
-              Predstavljanje proizvoda i brenda pomoću storytellinga i
-              estetičnog načina snimanja
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="#" muted autoplay playsinline loop loading="lazy"></video>
-            <p>Ellie&Mo</p>
-            <p>Predstavljanje proizvoda u estetičnom okruženju.</p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/Professional.mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>Professional</p>
-            <p>
-              Predstavljanje brenda i vrednosti kroz dinamiku videa i raznih
-              scena pomoću storytellinga.
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/HelloKids.mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>HelloKids</p>
-            <p>
-              Predstavljanje brenda implementacijom sopstvenog lica, vizuala i
-              profesionalnog editovanja videa koji drže pažnju gledaoca
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/SOPPY (2).mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>SOPPY</p>
-            <p>
-              Predstavljanje proizvoda realnom pričom, autentičnim snimcima,
-              vizualima i efektima za privlačenje pažnje gledaoca
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/Multiaktiv (2).mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>Multiaktiv</p>
-            <p>
-              Predstavljanje proizvoda i brenda ličnim iskstvom i recenzijom
-              autentičnog storytellinga implementacijom sopstvenog lica
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="#" muted autoplay playsinline loop loading="lazy"></video>
-            <p>iMOVE NYC</p>
-            <p>
-              Reklamni video za stranog klijenta sa dodatim AI glasom i
-              editovanjem dobijenog materijala
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/SOPPY (3).mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>SOPPY</p>
-            <p>
-              Predstavljanje proizvoda realnom pričom, autentičnim snimcima,
-              vizualima i efektima za privlačenje pažnje gledaoca
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/Ellie&Mo.mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>Ellie&Mo</p>
-            <p>
-              Predstavljanje proizvoda na zabavan i kreativan način. Velika
-              reakcija publike i zajednice
-            </p>
-          </div>
-          <div class="ugc_card">
-            <video src="/content/videos/Professional (2).mp4" muted autoplay playsinline loop loading="lazy"></video>
-            <p>Professional</p>
-            <p>
-              Predstavljanje brenda i vrednosti kroz dinamiku videa i raznih
-              scena pomoću storytellinga.
-            </p>
-          </div>
-        </div>
-        <button class="nxt_btn">
-          <img src="/assets/arrow.webp" alt="Loading..." />
-        </button>
-      </div>
-    </div>
-    <!-- kontent -->
-    <!--Rezultati-->
-    <!-- logo klijenata i pregledi preko njih animacija ispod  -->
-    <div class="photos hidden" id="photos">
-      <p class="photos_header">Fotografije</p>
-      <div class="img_box">
-        <div class="img_holder">
-          <span>
-            <img class="hidden animation_box" src="/content/images/img1.webp" loading="lazy" alt="Loading..." />
-          </span>
-          <span>
-            <img class="hidden animation_box" src="/content/images/img2.webp" loading="lazy" alt="Loading..." />
-          </span>
-          <span>
-            <img class="hidden animation_box" src="/content/images/img3.webp" loading="lazy" alt="Loading..." />
-          </span>
-        </div>
-        <p class="hidden1">
-          Ovakva vrsta fotografija ide uz svaki UGC video i služi za Instagram
-          PREVIEW.
-        </p>
-        <div class="img_holder">
-          <span>
-            <img class="hidden animation_box" src="/content/images/img4.webp" loading="lazy" alt="Loading..." />
-          </span>
-          <span>
-            <img class="hidden animation_box" src="/content/images/img5.webp" loading="lazy" alt="Loading..." />
-          </span>
-          <span>
-            <img class="hidden animation_box" src="/content/images/img6.webp" loading="lazy" alt="Loading..." />
-          </span>
-          <span>
-            <img class="hidden animation_box" src="/content/images/img7.webp" loading="lazy" alt="Loading..." />
-          </span>
-          <span>
-            <img class="hidden animation_box" src="/content/images/img8.webp" loading="lazy" alt="Loading..." />
-          </span>
-          <span>
-            <img class="hidden animation_box" src="/content/images/img9.webp" loading="lazy" alt="Loading..." />
-          </span>
+          <ul id="burger_menu">
+            <li>
+              <a
+                href="#ugc"
+                onclick="document.getElementById('menu_checkbox').checked = false;"
+                >UGC</a
+              >
+            </li>
+            <li>
+              <a
+                href="#content"
+                onclick="document.getElementById('menu_checkbox').checked = false;"
+                >KONTENT</a
+              >
+            </li>
+            <li>
+              <a
+                href="#results"
+                onclick="document.getElementById('menu_checkbox').checked = false;"
+                >REZULTAT</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about_me"
+                onclick="document.getElementById('menu_checkbox').checked = false;"
+                >O MENI</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contacts"
+                onclick="document.getElementById('menu_checkbox').checked = false;"
+                >KONTAKT</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
+    </nav>
+    <div class="page_wrapper">
+      <section class="header">
+        <div class="proffile_wrapper hidden">
+          <video
+            src="/content/videos/profile_video.mp4"
+            class="profile"
+            muted
+            autoplay
+            playsinline
+            loop
+            loading="lazy"
+          ></video>
+        </div>
+        <div class="text hidden">
+          <p class="header_txt">ISIDORA VERIŠ <br />UGC <span>CREATOR</span></p>
+          <p class="hidden description_txt">
+            Pomažem brendovima da se povežu sa publikom kroz autentičan
+            storytelling i estetičan sadržaj. Fokusiram se na predstavljanje
+            proizvoda i vrednosti brenda na način koji povećava vidljivost,
+            gradi poverenje i podstiče prodaju, prilagođavajući svoj rad
+            njihovim ciljevima i publici.
+          </p>
+
+          <a class="contact_me hidden1" href="mailto:isidoraverisugc@gmail.com">
+            <img
+              class="mail"
+              src="/assets/mail.webp"
+              loading="lazy"
+              alt="Loading..."
+            />
+            <p>isidoraverisugc@gmail.com</p>
+          </a>
+
+          <div class="contact_me hidden1">
+            <img
+              class="location"
+              src="/assets/location.webp"
+              loading="lazy"
+              alt="Loading..."
+            />
+            <p>Novi Sad, Srbija</p>
+          </div>
+
+          <a
+            class="contact_me hidden1"
+            href="https://www.instagram.com/isidoraverisugc/"
+            target="_blank"
+          >
+            <img
+              class="instagram"
+              src="/assets/instagram.webp"
+              loading="lazy"
+              alt="Loading..."
+            />
+            <p>isidoraverisugc</p>
+          </a>
+        </div>
+      </section>
+      <div class="scroll_to_top">
+        <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
+      </div>
+
+      <div class="ugc hidden animation_box" id="ugc">
+        <p class="ugc_header">UGC</p>
+        <div class="ugc_wrap">
+          <button class="pre_btn">
+            <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
+          </button>
+
+          <div class="ugc_slider">
+            <div class="ugc_card">
+              <p class="title">SpeltAnimal</p>
+
+              <video
+                src="/content/videos/SpeltAnimal.mp4"
+                muted
+                autoplay
+                playsinline
+                loop
+                loading="lazy"
+              ></video>
+              <p class="desc">
+                Predstavljanje proizvoda implementacijom sopstvenog lica,
+                storytellinga, vizuala i profesionalnog editovanja videa koji
+                drže pažnju gledaoca.
+              </p>
+            </div>
+
+            <div class="ugc_card">
+              <p class="title">Shelly’s Smash Burgers</p>
+
+              <video
+                src="/content/videos/Shelly’s Smash Burgers.mp4"
+                muted
+                autoplay
+                playsinline
+                loop
+                loading="lazy"
+              ></video>
+              <p class="desc">
+                Predstavljanje proizvoda realnom pričom, autentičnim snimcima,
+                vizualima i efektima za privlačenje pažnje gledaoca
+              </p>
+            </div>
+
+            <div class="ugc_card">
+              <p class="title">Multiaktiv</p>
+
+              <video
+                src="/content/videos/Multiaktiv.mp4"
+                muted
+                autoplay
+                playsinline
+                loop
+                loading="lazy"
+              ></video>
+              <p class="desc">
+                Predstavljanje proizvoda i brenda ličnim iskstvom i recenzijom
+                autentičnog storytellinga implementacijom sopstvenog lica
+              </p>
+            </div>
+
+            <!-- </div>
+
+  <div class="ugc_card">
+    <video src="/content/videos/NaturalWay.mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">NaturalWay</p>
+      <p class="desc">Predstavljanje proizvoda implementacijom sopstvenog lica, storytellinga, vizuala i profesionalnog editovanja videa koji drže pažnju gledaoca</p>
     </div>
   </div>
 
-  <div class="about_me" id="about_me">
-    <!-- O MENI  pisanim iskrivljenim slovima ROMATE HOOD -->
-    <!-- video u pozadini pozadina fiksa itd  -->
-    <!-- isidoa veris pisano ravno -->
-    <p class="about_me_header hidden">o meni</p>
-    <div class="about_me_content hidden">
-      <div class="page_wrapper">
-        <p class="hidden">
-          Trogodišnjim iskustvom stečenim kroz rad u marketingu za mali brend,
-          razvila sam razumevanje kako strategija i kreativnost mogu napraviti
-          razliku. Danas pomažem i drugim brendovima da, kroz pažljivo
-          osmišljene i estetične video sadržaje, povećaju prodaju i povežu se
-          sa svojom ciljnom publikom. Fokusiram se na kreiranje sadržaja koji
-          pored privlačenja pažnje gradi i autentičnu vezu između brenda i
-          potrošača. Moj cilj je da svaki brend sa kojim radim pronađe svoju
-          priču i postane prepoznatljiv i jedinstven na tržištu.
-        </p>
-        <div class="comments">
-          <div class="single_comment hidden animation_box">
-            <img class="img_profile" src="/content/images/ellie-mo.webp" loading="lazy" alt="Loaging..." />
-            <div class="stars">
-              <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
-              <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
-              <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
-              <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
-              <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
-            </div>
-            <p>
-              Isidora je kreativna, posvećena i spremna da razume naše potrebe
-              prilikom kreiranja sadržaja. Vrlo je uspešna u kreiranju
-              organskih, ali i reklama koje su namenjene za oglašavanje. Rado
-              je uvek preporučujemo.
-            </p>
+  <div class="ugc_card">
+    <video src="/content/videos/Ellie&Mo.mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">Ellie&Mo</p>
+      <p class="desc">Predstavljanje proizvoda i brenda pomoću storytellinga i estetičnog načina snimanja</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="/content/videos/Content.mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">Content</p>
+      <p class="desc">Storytelling sopstvenog iskustva i događaja u vidu “behind the scenes”</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="/content/videos/MIKOS.mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">MIKOS</p>
+      <p class="desc">Predstavljanje proizvoda implementacijom sopstvenog lica, storytellinga, vizuala i profesionalnog editovanja videa koji drže pažnju gledaoca</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="/content/videos/SOPPY.mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">SOPPY</p>
+      <p class="desc">Predstavljanje proizvoda realnom pričom, autentičnim snimcima, vizualima i efektima za privlačenje pažnje gledaoca</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="/content/videos/Ellie&Mo (2).mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">Ellie&Mo</p>
+      <p class="desc">Predstavljanje proizvoda i brenda pomoću storytellinga i estetičnog načina snimanja</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="#" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">Ellie&Mo</p>
+      <p class="desc">Predstavljanje proizvoda u estetičnom okruženju.</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="/content/videos/Professional.mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">Professional</p>
+      <p class="desc">Predstavljanje brenda i vrednosti kroz dinamiku videa i raznih scena pomoću storytellinga.</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="/content/videos/HelloKids.mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">HelloKids</p>
+      <p class="desc">Predstavljanje brenda implementacijom sopstvenog lica, vizuala i profesionalnog editovanja videa koji drže pažnju gledaoca</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="/content/videos/SOPPY (2).mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">SOPPY</p>
+      <p class="desc">Predstavljanje proizvoda realnom pričom, autentičnim snimcima, vizualima i efektima za privlačenje pažnje gledaoca</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="/content/videos/Multiaktiv (2).mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">Multiaktiv</p>
+      <p class="desc">Predstavljanje proizvoda i brenda ličnim iskstvom i recenzijom autentičnog storytellinga implementacijom sopstvenog lica</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="#" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">iMOVE NYC</p>
+      <p class="desc">Reklamni video za stranog klijenta sa dodatim AI glasom i editovanjem dobijenog materijala</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="/content/videos/SOPPY (3).mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">SOPPY</p>
+      <p class="desc">Predstavljanje proizvoda realnom pričom, autentičnim snimcima, vizualima i efektima za privlačenje pažnje gledaoca</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="/content/videos/Ellie&Mo.mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">Ellie&Mo</p>
+      <p class="desc">Predstavljanje proizvoda na zabavan i kreativan način. Velika reakcija publike i zajednice</p>
+    </div>
+  </div>
+
+  <div class="ugc_card">
+    <video src="/content/videos/Professional (2).mp4" muted autoplay playsinline loop loading="lazy"></video>
+    <div class="description">
+      <p class="title">Professional</p>
+      <p class="desc">Predstavljanje brenda i vrednosti kroz dinamiku videa i raznih scena pomoću storytellinga.</p>
+    </div>
+  </div> -->
           </div>
-          <div class="comment_box">
+
+          <button class="nxt_btn">
+            <img src="/assets/arrow.webp" alt="Loading..." />
+          </button>
+        </div>
+      </div>
+      <div class="content hidden animation_box" id="content">
+        <p class="content_header">Kontent</p>
+        <div class="content_wrap">
+          <button class="pre_btn">
+            <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
+          </button>
+
+          <div class="content_slider">
+            <div class="content_card">
+              <p class="title">SpeltAnimal</p>
+
+              <video
+                src="/content/videos/SpeltAnimal.mp4"
+                muted
+                autoplay
+                playsinline
+                loop
+                loading="lazy"
+              ></video>
+              <p class="desc">
+                Predstavljanje proizvoda implementacijom sopstvenog lica,
+                storytellinga, vizuala i profesionalnog editovanja videa koji
+                drže pažnju gledaoca.
+              </p>
+            </div>
+
+            <div class="content_card">
+              <p class="title">Shelly’s Smash Burgers</p>
+
+              <video
+                src="/content/videos/Shelly’s Smash Burgers.mp4"
+                muted
+                autoplay
+                playsinline
+                loop
+                loading="lazy"
+              ></video>
+              <p class="desc">
+                Predstavljanje proizvoda realnom pričom, autentičnim snimcima,
+                vizualima i efektima za privlačenje pažnje gledaoca
+              </p>
+            </div>
+
+            <div class="content_card">
+              <p class="title">Multiaktiv</p>
+
+              <video
+                src="/content/videos/Multiaktiv.mp4"
+                muted
+                autoplay
+                playsinline
+                loop
+                loading="lazy"
+              ></video>
+              <p class="desc">
+                Predstavljanje proizvoda i brenda ličnim iskstvom i recenzijom
+                autentičnog storytellinga implementacijom sopstvenog lica
+              </p>
+            </div>
+          </div>
+
+          <button class="nxt_btn">
+            <img src="/assets/arrow.webp" alt="Loading..." />
+          </button>
+        </div>
+      </div>
+      <!-- kontent -->
+      <!--Rezultati-->
+      <!-- logo klijenata i pregledi preko njih animacija ispod  -->
+      <div class="photos hidden" id="results">
+        <p class="photos_header">Rezultati</p>
+            <h1>Rezultati</h1>
+      </div>
+    </div>
+
+    <div class="about_me" id="about_me">
+      <!-- O MENI  pisanim iskrivljenim slovima ROMATE HOOD -->
+      <!-- video u pozadini pozadina fiksa itd  -->
+      <!-- isidoa veris pisano ravno -->
+      <p class="about_me_header hidden">o meni</p>
+      <div class="about_me_content hidden">
+        <div class="page_wrapper">
+          <p class="hidden">
+            Trogodišnjim iskustvom stečenim kroz rad u marketingu za mali brend,
+            razvila sam razumevanje kako strategija i kreativnost mogu napraviti
+            razliku. Danas pomažem i drugim brendovima da, kroz pažljivo
+            osmišljene i estetične video sadržaje, povećaju prodaju i povežu se
+            sa svojom ciljnom publikom. Fokusiram se na kreiranje sadržaja koji
+            pored privlačenja pažnje gradi i autentičnu vezu između brenda i
+            potrošača. Moj cilj je da svaki brend sa kojim radim pronađe svoju
+            priču i postane prepoznatljiv i jedinstven na tržištu.
+          </p>
+          <div class="comments">
             <div class="single_comment hidden animation_box">
-              <img class="img_profile" src="/content/images/soppy.webp" loading="lazy" alt="Loaging..." />
+              <img
+                class="img_profile"
+                src="/content/images/ellie-mo.webp"
+                loading="lazy"
+                alt="Loaging..."
+              />
               <div class="stars">
                 <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
                 <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
@@ -352,50 +432,121 @@
                 <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
               </div>
               <p>
-                Odgovorna i sa mnogo truda i kreativnosti, kako bi u
-                potpunosti zadovoljila naša očekivanja... To je Isidora. Reel
-                koji nam je pravila privukao je mnogo pažnje i bio je potpuno
-                jedinstven na mrežama. Nastavljamo saradnju na obostrano
-                zadovoljstvo!
+                Isidora je kreativna, posvećena i spremna da razume naše potrebe
+                prilikom kreiranja sadržaja. Vrlo je uspešna u kreiranju
+                organskih, ali i reklama koje su namenjene za oglašavanje. Rado
+                je uvek preporučujemo.
               </p>
             </div>
-            <div class="single_comment hidden animation_box">
-              <img class="img_profile" src="/content/images/MK.webp" loading="lazy" alt="Loaging..." />
-              <div class="stars">
-                <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
-                <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
-                <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
-                <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
-                <img src="/assets/star.webp" loading="lazy" alt="Loading..." />
+            <div class="comment_box">
+              <div class="single_comment hidden animation_box">
+                <img
+                  class="img_profile"
+                  src="/content/images/soppy.webp"
+                  loading="lazy"
+                  alt="Loaging..."
+                />
+                <div class="stars">
+                  <img
+                    src="/assets/star.webp"
+                    loading="lazy"
+                    alt="Loading..."
+                  />
+                  <img
+                    src="/assets/star.webp"
+                    loading="lazy"
+                    alt="Loading..."
+                  />
+                  <img
+                    src="/assets/star.webp"
+                    loading="lazy"
+                    alt="Loading..."
+                  />
+                  <img
+                    src="/assets/star.webp"
+                    loading="lazy"
+                    alt="Loading..."
+                  />
+                  <img
+                    src="/assets/star.webp"
+                    loading="lazy"
+                    alt="Loading..."
+                  />
+                </div>
+                <p>
+                  Odgovorna i sa mnogo truda i kreativnosti, kako bi u
+                  potpunosti zadovoljila naša očekivanja... To je Isidora. Reel
+                  koji nam je pravila privukao je mnogo pažnje i bio je potpuno
+                  jedinstven na mrežama. Nastavljamo saradnju na obostrano
+                  zadovoljstvo!
+                </p>
               </div>
-              <p>
-                Prezadovoljna sam saradnjom sa dragom Isidorom! Oduševljena
-                sam njenim načinom rada i veoma mi je važno što smo zajednički
-                došle do idealnog sadržaja za moj nakit. Njena estetika je
-                upravo ono što upotpunjuje moj rad. Kreira sadržaj tačno po
-                mojoj meri i uvek ću je sa zadovoljstvom preporučiti!
-              </p>
+              <div class="single_comment hidden animation_box">
+                <img
+                  class="img_profile"
+                  src="/content/images/MK.webp"
+                  loading="lazy"
+                  alt="Loaging..."
+                />
+                <div class="stars">
+                  <img
+                    src="/assets/star.webp"
+                    loading="lazy"
+                    alt="Loading..."
+                  />
+                  <img
+                    src="/assets/star.webp"
+                    loading="lazy"
+                    alt="Loading..."
+                  />
+                  <img
+                    src="/assets/star.webp"
+                    loading="lazy"
+                    alt="Loading..."
+                  />
+                  <img
+                    src="/assets/star.webp"
+                    loading="lazy"
+                    alt="Loading..."
+                  />
+                  <img
+                    src="/assets/star.webp"
+                    loading="lazy"
+                    alt="Loading..."
+                  />
+                </div>
+                <p>
+                  Prezadovoljna sam saradnjom sa dragom Isidorom! Oduševljena
+                  sam njenim načinom rada i veoma mi je važno što smo zajednički
+                  došle do idealnog sadržaja za moj nakit. Njena estetika je
+                  upravo ono što upotpunjuje moj rad. Kreira sadržaj tačno po
+                  mojoj meri i uvek ću je sa zadovoljstvom preporučiti!
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="footer" id="contacts">
-    <div class="page_wrapper_footer hidden1">
-      <img src="/content/images/profile2.webp" loading="lazy" alt="Loading..." />
-      <div class="txt_box">
-        <p>Zainteresovani ste za saradnju?</p>
-        <p>PIŠITE MI</p>
-        <a href="mailto:isidoraverisugc@gmail.com">isidoraverisugc@gmail.com
-        </a>
+    <div class="footer" id="contacts">
+      <div class="page_wrapper_footer hidden1">
+        <img
+          src="/content/images/profile2.webp"
+          loading="lazy"
+          alt="Loading..."
+        />
+        <div class="txt_box">
+          <p>Zainteresovani ste za saradnju?</p>
+          <p>PIŠITE MI</p>
+          <a href="mailto:isidoraverisugc@gmail.com"
+            >isidoraverisugc@gmail.com
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="scripts/script.js"></script>
-  <script src="scripts/light_box.js"></script>
-  <script src="scripts/swiper.js"></script>
-</body>
-
+    <script src="scripts/script.js"></script>
+    <script src="scripts/light_box.js"></script>
+    <script src="scripts/swiper.js"></script>
+  </body>
 </html>

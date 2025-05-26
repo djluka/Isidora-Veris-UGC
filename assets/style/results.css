@@ -1,0 +1,9 @@
+/* Default za telefon (mobile-first) */
+
+/* Veći ekran (npr. tablet) */
+@media (min-width: 768px) {
+}
+
+/* Još veći ekran (npr. desktop) */
+@media (min-width: 1200px) {
+}
