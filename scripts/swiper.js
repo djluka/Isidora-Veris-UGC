@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setVideo();
 });
 function updateButtonStates() {
-  const slider = document.querySelector(".clients_slider");
+  const slider = document.querySelector(".ugc_slider");
   const preBtn = document.querySelector(".pre_btn");
   const nxtBtn = document.querySelector(".nxt_btn");
 
@@ -27,10 +27,10 @@ function updateButtonStates() {
   }
 }
 function sliderInit() {
-  const slider = document.querySelector(".clients_slider");
+  const slider = document.querySelector(".ugc_slider");
   const nextBtn = document.querySelector(".nxt_btn");
   const prevBtn = document.querySelector(".pre_btn");
-  const card = document.querySelector(".clients_card");
+  const card = document.querySelector(".ugc_card");
 
   const cardStyle = getComputedStyle(card);
   const cardSpacing =
@@ -39,7 +39,7 @@ function sliderInit() {
     parseInt(cardStyle.paddingLeft || 0) +
     parseInt(cardStyle.paddingRight || 0);
   const cardWidth = card.offsetWidth + cardSpacing ;
-
+// ovde treba dodati pomeranje za responsive 
   const scrollCount = window.innerWidth <= 768 ? 1 : 3;
   const scrollAmount = cardWidth * scrollCount;
     console.log(cardWidth)
@@ -58,7 +58,7 @@ function sliderInit() {
 }
 
 function setVideo() {
-  const videoElements = document.querySelectorAll(".clients_slider video");
+  const videoElements = document.querySelectorAll(".ugc_slider video");
   videoElements.forEach((videoElement) => {
     videoElement.addEventListener("click", () => {
       if (videoElement.requestFullscreen) {

@@ -27,7 +27,7 @@ nav .mobile_menu {
 }
 nav .mobile_menu .site_title {
   font-size: 18pt;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 3px;
   font-family: TheSeasons;
 }
@@ -146,37 +146,36 @@ nav .mobile_menu .site_title {
 }
 /* Veći ekran (npr. tablet) */
 @media (min-width: 768px) {
+  nav .mobile_menu {
+    display: none;
+  }
   nav {
-    display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 5px;
     text-align: center;
-    max-width: 1300px;
+    max-width: 800px;
     margin: 0 auto;
   }
   nav .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
-  }
-  nav .menu {
+    display: block;
     list-style: none;
-    padding: 15px;
   }
 
   nav .menu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
     margin: 20px;
-    padding: 10px 15px;
+    padding: 10px;
+    text-align: center;
   }
-  nav .menu li:nth-child(1) {
+  nav .menu li:nth-child(1) p {
     background-color: transparent;
-    text-align: left;
+    text-align: center;
     font-size: 24pt;
     font-weight: 600;
     letter-spacing: 5px;
@@ -186,8 +185,7 @@ nav .mobile_menu .site_title {
     transition: 0.3s all;
   }
   nav .menu li a {
-    font-size: 15pt;
-    letter-spacing: 2px;
+    font-size: 14pt;
     text-decoration: none;
     color: black;
     font-family: TheSeasons;
@@ -204,15 +202,27 @@ nav .mobile_menu .site_title {
   nav .menu li a:active {
     background-color: #b9b5b0;
   }
-
-    nav .mobile_menu {
-    display: none;
-  }
 }
 
 /* Još veći ekran (npr. desktop) */
 @media (min-width: 1200px) {
-    nav .mobile_menu {
+  nav .mobile_menu {
     display: none;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    text-align: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  nav .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 }

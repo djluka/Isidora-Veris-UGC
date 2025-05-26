@@ -1,14 +1,15 @@
+/* Default za telefon (mobile-first) */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  font-family: sans-serif;
 }
 
 .ugc {
-  margin-top: 150px;
+  margin-top: 50px;
   text-align: left;
+  max-height: 100vh;
 }
 
 .ugc p.ugc_header {
@@ -20,19 +21,28 @@ body {
 
 .ugc_wrap {
   display: flex;
+  flex-direction: column;
+
   align-items: center;
   justify-content: center;
-  margin: 10px auto;
-  max-width: 1200px;
+  margin: 30px auto;
+  max-width: 350px;
   overflow: hidden;
 }
 
 .pre_btn,
 .nxt_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+
+  z-index: 9;
   cursor: pointer;
   border: none;
-  padding: 20px;
+  padding: 10px;
   border-radius: 50%;
+
   background-color: #e8e3de;
   margin: 10px;
   transition: 0.2s all;
@@ -43,10 +53,12 @@ body {
   transition: 0.2s all;
 }
 .pre_btn {
-  left: -60px;
+  left: 35%;
+  bottom: -10%;
 }
 .nxt_btn {
-  right: -60px;
+  right: 35%;
+  bottom: -10%;
 }
 .pre_btn img {
   transform: rotate(-90deg);
@@ -58,19 +70,20 @@ body {
 
 .pre_btn img,
 .nxt_btn img {
-  width: 30px;
+  width: 20px;
 }
 
 .ugc_slider {
   display: flex;
   gap: 20px;
+  max-width: 100%;
+
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  max-width: 1050px;
 }
 
 .ugc_slider::-webkit-scrollbar {
@@ -78,7 +91,7 @@ body {
 }
 
 .ugc_card {
-  flex: 0 0 calc((100% - 40px) / 3);
+  flex: 0 0 100%;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -92,7 +105,7 @@ body {
 }
 
 .ugc_card video {
-  width: 290px;
+  width: 250px;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -127,62 +140,112 @@ body {
   cursor: default;
   transition: 0.2s all;
 }
-@media (max-width: 768px) {
+
+/* Veći ekran (npr. tablet) */
+@media (min-width: 768px) {
+  .ugc_wrap {
+    margin: 10px auto;
+    max-width: 650px;
+  }
   .pre_btn,
   .nxt_btn {
-    padding: 10px;
+    padding: 20px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    z-index: 9;
-    position: absolute;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #e8e3de;
+    margin: 0px;
+    top: 50%;
   }
   .pre_btn {
-    left: 35%;
-    bottom: -10%;
-  }
-  .nxt_btn {
-    right: 35%;
-    bottom: -10%;
-  }
-
-  .pre_btn img {
-    transform: rotate(-90deg);
-  }
-
-  .nxt_btn img {
-    transform: rotate(90deg);
-  }
-
+  left: -5%;
+}
+.nxt_btn {
+  right: -5%;
+}
   .pre_btn img,
   .nxt_btn img {
-    width: 20px;
+    width: 25px;
   }
 
   .ugc_slider {
-    max-width: 100%;
-    gap: 20px;
-  }
-  .ugc_card video {
-    width: 250px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    max-width: 650px;
   }
   .ugc_card {
-    flex: 0 0 100%;
-    padding: 10px;
+    flex: 0 0 calc((100% - 40px) / 2);
+  }
+  .ugc_card video {
+    width: 290px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Još veći ekran (npr. desktop) */
+@media (min-width: 1200px) {
+
+
+  .ugc {
+    margin-top: 80px;
+    text-align: left;
+    max-height: 100vh;
+  }
+
+  .ugc p.ugc_header {
+    padding: 20px;
+    font-size: 3em;
+    font-weight: normal;
+    font-family: TheSeasons;
   }
 
   .ugc_wrap {
-    margin: 30px auto;
-    flex-direction: column;
-
-    max-width: 350px;
+    max-width: 1100px;
   }
-  .ugc_card video:focus + p {
-    margin-top: 0%;
+
+  .pre_btn {
+    left: -2%;
+  }
+  .nxt_btn {
+    right: -2%;
+  }
+
+  .ugc_slider {
+
+    max-width: 1050px;
+  }
+
+  .ugc_slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ugc_card {
+    flex: 0 0 calc((100% - 40px) / 3);
+
+  }
+
+  .ugc_card p:nth-child(2) {
+    background-color: white;
+    font-size: 15pt;
+    max-width: 200px;
+    margin: 0 auto 10px;
+    padding: 15px;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin-bottom: 20px;
     transition: 0.2s ease-in-out all;
+    position: relative;
+    top: -5%;
+  }
+
+  .ugc_card p:nth-child(3) {
+    font-size: 13pt;
+    font-family: CormorantGaramond;
+    padding: 10px;
+    margin-top: -30px;
+  }
+  .opacity_low {
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: default;
+    transition: 0.2s all;
   }
 }
