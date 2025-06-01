@@ -6,6 +6,7 @@
     <title>Isidoraverisugc</title>
     <link rel="stylesheet" href="assets/style/main.css" />
     <link rel="stylesheet" href="assets/style/ugc.css" />
+    <link rel="stylesheet" href="assets/style/content.css" />
 
     <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
   </head>
@@ -136,266 +137,148 @@
         <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
       </div>
 
-      <div class="ugc hidden animation_box" id="ugc">
-        <p class="ugc_header">UGC</p>
-        <div class="ugc_wrap">
-          <button class="pre_btn">
-            <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
-          </button>
+      <div class="ugc_content">
+        <div class="ugc hidden animation_box" id="ugc">
+          <p class="ugc_header">UGC</p>
+          <div class="ugc_wrap">
+            <button class="pre_btn">
+              <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
+            </button>
 
-          <div class="ugc_slider">
-            <div class="ugc_card">
-              <p class="title">SpeltAnimal</p>
+            <div class="ugc_slider slider">
+              <div class="ugc_card card">
+                <p class="title">SpeltAnimal</p>
 
-              <video
-                src="/content/videos/SpeltAnimal.mp4"
-                muted
-                autoplay
-                playsinline
-                loop
-                loading="lazy"
-              ></video>
-              <p class="desc">
-                Predstavljanje proizvoda implementacijom sopstvenog lica,
-                storytellinga, vizuala i profesionalnog editovanja videa koji
-                drže pažnju gledaoca.
-              </p>
+                <video
+                  src="/content/videos/SpeltAnimal.mp4"
+                  muted
+                  autoplay
+                  playsinline
+                  loop
+                  loading="lazy"
+                ></video>
+                <p class="desc">
+                  Predstavljanje proizvoda implementacijom sopstvenog lica,
+                  storytellinga, vizuala i profesionalnog editovanja videa koji
+                  drže pažnju gledaoca.
+                </p>
+              </div>
+
+              <div class="ugc_card card ">
+                <p class="title">Shelly’s Smash Burgers</p>
+
+                <video
+                  src="/content/videos/Shelly’s Smash Burgers.mp4"
+                  muted
+                  autoplay
+                  playsinline
+                  loop
+                  loading="lazy"
+                ></video>
+                <p class="desc">
+                  Predstavljanje proizvoda realnom pričom, autentičnim snimcima,
+                  vizualima i efektima za privlačenje pažnje gledaoca
+                </p>
+              </div>
+
+              <div class="ugc_card card">
+                <p class="title">Multiaktiv</p>
+
+                <video
+                  src="/content/videos/Multiaktiv.mp4"
+                  muted
+                  autoplay
+                  playsinline
+                  loop
+                  loading="lazy"
+                ></video>
+                <p class="desc">
+                  Predstavljanje proizvoda i brenda ličnim iskstvom i recenzijom
+                  autentičnog storytellinga implementacijom sopstvenog lica
+                </p>
+              </div>
+
             </div>
 
-            <div class="ugc_card">
-              <p class="title">Shelly’s Smash Burgers</p>
-
-              <video
-                src="/content/videos/Shelly’s Smash Burgers.mp4"
-                muted
-                autoplay
-                playsinline
-                loop
-                loading="lazy"
-              ></video>
-              <p class="desc">
-                Predstavljanje proizvoda realnom pričom, autentičnim snimcima,
-                vizualima i efektima za privlačenje pažnje gledaoca
-              </p>
-            </div>
-
-            <div class="ugc_card">
-              <p class="title">Multiaktiv</p>
-
-              <video
-                src="/content/videos/Multiaktiv.mp4"
-                muted
-                autoplay
-                playsinline
-                loop
-                loading="lazy"
-              ></video>
-              <p class="desc">
-                Predstavljanje proizvoda i brenda ličnim iskstvom i recenzijom
-                autentičnog storytellinga implementacijom sopstvenog lica
-              </p>
-            </div>
-
-            <!-- </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/NaturalWay.mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">NaturalWay</p>
-      <p class="desc">Predstavljanje proizvoda implementacijom sopstvenog lica, storytellinga, vizuala i profesionalnog editovanja videa koji drže pažnju gledaoca</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/Ellie&Mo.mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">Ellie&Mo</p>
-      <p class="desc">Predstavljanje proizvoda i brenda pomoću storytellinga i estetičnog načina snimanja</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/Content.mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">Content</p>
-      <p class="desc">Storytelling sopstvenog iskustva i događaja u vidu “behind the scenes”</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/MIKOS.mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">MIKOS</p>
-      <p class="desc">Predstavljanje proizvoda implementacijom sopstvenog lica, storytellinga, vizuala i profesionalnog editovanja videa koji drže pažnju gledaoca</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/SOPPY.mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">SOPPY</p>
-      <p class="desc">Predstavljanje proizvoda realnom pričom, autentičnim snimcima, vizualima i efektima za privlačenje pažnje gledaoca</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/Ellie&Mo (2).mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">Ellie&Mo</p>
-      <p class="desc">Predstavljanje proizvoda i brenda pomoću storytellinga i estetičnog načina snimanja</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="#" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">Ellie&Mo</p>
-      <p class="desc">Predstavljanje proizvoda u estetičnom okruženju.</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/Professional.mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">Professional</p>
-      <p class="desc">Predstavljanje brenda i vrednosti kroz dinamiku videa i raznih scena pomoću storytellinga.</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/HelloKids.mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">HelloKids</p>
-      <p class="desc">Predstavljanje brenda implementacijom sopstvenog lica, vizuala i profesionalnog editovanja videa koji drže pažnju gledaoca</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/SOPPY (2).mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">SOPPY</p>
-      <p class="desc">Predstavljanje proizvoda realnom pričom, autentičnim snimcima, vizualima i efektima za privlačenje pažnje gledaoca</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/Multiaktiv (2).mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">Multiaktiv</p>
-      <p class="desc">Predstavljanje proizvoda i brenda ličnim iskstvom i recenzijom autentičnog storytellinga implementacijom sopstvenog lica</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="#" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">iMOVE NYC</p>
-      <p class="desc">Reklamni video za stranog klijenta sa dodatim AI glasom i editovanjem dobijenog materijala</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/SOPPY (3).mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">SOPPY</p>
-      <p class="desc">Predstavljanje proizvoda realnom pričom, autentičnim snimcima, vizualima i efektima za privlačenje pažnje gledaoca</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/Ellie&Mo.mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">Ellie&Mo</p>
-      <p class="desc">Predstavljanje proizvoda na zabavan i kreativan način. Velika reakcija publike i zajednice</p>
-    </div>
-  </div>
-
-  <div class="ugc_card">
-    <video src="/content/videos/Professional (2).mp4" muted autoplay playsinline loop loading="lazy"></video>
-    <div class="description">
-      <p class="title">Professional</p>
-      <p class="desc">Predstavljanje brenda i vrednosti kroz dinamiku videa i raznih scena pomoću storytellinga.</p>
-    </div>
-  </div> -->
+            <button class="nxt_btn">
+              <img src="/assets/arrow.webp" alt="Loading..." />
+            </button>
           </div>
+        </div>
+        <div class="content hidden animation_box" id="content">
+          <p class="content_header">Kontent</p>
+          <div class="content_wrap">
+            <button class="pre_btn">
+              <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
+            </button>
 
-          <button class="nxt_btn">
-            <img src="/assets/arrow.webp" alt="Loading..." />
-          </button>
+            <div class="content_slider slider">
+              <div class="content_card card">
+                <p class="title">SpeltAnimal</p>
+
+                <video
+                  src="/content/videos/SpeltAnimal.mp4"
+                  muted
+                  autoplay
+                  playsinline
+                  loop
+                  loading="lazy"
+                ></video>
+                <p class="desc">
+                  Predstavljanje proizvoda implementacijom sopstvenog lica,
+                  storytellinga, vizuala i profesionalnog editovanja videa koji
+                  drže pažnju gledaoca.
+                </p>
+              </div>
+
+              <div class="content_card card">
+                <p class="title">Shelly’s Smash Burgers</p>
+
+                <video
+                  src="/content/videos/Shelly’s Smash Burgers.mp4"
+                  muted
+                  autoplay
+                  playsinline
+                  loop
+                  loading="lazy"
+                ></video>
+                <p class="desc">
+                  Predstavljanje proizvoda realnom pričom, autentičnim snimcima,
+                  vizualima i efektima za privlačenje pažnje gledaoca
+                </p>
+              </div>
+
+              <div class="content_card card">
+                <p class="title">Multiaktiv</p>
+
+                <video
+                  src="/content/videos/Multiaktiv.mp4"
+                  muted
+                  autoplay
+                  playsinline
+                  loop
+                  loading="lazy"
+                ></video>
+                <p class="desc">
+                  Predstavljanje proizvoda i brenda ličnim iskstvom i recenzijom
+                  autentičnog storytellinga implementacijom sopstvenog lica
+                </p>
+              </div>
+            </div>
+
+            <button class="nxt_btn">
+              <img src="/assets/arrow.webp" alt="Loading..." />
+            </button>
+          </div>
         </div>
       </div>
-      <div class="content hidden animation_box" id="content">
-        <p class="content_header">Kontent</p>
-        <div class="content_wrap">
-          <button class="pre_btn">
-            <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
-          </button>
 
-          <div class="content_slider">
-            <div class="content_card">
-              <p class="title">SpeltAnimal</p>
-
-              <video
-                src="/content/videos/SpeltAnimal.mp4"
-                muted
-                autoplay
-                playsinline
-                loop
-                loading="lazy"
-              ></video>
-              <p class="desc">
-                Predstavljanje proizvoda implementacijom sopstvenog lica,
-                storytellinga, vizuala i profesionalnog editovanja videa koji
-                drže pažnju gledaoca.
-              </p>
-            </div>
-
-            <div class="content_card">
-              <p class="title">Shelly’s Smash Burgers</p>
-
-              <video
-                src="/content/videos/Shelly’s Smash Burgers.mp4"
-                muted
-                autoplay
-                playsinline
-                loop
-                loading="lazy"
-              ></video>
-              <p class="desc">
-                Predstavljanje proizvoda realnom pričom, autentičnim snimcima,
-                vizualima i efektima za privlačenje pažnje gledaoca
-              </p>
-            </div>
-
-            <div class="content_card">
-              <p class="title">Multiaktiv</p>
-
-              <video
-                src="/content/videos/Multiaktiv.mp4"
-                muted
-                autoplay
-                playsinline
-                loop
-                loading="lazy"
-              ></video>
-              <p class="desc">
-                Predstavljanje proizvoda i brenda ličnim iskstvom i recenzijom
-                autentičnog storytellinga implementacijom sopstvenog lica
-              </p>
-            </div>
-          </div>
-
-          <button class="nxt_btn">
-            <img src="/assets/arrow.webp" alt="Loading..." />
-          </button>
-        </div>
-      </div>
       <!-- kontent -->
       <!--Rezultati-->
       <!-- logo klijenata i pregledi preko njih animacija ispod  -->
-      <div class="photos hidden" id="results">
-        <p class="photos_header">Rezultati</p>
-            <h1>Rezultati</h1>
+      <div class="results hidden" id="results">
+        <p class="results_header">Rezultati</p>
+        <h1>Rezultati</h1>
       </div>
     </div>
 

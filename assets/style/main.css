@@ -1,4 +1,4 @@
-@import "burger_menu.css";
+@import "navigation.css";
 @import "scroll_to_top.css";
 @import "ugc.css";
 @import "content.css";
@@ -59,7 +59,6 @@ annimations
 .page_wrapper {
   max-width: 375px;
   margin: 0 auto;
-  padding: 5px;
 }
 
 section.header {

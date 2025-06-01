@@ -5,18 +5,17 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
 }
-
 .content {
-  margin-top: 50px;
-  text-align: left;
-  max-height: 90vh;
+  max-height: 100vh;
+  margin-bottom: 100px;
 }
-
 .content p.content_header {
-  margin-bottom: 5px;
+  margin-top: 120px;
+  margin-bottom: 20px;
   font-size: 2em;
   font-weight: normal;
   font-family: TheSeasons;
+  text-align: right;
 }
 
 .content_wrap {
@@ -36,7 +35,7 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: -10%;
+  bottom: -15%;
   z-index: 9;
   cursor: pointer;
   border: none;
@@ -96,20 +95,21 @@ body {
   border-radius: 16px;
   overflow: hidden;
   background-color: #e8e3de94;
-  transition: transform 0.3s ease;
   padding: 0;
   margin: 0;
   position: relative;
+  transition: 0.3s all;
 }
-.content_card:hover {
-  transform: translateY(-5px);
+
+/* svi sem tog */
+.content_card:hover video {
+  transition: 0.3s all;
 }
 .content_card video {
   width: 90%;
   aspect-ratio: 9 / 16;
   object-fit: cover;
   display: block;
-  filter: blur(0.5px) brightness(0.9);
 }
 p.title {
   font-family: CormorantGaramond;
@@ -189,13 +189,9 @@ p.desc {
 
 /* Još veći ekran (npr. desktop) */
 @media (min-width: 1200px) {
-  .content {
-    margin-top: 80px;
-    max-height: 100vh;
-  }
-
   .content p.content_header {
     padding: 20px;
+    margin-bottom: 10px;
     font-size: 3em;
   }
 

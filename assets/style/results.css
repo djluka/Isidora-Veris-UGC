@@ -1,5 +1,7 @@
 /* Default za telefon (mobile-first) */
-
+.results {
+  max-height: 100vh;
+}
 /* Veći ekran (npr. tablet) */
 @media (min-width: 768px) {
 }

@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function sliderInit() {
   // Dohvata osnovne elemente slidera i dugmića
-  const slider = document.querySelector(".ugc_slider");
-  const cards = document.querySelectorAll(".ugc_card");
+  const slider = document.querySelector(".slider");
+  const cards = document.querySelectorAll(".card");
   const nextBtn = document.querySelector(".nxt_btn");
   const prevBtn = document.querySelector(".pre_btn");
   // Ako nešto nedostaje – prekini (sigurnosna provera)
@@ -80,7 +80,7 @@ function sliderInit() {
 }
 
 function setVideo() {
-  const videoElements = document.querySelectorAll(".ugc_slider video");
+  const videoElements = document.querySelectorAll(".slider video");
 
   videoElements.forEach((videoElement) => {
     videoElement.addEventListener("click", () => {

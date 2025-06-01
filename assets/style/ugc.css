@@ -5,18 +5,29 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
 }
-
-.ugc {
-  margin-top: 50px;
-  text-align: left;
-  max-height: 90vh;
+.ugc_content {
+  position: relative;
 }
-
+.ugc_content::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #e8e3de;
+  position: absolute;
+  top: 20px;
+  z-index: -1;
+}
 .ugc p.ugc_header {
+  margin-top: 80px;
   margin-bottom: 5px;
   font-size: 2em;
   font-weight: normal;
   font-family: TheSeasons;
+}
+.ugc {
+  max-height: 100vh;
+  position: relative;
 }
 
 .ugc_wrap {
@@ -36,7 +47,7 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: -10%;
+  bottom: -8%;
   z-index: 9;
   cursor: pointer;
   border: none;
@@ -101,24 +112,17 @@ body {
   position: relative;
   transition: 0.3s all;
 }
-
-/* svi sem tog */
-.ugc_card:hover video{
-  filter: blur(0) brightness(1);
-  transition: 0.3s all;
-}
 .ugc_card video {
   width: 90%;
   aspect-ratio: 9 / 16;
   object-fit: cover;
   display: block;
-  filter: blur(0.7px) brightness(0.8);
 }
 p.title {
   font-family: CormorantGaramond;
   font-size: 18pt;
   color: #000000;
-  background: #faf9f8;
+  background: #e8e3de;
   background: linear-gradient(
     180deg,
     rgba(250, 249, 248, 1) 0%,
@@ -138,7 +142,7 @@ p.desc {
   color: #000000;
   font-size: 14pt;
   letter-spacing: 1px;
-  background: #faf9f8;
+  background: #e8e3de;
   background: linear-gradient(
     0deg,
     rgba(250, 249, 248, 1) 0%,
@@ -192,11 +196,6 @@ p.desc {
 
 /* Još veći ekran (npr. desktop) */
 @media (min-width: 1200px) {
-  .ugc {
-    margin-top: 80px;
-    max-height: 100vh;
-  }
-
   .ugc p.ugc_header {
     padding: 20px;
     font-size: 3em;
