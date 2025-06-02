@@ -115,9 +115,8 @@ section.header .text p.header_txt {
 section.header .text p.header_txt span {
   font-family: RomateHood;
   display: inline-block;
-  transform: skew(-20deg) rotate(4deg);
 
-  font-size: 20pt;
+  font-size: 35pt;
   font-weight: 600;
 }
 
@@ -167,7 +166,6 @@ section.header .text .contact_me p {
     font-size: 25pt;
   }
   section.header .text p.header_txt span {
-    transform: rotate(4deg);
     font-size: 16pt;
   }
 }
@@ -184,7 +182,7 @@ section.header .text .contact_me p {
     max-width: 350px;
   }
 
-  section.header .profile_wrapper::after {
+  section.header .proffile_wrapper::after {
     top: 50px;
     left: -50px;
   }
@@ -198,7 +196,7 @@ section.header .text .contact_me p {
     font-size: 40pt;
   }
   section.header .text p.header_txt span {
-    font-size: 25pt;
+    font-size: 45pt;
   }
 
   section.header .text p.description_txt {
