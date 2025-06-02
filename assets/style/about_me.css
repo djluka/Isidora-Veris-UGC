@@ -1,12 +1,17 @@
+/* mobile first */
+@font-face {
+  font-family: "RomateHood";
+  src: url("/fonts/RomateHood-p73Ed.otf");
+}
 .about_me {
   margin-top: 200px;
 }
 
 p.about_me_header {
   text-align: center;
-  font-size: 4em;
-  font-family: TheSeasons;
-
+  font-size: 8em;
+  font-family: RomateHood;
+  padding: 0;
 }
 .about_me .about_me_content {
   width: 100%;
@@ -18,7 +23,7 @@ p.about_me_header {
   font-size: 1.5em;
   line-height: 35px;
   max-width: 1000px;
-  margin: 30px auto;
+  margin: 0px auto;
   padding: 30px;
   font-family: CormorantGaramond;
 
@@ -94,6 +99,7 @@ p.about_me_header {
 
 }
 @media only screen and (max-width: 600px) {
+
 .about_me .about_me_content p:nth-child(1) {
     font-size: 1.2em;
   }

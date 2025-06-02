@@ -113,11 +113,11 @@ section.header .text p.header_txt {
   font-size: 30pt;
 }
 section.header .text p.header_txt span {
-  font-family: RomateHood;
-  display: inline-block;
+  /* font-family: RomateHood; */
+  /* display: inline-block; */
 
-  font-size: 35pt;
-  font-weight: 600;
+  font-size: 26pt;
+  /* font-weight: 600; */
 }
 
 section.header .text p.description_txt {
@@ -196,7 +196,7 @@ section.header .text .contact_me p {
     font-size: 40pt;
   }
   section.header .text p.header_txt span {
-    font-size: 45pt;
+    font-size: 35pt;
   }
 
   section.header .text p.description_txt {

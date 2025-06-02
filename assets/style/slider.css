@@ -14,6 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 0;
 }
 .slider_section::after {
   content: "";
@@ -34,6 +35,7 @@ p.header {
 .ugc {
   max-height: 100vh;
   position: relative;
+  padding: 0;
 }
 
 .slider_wrap {
@@ -63,6 +65,7 @@ p.header {
   scrollbar-width: none;
   -ms-overflow-style: none;
   gap: 20px;
+  padding: 0;
 }
 
 .slider::-webkit-scrollbar {
@@ -89,12 +92,15 @@ p.header {
   position: relative;
   width: 100%;
   height: 100%;
+  padding: 0;
 }
 .card .video_wrapper video {
   width: 100%;
   aspect-ratio: 9 / 16;
   object-fit: contain;
   display: block;
+  padding: 0;
+  filter: brightness(0.8) blur(1px);
 }
 .card .video_wrapper button.play_button {
   background-color: transparent;
@@ -123,9 +129,9 @@ p.title {
     rgba(250, 249, 248, 0.8) 30%,
     rgba(250, 249, 248, 0) 100%
   );
+  padding: 10px;
   width: 100%;
-  padding: 10px 50px 80px;
-  border-radius: 12px;
+  border-radius: 12px 12px 0px 0px;
   position: absolute;
   top: 0;
   text-align: center;
@@ -136,19 +142,20 @@ p.desc {
   font-family: CormorantGaramond;
   color: #000000;
   font-size: 14pt;
-  letter-spacing: 1px;
+  text-align: center;
   background: #e8e3de;
   background: linear-gradient(
     0deg,
     rgba(250, 249, 248, 1) 0%,
-    rgba(250, 249, 248, 0.8) 50%,
+    rgba(250, 249, 248, 0.5) 80%,
     rgba(250, 249, 248, 0) 100%
   );
-  padding: 80px 30px 10px;
-  border-radius: 12px;
+  padding: 10px;
+
+  width: 100%;
+  border-radius: 0px 0px 12px 12px;
   position: absolute;
   bottom: 0;
-  text-align: center;
   z-index: 5;
   transition: all 0.3s ease;
 }
@@ -286,7 +293,7 @@ a.more_on_instagram img {
     transition: 0.2s all;
   }
   .card .video_wrapper:hover > button {
-  font-size: 6em;
+    font-size: 6em;
     transition: 0.2s all;
   }
   .pre_btn,
@@ -329,6 +336,12 @@ a.more_on_instagram img {
   .card {
     flex: 0 0 calc((100% / 3 - 20px));
     transition: all 0.3s ease;
+  }
+  p.desc {
+    padding: 80px 30px 10px;
+  }
+  p.title {
+    padding: 10px 50px 50px;
   }
   .dot {
     display: none;
