@@ -277,10 +277,17 @@ a.more_on_instagram img {
     aspect-ratio: 9 / 16;
     object-fit: contain;
     display: block;
-    filter: brightness(0.8) blur(0.5px);
+    filter: brightness(0.9) blur(1px);
   }
   .card .video_wrapper:hover > video {
     filter: brightness(1) blur(0);
+  }
+  .card .video_wrapper button {
+    transition: 0.2s all;
+  }
+  .card .video_wrapper:hover > button {
+  font-size: 6em;
+    transition: 0.2s all;
   }
   .pre_btn,
   .nxt_btn {
@@ -340,8 +347,8 @@ animation
   }
 
   .other_cards {
-    opacity: 0.5;
-    filter: blur(1px) brightness(0.8) grayscale(0.4);
+    opacity: 0.8;
+    filter: blur(1px) brightness(0.9) grayscale(0.1);
     pointer-events: none;
     transition: all 0.3s ease;
   }
