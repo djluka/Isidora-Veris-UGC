@@ -10,6 +10,7 @@
     transition-delay: 0.4s;
 
     font-family: TheSeasons;
+    max-height: 100vh;
 }
 
 .footer img{
@@ -26,7 +27,6 @@
 }
 .footer .txt_box p:nth-child(1){
     margin-top: 30px;
-
     font-size: 3em;
     text-align: center;
     font-family: TheSeasons;
