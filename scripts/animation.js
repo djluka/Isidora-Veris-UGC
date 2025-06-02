@@ -31,7 +31,12 @@ function scrollAnimation() {
       start = 0.1;
     }
   });
-}function sliderAnimation() {
+}
+
+
+
+
+function sliderAnimation() {
   const cards = document.querySelectorAll(".card");
 
   cards.forEach((card) => {
