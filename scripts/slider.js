@@ -7,6 +7,7 @@ function initSlider(wrapper) {
   const cards = wrapper.querySelectorAll(".card");
   const nextBtn = wrapper.querySelector(".nxt_btn");
   const prevBtn = wrapper.querySelector(".pre_btn");
+  const dots = wrapper.querySelectorAll(".dot");
 
   if (!slider || cards.length === 0) return;
 
@@ -58,12 +59,17 @@ function initSlider(wrapper) {
       updateButtons();
     }
   });
+  function updateDots(index) {
+    dots.forEach((dot) => dot.classList.remove("active"));
+    if (dots[index]) dots[index].classList.add("active");
+  }
 
   slider.addEventListener("scroll", () => {
     const cardWidth =
       cards[1]?.offsetLeft - cards[0].offsetLeft || cards[0].offsetWidth;
     currentIndex = Math.round(slider.scrollLeft / cardWidth);
     updateButtons();
+    updateDots(currentIndex);
   });
 
   // Init

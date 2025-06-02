@@ -68,7 +68,7 @@ section.header {
   position: relative;
 }
 
-section.header .proffile_wrapper {
+section.header .profile_wrapper {
   position: relative;
   max-width: 250px;
   display: block;
@@ -82,7 +82,7 @@ section.header video.profile {
   z-index: 1;
 }
 
-section.header .proffile_wrapper::after {
+section.header .profile_wrapper::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -160,7 +160,7 @@ section.header .text .contact_me p {
   section.header {
     max-height: 150vh;
   }
-  section.header .proffile_wrapper {
+  section.header .profile_wrapper {
     max-width: 300px;
   }
   section.header .text p.header_txt {
@@ -180,11 +180,11 @@ section.header .text .contact_me p {
   section.header {
     max-height: 100vh;
   }
-  section.header .proffile_wrapper {
+  section.header .profile_wrapper {
     max-width: 350px;
   }
 
-  section.header .proffile_wrapper::after {
+  section.header .profile_wrapper::after {
     top: 50px;
     left: -50px;
   }

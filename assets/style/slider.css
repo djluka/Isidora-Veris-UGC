@@ -7,6 +7,8 @@ body {
 }
 .slider_section {
   margin-top: 80px;
+  margin-bottom: 50px;
+
   position: relative;
   display: flex;
   justify-content: center;
@@ -16,7 +18,7 @@ body {
 .slider_section::after {
   content: "";
   width: 100%;
-  height: 100%;
+  height: 102%;
   display: block;
   background-color: #e8e3de;
   position: absolute;
@@ -40,6 +42,7 @@ p.header {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  padding: 0;
   max-width: 350px;
   max-height: 100%;
   position: relative;
@@ -80,7 +83,7 @@ p.header {
   padding: 0;
   margin: 0;
   position: relative;
-  transition: 0.3s all;
+  transition: all 0.3s ease;
 }
 .card .video_wrapper {
   position: relative;
@@ -92,7 +95,10 @@ p.header {
   aspect-ratio: 9 / 16;
   object-fit: contain;
   display: block;
-  filter: brightness(0.8) blur(3px);
+  filter: brightness(0.8) blur(0.5px);
+}
+.card .video_wrapper:hover > video {
+  filter: brightness(1) blur(0);
 }
 .card .video_wrapper button.play_button {
   background-color: transparent;
@@ -128,6 +134,7 @@ p.title {
   top: 0;
   text-align: center;
   z-index: 5;
+  transition: all 0.3s ease;
 }
 p.desc {
   font-family: CormorantGaramond;
@@ -147,6 +154,7 @@ p.desc {
   bottom: 0;
   text-align: center;
   z-index: 5;
+  transition: all 0.3s ease;
 }
 
 a.more_on_instagram {
@@ -173,6 +181,25 @@ a.more_on_instagram p.header {
 a.more_on_instagram img {
   transition: 0.3s all;
   max-width: 200px;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
 }
 
 .content {
@@ -213,13 +240,26 @@ a.more_on_instagram img {
 
 /* Još veći ekran (npr. desktop) */
 @media (min-width: 1200px) {
+  .ugc {
+    padding: 0;
+    padding-right: 10%;
+  }
+  .content {
+    padding: 0;
+    padding-left: 10%;
+  }
   p.header {
     padding: 20px;
     font-size: 3em;
   }
+  .slider_section {
+    max-width: 90vw;
+    margin: 50px auto;
+    padding: 0;
+  }
   .slider_section::after {
     content: "";
-    width: 90%;
+    width: 110%;
     height: 100%;
     display: block;
     background-color: #e8e3de;
@@ -229,6 +269,7 @@ a.more_on_instagram img {
   }
   .slider_wrap {
     max-width: 1000px;
+    padding: 0;
   }
   .slider {
     position: relative;
@@ -246,7 +287,7 @@ a.more_on_instagram img {
     border: none;
     padding: 20px;
     border-radius: 50%;
-    background-color: #e8e3de;
+    background-color: #ffffff;
     transition: 0.2s all;
   }
   .pre_btn:hover,
@@ -255,10 +296,10 @@ a.more_on_instagram img {
     transition: 0.2s all;
   }
   .pre_btn {
-    left: -8vw;
+    left: -8%;
   }
   .nxt_btn {
-    right: -8vw;
+    right: -8%;
   }
   .pre_btn img {
     transform: rotate(-90deg);
@@ -274,5 +315,43 @@ a.more_on_instagram img {
   }
   .card {
     flex: 0 0 calc((100% / 3 - 20px));
+    transition: all 0.3s ease;
+  }
+  .dot {
+    display: none;
+  }
+  /*
+==================================
+animation
+================================== 
+*/
+
+  .hovered_card {
+    z-index: 10;
+    filter: brightness(1.05);
+    transition: all 0.3s ease;
+
+    transition-delay: 0.2s;
+  }
+
+  .other_cards {
+    opacity: 0.5;
+    filter: blur(1px) brightness(0.8) grayscale(0.4);
+        transform: scale(0.9);
+
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .title_animation {
+    transform: translateY(-100px);
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+
+  .desc_animation {
+    opacity: 1;
+    transform: translateY(180px);
+    transition: all 0.3s ease;
   }
 }
