@@ -55,7 +55,7 @@ p.header {
 
 .slider {
   display: flex;
-  max-width: 100%;
+  max-width: 85%;
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
@@ -277,7 +277,7 @@ a.more_on_instagram img {
     aspect-ratio: 9 / 16;
     object-fit: contain;
     display: block;
-    filter: brightness(0.9) blur(1px);
+    filter: brightness(0.9) blur(0.5px);
   }
   .card .video_wrapper:hover > video {
     filter: brightness(1) blur(0);
