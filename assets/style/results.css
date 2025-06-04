@@ -1,6 +1,43 @@
 /* Default za telefon (mobile-first) */
 .results {
   max-height: 100vh;
+  /* background-position: fixed; */
+  border: 5px solid #e8e3de94;
+  position: relative;
+    background-attachment: fixed;
+}
+.clients {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.clients .client {
+  position: relative;
+}
+.clients .client img {
+  max-width: 100px;
+}
+.clients .client p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.comments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  gap: 30px;
+}
+.comments .comment {
+  display: flex;
+}
+.comments .comment img {
+  max-width: 100px;
 }
 /* Veći ekran (npr. tablet) */
 @media (min-width: 768px) {

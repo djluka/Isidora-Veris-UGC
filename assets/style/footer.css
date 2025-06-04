@@ -1,3 +1,5 @@
+/* mobile first */
+
 .page_wrapper_footer{
     display: flex;
     flex-wrap: wrap;
@@ -76,3 +78,6 @@
 
     }
   }
+  /* Veći ekran (npr. tablet) */
+@media (min-width: 768px) {}
+@media only screen and (max-width: 600px) {}
