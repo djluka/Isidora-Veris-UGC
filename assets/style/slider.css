@@ -1,4 +1,5 @@
 /* Default za telefon (mobile-first) */
+
 body {
   margin: 0;
   padding: 0;
@@ -15,10 +16,11 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 0;
+  width: 100%;
 }
 .slider_section::after {
   content: "";
-  width: 100%;
+  width: 100vw;
   height: 102%;
   display: block;
   background-color: #e8e3de;
