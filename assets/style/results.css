@@ -1,6 +1,6 @@
 .results {
-  margin-top: 100px;
-  max-height: 100vh;
+  margin-top: 100px;  
+  width: 1200px;
 }
 .results .results_header {
   font-size: 3em;
@@ -78,27 +78,46 @@
 
 
 .comments {
+  margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-
+  background-color: red;
+  max-height: 800px;
+  width: 1200px;
 }
+
 .comments .comment {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 800px;
-
+  background-color: #e8e3de;
+  border-radius: 500px;
+  max-width: 650px;
+  padding: 10px;
+  margin: 10px;
 }
-.comments .comment img {
+.comments .comment img{
   max-width: 150px;
 }
-.comments .comment p{
-  max-width: 500px;
-  background-color: #e8e3de;
-  padding: 30px;
-  padding-left: 60px;
-  font-size: 15pt;
+.comments .comment .comment_box{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+
 }
+.comments .comment .comment_box p.comment_txt{
+  font-size: 13pt;
+  text-align: center;
+  margin: 20px;
+
+
+}
+.comments .comment .comment_box .comment_rating img{
+  max-width: 30px;
+}
+
