@@ -15,6 +15,7 @@
   background-color: black;
   width: 2px;
   height: 500px;
+  margin-left: 30px;
 }
 .results .results_section .results_text {
   font-family: CormorantGaramond;
@@ -31,7 +32,7 @@
   overflow: hidden;
   position: relative;
   height: 500px;
-  margin: 20px;
+  margin: 30px;
 }
 
 .logo-strip {
