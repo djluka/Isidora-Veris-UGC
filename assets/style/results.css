@@ -2,6 +2,7 @@
   margin-top: 100px;
   width: 1200px;
 }
+
 .results .results_header {
   font-size: 3em;
   font-family: TheSeasons;
@@ -27,6 +28,10 @@
   justify-content: center;
   align-items: center;
 }
+.results .results_section .clients_box button{
+  border: none;
+  outline: none;
+}
 .results .results_section .clients_box .column {
   width: 200px;
   overflow: hidden;
@@ -37,6 +42,8 @@
 
 .results .results_section .clients_box .column .logo_strip {
   display: flex;
+  justify-content: center;
+  align-items:center;
   flex-direction: column;
   gap: 100px;
   animation: up_down 20s linear infinite;
@@ -51,7 +58,6 @@
 }
 
 .results .results_section .clients_box .column .logo_strip .logo {
-  margin: 10px;
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -60,6 +66,8 @@
   align-items: center;
   position: relative;
 }
+.results .results_section .clients_box .column .logo_strip:hover{
+  animation-play-state: paused;}
 
 .results .results_section .clients_box .column .logo_strip .logo .logo_inner {
   position: absolute;
@@ -79,8 +87,16 @@
     rgba(204, 35, 102, 1) 75%,
     rgba(188, 24, 136, 1) 100%
   );
-}
+    transition: 0.2s;
 
+}
+.results .results_section .clients_box .column .logo_strip .logo:hover > .logo_inner{
+  width: 102%;
+  height: 102%;
+  transition: 0.2s;
+  animation: spin 0.5s linear infinite;
+
+}
 .results .results_section .clients_box .column .logo_strip .logo img {
   width: 95%;
   height: 95%;
@@ -103,7 +119,7 @@
     transform: translateY(0%);
   }
   50% {
-    transform: translateY(-50%);
+    transform: translateY(-66%);
   }
   100% {
     transform: translateY(0%);
@@ -118,45 +134,45 @@
   align-items: center;
   max-width: 1200px;
 }
-.comments .comments_arrow {
-  background-color: #e8e3de;
-  width: 100px;
-  height: 100px;
-  transform: rotate(45deg);
-}
-.comments .comments_box {
-  z-index: 2;
-  background-color: #e8e3de;
-  max-width: 1200px;
-  transform:translateY(-50px);
-  border-radius: 50px;
-}
 .comments .comment {
   background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 1000px;
+  padding: 10px 100px 10px 10px;
   border-radius: 500px;
-  max-width: 650px;
-  padding: 10px;
-  margin: 10px;
+  position: relative;
+  margin-top: 50px;
+}
+.comments .comment::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: -10%;
+  transform: translate(50%, -10%);
+  transform: rotate(45deg);
 }
 .comments .comment img {
-  max-width: 50px;
+  max-width: 300px;
   border-radius: 500px;
   padding: 5px;
 }
 .comments .comment .comment_box {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
 .comments .comment .comment_box p.comment_txt {
-  font-size: 13pt;
+  font-size: 18pt;
   text-align: center;
   margin: 20px;
 }
 .comments .comment .comment_box .comment_rating img {
-  max-width: 20px;
+  max-width: 50px;
 }
