@@ -1,9 +1,17 @@
 @font-face {
-  font-family: "TheSeasons";
+  font-family: "TheSeasons1";
   src: url("/fonts/Fontspring-DEMO-theseasons-reg.otf");
 }
 @font-face {
-  font-family: "RomateHood";
+  font-family: "TheSeasons2";
+  src: url("/fonts/Fontspring-DEMO-theseasons-reg.otf");
+}
+@font-face {
+  font-family: "RomateHood1";
+  src: url("/fonts/RomateHoodOTF.otf");
+}
+@font-face {
+  font-family: "RomateHood2";
   src: url("/fonts/RomateHood-p73Ed.otf");
 }
 @font-face {
@@ -52,7 +60,7 @@ nav .mobile_menu .site_title {
   text-align: center;
 }
 nav .site_title p:nth-child(2) {
-  font-family: RomateHood;
+  font-family: RomateHood1;
   font-size: 10pt;
   max-width: 90px;
   margin: 0 auto;

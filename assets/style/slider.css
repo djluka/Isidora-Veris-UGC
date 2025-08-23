@@ -137,7 +137,7 @@ body {
 }
 .card .card_box {
   z-index: 5;
-  max-height: 150px;
+  max-height: 250px;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -145,7 +145,6 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 10px;
-
   color: white;
   font-family: CormorantGaramond;
 }
@@ -184,11 +183,11 @@ body {
   overflow: hidden;
   white-space: normal;
   display: block;
-  max-height: 12pt; /* skraćeno stanje */
+  max-height: 30pt; /* skraćeno stanje */
   text-overflow: ellipsis;
   position: relative;
   transition: 0.5s all;
-  font-size: 10pt;
+  font-size: 12pt;
   max-width: 250px;
 }
 
@@ -198,12 +197,16 @@ body {
 
 a.more_on_instagram {
   text-decoration: none;
-  color: #000000;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: #faf9f8;
+  background-image: url(/assets/insta_profile.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 a.more_on_instagram:hover > p,
 a.more_on_instagram:hover > img {
@@ -275,6 +278,10 @@ a.more_on_instagram img {
   .card {
     flex: 0 0 calc(50% - 10px); /* 2 kartice po redu, - gap/2 */
   }
+  .desc {
+  max-height: 30pt; 
+  font-size: 15pt;
+}
 }
 
 /* Još veći ekran (npr. desktop) */
@@ -380,6 +387,14 @@ a.more_on_instagram img {
   .card .card_box {
     width: 90%;
   }
+  .desc {
+  max-height: 30pt; /* skraćeno stanje */
+  text-overflow: ellipsis;
+  position: relative;
+  transition: 0.5s all;
+  font-size: 12pt;
+  max-width: 250px;
+}
 
   .dot {
     display: none;
