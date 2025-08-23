@@ -231,6 +231,20 @@ section.header .text .instagram_highlights p.highlight_desc{
   section.header .text p.header_txt span {
     font-size: 20pt;
   }
+  section.header .text .instagram_highlights {
+  position: relative;
+  right: -50%;
+  top: 20px;
+  transform: translateX(-50%);
+
+}
+section.header .text .instagram_highlights img.point_arrow {
+  max-width: 50px;
+  rotate: 65deg;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+}
 }
 
 /* Još veći ekran (npr. desktop) */
@@ -265,4 +279,19 @@ section.header .text .instagram_highlights p.highlight_desc{
   section.header .text p.description_txt {
     font-size: 17pt;
   }
+  section.header .text .instagram_highlights {
+  position: relative;
+  left: 0%;
+  top: 40px;
+  transform: translateX(0%);
+
+}
+section.header .text .instagram_highlights img.point_arrow {
+  max-width: 80px;
+  rotate: 65deg;
+  transform: scaleY(-1);
+  position: absolute;
+  top: -70px;
+  left: 57%;
+}
 }
