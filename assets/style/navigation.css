@@ -224,8 +224,10 @@ nav .site_title p:nth-child(2) {
   nav .menu .site_title p:nth-child(2) {
     font-family: RomateHood;
     font-size: 12pt;
+    max-width: 120px;
     margin-top: 10px;
   }
+
   nav .menu li:nth-child(1) p {
     background-color: transparent;
     text-align: center;
