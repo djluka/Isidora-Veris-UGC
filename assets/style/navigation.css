@@ -1,31 +1,47 @@
 @font-face {
-  font-family: TheSeasons;
-  src: url(/fonts/Fontspring-DEMO-theseasons-reg.otf);
-
-  font-family: CormorantGaramond;
-  src: url(/fonts/CormorantGaramond-Regular.ttf);
+  font-family: "TheSeasons";
+  src: url("/fonts/Fontspring-DEMO-theseasons-reg.otf");
 }
+@font-face {
+  font-family: "RomateHood";
+  src: url("/fonts/RomateHood-p73Ed.otf");
+}
+@font-face {
+  font-family: "CormorantGaramond";
+  src: url("/fonts/CormorantGaramond-Regular.ttf");
+}
+
 /* Default za telefon (mobile-first) */
 nav .menu {
   display: none;
 }
+
 nav {
   margin: 20px auto 0px auto;
-  max-width: 350px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
+
 nav .mobile_menu {
   width: 100%;
   margin: 0 auto;
-  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  padding: 20px;
+}
+nav .mobile_menu::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #e8e3de;
+  position: absolute;
+  left: 0%;
+  z-index: -5;
 }
 nav .mobile_menu .site_title {
   font-size: 18pt;
@@ -33,6 +49,11 @@ nav .mobile_menu .site_title {
   letter-spacing: 3px;
   font-family: TheSeasons;
   position: relative;
+  text-align: center;
+}
+nav .site_title p:nth-child(2) {
+  font-family: RomateHood;
+  font-size: 10pt;
 }
 #menu_toggle {
   z-index: 1;
@@ -44,6 +65,18 @@ nav .mobile_menu .site_title {
   position: relative;
   width: 35px;
   height: 35px;
+}
+#menu_toggle::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
 }
 #menu_toggle input {
   display: block;
@@ -91,7 +124,6 @@ nav .mobile_menu .site_title {
   box-sizing: border-box;
   overflow: hidden;
   background: rgba(237, 237, 237, 0.9);
-
   -webkit-font-smoothing: antialiased;
 
   transform: translate(100%, 0);
@@ -140,9 +172,8 @@ nav .mobile_menu .site_title {
 }
 
 #menu_toggle input:checked + .burger_line span:nth-child(1) {
-  transform: rotate(45deg) translate(2px, -5px);
+  transform: rotate(45deg) translate(4px, -7px);
   background: #232323;
-
 }
 
 #menu_toggle input:checked ~ .burger_line span:nth-child(2) {
@@ -152,9 +183,8 @@ nav .mobile_menu .site_title {
 }
 
 #menu_toggle input:checked ~ .burger_line span:nth-child(3) {
-  transform: rotate(-45deg) translate(1px, 3px);
+  transform: rotate(-45deg) translate(2px, 5px);
   background: #232323;
-
 }
 .no_scroll {
   overflow: hidden;
@@ -188,6 +218,11 @@ nav .mobile_menu .site_title {
     margin: 20px;
     padding: 10px;
     text-align: center;
+  }
+  nav .menu .site_title p:nth-child(2) {
+    font-family: RomateHood;
+    font-size: 12pt;
+    margin-top: 10px;
   }
   nav .menu li:nth-child(1) p {
     background-color: transparent;
@@ -225,6 +260,7 @@ nav .mobile_menu .site_title {
   nav .mobile_menu {
     display: none;
   }
+
   nav {
     display: flex;
     flex-direction: row;
@@ -241,4 +277,5 @@ nav .mobile_menu .site_title {
     justify-content: center;
     align-items: center;
   }
+
 }

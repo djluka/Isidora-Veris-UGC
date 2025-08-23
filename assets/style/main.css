@@ -5,7 +5,6 @@
 @import "about_me.css";
 @import "footer.css";
 
-
 @font-face {
   font-family: "TheSeasons";
   src: url("/fonts/Fontspring-DEMO-theseasons-reg.otf");
@@ -112,12 +111,9 @@ section.header .text p.header_txt {
   font-family: TheSeasons;
   font-size: 30pt;
 }
-section.header .text p.header_txt span {
-  /* font-family: RomateHood; */
-  /* display: inline-block; */
-
-  font-size: 26pt;
-  /* font-weight: 600; */
+section.header .text p.header_txt > span {
+  font-size: 20pt;
+  font-family: serif, "TheSeasons";
 }
 
 section.header .text p.description_txt {
@@ -150,6 +146,73 @@ section.header .text .contact_me p {
   font-family: CormorantGaramond;
 }
 
+section.header .text .instagram_highlights {
+  position: relative;
+  right: -50%;
+  top: 50px;
+  transform: translateX(-50%);
+
+}
+section.header .text .instagram_highlights img.point_arrow {
+  max-width: 80px;
+  rotate: 65deg;
+  position: absolute;
+  top: -50px;
+  left: -35px;
+}
+section.header .text .instagram_highlights .highlights {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.header .text .instagram_highlights .highlights a {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  color: black;
+  font-family: CormorantGaramond;
+}
+section.header .text .instagram_highlights .highlights a div {
+  padding: 30px;
+  margin: 10px;
+  border-radius: 50px;
+  border: 1px solid black;
+  position: relative;
+  z-index: 3;
+}
+section.header .text .instagram_highlights .highlights a div::after {
+  content: "";
+  background-color: #dbdee200;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  z-index: -1;
+  padding: 33px;
+}
+section.header .text .instagram_highlights .highlights a:nth-child(1) > div {
+  background-color: #d6ccc2;
+}
+section.header .text .instagram_highlights .highlights a:nth-child(2) > div {
+  background-color: #f5ebe1;
+}
+section.header .text .instagram_highlights .highlights a:nth-child(3) > div {
+  background-color: #e3d5ca;
+}
+section.header .text .instagram_highlights .highlights a:nth-child(4) > div {
+  background-color: #d5bfb1;
+}
+section.header .text .instagram_highlights p.highlight_desc{
+  padding: 10px;
+  text-align: center;
+  font-family: CormorantGaramond;
+  font-weight: bold;
+}
+
 /* Veći ekran (npr. tablet) */
 @media (min-width: 768px) {
   .page_wrapper {
@@ -166,7 +229,7 @@ section.header .text .contact_me p {
     font-size: 25pt;
   }
   section.header .text p.header_txt span {
-    font-size: 16pt;
+    font-size: 20pt;
   }
 }
 
@@ -195,8 +258,8 @@ section.header .text .contact_me p {
     letter-spacing: 5px;
     font-size: 40pt;
   }
-  section.header .text p.header_txt span {
-    font-size: 35pt;
+  section.header .text p.header_txt > span {
+    font-size: 25pt;
   }
 
   section.header .text p.description_txt {
