@@ -377,12 +377,10 @@ a.more_on_instagram img {
     flex: 0 0 calc((100% / 3 - 20px));
     transition: all 0.3s ease;
   }
-  p.desc {
-    padding: 80px 30px 10px;
+  .card .card_box {
+    width: 90%;
   }
-  p.title {
-    padding: 10px 50px 50px;
-  }
+
   .dot {
     display: none;
   }
