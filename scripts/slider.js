@@ -76,3 +76,21 @@ function initSlider(wrapper) {
   scrollToCurrentCard();
   updateButtons();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".desc").forEach((el) => {
+    el.addEventListener("click", () => {
+      el.classList.toggle("expanded");
+
+      // nađi video u istoj kartici
+      const video = el.closest(".card").querySelector("video");
+
+      if (el.classList.contains("expanded")) {
+        video.style.filter = "brightness(0.3)";
+        video.style.transition = "filter 0.3s ease"; // ovde je transition
+      } else {
+        video.style.filter = "none";
+      }
+    });
+  });
+});

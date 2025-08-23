@@ -33,11 +33,9 @@ function videoButton() {
         if (!document.fullscreenElement) {
           video.muted = true;
           video.controls = false;
-          video.style.filter = "brightness(0.8) blur(3px)";
         } else {
           video.muted = false;
           video.controls = true;
-          video.style.filter = "none";
         }
       });
     }
