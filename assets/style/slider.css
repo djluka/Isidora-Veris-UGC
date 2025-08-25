@@ -105,6 +105,7 @@ body {
   flex-direction: column;
   position: relative;
 }
+
 .card .video_wrapper {
   width: 100%;
   height: 100%;
@@ -202,18 +203,39 @@ a.more_on_instagram {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #faf9f8;
+  position: relative;
+  overflow: hidden;
+}
+a.more_on_instagram::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   background-image: url(/assets/insta_profile.png);
-  background-position: center;
-  background-repeat: no-repeat;
+  background-position: initial;
   background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(0.5) blur(1px);
+  transition: 0.2s;
 }
-a.more_on_instagram:hover > p,
-a.more_on_instagram:hover > img {
+a.more_on_instagram .more_on_instagram_content {
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+a.more_on_instagram:hover{
+  font-size: 13pt;
+}
+a.more_on_instagram:hover::before {
   transform: scale(1.2);
-  padding: 10px;
-  transition: 0.3s all;
+  transition: 0.2s;
+  filter: brightness(0.4) blur(5px);
 }
+
 a.more_on_instagram p.header {
   transition: 0.3s all;
   font-size: 2em;
@@ -279,9 +301,9 @@ a.more_on_instagram img {
     flex: 0 0 calc(50% - 10px); /* 2 kartice po redu, - gap/2 */
   }
   .desc {
-  max-height: 30pt; 
-  font-size: 15pt;
-}
+    max-height: 30pt;
+    font-size: 15pt;
+  }
 }
 
 /* Još veći ekran (npr. desktop) */
@@ -388,22 +410,22 @@ a.more_on_instagram img {
     width: 90%;
   }
   .desc {
-  max-height: 30pt; /* skraćeno stanje */
-  text-overflow: ellipsis;
-  position: relative;
-  transition: 0.5s all;
-  font-size: 12pt;
-  max-width: 250px;
-}
+    max-height: 30pt; /* skraćeno stanje */
+    text-overflow: ellipsis;
+    position: relative;
+    transition: 0.5s all;
+    font-size: 12pt;
+    max-width: 250px;
+  }
 
   .dot {
     display: none;
   }
   /*
-==================================
-animation
-================================== 
-*/
+  ==================================
+  animation
+  ================================== 
+  */
 
   .hovered_card {
     z-index: 10;
