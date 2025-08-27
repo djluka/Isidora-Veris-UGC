@@ -1,21 +1,18 @@
+
 @font-face {
-  font-family: "TheSeasons1";
-  src: url("/fonts/Fontspring-DEMO-theseasons-reg.otf");
+  font-family: "naslovi_podnaslovi_TheSeasonsBold";
+  src: url("/fonts/fonnts.com-The-Seasons-Bold.otf");
 }
 @font-face {
-  font-family: "TheSeasons2";
-  src: url("/fonts/Fontspring-DEMO-theseasons-reg.otf");
+  font-family: "naslovi_podnaslovi_TheSeasonsLight";
+  src: url("/fonts/fonnts.com-The-Seasons-Light.otf");
 }
 @font-face {
-  font-family: "RomateHood1";
-  src: url("/fonts/RomateHoodOTF.otf");
-}
-@font-face {
-  font-family: "RomateHood2";
+  font-family: "pisani_RomateHood";
   src: url("/fonts/RomateHood-p73Ed.otf");
 }
 @font-face {
-  font-family: "CormorantGaramond";
+  font-family: "mali_tekstovi_CormorantGaramond";
   src: url("/fonts/CormorantGaramond-Regular.ttf");
 }
 
@@ -25,7 +22,7 @@ nav .menu {
 }
 
 nav {
-  margin: 20px auto 0px auto;
+  margin: 0px auto 0px auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -53,18 +50,18 @@ nav .mobile_menu::after {
 }
 nav .mobile_menu .site_title {
   font-size: 18pt;
-  font-weight: 700;
+
   letter-spacing: 3px;
-  font-family: TheSeasons;
+  font-family: naslovi_podnaslovi_TheSeasonsBold;
   position: relative;
   text-align: center;
 }
 nav .site_title p:nth-child(2) {
-  font-family: RomateHood1;
+  font-family: naslovi_podnaslovi_TheSeasonsLight;
   font-size: 10pt;
   max-width: 90px;
   margin: 0 auto;
-  margin-right: 0;
+  margin-right: -10px;
 }
 #menu_toggle {
   z-index: 1;
@@ -72,7 +69,6 @@ nav .site_title p:nth-child(2) {
   user-select: none;
   display: flex;
   align-items: center;
-
   position: relative;
   width: 35px;
   height: 35px;
