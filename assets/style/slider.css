@@ -23,7 +23,7 @@ body {
   width: 100vw;
   height: 102%;
   display: block;
-  background-color: #e8e3de;
+  background-color: #F4EADE;
   position: absolute;
   top: 20px;
   z-index: -1;
@@ -35,11 +35,11 @@ body {
   justify-content: center;
   align-items: start;
   margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 .slider_section .header p:nth-child(1) {
   margin-bottom: 5px;
-  font-size: 1.5em;
+  font-size: 2em;
   letter-spacing: 1px;
 }
 .slider_section .header p:nth-child(2) {
@@ -256,14 +256,14 @@ a.more_on_instagram img {
 .dot {
   width: 10px;
   height: 10px;
-  background-color: #bbb;
+  background-color: #57432a59;
   border-radius: 50%;
   transition: background-color 0.3s;
   cursor: pointer;
 }
 
 .dot.active {
-  background-color: #333;
+  background-color: #57432a;
 }
 
 .content {
@@ -327,7 +327,7 @@ a.more_on_instagram img {
     width: 110%;
     height: 100%;
     display: block;
-    background-color: #e8e3de;
+    background-color: #F4EADE;
     position: absolute;
     top: 50px;
     z-index: -1;

@@ -6,18 +6,21 @@
 @import "footer.css";
 
 @font-face {
-  font-family: "TheSeasons";
-  src: url("/fonts/Fontspring-DEMO-theseasons-reg.otf");
+  font-family: "naslovi_podnaslovi_TheSeasonsBold";
+  src: url("/fonts/fonnts.com-The-Seasons-Bold.otf");
 }
 @font-face {
-  font-family: "CormorantGaramond";
-  src: url("/fonts/CormorantGaramond-Regular.ttf");
+  font-family: "naslovi_podnaslovi_TheSeasonsLight";
+  src: url("/fonts/fonnts.com-The-Seasons-Light.otf");
 }
 @font-face {
-  font-family: "RomateHood";
+  font-family: "pisani_RomateHood";
   src: url("/fonts/RomateHood-p73Ed.otf");
 }
-
+@font-face {
+  font-family: "mali_tekstovi_CormorantGaramond";
+  src: url("/fonts/CormorantGaramond-Regular.ttf");
+}
 * {
   margin: 0;
   padding: 0;
@@ -86,7 +89,7 @@ section.header .profile_wrapper::after {
   width: 100%;
   height: 100%;
   display: block;
-  background-color: #e8e3de;
+  background-color: #F4EADE;
   position: absolute;
   top: 30px;
   left: -30px;
@@ -100,7 +103,6 @@ section.header .text {
   justify-content: center;
   align-items: start;
   max-width: 300px;
-  font-family: CormorantGaramond;
   transition-delay: 0.2s;
 }
 
@@ -108,17 +110,17 @@ section.header .text p.header_txt {
   margin: 0 auto;
   text-align: center;
   letter-spacing: 2px;
-  font-family: TheSeasons;
+  font-family: naslovi_podnaslovi_TheSeasonsBold;
   font-size: 30pt;
 }
 section.header .text p.header_txt > span {
-  font-size: 20pt;
-  font-family: serif, "TheSeasons";
+  font-size: 16pt;
+  font-family: naslovi_podnaslovi_TheSeasonsBold;
 }
 
 section.header .text p.description_txt {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 50px;
   font-size: 16pt;
   letter-spacing: 1px;
