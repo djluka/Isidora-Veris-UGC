@@ -1,21 +1,3 @@
-
-@font-face {
-  font-family: "naslovi_podnaslovi_TheSeasonsBold";
-  src: url("/fonts/fonnts.com-The-Seasons-Bold.otf");
-}
-@font-face {
-  font-family: "naslovi_podnaslovi_TheSeasonsLight";
-  src: url("/fonts/fonnts.com-The-Seasons-Light.otf");
-}
-@font-face {
-  font-family: "pisani_RomateHood";
-  src: url("/fonts/RomateHood-p73Ed.otf");
-}
-@font-face {
-  font-family: "mali_tekstovi_CormorantGaramond";
-  src: url("/fonts/CormorantGaramond-Regular.ttf");
-}
-
 /* Default za telefon (mobile-first) */
 nav .menu {
   display: none;
@@ -52,12 +34,12 @@ nav .mobile_menu .site_title {
   font-size: 18pt;
 
   letter-spacing: 3px;
-  font-family: naslovi_podnaslovi_TheSeasonsBold;
+  font-family: TheSeasonsBold;
   position: relative;
   text-align: center;
 }
 nav .site_title p:nth-child(2) {
-  font-family: naslovi_podnaslovi_TheSeasonsLight;
+  font-family: TheSeasonsLight;
   font-size: 10pt;
   max-width: 90px;
   margin: 0 auto;
@@ -154,7 +136,7 @@ nav .site_title p:nth-child(2) {
 #burger_menu li a {
   text-decoration: none;
   color: #57432a;
-  font-family: TheSeasons;
+font-family: TheSeassonsBold;
   font-size: 14pt;
   cursor: pointer;
   padding: 5px;
@@ -241,14 +223,12 @@ nav .site_title p:nth-child(2) {
     letter-spacing: 5px;
     font-size: none;
     text-decoration: none;
-    font-family: TheSeasons;
     transition: 0.3s all;
   }
   nav .menu li a {
     font-size: 15pt;
     text-decoration: none;
     color: black;
-    font-family: TheSeasons;
     margin: 10px;
     padding: 10px 15px;
     border: 1px solid transparent;

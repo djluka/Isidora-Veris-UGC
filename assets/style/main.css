@@ -4,23 +4,6 @@
 @import "results.css";
 @import "about_me.css";
 @import "footer.css";
-
-@font-face {
-  font-family: "naslovi_podnaslovi_TheSeasonsBold";
-  src: url("/fonts/fonnts.com-The-Seasons-Bold.otf");
-}
-@font-face {
-  font-family: "naslovi_podnaslovi_TheSeasonsLight";
-  src: url("/fonts/fonnts.com-The-Seasons-Light.otf");
-}
-@font-face {
-  font-family: "pisani_RomateHood";
-  src: url("/fonts/RomateHood-p73Ed.otf");
-}
-@font-face {
-  font-family: "mali_tekstovi_CormorantGaramond";
-  src: url("/fonts/CormorantGaramond-Regular.ttf");
-}
 * {
   margin: 0;
   padding: 0;
@@ -110,12 +93,12 @@ section.header .text p.header_txt {
   margin: 0 auto;
   text-align: center;
   letter-spacing: 2px;
-  font-family: naslovi_podnaslovi_TheSeasonsBold;
+  font-family: TheSeasonsBold;
   font-size: 30pt;
 }
 section.header .text p.header_txt > span {
   font-size: 16pt;
-  font-family: naslovi_podnaslovi_TheSeasonsBold;
+  font-family: TheSeasonsBold;
 }
 
 section.header .text p.description_txt {
@@ -137,6 +120,7 @@ section.header .text .contact_me {
 section.header .text .contact_me img {
   width: 40px;
   height: 40px;
+
 }
 
 section.header .text .contact_me,
@@ -156,11 +140,11 @@ section.header .text .instagram_highlights {
 
 }
 section.header .text .instagram_highlights img.point_arrow {
-  max-width: 80px;
+  max-width: 110px;
   rotate: 65deg;
   position: absolute;
-  top: -50px;
-  left: -35px;
+  top: -100px;
+  left: -50px;
 }
 section.header .text .instagram_highlights .highlights {
   display: flex;
@@ -168,7 +152,7 @@ section.header .text .instagram_highlights .highlights {
   justify-content: center;
 }
 section.header .text .instagram_highlights .highlights a {
-  margin-top: 10px;
+  margin-top: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,23 +180,33 @@ section.header .text .instagram_highlights .highlights a div::after {
   z-index: -1;
   padding: 33px;
 }
+/* Content */
 section.header .text .instagram_highlights .highlights a:nth-child(1) > div {
-  background-color: #d6ccc2;
+  background-color: #D6CCC2;
 }
+/* UGC */
 section.header .text .instagram_highlights .highlights a:nth-child(2) > div {
-  background-color: #f5ebe1;
+ background-image: url(/assets/ugc_highlights.png);
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
 }
+/* BTS */
 section.header .text .instagram_highlights .highlights a:nth-child(3) > div {
-  background-color: #e3d5ca;
+  background-color: #E3D5CA;
 }
+/* Product */
 section.header .text .instagram_highlights .highlights a:nth-child(4) > div {
-  background-color: #d5bfb1;
+ background-image: url(/assets/product_highlights.png);
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
 }
 section.header .text .instagram_highlights p.highlight_desc{
   padding: 10px;
   text-align: center;
   font-family: CormorantGaramond;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /* Veći ekran (npr. tablet) */

@@ -1,5 +1,4 @@
 /* Default za telefon (mobile-first) */
-
 body {
   margin: 0;
   padding: 0;
@@ -23,13 +22,12 @@ body {
   width: 100vw;
   height: 102%;
   display: block;
-  background-color: #F4EADE;
+  background-color: #f4eade;
   position: absolute;
   top: 20px;
   z-index: -1;
 }
 .slider_section .header {
-  font-family: TheSeasons;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,8 +37,9 @@ body {
 }
 .slider_section .header p:nth-child(1) {
   margin-bottom: 5px;
-  font-size: 2em;
+  font-size: 2.3em;
   letter-spacing: 1px;
+  font-family: TheSeasonsBold;
 }
 .slider_section .header p:nth-child(2) {
   margin-bottom: 5px;
@@ -49,6 +48,7 @@ body {
   color: #333;
   letter-spacing: 1px;
   border-top: 1px solid #333;
+  font-family: TheSeasonsLight;
 }
 .ugc {
   max-height: 100vh;
@@ -184,16 +184,17 @@ body {
   overflow: hidden;
   white-space: normal;
   display: block;
-  max-height: 30pt; /* skraćeno stanje */
+  max-height: 50pt; /* skraćeno stanje */
   text-overflow: ellipsis;
   position: relative;
   transition: 0.5s all;
-  font-size: 12pt;
+  font-size: 14pt;
   max-width: 250px;
 }
 
 .desc.expanded {
   max-height: 500px;
+  text-align: unset;
 }
 
 a.more_on_instagram {
@@ -227,7 +228,7 @@ a.more_on_instagram .more_on_instagram_content {
   align-items: center;
   flex-direction: column;
 }
-a.more_on_instagram:hover{
+a.more_on_instagram:hover {
   font-size: 13pt;
 }
 a.more_on_instagram:hover::before {
@@ -327,7 +328,7 @@ a.more_on_instagram img {
     width: 110%;
     height: 100%;
     display: block;
-    background-color: #F4EADE;
+    background-color: #f4eade;
     position: absolute;
     top: 50px;
     z-index: -1;

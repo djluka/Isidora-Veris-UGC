@@ -1,3 +1,4 @@
+
 /* Default za telefon (mobile-first) */
 .results {
   /* širina sekcije na mobilu */
@@ -19,14 +20,14 @@
   ovo je da se rezultati vuku levo idiote
 } */
 .results .results_text p.results_header {
-  font-family: pisani_RomateHood;
+  font-family: RomateHood;
   font-size: 3em;
   font-weight: 100;
   text-align: start;
   margin-top: 50px;
 }
 .results .results_text .results_title1 {
-  font-family: naslovi_podnaslovi_TheSeasonsBold;
+  font-family: TheSeasonsBold;
   font-size: 3em;
   text-align: end;
   margin-top: 5px;
@@ -40,7 +41,7 @@
   margin-bottom: 50px;
 }
 .results .results_desc {
-  font-family: naslovi_podnaslovi_TheSeasonsLight;
+  font-family: TheSeasonsLight;
   font-size: 1em;
   margin-top: 10px;
   text-align: center;
