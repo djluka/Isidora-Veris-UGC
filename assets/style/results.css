@@ -181,7 +181,7 @@
     margin-top: 200px;
     width: min(700px, 100%);
     --vw: min(700px, 100%);
-    flex-direction: row;
+    flex-direction: column;
   }
   .results .results_text {
     position: relative;
@@ -191,27 +191,25 @@
     background-color: black;
     z-index: 1;
     position: absolute;
-    right: 0%;
-    height: 120%;
-    width: 1px;
+    right: 50%;
+    bottom: 20px;
+    transform: translateX(50%);
+    height: 1px;
+    width: 100%;
   }
   .results .line {
     display: none;
   }
   .results .clients_box {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     flex-direction: row;
-
     max-width: var(--vw);
-    width: 100%;
-
     /* BITNO: visina vidljivog okvira + var za animaciju */
     height: 350px;
     --vh: 350px;
 
-    margin: 0 auto;
     padding: 10px;
     overflow: hidden;
 
