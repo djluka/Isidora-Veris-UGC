@@ -1,251 +1,100 @@
 
-/* Default za telefon (mobile-first) */
-.results {
-  /* širina sekcije na mobilu */
-  width: min(350px, 100%);
-  /* ova var se koristi da izračunamo do kog X treba da klizi red */
-  --vw: min(350px, 100%);
-  margin: 0 auto;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-/* .results .results_text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  ovo je da se rezultati vuku levo idiote
-} */
-.results .results_text p.results_header {
-  font-family: RomateHood;
-  font-size: 3em;
-  font-weight: 100;
-  text-align: start;
-  margin-top: 50px;
-}
-.results .results_text .results_title1 {
-  font-family: TheSeasonsBold;
-  font-size: 3em;
-  text-align: end;
-  margin-top: 5px;
-  position: relative;
-  left: 10%;
-}
-.results .results_text .results_title2 {
-  font-size: 2em;
-  position: relative;
-  top: -10%;
-  margin-bottom: 50px;
-}
-.results .results_desc {
-  font-family: TheSeasonsLight;
-  font-size: 1em;
-  margin-top: 10px;
-  text-align: center;
-}
-/* .results .line {
-  background-color: black;
-  width: 90%;
-  height: 2px;
-  margin: 20px auto;
-} */
-.results .clients_box {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-
-  max-width: var(--vw);
-  width: 100%;
-  margin: 0 auto;
-  padding: 10px;
-
-  /* da ne viri sadržaj dok klizi */
-  overflow: hidden;
-
-  /* lepši rubovi (opciono) */
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black 20px,
-    black calc(100% - 20px),
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black 20px,
-    black calc(100% - 20px),
-    transparent 100%
-  );
-}
-.results .clients_box button {
-  border: none;
-  outline: none;
-}
-.results .clients_box .logo_strip {
-  display: inline-flex; /* širina = sadržaj */
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0; /* koristi margine na .logo */
-  width: max-content; /* bitno zbog translateX(100%) */
-  will-change: transform;
-  animation: slide-x var(--dur, 12s) linear infinite alternate;
-}
-.results .clients_box .logo_strip:nth-child(1) {
-  --dur: 8s;
-}
-.results .clients_box .logo_strip:nth-child(2) {
-  --dur: 5s;
-  animation-direction: alternate-reverse;
-}
-.results .clients_box .logo_strip:nth-child(3) {
-  --dur: 10s;
-}
-.results .clients_box .logo_strip:nth-child(2) {
-  animation-direction: alternate-reverse;
-}
-.results .clients_box .logo_strip .logo {
-  width: 80px;
-  height: 80px;
-  margin: 20px;
-  border-radius: 50%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-
-  flex-direction: column;
-}
-.results .clients_box .logo_strip .logo img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  z-index: 1;
-}
-.results .clients_box .logo_strip .logo .logo_inner {
-  position: absolute;
-  width: 105%;
-  height: 105%;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  animation: spin 2.5s linear infinite;
-
-  background: linear-gradient(
-    180deg,
-    rgba(240, 148, 51, 1) 0%,
-    rgba(230, 104, 60, 1) 25%,
-    rgba(220, 39, 67, 1) 50%,
-    rgba(204, 35, 102, 1) 75%,
-    rgba(188, 24, 136, 1) 100%
-  );
-  transition: 0.2s;
-}
-/* Animacije */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes slide-x {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(calc(-100% + var(--vw)), 0, 0);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .results .clients_box .logo_strip {
-    animation: none !important;
-  }
-  .results .clients_box .logo_strip .logo .logo_inner {
-    animation: none !important;
-  }
-}
-
-/* Veći ekran (npr. tablet) */
-@media (min-width: 768px) {
+  /* Default za telefon (mobile-first) */
   .results {
-    margin-top: 200px;
-    width: min(700px, 100%);
-    --vw: min(700px, 100%);
+    /* širina sekcije na mobilu */
+    width: min(350px, 100%);
+    /* ova var se koristi da izračunamo do kog X treba da klizi red */
+    --vw: min(350px, 100%);
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
   }
-  .results .results_text {
+  .results .results_text p.results_header {
+    font-family: RomateHood;
+    font-size: 3em;
+    font-weight: 100;
+    text-align: start;
+    margin-top: 50px;
+  }
+  .results .results_text .results_title1 {
+    font-family: TheSeasonsBold;
+    font-size: 3em;
+    text-align: end;
+    margin-top: 5px;
     position: relative;
+    left: 10%;
   }
-  .results .results_text::after {
-    content: "";
-    background-color: black;
-    z-index: 1;
-    position: absolute;
-    right: 50%;
-    bottom: 20px;
-    transform: translateX(50%);
-    height: 1px;
-    width: 100%;
+  .results .results_text .results_title2 {
+    font-size: 2em;
+    position: relative;
+    top: -10%;
+    margin-bottom: 50px;
   }
-  .results .line {
-    display: none;
+  .results .results_desc {
+    font-family: TheSeasonsLight;
+    font-size: 1em;
+    margin-top: 10px;
+    text-align: center;
   }
   .results .clients_box {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    flex-direction: row;
-    max-width: var(--vw);
-    /* BITNO: visina vidljivog okvira + var za animaciju */
-    height: 350px;
-    --vh: 350px;
+    flex-direction: column;
 
+    max-width: var(--vw);
+    width: 100%;
+    margin: 0 auto;
     padding: 10px;
+
+    /* da ne viri sadržaj dok klizi */
     overflow: hidden;
 
-    /* opcioni fade na vrhu/dnu */
+    /* lepši rubovi (opciono) */
     -webkit-mask-image: linear-gradient(
-      to top,
+      to right,
       transparent 0,
       black 20px,
       black calc(100% - 20px),
       transparent 100%
     );
-            mask-image: linear-gradient(
-      to top,
+    mask-image: linear-gradient(
+      to right,
       transparent 0,
       black 20px,
       black calc(100% - 20px),
       transparent 100%
     );
   }
-
   .results .clients_box button {
     border: none;
     outline: none;
   }
-
   .results .clients_box .logo_strip {
-    flex-direction: column;        /* poređaj logoe po vertikali */
-    width: auto;
-    height: max-content;
-    animation: slide-y var(--dur, 12s) linear infinite alternate;
-    }
-
-  .results .clients_box .logo_strip:nth-child(1) { --dur: 8s; }
-  .results .clients_box .logo_strip:nth-child(2) { --dur: 5s; animation-direction: alternate-reverse; }
-  .results .clients_box .logo_strip:nth-child(3) { --dur: 10s; }
-
+    display: inline-flex; /* širina = sadržaj */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0; /* koristi margine na .logo */
+    width: max-content; /* bitno zbog translateX(100%) */
+    will-change: transform;
+    animation: slide-x var(--dur, 12s) linear infinite alternate;
+  }
+  .results .clients_box .logo_strip:nth-child(1) {
+    --dur: 8s;
+  }
+  .results .clients_box .logo_strip:nth-child(2) {
+    --dur: 5s;
+    animation-direction: alternate-reverse;
+  }
+  .results .clients_box .logo_strip:nth-child(3) {
+    --dur: 10s;
+  }
+  .results .clients_box .logo_strip:nth-child(2) {
+    animation-direction: alternate-reverse;
+  }
   .results .clients_box .logo_strip .logo {
     width: 80px;
     height: 80px;
@@ -266,7 +115,6 @@
     object-fit: cover;
     z-index: 1;
   }
-
   .results .clients_box .logo_strip .logo .logo_inner {
     position: absolute;
     width: 105%;
@@ -288,7 +136,6 @@
     );
     transition: 0.2s;
   }
-
   /* Animacije */
   @keyframes spin {
     0% {
@@ -298,12 +145,236 @@
       transform: rotate(360deg);
     }
   }
-
-  @keyframes slide-y {
-    from { transform: translate3d(0, 0, 0); }
-    to   { transform: translate3d(0, calc(-100% + var(--vh)), 0); }
+  @keyframes slide-x {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(calc(-100% + var(--vw)), 0, 0);
+    }
   }
-}
-/* Još veći ekran (npr. desktop) */
-@media (min-width: 1200px) {
-}
+  @media (prefers-reduced-motion: reduce) {
+    .results .clients_box .logo_strip {
+      animation: none !important;
+    }
+    .results .clients_box .logo_strip .logo .logo_inner {
+      animation: none !important;
+    }
+  }
+
+  /* Veći ekran (npr. tablet) */
+  @media (min-width: 768px) {
+    .results {
+      width: min(750px, 100%);
+      --vw: min(720px, 100%);
+      flex-direction: column;
+    }
+    .results .results_text {
+      position: relative;
+    }
+    .results .line {
+      display: none;
+    }
+    .results .clients_box {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: row;
+      max-width: var(--vw);
+      /* BITNO: visina vidljivog okvira + var za animaciju */
+      height: 350px;
+      --vh: 350px;
+
+      padding: 10px;
+      overflow: hidden;
+
+      /* opcioni fade na vrhu/dnu */
+      -webkit-mask-image: linear-gradient(
+        to top,
+        transparent 0,
+        black 20px,
+        black calc(100% - 20px),
+        transparent 100%
+      );
+              mask-image: linear-gradient(
+        to top,
+        transparent 0,
+        black 20px,
+        black calc(100% - 20px),
+        transparent 100%
+      );
+      position: relative;
+    }
+.results .clients_box::after {
+      content: "";
+      background-color: black;
+      z-index: 1;
+      position: absolute;
+      right: 50%;
+      top: 20px;
+      transform: translateX(50%);
+      height: 1px;
+      width: 90%;
+    }
+    .results .clients_box button {
+      border: none;
+      outline: none;
+    }
+
+    .results .clients_box .logo_strip {
+      flex-direction: column;        /* poređaj logoe po vertikali */
+      width: auto;
+      height: max-content;
+      animation: slide-y var(--dur, 12s) linear infinite alternate;
+      }
+
+    .results .clients_box .logo_strip:nth-child(1) { --dur: 8s; }
+    .results .clients_box .logo_strip:nth-child(2) { --dur: 5s; animation-direction: alternate-reverse; }
+    .results .clients_box .logo_strip:nth-child(3) { --dur: 10s; }
+
+    .results .clients_box .logo_strip .logo {
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      flex-direction: column;
+    }
+    .results .clients_box .logo_strip .logo img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .results .clients_box .logo_strip .logo .logo_inner {
+      position: absolute;
+      width: 105%;
+      height: 105%;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      animation: spin 2.5s linear infinite;
+
+      background: linear-gradient(
+        180deg,
+        rgba(240, 148, 51, 1) 0%,
+        rgba(230, 104, 60, 1) 25%,
+        rgba(220, 39, 67, 1) 50%,
+        rgba(204, 35, 102, 1) 75%,
+        rgba(188, 24, 136, 1) 100%
+      );
+      transition: 0.2s;
+    }
+
+    /* Animacije */
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes slide-y {
+      from { transform: translate3d(0, 0, 0); }
+      to   { transform: translate3d(0, calc(-100% + var(--vh)), 0); }
+    }
+  }
+  /* Još veći ekran (npr. desktop) */
+  @media (min-width: 1200px) {
+    .results {
+    width: min(1000px, 100%);
+  }
+  .results .results_text p.results_header {
+    font-size: 4em;
+  }
+  .results .results_text .results_title2 {
+    font-size: 2em;
+    position: relative;
+    top: -10%;
+    margin-bottom: 50px;
+  }
+  .results .clients_box button {
+    border: none;
+    outline: none;
+  }
+
+  .results .clients_box{
+    flex-direction: column;
+  height: 500px;
+      --vh: 500px;
+      -webkit-mask-image: linear-gradient(
+        to left,
+        transparent 0,
+        black 20px,
+        black calc(100% - 20px),
+        transparent 100%
+      );
+              mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        black 20px,
+        black calc(100% - 20px),
+        transparent 100%
+      );
+      position: relative;
+  }
+    .results .clients_box::after {
+      content: "";
+      background-color: black;
+      z-index: 1;
+      position: absolute;
+      right: 50%;
+      top: 20px;
+      transform: translateX(50%);
+      height: 1px;
+      width: 90%;
+    }
+  .results .clients_box .logo_strip {
+    display: flex; /* širina = sadržaj */
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0; /* koristi margine na .logo */
+    width: max-content; /* bitno zbog translateX(100%) */
+    will-change: transform;
+    animation: slide-x var(--dur, 12s) linear infinite alternate;
+
+  }
+  /* Animacije */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes slide-x {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(calc(-100% + var(--vw)), 0, 0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .results .clients_box .logo_strip {
+      animation: none !important;
+    }
+    .results .clients_box .logo_strip .logo .logo_inner {
+      animation: none !important;
+    }
+  }
+
+  }

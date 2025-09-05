@@ -1,8 +1,13 @@
 /* mobile first */
 .about_me {
-  margin-top: 50px;
+  background-color: red;
 }
-
+.about_me .profile_loop_video {
+  width: 100%;
+  max-width: 375px;
+  display: block;
+  margin: 0 auto;
+}
 .about_me .about_me_content p.about_me_header {
   text-align: center;
   font-size: 5em;
@@ -12,9 +17,8 @@
 .about_me .about_me_content {
   width: 100%;
   background-color: #e8e3de;
-  
 }
-.about_me .about_me_content .page_wrapper p{
+.about_me .about_me_content .page_wrapper p {
   text-align: center;
   font-size: 1.5em;
   line-height: 35px;
@@ -22,8 +26,9 @@
   margin: 0px auto;
   padding: 30px;
   font-family: "CormorantGaramond";
-
 }
 
-@media (min-width: 768px) {}
-@media (min-width: 1200px) {}
+@media (min-width: 768px) {
+}
+@media (min-width: 1200px) {
+}
