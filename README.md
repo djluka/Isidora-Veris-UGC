@@ -1,1 +1,1 @@
-SITE -->  https://isidoraverisugc.netlify.app/
+SITE -->  isidoraverisugc.com
