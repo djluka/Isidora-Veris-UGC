@@ -1,0 +1,57 @@
+name: Deploy to Virtualmin on push
+
+on:
+  push:
+    branches: [ "main" ]     # change if you deploy a different branch
+    # paths:                  # optionally limit which paths trigger deploy
+    #   - "web/**"
+  workflow_dispatch: {}       # allow manual trigger
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ensure server host key is known
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p "${{ secrets.SSH_PORT }}" -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy via SSH and git update
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script_stop: true
+          script: |
+            set -euo pipefail
+
+            cd "${APP_DIR:-${{ secrets.APP_DIR }}}"
+
+            # Ensure the repo is a safe directory for git (some servers require this)
+            git config --global --add safe.directory "${APP_DIR:-${{ secrets.APP_DIR }}}"
+
+            # Optional: lock to a specific branch from secrets, default to 'main'
+            BRANCH="${BRANCH:-${{ secrets.BRANCH || 'main' }}}"
+
+            # Fetch latest code from GitHub (server uses deploy key to auth)
+            git fetch --all --prune
+
+            # Safer than pull (avoids merge conflicts on server)
+            git reset --hard "origin/${BRANCH}"
+
+            # If you use submodules:
+            # git submodule sync --recursive
+            # git submodule update --init --recursive
+
+            # Optional: build steps, permission fixes, cache clear, etc.
+            # npm ci && npm run build
+            # php artisan config:cache
+
+            echo "✅ Deployed branch ${BRANCH} to ${PWD}"
