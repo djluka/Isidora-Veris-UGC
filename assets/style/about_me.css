@@ -1,68 +1,105 @@
-  /* mobile first */
-  .about_me {
-    margin-top: 20px;
-  }
-  .profile_loop_video {
-    position: sticky;
-    top: 0; /* "lepi" video za vrh viewport-a dok je sekcija u toku */
-  width: 98%;
-  height: 98%;
-  display: block;
-  aspect-ratio: 9/16;
-  object-fit: cover;
-  padding: 0;    margin: 0px auto;
-    object-fit:contain;
-    display: block;
-    z-index: 0; /* ispod teksta, iznad pozadine sekcije */
-    /* Blago potamnjenje kroz filter (radi na svim browserima) */
-    /* filter: brightness(0.45) saturate(0.95); */
-    /* Ako želiš još mirniji look: */
-    /* filter: brightness(0.4) saturate(0.9) blur(0.3px); */
-  }
-  .about_me .about_me_content p.about_me_header {
-    text-align: center;
-    font-size: 5em;
-    font-family: RomateHood;
-    z-index: 1;
-  }
-  .about_me .about_me_content {
-    width: 100%;
-  background-color: #f4eade;
-    position: relative;
-  }
+:root {
+  --pad: clamp(16px, 2.5vw, 40px);
+  --focus-y: 40%;
+}
 
-  .about_me .about_me_content p.about_me_txt {
-    text-align: center;
-    font-size: 1.5em;
-    height: 80svh;    
-    width: 80%;
-    margin: 0px auto;
-    padding: 30px;
-    font-family: "CormorantGaramond";
-    position: relative;
-    padding-left: 40px;
-    padding-right: 40px;
-    color: #ffffff;
+.about_me_content {
+  height: 240vh; /* > 200vh da ima “puta” za skrol animaciju */
+  position: relative;
+  background: #f4eade;
+}
+
+.about_me_header {
+  text-align: center;
+  margin: 0;
+  padding: var(--pad);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  font-size: clamp(32px, 7vw, 96px);
+  color: #111;
+}
+
+.sticky-frame {
+  position: sticky;
+  top: 0;
+  height: 90vh;
+  display: grid;
+  place-items: center;
+}
+
+/* Maska = okvir koji seče i video i tekst */
+.frame-box {
+  position: relative;
+  width: min(90vw, 1000px);
+  height: min(80vh, 700px);
+  margin: 0 auto;
+  overflow: hidden; /* KLJUČ */
+  border-radius: 14px; /* po želji */
+  background: #000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Video ispunjava okvir */
+.profile_loop_video {
+  position: sticky;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center var(--focus-y);
+  z-index: 0;
+  background: #000;
+}
+
+/* Tekst je iznad videa, ali isečen istim okvirom */
+.text-viewport {
+  position: relative;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 2.5vw, 28px);
+}
+
+.text-scroll {
+  width: min(900px, 92%);
+  font-size: clamp(18px, 2.1vw, 22px);
+  line-height: 1.6;
+  color: #f7f7f7;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+  will-change: transform; /* performans */
+}
+
+/* Dodat malo teksta sa dna da se lepo “izveze” */
+.text-scroll p {
+  margin: 0 0 1.1em;
+}
+.text-scroll::after {
+  content: "";
+  display: block;
+  height: 12vh;
+}
+
+.after-hero {
+  padding: 12vh var(--pad);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 380px) {
+  :root {
+    --focus-y: 28%;
   }
-    .about_me .about_me_content p.about_me_txt::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0px;
-      left: 0;
-      z-index: -1;
-      background: #ffffff;
-    background: linear-gradient(
-      181deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(0, 0, 0, 0.7) 40%
-    );
-    filter: blur(20px);
-    filter: brightness(0.85);
-    }
-  @media (min-width: 768px) {
+  .about_me_content {
+    height: 220vh;
   }
-  @media (min-width: 1200px) {
+  .frame-box {
+    width: 92vw;
+    height: 72vh;
   }
+  .about_me_header {
+    font-size: clamp(28px, 9vw, 56px);
+  }
+}
