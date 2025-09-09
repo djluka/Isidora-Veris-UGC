@@ -5,9 +5,13 @@
   .profile_loop_video {
     position: sticky;
     top: 0; /* "lepi" video za vrh viewport-a dok je sekcija u toku */
-    width: 100%;
-    height: 100svh; /* puni visinu ekrana; svh radi dobro na mobilnim */
-    object-fit: cover;
+  width: 98%;
+  height: 98%;
+  display: block;
+  aspect-ratio: 9/16;
+  object-fit: cover;
+  padding: 0;    margin: 0px auto;
+    object-fit:contain;
     display: block;
     z-index: 0; /* ispod teksta, iznad pozadine sekcije */
     /* Blago potamnjenje kroz filter (radi na svim browserima) */
@@ -23,25 +27,15 @@
   }
   .about_me .about_me_content {
     width: 100%;
-    background-color: #e8e3de;
+  background-color: #f4eade;
     position: relative;
   }
-  /*
-    .about_me .about_me_content::after{
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: #e8e3de;
-      position: absolute;
-      top: 60px;
-      z-index: -1;
-    } */
+
   .about_me .about_me_content p.about_me_txt {
     text-align: center;
     font-size: 1.5em;
-    line-height: 35px;
-    width: 100%;
+    height: 80svh;    
+    width: 80%;
     margin: 0px auto;
     padding: 30px;
     font-family: "CormorantGaramond";
