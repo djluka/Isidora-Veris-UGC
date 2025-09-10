@@ -1,5 +1,6 @@
 /* mobile first */
-
+.footer{
+}
 .page_wrapper_footer{
     display: flex;
     flex-wrap: wrap;
