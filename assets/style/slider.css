@@ -1,459 +1,459 @@
-/* Default za telefon (mobile-first) */
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-.slider_section {
-  margin-top: 100px;
-  margin-bottom: 50px;
-
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0;
-  width: 100%;
-  max-width: 100vw;
-  max-height: 150vh;
-}
-.slider_section::after {
-  content: "";
-  width: 100vw;
-  height: 102%;
-  display: block;
-  background-color: #f4eade;
-  position: absolute;
-  top: 20px;
-  z-index: -1;
-}
-.slider_section .header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  margin-bottom: 10px;
-  margin-top: 0px;
-}
-.slider_section .header p:nth-child(1) {
-  margin-bottom: 5px;
-  font-size: 2.3em;
-  letter-spacing: 1px;
-  font-family: TheSeasonsBold;
-}
-.slider_section .header p:nth-child(2) {
-  margin-bottom: 5px;
-  font-size: 1em;
-  font-weight: normal;
-  color: #333;
-  letter-spacing: 1px;
-  border-top: 1px solid #333;
-  font-family: TheSeasonsLight;
-}
-.ugc {
-  max-height: 100vh;
-  position: relative;
-  padding: 0;
-
-}
-
-.slider_wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 0;
-  max-width: 350px;
-  max-height: 100%;
-  position: relative;
-}
-
-.pre_btn,
-.nxt_btn {
-  display: none;
-}
-
-.slider {
-  display: flex;
-  max-width: 85%;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  gap: 20px;
-  padding: 0;
-}
-
-.slider::-webkit-scrollbar {
-  display: none;
-}
-
-.card {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  max-width: 100%;
-  max-height: 500px;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  transition: all 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-}
-
-.card .video_wrapper {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-.card .video_wrapper video {
-  width: 100%;
-  height: 100%;
-  display: block;
-  aspect-ratio: 9/16;
-  object-fit: cover;
-  padding: 0;
-}
-.card .video_wrapper button.play_button {
-  background-color: transparent;
-  border: 0;
-  outline: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 5em;
-  color: #e8e3de;
-  z-index: 1;
-}
-.card .card_box {
-  z-index: 5;
-  max-height: 250px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-  color: white;
-  font-family: CormorantGaramond;
-}
-.card .card_box .card_header_box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 10px;
-}
-.card .card_box .card_header_box .brand {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.card .card_box .card_header_box .brand img {
-  max-width: 40px;
-  padding-right: 5px;
-}
-
-.card .card_box .card_header_box .views {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-}
-.card .card_box .card_header_box .views img {
-  max-width: 20px;
-}
-
-.card .card_box img {
-  width: 50px;
-}
-.desc {
-  cursor: pointer;
-  overflow: hidden;
-  white-space: normal;
-  display: block;
-  max-height: 50pt; /* skraćeno stanje */
-  text-overflow: ellipsis;
-  position: relative;
-  transition: 0.5s all;
-  font-size: 14pt;
-  max-width: 250px;
-}
-
-.desc.expanded {
-  max-height: 500px;
-  text-align: unset;
-}
-
-a.more_on_instagram {
-  text-decoration: none;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-}
-a.more_on_instagram::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-image: url(/assets/insta_profile.png);
-  background-position: initial;
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: brightness(0.5) blur(1px);
-  transition: 0.2s;
-}
-a.more_on_instagram .more_on_instagram_content {
-  z-index: 5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-a.more_on_instagram:hover {
-  font-size: 13pt;
-}
-a.more_on_instagram:hover::before {
-  transform: scale(1.2);
-  transition: 0.2s;
-  filter: brightness(0.4) blur(5px);
-}
-
-a.more_on_instagram p.header {
-  transition: 0.3s all;
-  font-size: 2em;
-  text-align: center;
-  padding: 10px;
-}
-a.more_on_instagram img {
-  transition: 0.3s all;
-  max-width: 200px;
-}
-.dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  background-color: #57432a59;
-  border-radius: 50%;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: #57432a;
-}
-
-.content {
-  max-height: 100vh;
-}
-.content p.header {
-  text-align: right;
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-.opacity_low {
-  opacity: 0.4;
-  pointer-events: none;
-  cursor: default;
-  transition: 0.2s all;
-}
-
-/* Veći ekran (npr. tablet) */
-@media (min-width: 768px) {
-  .slider_wrap {
-    max-width: 650px;
-  }
-
-  .pre_btn,
-  .nxt_btn {
-    display: none;
-  }
-  .slider {
-    max-width: 100%;
-    position: relative;
-    gap: 20px;
-  }
-
-  .card {
-    flex: 0 0 calc(50% - 10px); /* 2 kartice po redu, - gap/2 */
-  }
-  .desc {
-    max-height: 30pt;
-    font-size: 15pt;
-  }
-}
-
-/* Još veći ekran (npr. desktop) */
-@media (min-width: 1200px) {
-  .ugc {
-    padding: 0;
-    padding-right: 10%;
-  }
-  .content {
-    padding: 0;
-    padding-left: 10%;
-  }
-
+  /* Default za telefon (mobile-first) */
   .slider_section {
-    max-width: 90vw;
-    margin: 50px auto;
+    margin-top: 100px;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 0;
+
+    max-width: 100vw;
+    max-height: fit-content;
   }
   .slider_section::after {
     content: "";
-    width: 110%;
+    width: 100vw;
     height: 100%;
     display: block;
     background-color: #f4eade;
     position: absolute;
-    top: 50px;
+    top: 20px;
     z-index: -1;
+  }
+  .slider_section .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-bottom: 10px;
+    margin-top: 0px;
   }
   .slider_section .header p:nth-child(1) {
     margin-bottom: 5px;
-    font-size: 3em;
+    font-size: 2.3em;
+    letter-spacing: 1px;
+    font-family: TheSeasonsBold;
   }
   .slider_section .header p:nth-child(2) {
-    font-size: 1.5em;
+    margin-bottom: 5px;
+    font-size: 1em;
+    font-weight: normal;
+    color: #333;
+    letter-spacing: 1px;
+    border-top: 1px solid #333;
+    font-family: TheSeasonsLight;
   }
-  .slider_wrap {
-    max-width: 1000px;
-    padding: 0;
-  }
-  .slider {
+  .ugc {
+    max-height: 100vh;
     position: relative;
-    gap: 30px;
     padding: 0;
+
   }
-  .card .video_wrapper video {
-    width: 100%;
-    aspect-ratio: 9 / 16;
-    object-fit: contain;
-    display: block;
-    filter: brightness(1) opacity(0.9);
+
+  .slider_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 350px;
+    max-height: 100%;
+    position: relative;
   }
-  .card .video_wrapper:hover > video {
-    filter: brightness(1) opacity(1);
-  }
-  .card .video_wrapper button {
-    transition: 0.2s all;
-  }
-  .card .video_wrapper:hover > button {
-    font-size: 6em;
-    transition: 0.2s all;
-  }
+
   .pre_btn,
   .nxt_btn {
+    display: none;
+  }
+
+  .slider {
+    display: flex;
+    max-width: 85%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    max-width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .card .video_wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .card .video_wrapper video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    padding: 0;
+  }
+  .card .video_wrapper button.play_button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    z-index: 9;
-    cursor: pointer;
-    border: none;
-    padding: 20px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    transition: 0.2s all;
-  }
-  .pre_btn:hover,
-  .nxt_btn:hover {
-    background-color: #aca8a5;
-    transition: 0.2s all;
-  }
-  .pre_btn {
-    left: -8%;
-  }
-  .nxt_btn {
-    right: -8%;
-  }
-  .pre_btn img {
-    transform: rotate(-90deg);
-  }
-
-  .nxt_btn img {
-    transform: rotate(90deg);
-  }
-
-  .pre_btn img,
-  .nxt_btn img {
-    width: 30px;
-  }
-  .card {
-    flex: 0 0 calc((100% / 3 - 20px));
-    transition: all 0.3s ease;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5em;
+    color: #e8e3de;
+    z-index: 1;
   }
   .card .card_box {
-    width: 90%;
+    z-index: 5;
+    max-height: 250px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    color: white;
+    font-family: CormorantGaramond;
+  }
+  .card .card_box .card_header_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .card .card_box .card_header_box .brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card .card_box .card_header_box .brand img {
+    max-width: 40px;
+    padding-right: 5px;
+  }
+
+  .card .card_box .card_header_box .views {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+  }
+  .card .card_box .card_header_box .views img {
+    max-width: 20px;
+  }
+
+  .card .card_box img {
+    width: 50px;
   }
   .desc {
-    max-height: 30pt; /* skraćeno stanje */
+    cursor: pointer;
+    overflow: hidden;
+    white-space: normal;
+    display: block;
+    max-height: 50pt; /* skraćeno stanje */
     text-overflow: ellipsis;
     position: relative;
     transition: 0.5s all;
-    font-size: 12pt;
+    font-size: 14pt;
     max-width: 250px;
   }
 
+  .desc.expanded {
+    max-height: 500px;
+    text-align: unset;
+  }
+
+  a.more_on_instagram {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  a.more_on_instagram::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(/assets/insta_profile.png);
+    background-position: initial;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(0.5) blur(1px);
+    transition: 0.2s;
+  }
+  a.more_on_instagram .more_on_instagram_content {
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  a.more_on_instagram:hover {
+    font-size: 13pt;
+  }
+  a.more_on_instagram:hover::before {
+    transform: scale(1.2);
+    transition: 0.2s;
+    filter: brightness(0.4) blur(5px);
+  }
+
+  a.more_on_instagram p.header {
+    transition: 0.3s all;
+    font-size: 2em;
+    text-align: center;
+    padding: 10px;
+  }
+  a.more_on_instagram img {
+    transition: 0.3s all;
+    max-width: 200px;
+  }
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
   .dot {
-    display: none;
-  }
-  /*
-  ==================================
-  animation
-  ================================== 
-  */
-
-  .hovered_card {
-    z-index: 10;
-    filter: brightness(1.05);
-    transition: all 0.3s ease;
-    transition-delay: 0.2s;
+    width: 10px;
+    height: 10px;
+    background-color: #57432a59;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    cursor: pointer;
   }
 
-  .other_cards {
-    opacity: 0.8;
-    filter: blur(0.3px) brightness(0.9) grayscale(0.1);
+  .dot.active {
+    background-color: #57432a;
+  }
+
+  .content {
+    max-height: 100vh;
+  }
+  .content p.header {
+    text-align: right;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  .opacity_low {
+    opacity: 0.4;
     pointer-events: none;
-    transition: all 0.3s ease;
+    cursor: default;
+    transition: 0.2s all;
   }
 
-  .title_animation {
-    transform: translateY(-100px);
-    opacity: 1;
-    transition: all 0.3s ease;
+  /* Veći ekran (npr. tablet) */
+  @media (min-width: 768px) {
+    .slider_wrap {
+      max-width: 650px;
+    }
+
+    .pre_btn,
+    .nxt_btn {
+      display: none;
+    }
+    .slider {
+      max-width: 100%;
+      position: relative;
+      gap: 20px;
+    }
+
+    .card {
+      flex: 0 0 calc(50% - 10px); /* 2 kartice po redu, - gap/2 */
+    }
+    .desc {
+      max-height: 30pt;
+      font-size: 15pt;
+    }
   }
 
-  .desc_animation {
-    opacity: 1;
-    transform: translateY(180px);
-    transition: all 0.3s ease;
+  /* Još veći ekran (npr. desktop) */
+  @media (min-width: 1200px) {
+    .slider_section{
+      max-height:200vh ;
+      margin: 0;
+      padding: 0;
+    }
+    .ugc {
+      padding: 0;
+      padding-right: 10%;
+
+    }
+    .content {
+      padding: 0;
+      padding-left: 10%;
+    }
+
+    .slider_section {
+      max-width: 90vw;
+      margin: 50px auto;
+      padding: 0;
+    }
+    .slider_section::after {
+      
+      content: "";
+      width: 90vw;
+      height: 90%;
+      display: block;
+      background-color: #f4eade;
+      position: absolute;
+      top: 50px;
+      z-index: -1;
+    }
+    .slider_section .header p:nth-child(1) {
+      margin-bottom: 5px;
+      font-size: 3em;
+    }
+    .slider_section .header p:nth-child(2) {
+      font-size: 1.5em;
+    }
+    .slider_wrap {
+      max-width: 1000px;
+      padding: 0;
+    }
+    .slider {
+      position: relative;
+      gap: 30px;
+      padding: 0;
+    }
+    .card .video_wrapper video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: contain;
+      display: block;
+      filter: brightness(1) opacity(0.9);
+    }
+    .card .video_wrapper:hover > video {
+      filter: brightness(1) opacity(1);
+    }
+    .card .video_wrapper button {
+      transition: 0.2s all;
+    }
+    .card .video_wrapper:hover > button {
+      font-size: 6em;
+      transition: 0.2s all;
+    }
+    .pre_btn,
+    .nxt_btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      z-index: 9;
+      cursor: pointer;
+      border: none;
+      padding: 20px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      transition: 0.2s all;
+    }
+    .pre_btn:hover,
+    .nxt_btn:hover {
+      background-color: #aca8a5;
+      transition: 0.2s all;
+    }
+    .pre_btn {
+      left: -8%;
+    }
+    .nxt_btn {
+      right: -8%;
+    }
+    .pre_btn img {
+      transform: rotate(-90deg);
+    }
+
+    .nxt_btn img {
+      transform: rotate(90deg);
+    }
+
+    .pre_btn img,
+    .nxt_btn img {
+      width: 30px;
+    }
+    .card {
+      flex: 0 0 calc((100% / 3 - 20px));
+      transition: all 0.3s ease;
+    }
+    .card .card_box {
+      width: 90%;
+    }
+    .desc {
+      max-height: 30pt; /* skraćeno stanje */
+      text-overflow: ellipsis;
+      position: relative;
+      transition: 0.5s all;
+      font-size: 12pt;
+      max-width: 250px;
+    }
+
+    .dot {
+      display: none;
+    }
+    /*
+    ==================================
+    animation
+    ================================== 
+    */
+
+    .hovered_card {
+      z-index: 10;
+      filter: brightness(1.05);
+      transition: all 0.3s ease;
+      transition-delay: 0.2s;
+    }
+
+    .other_cards {
+      opacity: 0.8;
+      filter: blur(0.3px) brightness(0.9) grayscale(0.1);
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .title_animation {
+      transform: translateY(-100px);
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+
+    .desc_animation {
+      opacity: 1;
+      transform: translateY(180px);
+      transition: all 0.3s ease;
+    }
   }
-}
