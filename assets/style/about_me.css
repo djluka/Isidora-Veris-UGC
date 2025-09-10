@@ -1,16 +1,31 @@
 .about_me {
-  margin-top: 50px;
-  padding: 10px 0;
-  width: 100vw;
   max-width: 100vw;
-  height: 50vh;
-  background: #f4eade;
+  max-height: 100vh;
+  height: fit-content;
+  margin: 0 auto;
+  margin-top: 50px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
 }
-
+.about_me_content {
+  position: relative;
+  background-color: #f4eade;
+  padding-bottom: 20px;
+}
+/*
+.about_me_content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f4eade;
+  z-index: 1;
+} */
 .about_me_header {
   text-align: center;
   margin: 0 0 20px 0;
@@ -18,61 +33,180 @@
   font-size: 3em;
   color: #57432a;
   font-family: TheSeasonsBold;
+  position: sticky;
+  top: 10px;
 }
-.about_me_content {
-  width: 100vw;
-  max-width: 100vw;
-  min-height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
 .profile_loop_video {
-  width: 80vw;
-  max-width: 600px;
-  height: auto;
   display: block;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  z-index: 1;
-  position: relative;
   margin: 0 auto;
-}
 
+  width: 90%;
+  height: 90vh;
+  object-fit: cover;
+  object-position: center;
+
+  position: sticky;
+  top: 10px;
+  z-index: 0;
+}
 .text-scroll {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80vw;
-  max-width: 600px;
-  height: 100%;
-  overflow-y: auto;
+  width: 90%;
+  height: 90vh;
   font-size: 1em;
   color: #57432a;
   background: transparent;
-  padding: 24px 28px;
   border-radius: 16px;
-  box-shadow: none;
-  line-height: 1.7;
   z-index: 2;
-  background-clip: padding-box;
   background: rgba(255, 248, 241, 0.85);
+  margin: 0 auto;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  animation: on_stage 2000ms ease-in forwards;
+  animation: off_stage 2000ms ease-out reverse;
+
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+}
+.text-scroll p {
+  font-family: CormorantGaramond;
+  z-index: 3;
+  font-size: 1.2em;
+  padding: 20px;
+}
+/*============ ANIMATIONS ============*/
+@keyframes on_stage {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes off_stage {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 0.5;
+  }
+}
+@keyframes zooooom {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.5;
+  }
 }
 
-/* Mobilni prikaz */
-@media (max-width: 600px) {
-  .profile_loop_video,
-  .text-scroll {
-    width: 100vw;
-    max-width: 100vw;
-    border-radius: 0;
-    padding: 12px 4px;
+/* === TABLET (min-width: 768px) === */
+@media (min-width: 768px) {
+  .about_me {
+    width: min(768px, 100%);
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
   .about_me_content {
-    min-height: 300px;
+    position: relative;
+    background-color: #f4eade;
+    padding-bottom: 20px;
+    width: 100vw;
+  }
+  .about_me_header {
+    font-size: 4em;
+    margin-bottom: 30px;
+  }
+
+  .text-scroll {
+    width: 90%;
+    height: 90vh;
+    font-size: 1.2em;
+  }
+  .text-scroll p {
+    font-size: 1.5em;
+    padding: 30px;
+  }
+}
+/* === DESKTOP (min-width: 1200px) === */
+@media (min-width: 1200px) {
+  .about_me_content {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    background-color: #f4eade;
+    padding-bottom: 40px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .about_me_header {
+    text-align: center;
+    margin: 0 0 40px 0;
+    font-weight: 800;
+    font-size: 4em;
+    color: #57432a;
+    font-family: TheSeasonsBold;
+    position: static;
+    top: unset;
+  }
+  .profile_loop_video {
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    margin: 0;
+    height: 50vh;
+
+    width: 50vw;
+    max-width: 600px;
+    object-fit: cover;
+    object-position: center;
+    position: sticky;
+    top: 40px;
+    z-index: 1;
+    transition: transform 0.3s;
+  }
+  .text-scroll {
+    min-height: 320px;
+    height: auto;
+    width: 40vw;
+    max-width: 700px;
+    font-size: 1.3em;
+    color: #57432a;
+    background: rgba(255, 248, 241, 0.85);
+    border-radius: 16px;
+    z-index: 2;
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 48px 48px;
+    box-sizing: border-box;
+    animation: none;
+  }
+  .text-scroll p {
+    font-family: CormorantGaramond;
+    z-index: 3;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+    text-align: left;
   }
 }
