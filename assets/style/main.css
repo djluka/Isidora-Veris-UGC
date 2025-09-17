@@ -14,27 +14,7 @@
 body {
   background-color: #faf9f8;
 }
-/*
-==================================
-annimations 
-==================================
-*/
-.hidden {
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateX(-100%);
-  transition: all 1s;
-}
-.hidden1 {
-  opacity: 0;
-  filter: blur(5px);
-  transition: all 1s;
-}
-.show {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0);
-}
+
 
 .blur {
   filter: blur(5px);
@@ -137,7 +117,6 @@ section.header .text .instagram_highlights {
   right: -50%;
   top: 50px;
   transform: translateX(-50%);
-
 }
 section.header .text .instagram_highlights img.point_arrow {
   max-width: 110px;
