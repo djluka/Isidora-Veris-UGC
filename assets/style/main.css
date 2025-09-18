@@ -15,7 +15,6 @@ body {
   background-color: #faf9f8;
 }
 
-
 .blur {
   filter: blur(5px);
 }
@@ -52,7 +51,7 @@ section.header .profile_wrapper::after {
   width: 100%;
   height: 100%;
   display: block;
-  background-color: #F4EADE;
+  background-color: #f4eade;
   position: absolute;
   top: 30px;
   left: -30px;
@@ -65,7 +64,7 @@ section.header .text {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  max-width: 300px;
+  max-width: 330px;
   transition-delay: 0.2s;
 }
 
@@ -75,6 +74,11 @@ section.header .text p.header_txt {
   letter-spacing: 2px;
   font-family: TheSeasonsBold;
   font-size: 30pt;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 section.header .text p.header_txt > span {
   font-size: 16pt;
@@ -100,7 +104,6 @@ section.header .text .contact_me {
 section.header .text .contact_me img {
   width: 40px;
   height: 40px;
-
 }
 
 section.header .text .contact_me,
@@ -115,15 +118,16 @@ section.header .text .contact_me p {
 section.header .text .instagram_highlights {
   position: relative;
   right: -50%;
-  top: 50px;
+  top: 10px;
   transform: translateX(-50%);
 }
 section.header .text .instagram_highlights img.point_arrow {
-  max-width: 110px;
-  rotate: 65deg;
+  max-width: 80px;
+  rotate: -90deg;
+  transform: scaleX(-1);
   position: absolute;
-  top: -100px;
-  left: -50px;
+  top: -70px;
+  right: 55px;
 }
 section.header .text .instagram_highlights .highlights {
   display: flex;
@@ -144,7 +148,7 @@ section.header .text .instagram_highlights .highlights a div {
   padding: 30px;
   margin: 10px;
   border-radius: 50px;
-  border: 1px solid black;
+  
   position: relative;
   z-index: 3;
 }
@@ -161,31 +165,31 @@ section.header .text .instagram_highlights .highlights a div::after {
 }
 /* Content */
 section.header .text .instagram_highlights .highlights a:nth-child(1) > div {
-  background-color: #D6CCC2;
+  background-color: #d6ccc2;
 }
 /* UGC */
 section.header .text .instagram_highlights .highlights a:nth-child(2) > div {
- background-image: url(/assets/ugc_highlights.png);
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
+  background-image: url(/assets/ugc_highlights.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /* BTS */
 section.header .text .instagram_highlights .highlights a:nth-child(3) > div {
-  background-color: #E3D5CA;
+  background-color: #e3d5ca;
 }
 /* Product */
 section.header .text .instagram_highlights .highlights a:nth-child(4) > div {
- background-image: url(/assets/product_highlights.png);
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
+  background-image: url(/assets/product_highlights.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-section.header .text .instagram_highlights p.highlight_desc{
+section.header .text .instagram_highlights p.highlight_desc {
   padding: 10px;
   text-align: center;
-  font-family: CormorantGaramond;
-  font-weight: 600;
+  font-family: TheSeasonsLight;
+  font-weight: 0;
 }
 
 /* Veći ekran (npr. tablet) */
@@ -207,18 +211,18 @@ section.header .text .instagram_highlights p.highlight_desc{
     font-size: 20pt;
   }
   section.header .text .instagram_highlights {
-  position: relative;
-  right: -50%;
-  top: 20px;
-  transform: translateX(-50%);
-
-}section.header .text .instagram_highlights img.point_arrow {
-  max-width: 110px;
-  rotate: 65deg;
-  position: absolute;
-  top: -60px;
-  left: -60px;
-}
+    position: relative;
+    right: -50%;
+    top: 20px;
+    transform: translateX(-50%);
+  }
+  section.header .text .instagram_highlights img.point_arrow {
+    max-width: 110px;
+    rotate: 65deg;
+    position: absolute;
+    top: -60px;
+    left: -60px;
+  }
 }
 
 /* Još veći ekran (npr. desktop) */
@@ -254,18 +258,17 @@ section.header .text .instagram_highlights p.highlight_desc{
     font-size: 17pt;
   }
   section.header .text .instagram_highlights {
-  position: relative;
-  left: 0%;
-  top: 40px;
-  transform: translateX(0%);
-
-}
-section.header .text .instagram_highlights img.point_arrow {
-  max-width: 110px;
-  rotate: 70deg;
-  transform: scaleY(-1);
-  position: absolute;
-  top: -110px;
-  left: 58%;
-}
+    position: relative;
+    left: 0%;
+    top: 40px;
+    transform: translateX(0%);
+  }
+  section.header .text .instagram_highlights img.point_arrow {
+    max-width: 110px;
+    rotate: 70deg;
+    transform: scaleY(-1);
+    position: absolute;
+    top: -110px;
+    left: 58%;
+  }
 }
