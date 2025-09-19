@@ -52,11 +52,14 @@
   flex-direction: column;
   text-align: center;
 
-  animation: on_stage 2000ms ease-in forwards;
-  animation: off_stage 2000ms ease-out reverse;
+  animation: on_stage 1000ms ease-in forwards;
+  animation: off_stage 1000ms ease-out reverse;
 
   animation-timeline: view();
   animation-range: entry 0% cover 50%;
+
+      opacity: 0;
+    scale: 0.5;
 }
 .text-scroll p {
   font-family: CormorantGaramond;
@@ -86,3 +89,45 @@
   }
 }
 
+@media (min-width: 768px) {
+  .about_me_header {
+    font-size: 4em;
+  }
+  .profile_loop_video {
+    width: 70%;
+    height: 80vh;
+  }
+  .text-scroll {
+    width: 70%;
+    height: 80vh;
+    font-size: 1.2em;
+  }
+  .text-scroll p {
+    font-size: 1.5em;
+    padding: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  .about_me_header {
+    font-size: 5em;
+  }
+  .profile_loop_video {
+    width: 80%;
+    height: 80vh;
+  }
+  .text-scroll {
+    width: 80%;
+    height: 80vh;
+    font-size: 1.5em;
+  }
+  .text-scroll p {
+    font-size: 1.8em;
+    padding: 40px;
+  }
+  
+}
+.visible {
+  background-color: red;
+      opacity: 1;
+    scale: 1;
+}
