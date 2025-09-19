@@ -1,13 +1,15 @@
 .about_me {
   max-width: 100vw;
-  height: fit-content;
+  height:max-content;
   margin: 50px auto;
+
   max-width: fit-content;
   background: #f4eade;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+ 
 }
 .about_me_header {
   text-align: center;
@@ -15,34 +17,31 @@
   font-weight: 800;
   font-size: 3em;
   color: #57432a;
-  font-family: TheSeasonsBold;
+  font-family: RomateHood;
   position: sticky;
   top: 10px;
-}
+} 
 .profile_loop_video {
   display: block;
-  border-radius: 16px;
+  /* border-radius: 16px; */
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   margin: 0 auto;
 
-  width: 90%;
-  height: 90vh;
-  object-fit: cover;
+  width: 100vw;
+  /* height: 90vh; */
+  object-fit: contain;
   object-position: center;
-
   position: sticky;
   top: 10px;
   z-index: 0;
 }
 .text-scroll {
-  width: 90%;
-  height: 90vh;
+  width: 100vw;
   font-size: 1em;
   color: #57432a;
   background: transparent;
-  border-radius: 16px;
   z-index: 2;
-  background: rgba(255, 248, 241, 0.85);
+  background: rgba(255, 248, 241,0.90);
   margin: 0 auto;
 
   position: relative;

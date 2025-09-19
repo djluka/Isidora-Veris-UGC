@@ -19,7 +19,7 @@
 }
 .results .results_text p.results_header {
   font-family: RomateHood;
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 100;
   align-self: flex-start;
 }
@@ -31,7 +31,8 @@
 }
 .results .results_text .results_title2 {
   align-self: end;
-  font-size: 2em;
+  font-size: 1.6em;
+  font-family:TheSeasonsBold ;
 }
 .results .results_desc {
   font-family: TheSeasonsLight;
@@ -220,12 +221,13 @@
 /* === DESKTOP (min-width: 1200px) === */
 @media (min-width: 1200px) {
   .results {
-    width: min(1200px, 100%);
-    --vw: min(800px, 100%);
+    width: min(1100px, 100%);
+    --vw: min(750px, 100%);
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    position: relative;
   }
   .results .results_text {
     display: flex;
@@ -239,19 +241,18 @@
     font-size: 5em;
     font-weight: 100;
     text-align: start;
-    margin-top: 0;
     align-self: start;
   }
   .results .results_text .results_title1 {
     font-family: TheSeasonsBold;
     font-size: 3em;
-    margin-top: 5px;
+    margin-top: 0px;
     position: relative;
     left: 0;
     align-self: flex-end;
   }
   .results .results_text .results_title2 {
-    font-size: 2.5em;
+    font-size: 2em;
     position: relative;
     top: 0%;
     margin-bottom: 0px;
@@ -264,9 +265,10 @@
     bottom: -50px;
     transform: translateX(-50%);
     left: 50%;
+    bottom: 0;
     width: 300px;
   }
-  .results .results_text::after {
+  /* .results .results_text::after {
     content: "";
     background-color: black;
     z-index: 4;
@@ -276,7 +278,7 @@
     right: -5%;
     height: 150%;
     width: 2px;
-  }
+  } */
   .results .clients_box::before {
     display: none;
   }
