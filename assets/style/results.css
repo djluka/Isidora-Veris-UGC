@@ -38,7 +38,9 @@
   font-family: TheSeasonsLight;
   font-size: 1em;
   margin-top: 10px;
+  align-self: center;
   text-align: center;
+  width: 100%;
 }
 .results .clients_box {
   display: flex;
