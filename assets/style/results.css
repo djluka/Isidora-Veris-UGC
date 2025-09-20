@@ -7,7 +7,12 @@
   align-items: center;
   flex-direction: column;
   max-height: fit-content;
+
+
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 50px;
+  position: relative;
 }
 .results .results_text {
   display: flex;

@@ -1,0 +1,44 @@
+.comments {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  margin: 0 auto;
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+  background: #f4eade;
+
+  display: none;
+}
+.comments img {
+  width: 100px;
+}
+.comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 20px;
+}
+.comment_header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.comment_header p {
+  font-size: 2em;
+  color: #57432a;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 10px;
+}
+.comment_header img {
+  width: 100%;
+  height: 100%;
+}
