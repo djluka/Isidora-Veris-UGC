@@ -8,7 +8,6 @@
   flex-direction: column;
   max-height: fit-content;
 
-
   left: 50%;
   transform: translateX(-50%);
   margin-top: 50px;
@@ -37,7 +36,7 @@
 .results .results_text .results_title2 {
   align-self: end;
   font-size: 1.6em;
-  font-family:TheSeasonsBold ;
+  font-family: TheSeasonsBold;
 }
 .results .results_desc {
   font-family: TheSeasonsLight;
@@ -87,6 +86,9 @@
   width: max-content;
   will-change: transform;
   animation: slide-y var(--dur, 12s) linear infinite alternate;
+}
+.results .clients_box .logo_strip:hover {
+  animation-play-state: paused; /* stopira animaciju dok je miš preko */
 }
 .results .clients_box .logo_strip:nth-child(1) {
   --dur: 8s;
@@ -232,8 +234,8 @@
     --vw: min(750px, 100%);
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 70px;
-    margin-bottom: 70px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     position: relative;
   }
   .results .results_text {

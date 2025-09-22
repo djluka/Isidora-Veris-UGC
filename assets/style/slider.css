@@ -1,7 +1,5 @@
 /* Default za telefon (mobile-first) */
 .slider_section {
-  margin-top: 50px;
-
   position: relative;
   display: flex;
   justify-content: center;
@@ -9,65 +7,48 @@
   flex-direction: column;
   padding: 0;
 
-  max-width: 100vw;
+  max-width: 100%;
   max-height: fit-content;
   position: relative;
-
+  margin-top: 50px;
 }
 .slider_section::after {
-    content: "";
-    width: 100vw;
-    height: 103%;
-    display: block;
-    background-color: #f4eade;
-    position: absolute;
-    top: -20px;
-    z-index: -1;
-  }
+  content: "";
+  width: 100%;
+  height: 103%;
+  display: block;
+  background-color: #f4eade;
+  position: absolute;
+  top: -20px;
+  z-index: -1;
+}
 .slider_section .header_txt {
-
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  margin-bottom: 10px;
-  margin-top: 0px;
-
-}
-.slider_section .header_txt p:nth-child(1) {
+  margin: 5px;
   margin-bottom: 5px;
-  font-size: 2.3em;
+}
+.slider_section .header_txt p {
+  margin-bottom: 5px;
+  font-size: 2em;
   letter-spacing: 1px;
   font-family: TheSeasonsBold;
 }
 .slider_section .header_txt p:nth-child(2) {
-  margin-bottom: 5px;
   font-size: 1em;
   font-weight: normal;
-  color: #333;
-  letter-spacing: 1px;
   font-family: TheSeasonsLight;
-  position: relative;
   text-transform: lowercase;
 }
-/* .slider_section .header p:nth-child(2)::before{
-  content: "";
-  width: 2px;
-  height: 20px;
-  background-color:black;
-  display: block;
-  margin: 0 auto;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translate(Y -50%);
-} */
+
 .ugc {
   max-height: 100vh;
   position: relative;
   padding: 0;
 }
-.content{
+.content {
   margin-top: 50px;
 }
 .slider_wrap {
@@ -353,13 +334,15 @@ a.more_on_instagram img {
     top: 50px;
     z-index: -1;
   }
-  .slider_section .header p:nth-child(1) {
-    margin-bottom: 5px;
-    font-size: 3em;
-  }
-  .slider_section .header p:nth-child(2) {
-    font-size: 1.5em;
-  }
+.slider_section .header_txt p {
+  font-size: 2.5em;
+
+}
+.slider_section .header_txt p:nth-child(2) {
+  font-size: 1.5em;
+
+}
+
   .slider_wrap {
     max-width: 1000px;
     padding: 0;

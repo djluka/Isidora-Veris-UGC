@@ -8,27 +8,34 @@
 
   width: 100%;
   height: 100%;
-  background: #f4eade;
 
+  --img-dimensions: 250px;
   display: none;
 }
-.comments img {
-  width: 100px;
+.comment img {
+  width: 50px;
 }
 .comment {
-  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #f4eadeec;
+  backdrop-filter: blur(10px);
+
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
   padding: 20px;
+  border-radius: 50px;
+
+  display: none;
 }
 .comment_header {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: column-reverse;
+  justify-content: space-around;
   align-items: center;
 }
 .comment_header p {
@@ -36,9 +43,86 @@
   color: #57432a;
   font-weight: 800;
   text-align: center;
-  margin-top: 10px;
+  font-family: TheSeasonsBold;
 }
 .comment_header img {
-  width: 100%;
-  height: 100%;
+  width: var(--img-dimensions);
+  height: var(--img-dimensions);
+}
+.comment button {
+  position: relative;
+  /* bottom: 10px;
+  right: 10px; */
+  border-radius: 200px;
+  font-size: 2em;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color: white;
+  background-color: #57432a;
+  border: none;
+}
+.comment_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 90%;
+}
+p.comment_txt {
+  font-size: 1em;
+  padding: 10px;
+  font-family: CormorantGaramond;
+}
+@media (min-width: 768px) {
+  .comment {
+    padding: 30px;
+  }
+  p.comment_txt {
+    font-size: 1.2em;
+    padding: 20px;
+    font-family: CormorantGaramond;
+  }
+  .comment button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+  .comment_header img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .comment {
+    flex-direction: row;
+  }
+  p.comment_txt {
+    font-size: 1.5em;
+  }
+
+  .comment_header p {
+    font-size: 2.5em;
+  }
+  .comment_header img {
+    width: 300px;
+    height: 300px;
+  }
+  .comment .commetn_rating img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.comments.active {
+  display: block;
+}
+.comment.active {
+  display: flex; /* VIDLJIV samo aktivni */
 }

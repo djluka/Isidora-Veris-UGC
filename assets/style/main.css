@@ -148,7 +148,7 @@ section.header .text .instagram_highlights .highlights a div {
   padding: 30px;
   margin: 10px;
   border-radius: 50px;
-  
+
   position: relative;
   z-index: 3;
 }
@@ -217,11 +217,12 @@ section.header .text .instagram_highlights p.highlight_desc {
     transform: translateX(-50%);
   }
   section.header .text .instagram_highlights img.point_arrow {
-    max-width: 110px;
-    rotate: 65deg;
+    max-width: 80px;
+    rotate: -90deg;
+    transform: scaleX(-1);
     position: absolute;
-    top: -60px;
-    left: -60px;
+    top: -80px;
+    right: 50px;
   }
 }
 
@@ -265,10 +266,10 @@ section.header .text .instagram_highlights p.highlight_desc {
   }
   section.header .text .instagram_highlights img.point_arrow {
     max-width: 110px;
-    rotate: 70deg;
-    transform: scaleY(-1);
+    rotate: -90deg;
+    transform: scaleX(-1);
     position: absolute;
-    top: -110px;
-    left: 58%;
+    top: -100px;
+    right: 20px;
   }
 }
