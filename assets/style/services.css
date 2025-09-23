@@ -1,3 +1,53 @@
 .services{
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top:50px ;
+
+    position: relative;
+}
+.services p.tittle{
+    font-size: 2em;
+    font-family: TheSeasonsBold;
+    margin: 10px;
+}
+.services .services_box{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:20px
+}
+.services .services_box .service_card{
+  background-color: #f4eade;
+    margin: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    text-align: center;
+    border: 2px solid transparent;
+
+    max-width: 300px;
+    border-radius: 50px;
+    padding: 20px;
+    transition: 0.3s all ease-in;
+}
+.services .services_box .service_card:hover{
+    border: 2px solid #57432a59;
+    transition: 0.3s all ease-in-out;
+}
+.services .services_box .service_card p:nth-child(1){
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: TheSeasonsBold;
+}
+.services .services_box .service_card p:nth-child(2){
+    font-size: 1.2em;
+    font-weight: normal;
+    font-family: CormorantGaramond;
 }
