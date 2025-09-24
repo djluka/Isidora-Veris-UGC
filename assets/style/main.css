@@ -143,6 +143,7 @@ section.header .text .instagram_highlights .highlights a {
   text-decoration: none;
   color: black;
   font-family: CormorantGaramond;
+  font-size: 1.2em;
 }
 section.header .text .instagram_highlights .highlights a div {
   padding: 30px;
@@ -271,5 +272,11 @@ section.header .text .instagram_highlights p.highlight_desc {
     position: absolute;
     top: -100px;
     right: 20px;
+  }
+  section.header .text .instagram_highlights .highlights a {
+    font-size: 1.3em;
+  }
+  section.header .text .instagram_highlights p.highlight_desc {
+    font-size: 1.1em;
   }
 }

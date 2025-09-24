@@ -90,6 +90,9 @@
 .results .clients_box .logo_strip:hover {
   animation-play-state: paused; /* stopira animaciju dok je miš preko */
 }
+.results .clients_box .logo_strip:active {
+  animation-play-state: paused; /* stopira animaciju dok je miš preko */
+}
 .results .clients_box .logo_strip:nth-child(1) {
   --dur: 8s;
 }

@@ -13,10 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!targetId) return; // logo bez data-logo -> ignorisi klik
 
       // prikaži kontejner ako je skriven
-      if (
-        comments &&
-        !comments.classList.contains("active")
-      ) {
+      if (comments && !comments.classList.contains("active")) {
         comments.classList.add("active");
       }
 
@@ -26,8 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       if (targetComment) {
-        targetComment.classList.add("active");
         comments.classList.add("active");
+        targetComment.classList.add("active");
 
         console.log(targetComment);
       } else {
@@ -39,17 +36,21 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".close_comment").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const c = e.target.closest(".comment");
-      if (!c) return;
-      c.classList.remove("active");
       const comments = document.querySelector(`.comments`);
+      if (!c) return;
 
-      comments.classList.remove("active");
+      c.classList.remove("active");
+      c.classList.add("off_stage");
 
-      // ako nema više aktivnih komentara, sakrij i kontejner
-      const anyActive = document.querySelector(".comment.active");
-      if (!anyActive && comments) {
-        comments.classList.remove("active");
-      }
+      c.addEventListener("animationend", () => {
+        c.classList.remove("off_stage");
+
+        // Ako više nema aktivnih – sakrij i kontejner
+        const anyActive = document.querySelector(".comment.active");
+        if (!anyActive && comments) {
+          comments.classList.remove("active");
+        }
+      }, { once: true });
     });
   });
 });

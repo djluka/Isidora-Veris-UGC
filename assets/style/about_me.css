@@ -100,7 +100,7 @@ body {
   padding-block: clamp(24px, 6vh, 48px);
 
   /* Scroll-driven animation (shows final state when unsupported) */
-  animation: on_stage 0.5s ease both;
+  animation: text_scroll_on_stage 0.5s ease both;
   animation-timeline: view();
   animation-range: entry 0% cover 50%;
   padding: 0;
@@ -117,7 +117,7 @@ body {
 }
 
 /* ===== ANIMATIONS ===== */
-@keyframes on_stage {
+@keyframes text_scroll_on_stage {
   from {
     opacity: 0;
     transform: scale(0.5);

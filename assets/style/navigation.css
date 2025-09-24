@@ -54,13 +54,12 @@ nav .site_title p:nth-child(2) {
   position: relative;
   width: 35px;
   height: 35px;
+  
 }
 #menu_toggle::after {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #fff;
-  border-radius: 50px;
   padding: 10px;
   position: absolute;
   left: 50%;
@@ -78,6 +77,7 @@ nav .site_title p:nth-child(2) {
   position: relative;
   padding: 0;
   margin: 0;
+  
 }
 #menu_toggle .burger_line {
   position: absolute;
@@ -94,6 +94,8 @@ nav .site_title p:nth-child(2) {
   margin: 5px 0 5px 0;
   position: relative;
   background-color: #F4EADE;
+    background-color: #fff;
+
   border-radius: 3px;
 
   z-index: 1;
@@ -136,7 +138,7 @@ nav .site_title p:nth-child(2) {
 #burger_menu li a {
   text-decoration: none;
   color: #57432a;
-font-family: TheSeassonsBold;
+  font-family: TheSeassonsBold;
   font-size: 14pt;
   cursor: pointer;
   padding: 5px;
@@ -162,18 +164,18 @@ font-family: TheSeassonsBold;
 
 #menu_toggle input:checked + .burger_line span:nth-child(1) {
   transform: rotate(45deg) translate(4px, -7px);
-  background: #F4EADE;
+  background-color: #fff;
 }
 
 #menu_toggle input:checked ~ .burger_line span:nth-child(2) {
   transform: rotate(0deg) scale(0.2, 0.2);
   opacity: 0;
-  background: #F4EADE;
+  background-color: #fff;
 }
 
 #menu_toggle input:checked ~ .burger_line span:nth-child(3) {
   transform: rotate(-45deg) translate(2px, 5px);
-  background: #F4EADE;
+  background-color: #fff;
 }
 .no_scroll {
   overflow: hidden;

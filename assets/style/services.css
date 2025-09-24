@@ -1,53 +1,101 @@
-.services{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-top:50px ;
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 50px;
 
-    position: relative;
+  position: relative;
 }
-.services p.tittle{
+.services p.tittle {
+  font-size: 2em;
+  font-family: TheSeasonsBold;
+  margin: 10px;
+}
+.services .services_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.services .services_box .service_card {
+  text-decoration: none;
+
+  background-color: #d5bdaf;
+  color: white;
+  margin: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  text-align: center;
+  border: 2px solid transparent;
+
+  max-width: 300px;
+  border-radius: 50px;
+  padding: 20px;
+  transition: 0.3s all ease-in;
+
+  -webkit-box-shadow: 0px 7px 11px 6px transparent;
+  box-shadow: 0px 7px 11px 6px transparent;
+}
+.services .services_box .service_card:hover,
+.services .services_box .service_card:active {
+  -webkit-box-shadow: 0px 7px 11px 6px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 7px 11px 6px rgba(0, 0, 0, 0.28);
+  scale: 1.01;
+  border: 2px solid #57432a59;
+
+  transition: 0.3s all ease-in-out;
+}
+.services .services_box .service_card p:nth-child(1) {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: TheSeasonsBold;
+}
+.services .services_box .service_card p:nth-child(2) {
+  font-size: 1.2em;
+  font-weight: normal;
+  font-family: CormorantGaramond;
+}
+.services .services_box .service_card p:nth-child(3) {
+  font-size: 1.3em;
+  font-weight: normal;
+  font-family: CormorantGaramond;
+  border: 1px solid white;
+  color: #d5bdaf;
+  background-color: white;
+  border-radius: 50px;
+  padding: 12px;
+}
+@media (min-width: 1200px) {
+  .services .services_box .service_card {
+    height: 50vh;
+      max-width: 350px;
+      gap: 30px;
+
+  }
+  .services .services_box .service_card p:nth-child(1) {
     font-size: 2em;
-    font-family: TheSeasonsBold;
-    margin: 10px;
-}
-.services .services_box{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:20px
-}
-.services .services_box .service_card{
-  background-color: #f4eade;
-    margin: 5px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    text-align: center;
-    border: 2px solid transparent;
-
-    max-width: 300px;
-    border-radius: 50px;
-    padding: 20px;
-    transition: 0.3s all ease-in;
-}
-.services .services_box .service_card:hover{
-    border: 2px solid #57432a59;
-    transition: 0.3s all ease-in-out;
-}
-.services .services_box .service_card p:nth-child(1){
-    font-size: 1.5em;
     font-weight: bold;
     font-family: TheSeasonsBold;
-}
-.services .services_box .service_card p:nth-child(2){
-    font-size: 1.2em;
+  }
+  .services .services_box .service_card p:nth-child(2) {
+    font-size: 1.5em;
     font-weight: normal;
     font-family: CormorantGaramond;
+  }
+  .services .services_box .service_card p:nth-child(3) {
+    font-size: 1.5em;
+    font-weight: normal;
+    font-family: CormorantGaramond;
+    border: 1px solid white;
+    color: #d5bdaf;
+    background-color: white;
+    border-radius: 50px;
+    padding: 12px;
+  }
 }
