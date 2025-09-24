@@ -122,5 +122,5 @@
   }
 }
 /* Veći ekran (npr. tablet) */
-/* @media (min-width: 768px) {}
-@media only screen and (max-width: 600px) {} */
+@media (min-width: 768px) {}
+@media only screen and (max-width: 600px) {}
