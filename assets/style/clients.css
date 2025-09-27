@@ -21,7 +21,7 @@
   position: relative;
   margin-bottom: 30px;
 }
-.clients .clients_text p.clients_header {
+.clients .clients_text p.client_header {
   font-family: RomateHood;
   font-size: 2.5em;
   font-weight: 100;
@@ -240,6 +240,7 @@
     margin-top: 100px;
     margin-bottom: 100px;
     position: relative;
+    
   }
   .clients .clients_text {
     display: flex;
@@ -247,8 +248,9 @@
     align-items: center;
     flex-direction: column;
     position: relative;
+    padding: 20px;
   }
-  .clients .clients_text p.clients_header {
+  .clients .clients_text p.client_header {
     font-family: RomateHood;
     font-size: 5em;
     font-weight: 100;
@@ -325,6 +327,7 @@
     margin: 0;
     padding: 0;
     min-height: 500px;
+
   }
   .clients .clients_box .logo_strip {
     display: inline-flex;
