@@ -1,24 +1,23 @@
 /* mobile first */
+footer {
+  max-height: 100vh;
+}
 .page_wrapper_footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  max-width: 1300px;
   margin: 0 auto;
   padding: 40px;
 
-  transition-delay: 0.4s;
-
   font-family: TheSeasons;
-  max-height: 100vh;
 }
 
-.footer img {
-  max-width: 490px;
+footer img {
+  max-width: 300px;
   margin: 0 auto;
 }
-.footer .txt_box {
+footer .txt_box {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -26,17 +25,17 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.footer .txt_box p:nth-child(1) {
+footer .txt_box p:nth-child(1) {
   margin-top: 30px;
   font-size: 3em;
   text-align: center;
   font-family: TheSeasons;
 }
-.footer .txt_box p:nth-child(2) {
+footer .txt_box p:nth-child(2) {
   font-size: 2em;
   margin-top: 30px;
 }
-.footer .txt_box a {
+footer .txt_box a {
   text-decoration: none;
   color: black;
   border: 1px solid black;
@@ -46,20 +45,21 @@
   border-radius: 50px;
   transition: 0.2s;
 }
-.footer .txt_box a:hover {
+footer .txt_box a:hover {
   background-color: black;
   color: white;
   transition: 0.2s;
 }
-.footer .txt_box a:active {
+footer .txt_box a:active {
   transform: scale(1.1);
   background-color: black;
 }
-.footer a.credits {
+/* credits */
+footer a.credits {
   text-decoration: none;
   color: grey;
 
-  font-family: TheSeasonsBold;
+  font-family: CormorantGaramond;
 
   background-color: rgba(128, 128, 128, 0.034);
 
@@ -76,7 +76,7 @@
   text-align: center;
 }
 
-.footer a.credits:hover {
+footer a.credits:hover {
   text-decoration: underline;
 }
 
@@ -103,17 +103,17 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .footer img {
+  footer img {
     max-width: 320px;
     margin: 0 auto;
   }
-  .footer .txt_box p:nth-child(1) {
+  footer .txt_box p:nth-child(1) {
     font-size: 2em;
   }
-  .footer .txt_box p:nth-child(2) {
+  footer .txt_box p:nth-child(2) {
     font-size: 1.5em;
   }
-  .footer .txt_box a {
+  footer .txt_box a {
     padding: 20px;
     font-size: 1.5em;
   }
@@ -121,5 +121,12 @@
 /* Veći ekran (npr. tablet) */
 @media (min-width: 768px) {
 }
-@media only screen and (max-width: 600px) {
+@media (min-width: 1200px) {
+  .page_wrapper_footer {
+  max-width: 1500px;
+}
+  footer img {
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }

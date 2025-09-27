@@ -8,7 +8,7 @@
 
   position: relative;
 }
-.services p.tittle {
+.services p.title {
   font-size: 2em;
   font-family: TheSeasonsBold;
   margin: 10px;
@@ -30,7 +30,8 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
+  min-height: 50vh;
+  max-height: 60vh;
   text-align: center;
   border: 2px solid transparent;
 
@@ -72,11 +73,14 @@
   padding: 12px;
 }
 @media (min-width: 1200px) {
+  .services .services_box{
+    gap: 10px;
+  }
   .services .services_box .service_card {
-    height: 50vh;
       max-width: 350px;
-      gap: 30px;
-
+      max-height: 60vh;
+      min-height: 50vh;
+    
   }
   .services .services_box .service_card p:nth-child(1) {
     font-size: 2em;

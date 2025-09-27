@@ -24,7 +24,7 @@ body {
   margin: 0 auto;
 }
 
-section.header {
+.main {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,21 +32,21 @@ section.header {
   position: relative;
 }
 
-section.header .profile_wrapper {
+.main .profile_wrapper {
   position: relative;
   max-width: 250px;
   display: block;
   margin: 50px auto;
 }
 
-section.header video.profile {
+.main video.profile {
   width: 100%;
   height: 100%;
   display: block;
   z-index: 1;
 }
 
-section.header .profile_wrapper::after {
+.main .profile_wrapper::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -58,7 +58,7 @@ section.header .profile_wrapper::after {
   z-index: -1;
 }
 
-section.header .text {
+.main .main_text_box {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -68,7 +68,7 @@ section.header .text {
   transition-delay: 0.2s;
 }
 
-section.header .text p.header_txt {
+.main .main_text_box p.main_txt {
   margin: 0 auto;
   text-align: center;
   letter-spacing: 2px;
@@ -80,12 +80,12 @@ section.header .text p.header_txt {
   justify-content: center;
   align-items: center;
 }
-section.header .text p.header_txt > span {
+.main .main_text_box p.main_txt > span {
   font-size: 16pt;
   font-family: TheSeasonsBold;
 }
 
-section.header .text p.description_txt {
+.main .main_text_box p.description_txt {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 50px;
@@ -94,20 +94,20 @@ section.header .text p.description_txt {
   font-family: CormorantGaramond;
 }
 
-section.header .text .contact_me {
+.main .main_text_box .contact_me {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-section.header .text .contact_me img {
+.main .main_text_box .contact_me img {
   width: 40px;
   height: 40px;
 }
 
-section.header .text .contact_me,
-section.header .text .contact_me p {
+.main .main_text_box .contact_me,
+.main .main_text_box .contact_me p {
   margin: 5px;
   font-size: 16pt;
   text-decoration: none;
@@ -115,13 +115,13 @@ section.header .text .contact_me p {
   font-family: CormorantGaramond;
 }
 
-section.header .text .instagram_highlights {
+.main .main_text_box .instagram_highlights {
   position: relative;
   right: -50%;
   top: 10px;
   transform: translateX(-50%);
 }
-section.header .text .instagram_highlights img.point_arrow {
+.main .main_text_box .instagram_highlights img.point_arrow {
   max-width: 80px;
   rotate: -90deg;
   transform: scaleX(-1);
@@ -129,12 +129,12 @@ section.header .text .instagram_highlights img.point_arrow {
   top: -70px;
   right: 55px;
 }
-section.header .text .instagram_highlights .highlights {
+.main .main_text_box .instagram_highlights .highlights {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-section.header .text .instagram_highlights .highlights a {
+.main .main_text_box .instagram_highlights .highlights a {
   margin-top: 0px;
   display: flex;
   justify-content: center;
@@ -145,7 +145,7 @@ section.header .text .instagram_highlights .highlights a {
   font-family: CormorantGaramond;
   font-size: 1.2em;
 }
-section.header .text .instagram_highlights .highlights a div {
+.main .main_text_box .instagram_highlights .highlights a div {
   padding: 30px;
   margin: 10px;
   border-radius: 50px;
@@ -153,7 +153,7 @@ section.header .text .instagram_highlights .highlights a div {
   position: relative;
   z-index: 3;
 }
-section.header .text .instagram_highlights .highlights a div::after {
+.main .main_text_box .instagram_highlights .highlights a div::after {
   content: "";
   background-color: #dbdee200;
   position: absolute;
@@ -165,28 +165,28 @@ section.header .text .instagram_highlights .highlights a div::after {
   padding: 33px;
 }
 /* Content */
-section.header .text .instagram_highlights .highlights a:nth-child(1) > div {
+.main .main_text_box .instagram_highlights .highlights a:nth-child(1) > div {
   background-color: #d6ccc2;
 }
 /* UGC */
-section.header .text .instagram_highlights .highlights a:nth-child(2) > div {
+.main .main_text_box .instagram_highlights .highlights a:nth-child(2) > div {
   background-image: url(/assets/ugc_highlights.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 /* BTS */
-section.header .text .instagram_highlights .highlights a:nth-child(3) > div {
+.main .main_text_box .instagram_highlights .highlights a:nth-child(3) > div {
   background-color: #e3d5ca;
 }
 /* Product */
-section.header .text .instagram_highlights .highlights a:nth-child(4) > div {
+.main .main_text_box .instagram_highlights .highlights a:nth-child(4) > div {
   background-image: url(/assets/product_highlights.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-section.header .text .instagram_highlights p.highlight_desc {
+.main .main_text_box .instagram_highlights p.highlight_desc {
   padding: 10px;
   text-align: center;
   font-family: TheSeasonsLight;
@@ -199,25 +199,25 @@ section.header .text .instagram_highlights p.highlight_desc {
     max-width: 750px;
   }
 
-  section.header {
+  .main {
     max-height: 150vh;
   }
-  section.header .profile_wrapper {
+  .main .profile_wrapper {
     max-width: 300px;
   }
-  section.header .text p.header_txt {
+  .main .main_text_box p.main_txt {
     font-size: 25pt;
   }
-  section.header .text p.header_txt span {
+  .main .main_text_box p.main_txt span {
     font-size: 20pt;
   }
-  section.header .text .instagram_highlights {
+  .main .main_text_box .instagram_highlights {
     position: relative;
     right: -50%;
     top: 20px;
     transform: translateX(-50%);
   }
-  section.header .text .instagram_highlights img.point_arrow {
+  .main .main_text_box .instagram_highlights img.point_arrow {
     max-width: 80px;
     rotate: -90deg;
     transform: scaleX(-1);
@@ -230,42 +230,43 @@ section.header .text .instagram_highlights p.highlight_desc {
 /* Još veći ekran (npr. desktop) */
 @media (min-width: 1200px) {
   .page_wrapper {
-    max-width: 1200px;
+    max-width: 1100px;
   }
-  section.header {
+  .main {
     max-height: 100vh;
   }
-  section.header .profile_wrapper {
+  .main .profile_wrapper {
     max-width: 350px;
+    margin: 20px auto;
   }
 
-  section.header .proffile_wrapper::after {
+  .main .proffile_wrapper::after {
     top: 50px;
     left: -50px;
   }
 
-  section.header .text {
+  .main .main_text_box {
     max-width: 500px;
   }
 
-  section.header .text p.header_txt {
+  .main .main_text_box p.main_txt {
     letter-spacing: 5px;
     font-size: 40pt;
   }
-  section.header .text p.header_txt > span {
+  .main .main_text_box p.main_txt > span {
     font-size: 25pt;
   }
 
-  section.header .text p.description_txt {
+  .main .main_text_box p.description_txt {
     font-size: 17pt;
   }
-  section.header .text .instagram_highlights {
+  .main .main_text_box .instagram_highlights {
     position: relative;
     left: 0%;
     top: 40px;
     transform: translateX(0%);
   }
-  section.header .text .instagram_highlights img.point_arrow {
+  .main .main_text_box .instagram_highlights img.point_arrow {
     max-width: 110px;
     rotate: -90deg;
     transform: scaleX(-1);
@@ -273,10 +274,10 @@ section.header .text .instagram_highlights p.highlight_desc {
     top: -100px;
     right: 20px;
   }
-  section.header .text .instagram_highlights .highlights a {
+  .main .main_text_box .instagram_highlights .highlights a {
     font-size: 1.3em;
   }
-  section.header .text .instagram_highlights p.highlight_desc {
+  .main .main_text_box .instagram_highlights p.highlight_desc {
     font-size: 1.1em;
   }
 }

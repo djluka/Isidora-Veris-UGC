@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Isidoraverisugc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Studio Veriš – UGC & Video | Isidora Veriš</title>
+
+    <meta
+      name="description"
+      content="UGC i video sadržaj za brendove – autentičan storytelling i produkcija. Novi Sad, Srbija. Kontakt: info@isidoraverisugc.com"
+    />
+    <meta property="og:title" content="Studio Veriš – UGC & Video" />
+    <meta
+      property="og:description"
+      content="Autentičan UGC i video produkcija za brendove."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/content/images/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.ico" />
+
     <link rel="stylesheet" href="assets/style/fonts.css" />
     <link rel="stylesheet" href="assets/style/main.css" />
-    <link rel="stylesheet" href="assets/style/results.css" />
+    <link rel="stylesheet" href="assets/style/clients.css" />
     <link rel="stylesheet" href="assets/style/slider.css" />
     <link rel="stylesheet" href="assets/style/about_me.css" />
     <link rel="stylesheet" href="assets/style/services.css" />
@@ -15,7 +30,7 @@
   </head>
 
   <body>
-    <nav>
+    <nav aria-label="Glavna navigacija">
       <ul class="menu">
         <li>
           <div class="site_title">
@@ -38,7 +53,12 @@
         </div>
 
         <div id="menu_toggle">
-          <input type="checkbox" id="menu_checkbox" />
+          <input
+            type="checkbox"
+            id="menu_checkbox"
+            aria-controls="burger_menu"
+            aria-label="Otvori/zatvori meni"
+          />
           <div class="burger_line">
             <span></span>
             <span></span>
@@ -85,8 +105,7 @@
       </div>
     </nav>
     <div class="page_wrapper">
-      <!--Header-->
-      <section class="header">
+      <div class="main">
         <div class="profile_wrapper">
           <video
             src="/content/videos/profile_video.mov"
@@ -95,15 +114,15 @@
             autoplay
             playsinline
             loop
-            loading="lazy"
+            preload="metadata"
           ></video>
         </div>
-        <div class="text">
-          <p class="header_txt">
+        <div class="main_text_box">
+          <p class="main_txt">
             ISIDORA VERIŠ<br /><span>UGC & Content Creator</span>
           </p>
 
-          <p class="hidden description_txt">
+          <p class="description_txt">
             Pomažem brendovima da se povežu sa publikom kroz autentičan
             storytelling i estetičan sadržaj. Fokusiram se na predstavljanje
             proizvoda i vrednosti brenda na način koji povećava vidljivost,
@@ -120,7 +139,6 @@
             />
             <p>info@isidoraverisugc.com</p>
           </a>
-
           <a
             class="contact_me"
             href="https://www.instagram.com/isidoraverisugc/"
@@ -134,7 +152,6 @@
             />
             <p>isidoraverisugc</p>
           </a>
-
           <div class="contact_me">
             <img
               class="location"
@@ -186,7 +203,7 @@
             </p>
           </div>
         </div>
-      </section>
+      </div>
       <!-- Scroll to top -->
       <div class="scroll_to_top">
         <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
@@ -204,6 +221,7 @@
             </button>
 
             <div class="slider">
+              <!-- Multiaciv -->
               <div class="card">
                 <div class="video_wrapper">
                   <video
@@ -224,7 +242,7 @@
                     </div>
                     <div class="views">
                       <img src="/assets/viewers.png" alt="" />
-                      <p class="views">10046</p>
+                      <p class="views_value">10046</p>
                     </div>
                   </div>
                   <p class="desc">
@@ -234,6 +252,7 @@
                   </p>
                 </div>
               </div>
+              <!-- Biguanelle -->
               <div class="card">
                 <div class="video_wrapper">
                   <video
@@ -254,7 +273,7 @@
                     </div>
                     <div class="views">
                       <img src="/assets/viewers.png" alt="" />
-                      <p class="views">10046</p>
+                      <p class="views_value">10046</p>
                     </div>
                   </div>
                   <p class="desc">
@@ -264,6 +283,7 @@
                   </p>
                 </div>
               </div>
+              <!-- Soppy -->
               <div class="card">
                 <div class="video_wrapper">
                   <video
@@ -284,7 +304,7 @@
                     </div>
                     <div class="views">
                       <img src="/assets/viewers.png" alt="" />
-                      <p class="views">10046</p>
+                      <p class="views_value">10046</p>
                     </div>
                   </div>
                   <p class="desc">
@@ -294,6 +314,7 @@
                   </p>
                 </div>
               </div>
+              <!-- Derma&Beauty -->
               <div class="card">
                 <div class="video_wrapper">
                   <video
@@ -314,7 +335,7 @@
                     </div>
                     <div class="views">
                       <img src="/assets/viewers.png" alt="" />
-                      <p class="views">10046</p>
+                      <p class="views_value">10046</p>
                     </div>
                   </div>
                   <p class="desc">
@@ -324,6 +345,7 @@
                   </p>
                 </div>
               </div>
+              <!-- Ellie&Mo -->
               <div class="card">
                 <div class="video_wrapper">
                   <video
@@ -344,7 +366,7 @@
                     </div>
                     <div class="views">
                       <img src="/assets/viewers.png" alt="" />
-                      <p class="views">10046</p>
+                      <p class="views_value">10046</p>
                     </div>
                   </div>
                   <p class="desc">
@@ -362,7 +384,7 @@
               >
                 <div class="more_on_instagram_content">
                   <p class="header">Više na mom instagram profilu</p>
-                  <img src="assets/instagram.webp" alt="loading..." />
+                  <img src="assets/instagram.png" alt="loading..." />
                 </div>
               </a>
             </div>
@@ -379,7 +401,7 @@
             </button>
           </div>
         </div>
-        <div class="content">
+        <div class="content_branding">
           <div class="header_txt">
             <p>CONTENT |</p>
             <p>branding</p>
@@ -389,6 +411,7 @@
               <img src="/assets/arrow.webp" loading="lazy" alt="Loading..." />
             </button>
             <div class="slider">
+              <!-- MLaf -->
               <div class="card">
                 <div class="video_wrapper">
                   <video
@@ -409,7 +432,7 @@
                     </div>
                     <div class="views">
                       <img src="/assets/viewers.png" alt="" />
-                      <p class="views">10046</p>
+                      <p class="views_value">10046</p>
                     </div>
                   </div>
                   <p class="desc">
@@ -419,6 +442,7 @@
                   </p>
                 </div>
               </div>
+              <!-- Ellie&Mo -->
               <div class="card">
                 <div class="video_wrapper">
                   <video
@@ -439,7 +463,7 @@
                     </div>
                     <div class="views">
                       <img src="/assets/viewers.png" alt="" />
-                      <p class="views">10046</p>
+                      <p class="views_value">10046</p>
                     </div>
                   </div>
                   <p class="desc">
@@ -449,6 +473,7 @@
                   </p>
                 </div>
               </div>
+              <!-- Soppy -->
               <div class="card">
                 <div class="video_wrapper">
                   <video
@@ -469,7 +494,7 @@
                     </div>
                     <div class="views">
                       <img src="/assets/viewers.png" alt="" />
-                      <p class="views">10046</p>
+                      <p class="views_value">10046</p>
                     </div>
                   </div>
                   <p class="desc">
@@ -479,6 +504,7 @@
                   </p>
                 </div>
               </div>
+              <!-- Professional -->
               <div class="card">
                 <div class="video_wrapper">
                   <video
@@ -499,7 +525,7 @@
                     </div>
                     <div class="views">
                       <img src="/assets/viewers.png" alt="" />
-                      <p class="views">10046</p>
+                      <p class="views_value">10046</p>
                     </div>
                   </div>
                   <p class="desc">
@@ -509,6 +535,7 @@
                   </p>
                 </div>
               </div>
+              <!-- MondoBambino -->
               <div class="card">
                 <div class="video_wrapper">
                   <video
@@ -529,7 +556,7 @@
                     </div>
                     <div class="views">
                       <img src="/assets/viewers.png" alt="" />
-                      <p class="views">10046</p>
+                      <p class="views_value">10046</p>
                     </div>
                   </div>
                   <p class="desc">
@@ -547,7 +574,7 @@
               >
                 <div class="more_on_instagram_content">
                   <p class="header">Više na mom instagram profilu</p>
-                  <img src="assets/instagram.webp" alt="loading..." />
+                  <img src="assets/instagram.png" alt="loading..." />
                 </div>
               </a>
             </div>
@@ -568,7 +595,7 @@
         </div>
       </div>
       <div class="services" id="services">
-        <p class="tittle">Usluge</p>
+        <p class="title">Usluge</p>
         <div class="services_box">
           <a href="mailto:info@isidoraverisugc.com" class="service_card">
             <p class="service_header">Kreiranje UGC sadržaja</p>
@@ -601,11 +628,11 @@
         </div>
       </div>
       <!--Rezultati-->
-      <div class="results" id="clients">
-        <div class="results_text">
-          <p class="results_header">rezultati</p>
-          <p class="results_title1">PREKO 30</p>
-          <p class="results_title2">zadovoljnih klijenata</p>
+      <div class="clients" id="clients">
+        <div class="clients_text">
+          <p class="client_header">rezultati</p>
+          <p class="clients_title1">PREKO 30</p>
+          <p class="clients_title2">zadovoljnih klijenata</p>
         </div>
         <div class="clients_box">
           <div class="logo_strip">
@@ -694,7 +721,7 @@
             </button>
           </div>
         </div>
-        <p class="results_desc">Klikni na logo za iskustva klijenata</p>
+        <p class="clients_desc">Klikni na logo za iskustva klijenata</p>
         <div class="comments">
           <div class="comment" data-logo="11">
             <div class="comment_header">
@@ -708,7 +735,7 @@
                 organskih, ali i reklama koje su namenjene za oglašavanje. Rado
                 je uvek preporučujemo.
               </p>
-              <div class="commetn_rating">
+              <div class="comment_rating">
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
@@ -730,7 +757,7 @@
                 pravila privukao je mnogo pažnje i bio je potpuno jedinstven na
                 mrežama. Nastavljamo saradnju na obostrano zadovoljstvo!
               </p>
-              <div class="commetn_rating">
+              <div class="comment_rating">
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
@@ -753,7 +780,7 @@
                 što upotpunjuje moj rad. Kreira sadržaj tačno po mojoj meri i
                 uvek ću je sa zadovoljstvom preporučiti!
               </p>
-              <div class="commetn_rating">
+              <div class="comment_rating">
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
@@ -776,7 +803,7 @@
                 isporučeni na vreme. Topla preporuka za svakoga ko želi
                 pouzdanog i talentovanog saradnika!
               </p>
-              <div class="commetn_rating">
+              <div class="comment_rating">
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
@@ -799,7 +826,7 @@
                 isporučeni na vreme. Topla preporuka za svakoga ko želi
                 pouzdanog i talentovanog saradnika!
               </p>
-              <div class="commetn_rating">
+              <div class="comment_rating">
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
@@ -823,7 +850,7 @@
                 Komunikacija sa njom je laka i prijatna, zato sa zadovoljstvom
                 nastavljamo saradnju! Toplo preporučujemo i vama!
               </p>
-              <div class="commetn_rating">
+              <div class="comment_rating">
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
@@ -847,7 +874,7 @@
                 sada koja nam je mnogo značila za povećanje obima posla. Sve
                 preporuke!
               </p>
-              <div class="commetn_rating">
+              <div class="comment_rating">
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
                 <img src="/assets/star.webp" alt="Loading..." />
@@ -866,7 +893,6 @@
         <video
           src="/content/videos/loop_video.MOV"
           class="profile_loop_video sticky"
-          id="myElement"
           muted
           autoplay
           playsinline
@@ -887,7 +913,7 @@
         </div>
       </div>
     </div>
-    <div class="footer" id="contact">
+    <footer id="contact">
       <div class="page_wrapper_footer">
         <img
           src="/content/images/profile2.webp"
@@ -902,16 +928,22 @@
           </a>
         </div>
       </div>
-      <a class="credits" href="mailto:luka.djordjevic7017@gmail.com" data-tooltip="CLICK FOR MY MAIL" >
-        &copy; 2025 All rights reserved | Luka Djordjevic
-      </a>
-    </div>
+      <div class="credits">
+        <a
+          class="credits"
+          href="mailto:luka.djordjevic7017@gmail.com"
+          data-tooltip="CLICK FOR MY MAIL"
+        >
+          &copy; 2025 All rights reserved | Luka Đorđević
+        </a>
+      </div>
+    </footer>
     <script src="scripts/burger_menu.js"></script>
     <script src="scripts/scroll_to_top.js"></script>
     <script src="scripts/slider.js"></script>
     <script src="scripts/video.js"></script>
     <script src="scripts/about_me.js"></script>
-    <script src="scripts/results.js"></script>
+    <script src="scripts/clients.js"></script>
     <script src="scripts/services.js"></script>
   </body>
 </html>
