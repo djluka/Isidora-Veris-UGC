@@ -64,6 +64,8 @@ function initSlider(wrapper) {
     if (dots[index]) dots[index].classList.add("active");
   }
 
+
+  
   slider.addEventListener("scroll", () => {
     const cardWidth =
       cards[1]?.offsetLeft - cards[0].offsetLeft || cards[0].offsetWidth;

@@ -19,7 +19,6 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-
 }
 .services .services_box .service_card {
   text-decoration: none;
@@ -31,8 +30,7 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  min-height: 80vh;
-  max-height: 90vh;
+  height: 500px;
   text-align: center;
   border: 2px solid transparent;
 
@@ -73,15 +71,14 @@
   border-radius: 50px;
   padding: 12px;
 }
+
 @media (min-width: 1200px) {
-  .services .services_box{
+  .services .services_box {
     gap: 10px;
   }
   .services .services_box .service_card {
-      max-width: 350px;
-      max-height: 85vh;
-      min-height: 80vh;
-    
+    max-width: 350px;
+    height: 900px;
   }
   .services .services_box .service_card p:nth-child(1) {
     font-size: 2em;
@@ -104,3 +101,4 @@
     padding: 20px;
   }
 }
+
