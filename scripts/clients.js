@@ -37,20 +37,45 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", (e) => {
       const c = e.target.closest(".comment");
       const comments = document.querySelector(`.comments`);
-      if (!c) return;
-
-      c.classList.remove("active");
+      if (!c) {
+        console.log("err");
+        return;
+      } else c.classList.remove("active");
       c.classList.add("off_stage");
 
-      c.addEventListener("animationend", () => {
-        c.classList.remove("off_stage");
+      c.addEventListener(
+        "animationend",
+        () => {
+          c.classList.remove("off_stage");
 
-        // Ako više nema aktivnih – sakrij i kontejner
-        const anyActive = document.querySelector(".comment.active");
-        if (!anyActive && comments) {
-          comments.classList.remove("active");
-        }
-      }, { once: true });
+          // Ako više nema aktivnih – sakrij i kontejner
+          const anyActive = document.querySelector(".comment.active");
+          if (!anyActive && comments) {
+            comments.classList.remove("active");
+          }
+        },
+        { once: true }
+      );
     });
   });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    const activeComment = document.querySelector(".comment.active");
+    if (!activeComment) return;
+
+    activeComment.classList.remove("active");
+    activeComment.classList.add("off_stage");
+
+    activeComment.addEventListener(
+      "animationend",
+      () => {
+        activeComment.classList.remove("off_stage");
+
+        if (!document.querySelector(".comment.active") && comments) {
+          comments.classList.remove("active");
+        }
+      },
+      { once: true }
+    );
+  });
 });

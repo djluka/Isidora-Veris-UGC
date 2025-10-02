@@ -64,8 +64,6 @@ function initSlider(wrapper) {
     if (dots[index]) dots[index].classList.add("active");
   }
 
-
-  
   slider.addEventListener("scroll", () => {
     const cardWidth =
       cards[1]?.offsetLeft - cards[0].offsetLeft || cards[0].offsetWidth;
@@ -80,19 +78,46 @@ function initSlider(wrapper) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".desc").forEach((el) => {
-    el.addEventListener("click", () => {
-      el.classList.toggle("expanded");
+  const cardBoxes = document.querySelectorAll(".card_box");
 
-      // nađi video u istoj kartici
-      const video = el.closest(".card").querySelector("video");
+  let activeBox = null;
 
-      if (el.classList.contains("expanded")) {
-        video.style.filter = "brightness(0.3)";
-        video.style.transition = "filter 0.3s ease"; // ovde je transition
-      } else {
+  cardBoxes.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.stopPropagation(); 
+
+      // Ako klikneš na već aktivnu karticu -> zatvori je
+      if (el === activeBox) {
+        el.classList.remove("expanded");
+        const video = el.closest(".card").querySelector("video");
         video.style.filter = "none";
+        activeBox = null;
+      } else {
+        // Zatvori prethodnu ako postoji
+        if (activeBox) {
+          activeBox.classList.remove("expanded");
+          const prevVideo = activeBox.closest(".card").querySelector("video");
+          prevVideo.style.filter = "none";
+        }
+
+        // Otvori novu
+        el.classList.add("expanded");
+        const video = el.closest(".card").querySelector("video");
+        video.style.filter = "brightness(0.3)";
+        video.style.transition = "filter 0.3s ease";
+
+        activeBox = el;
       }
     });
+  });
+
+  // Klik bilo gde van aktivne kartice
+  document.addEventListener("click", () => {
+    if (activeBox) {
+      activeBox.classList.remove("expanded");
+      const video = activeBox.closest(".card").querySelector("video");
+      video.style.filter = "none";
+      activeBox = null;
+    }
   });
 });

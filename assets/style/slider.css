@@ -48,7 +48,7 @@
   position: relative;
   padding: 0;
 }
-.content_branding_branding {
+.content_branding {
   margin-top: 50px;
 }
 .slider_wrap {
@@ -143,6 +143,7 @@
   padding: 10px;
   color: white;
   font-family: CormorantGaramond;
+  transition: max-height 0.4s ease, padding 0.3s ease;
   background: #fff;
   background: linear-gradient(
     180deg,
@@ -150,6 +151,30 @@
     rgba(0, 0, 0, 1) 100%
   );
 }
+.card .card_box.expanded {
+  max-height: none;
+  text-align: unset;
+  overflow-y: auto;
+  animation: expandCardBox 0.45s ease-out forwards;
+}
+.desc {
+  cursor: pointer;
+  overflow: hidden;
+  white-space: normal;
+  display: block;
+  text-overflow: ellipsis;
+  position: relative;
+  transition: 0.5s all;
+  font-size: 15pt;
+  max-width: 250px;
+  letter-spacing: 1px;
+}
+.card .card_box.expanded .desc {
+  max-height: none;
+  overflow: visible;
+  text-overflow: unset;
+}
+
 .card .card_box .card_header_box {
   display: flex;
   justify-content: space-between;
@@ -182,23 +207,7 @@
 .card .card_box img {
   width: 50px;
 }
-.desc {
-  cursor: pointer;
-  overflow: hidden;
-  white-space: normal;
-  display: block;
-  max-height: 50pt; /* skraćeno stanje */
-  text-overflow: ellipsis;
-  position: relative;
-  transition: 0.5s all;
-  font-size: 14pt;
-  max-width: 250px;
-}
 
-.desc.expanded {
-  max-height: 250px;
-  text-align: unset;
-}
 
 a.more_on_instagram {
   text-decoration: none;
@@ -319,11 +328,15 @@ a.more_on_instagram img {
   }
   .ugc {
     padding: 0;
-    padding-right: 10%;
+    /* padding-right: 10%; */
+    align-self: flex-start;
+    padding: 10px;
   }
-  .content_branding_branding {
+  .content_branding {
     padding: 0;
-    padding-left: 10%;
+    /* padding-left: 10%; */
+    align-self: flex-end;
+    padding: 10px;
   }
 
   .slider_section {
@@ -425,7 +438,7 @@ a.more_on_instagram img {
     text-overflow: ellipsis;
     position: relative;
     transition: 0.5s all;
-    font-size: 12pt;
+    font-size: 14pt;
     max-width: 250px;
   }
 
@@ -464,3 +477,4 @@ a.more_on_instagram img {
     transition: all 0.3s ease;
   }
 }
+
