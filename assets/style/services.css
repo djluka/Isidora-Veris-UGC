@@ -41,6 +41,7 @@
 
   -webkit-box-shadow: 0px 7px 11px 6px transparent;
   box-shadow: 0px 7px 11px 6px transparent;
+
 }
 .services .services_box .service_card:hover,
 .services .services_box .service_card:active {
@@ -78,7 +79,7 @@
   }
   .services .services_box .service_card {
     max-width: 350px;
-    height: 900px;
+    height: 600px;
   }
   .services .services_box .service_card p:nth-child(1) {
     font-size: 2em;
