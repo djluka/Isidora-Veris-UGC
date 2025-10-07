@@ -25,6 +25,25 @@ body {
   flex-wrap: wrap;
   position: relative;
 }
+.main {
+  /* Scroll-driven animation (shows final state when unsupported) */
+  animation: main_apper 0.5s ease;
+  animation-timeline: load();
+  animation-range: entry 20% cover 40%;
+  padding: 0;
+  margin: 0 auto;
+}
+/* ===== ANIMATIONS ===== */
+@keyframes main_apper {
+  from {
+    opacity: 0;
+    transform: translateY(100px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
 
 .main .profile_wrapper {
   position: relative;

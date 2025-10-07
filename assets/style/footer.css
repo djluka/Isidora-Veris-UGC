@@ -2,6 +2,23 @@
 footer {
   max-height: 100vh;
 }
+footer {
+  /* Scroll-driven animation (shows final state when unsupported) */
+  animation: footer_apper 0.5s ease;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+  padding: 0;
+  margin: 0 auto;
+}
+/* ===== ANIMATIONS ===== */
+@keyframes footer_apper {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .page_wrapper_footer {
   display: flex;
   flex-wrap: wrap;

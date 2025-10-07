@@ -81,6 +81,42 @@
   padding: 0;
 }
 
+.slider {
+  /* Scroll-driven animation (shows final state when unsupported) */
+  animation: slider_apper 0.2s ease;
+  animation-timeline: load();
+  animation-range: entry 20% cover 40%;
+
+  padding: 0;
+  margin: 0 auto;
+}
+/* ===== ANIMATIONS ===== */
+@keyframes slider_apper {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.slider_section {
+  /* Scroll-driven animation (shows final state when unsupported) */
+  animation: slider_section_apper 0.5s ease;
+  animation-timeline: view();
+  animation-range: entry 5% cover 50%;
+  padding: 0;
+  margin: 0 auto;
+}
+/* ===== ANIMATIONS ===== */
+@keyframes slider_section_apper {
+  from {
+    scale: 0.8;
+  }
+  to {
+    scale: 1;
+  }
+}
+
 .slider::-webkit-scrollbar {
   display: none;
 }
@@ -166,9 +202,10 @@
 
 .desc {
   transition: max-height 0.4s ease, transform 0.6s ease, opacity 0.6s ease;
-    overflow: hidden;
+  overflow: hidden;
 }
-.desc::-webkit-scrollbar { /* Chrome, Edge, Safari */
+.desc::-webkit-scrollbar {
+  /* Chrome, Edge, Safari */
   display: none;
 }
 
@@ -180,7 +217,7 @@
 }
 .card_box.expanded .desc {
   -webkit-line-clamp: unset;
-  max-height:15vh;
+  max-height: 15vh;
   animation: fadeInUp 0.6s ease forwards;
 }
 
