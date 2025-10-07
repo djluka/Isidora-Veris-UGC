@@ -1,123 +1,238 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".slider_wrap").forEach(initSlider);
-});
+  // =========================
+  // 1) Slider init
+  // =========================
+  document.querySelectorAll(".slider_wrap").forEach((wrapper) => {
+    const slider = wrapper.querySelector(".slider");
+    const cards = wrapper.querySelectorAll(".card");
+    const nextBtn = wrapper.querySelector(".nxt_btn");
+    const prevBtn = wrapper.querySelector(".pre_btn");
+    const dots = wrapper.querySelectorAll(".dot");
 
-function initSlider(wrapper) {
-  const slider = wrapper.querySelector(".slider");
-  const cards = wrapper.querySelectorAll(".card");
-  const nextBtn = wrapper.querySelector(".nxt_btn");
-  const prevBtn = wrapper.querySelector(".pre_btn");
-  const dots = wrapper.querySelectorAll(".dot");
+    if (!slider || cards.length === 0) return;
 
-  if (!slider || cards.length === 0) return;
+    let currentIndex = 0;
 
-  let currentIndex = 0;
-
-  function getVisibleCardsCount() {
-    const sliderWidth = slider.offsetWidth;
-    const cardWidth = cards[0].offsetWidth;
-    return Math.max(1, Math.round(sliderWidth / cardWidth));
-  }
-
-  function scrollToCurrentCard() {
-    const targetCard = cards[currentIndex];
-    if (targetCard) {
-      slider.scrollTo({
-        left: targetCard.offsetLeft,
-        behavior: "smooth",
-      });
+    function getVisibleCardsCount() {
+      const sliderWidth = slider.offsetWidth;
+      const cardWidth = cards[0].offsetWidth;
+      return Math.max(1, Math.round(sliderWidth / cardWidth));
     }
-  }
 
-  function updateButtons() {
-    const visible = getVisibleCardsCount();
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex >= cards.length - visible;
-
-    prevBtn.classList.toggle("opacity_low", prevBtn.disabled);
-    nextBtn.classList.toggle("opacity_low", nextBtn.disabled);
-  }
-
-  nextBtn?.addEventListener("click", () => {
-    const visible = getVisibleCardsCount();
-    if (currentIndex < cards.length - visible) {
-      currentIndex += visible;
-      if (currentIndex > cards.length - visible) {
-        currentIndex = cards.length - visible;
+    function scrollToCurrentCard() {
+      const targetCard = cards[currentIndex];
+      if (targetCard) {
+        slider.scrollTo({
+          left: targetCard.offsetLeft,
+          behavior: "smooth",
+        });
       }
-      scrollToCurrentCard();
-      updateButtons();
     }
-  });
 
-  prevBtn?.addEventListener("click", () => {
-    const visible = getVisibleCardsCount();
-    if (currentIndex > 0) {
-      currentIndex -= visible;
-      if (currentIndex < 0) currentIndex = 0;
-      scrollToCurrentCard();
-      updateButtons();
+    function updateButtons() {
+      const visible = getVisibleCardsCount();
+      if (prevBtn) {
+        prevBtn.disabled = currentIndex === 0;
+        prevBtn.classList.toggle("opacity_low", prevBtn.disabled);
+      }
+      if (nextBtn) {
+        nextBtn.disabled = currentIndex >= cards.length - visible;
+        nextBtn.classList.toggle("opacity_low", nextBtn.disabled);
+      }
     }
-  });
-  function updateDots(index) {
-    dots.forEach((dot) => dot.classList.remove("active"));
-    if (dots[index]) dots[index].classList.add("active");
-  }
 
-  slider.addEventListener("scroll", () => {
-    const cardWidth =
-      cards[1]?.offsetLeft - cards[0].offsetLeft || cards[0].offsetWidth;
-    currentIndex = Math.round(slider.scrollLeft / cardWidth);
-    updateButtons();
-    updateDots(currentIndex);
-  });
-
-  // Init
-  scrollToCurrentCard();
-  updateButtons();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const cardBoxes = document.querySelectorAll(".card_box");
-
-  let activeBox = null;
-
-  cardBoxes.forEach((el) => {
-    el.addEventListener("click", (e) => {
-      e.stopPropagation(); 
-
-      // Ako klikneš na već aktivnu karticu -> zatvori je
-      if (el === activeBox) {
-        el.classList.remove("expanded");
-        const video = el.closest(".card").querySelector("video");
-        video.style.filter = "none";
-        activeBox = null;
-      } else {
-        // Zatvori prethodnu ako postoji
-        if (activeBox) {
-          activeBox.classList.remove("expanded");
-          const prevVideo = activeBox.closest(".card").querySelector("video");
-          prevVideo.style.filter = "none";
-        }
-
-        // Otvori novu
-        el.classList.add("expanded");
-        const video = el.closest(".card").querySelector("video");
-        video.style.filter = "brightness(0.3)";
-        video.style.transition = "filter 0.3s ease";
-
-        activeBox = el;
+    nextBtn?.addEventListener("click", () => {
+      const visible = getVisibleCardsCount();
+      if (currentIndex < cards.length - visible) {
+        currentIndex = Math.min(currentIndex + visible, cards.length - visible);
+        scrollToCurrentCard();
+        updateButtons();
       }
     });
+
+    prevBtn?.addEventListener("click", () => {
+      const visible = getVisibleCardsCount();
+      if (currentIndex > 0) {
+        currentIndex = Math.max(currentIndex - visible, 0);
+        scrollToCurrentCard();
+        updateButtons();
+      }
+    });
+
+    function updateDots(index) {
+      dots.forEach((dot) => dot.classList.remove("active"));
+      if (dots[index]) dots[index].classList.add("active");
+    }
+
+    slider.addEventListener("scroll", () => {
+      const cardWidth =
+        cards[1]?.offsetLeft - cards[0].offsetLeft || cards[0].offsetWidth;
+      currentIndex = Math.round(slider.scrollLeft / cardWidth);
+      updateButtons();
+      updateDots(currentIndex);
+    });
+
+    // Init
+    scrollToCurrentCard();
+    updateButtons();
   });
 
-  // Klik bilo gde van aktivne kartice
-  document.addEventListener("click", () => {
+  // =========================
+  // 2) Reels overlay show + expand
+  // =========================
+
+  // a) ULAZ "od dole" kada kartica uđe u viewport
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const box = entry.target.querySelector(".card_box");
+        if (!box) return;
+        if (entry.isIntersecting) {
+          box.classList.add("show"); // .card_box.show -> transform: translateY(0); opacity:1
+        } else {
+          box.classList.remove("show");
+        }
+      });
+    },
+    { threshold: 0.25 }
+  );
+
+  document.querySelectorAll(".card").forEach((card) => io.observe(card));
+
+  // b) Klik za EXPAND — delegacija na document (hvata i nove kartice)
+  let activeBox = null;
+
+  document.addEventListener("click", (e) => {
+    // IGNORIŠI klik na play dugme
+    if (e.target.closest(".play_button")) return;
+
+    const desc = e.target.closest(".desc");
+    const box = desc
+      ? desc.closest(".card_box")
+      : e.target.closest(".card_box");
+    const clickedInsideAnyBox = !!box;
+
+    // Klik unutar box-a -> otvori/zatvori
+    if (clickedInsideAnyBox) {
+      e.stopPropagation();
+
+      // Ako klikneš istu koja je već aktivna -> zatvori
+      if (activeBox === box) {
+        collapseBox(box);
+        activeBox = null;
+        return;
+      }
+
+      // Zatvori prethodnu
+      if (activeBox) collapseBox(activeBox);
+
+      // Otvori novu
+      expandBox(box);
+      activeBox = box;
+      return;
+    }
+
+    // Klik van -> zatvori ako postoji
     if (activeBox) {
-      activeBox.classList.remove("expanded");
-      const video = activeBox.closest(".card").querySelector("video");
-      video.style.filter = "none";
+      collapseBox(activeBox);
       activeBox = null;
     }
   });
+
+  // ESC zatvara
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && activeBox) {
+      collapseBox(activeBox);
+      activeBox = null;
+    }
+  });
+  function getLineHeightPx(el) {
+    const cs = getComputedStyle(el);
+    let lh = parseFloat(cs.lineHeight);
+    if (Number.isNaN(lh)) {
+      const fs = parseFloat(cs.fontSize) || 16;
+      lh = fs * 1.25;
+    }
+    return lh;
+  }
+
+  function expandBox(box) {
+    box.classList.add("expanded");
+    box.setAttribute("aria-expanded", "true");
+
+    const video = box.closest(".card")?.querySelector("video");
+    if (video) {
+      video.style.transition = "filter 200ms cubic-bezier(0.16,1,0.3,1)";
+      video.style.filter = "brightness(0.5)";
+    }
+
+    const desc = box.querySelector(".desc");
+    if (!desc) return;
+
+    const startH = getLineHeightPx(desc);
+    // priprema
+    desc.classList.add("animating");
+    desc.style.transition = "none";
+    desc.style.maxHeight = startH + "px";
+    // dupli rAF = garantujemo da browser registruje start vrednost
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const target = Math.min(
+          desc.scrollHeight,
+          Math.round(window.innerHeight * 0.7)
+        );
+        desc.style.transition = "max-height 650ms cubic-bezier(0.16,1,0.3,1)";
+        desc.style.maxHeight = target + "px";
+        const onEnd = (ev) => {
+          if (ev.propertyName !== "max-height") return;
+          desc.removeEventListener("transitionend", onEnd);
+          // čisto stanje za expanded
+          desc.classList.remove("animating");
+          desc.style.transition = "";
+          desc.style.maxHeight = "";
+          desc.style.overflow = "auto";
+        };
+        desc.addEventListener("transitionend", onEnd);
+      });
+    });
+  }
+
+  function collapseBox(box) {
+    box.setAttribute("aria-expanded", "false");
+
+    const desc = box.querySelector(".desc");
+    const video = box.closest(".card")?.querySelector("video");
+    if (video) video.style.filter = "none";
+
+    if (!desc) {
+      box.classList.remove("expanded");
+      return;
+    }
+
+    // start od pune visine → do 1 linije
+    const start = desc.scrollHeight;
+    const endH = getLineHeightPx(desc);
+
+    desc.classList.add("animating");
+    desc.style.transition = "none";
+    desc.style.maxHeight = start + "px";
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        desc.style.transition = "max-height 520ms cubic-bezier(0.16,1,0.3,1)";
+        desc.style.maxHeight = endH + "px";
+        const onEnd = (ev) => {
+          if (ev.propertyName !== "max-height") return;
+          desc.removeEventListener("transitionend", onEnd);
+          box.classList.remove("expanded");
+          // vrati clamp stanje
+          desc.classList.remove("animating");
+          desc.style.transition = "";
+          desc.style.maxHeight = "";
+          desc.style.overflow = "hidden";
+        };
+        desc.addEventListener("transitionend", onEnd);
+      });
+    });
+  }
 });

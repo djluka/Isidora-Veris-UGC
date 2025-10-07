@@ -131,49 +131,82 @@
   color: #e8e3de;
   z-index: 1;
 }
-.card .card_box {
-  z-index: 5;
-  max-height: 100px;
-  width: 100%;
+.card_box {
   position: absolute;
   bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-  color: white;
+  width: 100%;
+  height: fit-content;
+  padding: 12px;
+  color: #fff;
   font-family: CormorantGaramond;
-  transition: max-height 0.4s ease, padding 0.3s ease;
-  background: #fff;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(0, 0, 0, 1) 80%
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 30%,
+    rgba(0, 0, 0, 0.9) 100%
   );
   cursor: pointer;
-}
-.card .card_box.expanded {
-  max-height: none;
-  text-align: unset;
-  overflow-y: auto;
-  animation: expandCardBox 0.45s ease-out forwards;
-}
-.desc {
-  cursor: pointer;
   overflow: hidden;
-  white-space: normal;
-  display: block;
-  text-overflow: ellipsis;
-  position: relative;
-  transition: 0.5s all;
-  font-size: 15pt;
-  max-width: 250px;
-  letter-spacing: 1px;
+  z-index: 5;
 }
-.card .card_box.expanded .desc {
-  max-height: none;
-  overflow: visible;
-  text-overflow: unset;
+
+.desc {
+  margin: 0;
+  line-height: 1.25;
+  max-width: 88%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  transform: translateY(80%);
+  opacity: 1;
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+.desc {
+  transition: max-height 0.4s ease, transform 0.6s ease, opacity 0.6s ease;
+    overflow: hidden;
+}
+.desc::-webkit-scrollbar { /* Chrome, Edge, Safari */
+  display: none;
+}
+
+.card:hover .desc,
+.card_box.show .desc {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.5s all;
+}
+.card_box.expanded .desc {
+  -webkit-line-clamp: unset;
+  max-height:15vh;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+/* skroz ukloni pogrešnu animaciju visine */
+.card .card_box.expanded {
+  animation: overlayRise 0.6s ease-out both;
+}
+
+/* nežan “podigni se” efekat */
+@keyframes overlayRise {
+  from {
+    transform: translateY(8px);
+    opacity: 0.95;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 .card .card_box .card_header_box {
@@ -208,7 +241,6 @@
 .card .card_box img {
   width: 50px;
 }
-
 
 a.more_on_instagram {
   text-decoration: none;
@@ -478,4 +510,3 @@ a.more_on_instagram img {
     transition: all 0.3s ease;
   }
 }
-
