@@ -83,12 +83,12 @@
 
 .slider {
   /* Scroll-driven animation (shows final state when unsupported) */
-  animation: slider_apper 0.2s ease;
+  animation: slider_apper 2s ease;
   animation-timeline: load();
-  animation-range: entry 20% cover 40%;
+  animation-range: entry -10% cover 40%;
 
   padding: 0;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 /* ===== ANIMATIONS ===== */
 @keyframes slider_apper {
@@ -99,13 +99,15 @@
     opacity: 1;
   }
 }
-.slider_section {
+.slider_section,
+.slider_section::after {
   /* Scroll-driven animation (shows final state when unsupported) */
   animation: slider_section_apper 0.5s ease;
   animation-timeline: view();
-  animation-range: entry 5% cover 50%;
+  animation-range: entry 0% cover 50%;
   padding: 0;
-  margin: 0 auto;
+  margin: 20px auto;
+
 }
 /* ===== ANIMATIONS ===== */
 @keyframes slider_section_apper {

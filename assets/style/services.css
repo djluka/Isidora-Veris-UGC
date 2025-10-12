@@ -24,9 +24,10 @@
   /* Scroll-driven animation (shows final state when unsupported) */
   animation: service_card_apper 0.5s ease;
   animation-timeline: view();
-  animation-range: entry 5% cover 50%;
+  animation-range: entry -10% cover 50%;
   padding: 0;
   margin: 0 auto;
+
 }
 /* ===== ANIMATIONS ===== */
 @keyframes service_card_apper {
