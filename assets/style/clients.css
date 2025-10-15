@@ -25,7 +25,7 @@
   /* Scroll-driven animation (shows final state when unsupported) */
   animation: clients_apper 0.3s ease;
   animation-timeline: view();
-  animation-range: entry -10% cover 90%;
+  animation-range: entry -10% cover 30%;
   padding: 0;
   margin: 0 auto;
 }

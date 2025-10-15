@@ -20,7 +20,7 @@ body {
   --video-txt-height: 100svh;
 
   width: 100%;
-  margin: 50px auto;
+  margin: 0px auto;
   background: #f4eade;
 
   display: flex;
@@ -32,7 +32,7 @@ body {
   /* Scroll-driven animation (shows final state when unsupported) */
   animation: about_me_apper 0.5s ease;
   animation-timeline: view();
-  animation-range: entry 5% cover 50%;
+  animation-range: entry -10% cover 25%;
   padding: 0;
   margin: 0 auto;
 }
