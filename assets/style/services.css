@@ -88,10 +88,11 @@
   font-weight: normal;
   font-family: CormorantGaramond;
   border: 1px solid white;
-  color: #d5bdaf;
+  color:#57432aea;
   background-color: white;
   border-radius: 50px;
   padding: 12px;
+
 }
 
 @media (min-width: 1200px) {
@@ -117,8 +118,6 @@
     font-weight: normal;
     font-family: CormorantGaramond;
     border: 1px solid white;
-    color: #d5bdaf;
-    background-color: white;
     border-radius: 50px;
     padding: 20px;
   }

@@ -211,7 +211,6 @@
   display: none;
 }
 
-.card:hover .desc,
 .card_box.show .desc {
   transform: translateY(0);
   opacity: 1;
