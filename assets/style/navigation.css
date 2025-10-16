@@ -25,7 +25,7 @@ nav .mobile_menu::after {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #F4EADE;
+  background-color: #f4eade;
   position: absolute;
   left: 0%;
   z-index: -5;
@@ -38,13 +38,7 @@ nav .mobile_menu .site_title {
   position: relative;
   text-align: center;
 }
-nav .site_title p:nth-child(2) {
-  font-family: TheSeasonsLight;
-  font-size: 10pt;
-  max-width: 90px;
-  margin: 0 auto;
-  margin-right: -10px;
-}
+
 #menu_toggle {
   z-index: 1;
   -webkit-user-select: none;
@@ -54,7 +48,6 @@ nav .site_title p:nth-child(2) {
   position: relative;
   width: 35px;
   height: 35px;
-  
 }
 #menu_toggle::after {
   content: "";
@@ -77,7 +70,6 @@ nav .site_title p:nth-child(2) {
   position: relative;
   padding: 0;
   margin: 0;
-  
 }
 #menu_toggle .burger_line {
   position: absolute;
@@ -93,8 +85,8 @@ nav .site_title p:nth-child(2) {
   height: 4px;
   margin: 5px 0 5px 0;
   position: relative;
-  background-color: #F4EADE;
-    background-color: #fff;
+  background-color: #f4eade;
+  background-color: #fff;
 
   border-radius: 3px;
 
@@ -210,11 +202,15 @@ nav .site_title p:nth-child(2) {
     padding: 10px;
     text-align: center;
   }
+
   nav .menu .site_title p:nth-child(2) {
-    font-family: RomateHood;
+    font-family: TheSeasonsLight;
     font-size: 12pt;
     max-width: 120px;
     margin-top: 10px;
+    font-size: 10pt;
+    margin: 0 auto;
+    margin-right: -10px;
   }
 
   nav .menu li:nth-child(1) p {
@@ -234,7 +230,7 @@ nav .site_title p:nth-child(2) {
     margin: 10px;
     padding: 10px 15px;
     border: 1px solid transparent;
-    background-color: #F4EADE;
+    background-color: #f4eade;
   }
   nav .menu li a:hover {
     transform: scale(1);
@@ -268,5 +264,4 @@ nav .site_title p:nth-child(2) {
     justify-content: center;
     align-items: center;
   }
-
 }

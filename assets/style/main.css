@@ -205,6 +205,38 @@ body {
   font-family: TheSeasonsLight;
   font-weight: 0;
 }
+.main .main_text_box .instagram_highlights .typewriter{
+  margin-top: 10px;
+}
+.main .main_text_box .instagram_highlights .typewriter p.highlight_desc {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .1em solid black; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
 
 /* Veći ekran (npr. tablet) */
 @media (min-width: 768px) {
@@ -285,7 +317,7 @@ body {
     transform: scaleX(-1);
     position: absolute;
     top: -100px;
-    right: 20px;
+    right: 50px;
   }
   .main .main_text_box .instagram_highlights .highlights a {
     font-size: 1.3em;
