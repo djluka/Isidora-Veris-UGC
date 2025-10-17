@@ -104,7 +104,7 @@
   /* Scroll-driven animation (shows final state when unsupported) */
   animation: slider_section_apper 0.5s ease;
   animation-timeline: view();
-  animation-range: entry 0% cover 50%;
+  animation-range: entry -10% cover 30%;
   padding: 0;
   margin: 20px auto;
 
@@ -200,11 +200,10 @@
     transform: none !important;
   opacity: 1;
   transition: none;     
+transition: max-height 0.4s ease, transform 0.6s ease, opacity 0.6s ease;
 }
-
-.desc {
-  transition: max-height 0.4s ease, transform 0.6s ease, opacity 0.6s ease;
-  overflow: hidden;
+.desc.animating {
+  -webkit-line-clamp: unset;
 }
 .desc::-webkit-scrollbar {
   /* Chrome, Edge, Safari */
@@ -218,7 +217,6 @@
 }
 .card_box.expanded .desc {
   -webkit-line-clamp: unset;
-  max-height: 20vh;
   animation: fadeInUp 0.6s ease forwards;
 }
 
@@ -232,7 +230,7 @@
 }
 /* skroz ukloni pogrešnu animaciju visine */
 .card .card_box.expanded {
-  animation: overlayRise 0.6s ease-out both;
+  animation:none !important;
 }
 
 /* nežan “podigni se” efekat */
@@ -317,7 +315,7 @@ a.more_on_instagram:hover {
 a.more_on_instagram:hover::before {
   transform: scale(1.2);
   transition: 0.2s;
-  filter: brightness(0.1) blur(5px);
+  filter: brightness(0.4) blur(5px);
 }
 
 a.more_on_instagram p.header {

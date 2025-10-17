@@ -80,26 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // =========================
   // 2) Reels overlay show + expand
   // =========================
-
-  // a) ULAZ "od dole" kada kartica uđe u viewport
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const box = entry.target.querySelector(".card_box");
-        if (!box) return;
-        if (entry.isIntersecting) {
-          box.classList.add("show"); // .card_box.show -> transform: translateY(0); opacity:1
-        } else {
-          box.classList.remove("show");
-        }
-      });
-    },
-    { threshold: 0.25 }
-  );
-
-  document.querySelectorAll(".card").forEach((card) => io.observe(card));
-
-  // b) Klik za EXPAND — delegacija na document (hvata i nove kartice)
+  // a) Klik za EXPAND — delegacija na document (hvata i nove kartice)
   let activeBox = null;
 
   document.addEventListener("click", (e) => {
@@ -174,6 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     desc.classList.add("animating");
     desc.style.transition = "none";
     desc.style.maxHeight = startH + "px";
+    console.log("startH ", startH);
     // dupli rAF = garantujemo da browser registruje start vrednost
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -181,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
           desc.scrollHeight,
           Math.round(window.innerHeight * 0.7)
         );
-        desc.style.transition = "max-height 650ms cubic-bezier(0.16,1,0.3,1)";
+        desc.style.transition = "max-height 650ms ";
         desc.style.maxHeight = target + "px";
         const onEnd = (ev) => {
           if (ev.propertyName !== "max-height") return;
@@ -216,10 +198,10 @@ document.addEventListener("DOMContentLoaded", function () {
     desc.classList.add("animating");
     desc.style.transition = "none";
     desc.style.maxHeight = start + "px";
-
+    console.log("startH ", startH);
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        desc.style.transition = "max-height 520ms cubic-bezier(0.16,1,0.3,1)";
+        desc.style.transition = "max-height 520ms ";
         desc.style.maxHeight = endH + "px";
         const onEnd = (ev) => {
           if (ev.propertyName !== "max-height") return;
