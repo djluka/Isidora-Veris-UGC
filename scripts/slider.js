@@ -76,10 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollToCurrentCard();
     updateButtons();
   });
-
-  // =========================
-  // 2) Reels overlay show + expand
-  // =========================
   // a) Klik za EXPAND — delegacija na document (hvata i nove kartice)
   let activeBox = null;
 
@@ -127,94 +123,80 @@ document.addEventListener("DOMContentLoaded", function () {
       activeBox = null;
     }
   });
-  function getLineHeightPx(el) {
-    const cs = getComputedStyle(el);
-    let lh = parseFloat(cs.lineHeight);
-    if (Number.isNaN(lh)) {
-      const fs = parseFloat(cs.fontSize) || 16;
-      lh = fs * 1.25;
-    }
-    return lh;
+function getCollapsedPx(desc){
+  const cs = getComputedStyle(desc);
+  const lh = parseFloat(cs.lineHeight) || 20;
+  const cssLines = parseInt(cs.getPropertyValue('--lines'),10);
+  const lines = Number.isFinite(cssLines) ? cssLines : 2;
+  return lh * lines;
+}
+
+function expandBox(box){
+  console.log("expandBox", box);
+  box.setAttribute("aria-expanded", "true");
+
+  const video = box.closest(".card")?.querySelector("video");
+  if (video){
+    video.style.transition = "filter 200ms cubic-bezier(0.16,1,0.3,1)";
+    video.style.filter = "brightness(0.5)";
   }
 
-  function expandBox(box) {
-    box.classList.add("expanded");
-    box.setAttribute("aria-expanded", "true");
+  const desc = box.querySelector(".desc");
+  if (!desc) return;
 
-    const video = box.closest(".card")?.querySelector("video");
-    if (video) {
-      video.style.transition = "filter 200ms cubic-bezier(0.16,1,0.3,1)";
-      video.style.filter = "brightness(0.5)";
+  // 1) Postavi start na TAČNO zatvorenu visinu (2 linije)
+  const start = getCollapsedPx(desc);
+  desc.style.maxHeight = start + "px";
+
+  // 2) Uključi expanded (skida clamp), ALI zadrži start visinu
+  box.classList.add("is-expanded");
+
+  // 3) Forsiraj reflow da browser “registruje” start vrednost
+  //    (ovo sprečava skok “pojavi se pa nestane”)
+  void desc.offsetHeight;
+
+  // 4) Izmeri cilj i animiraj ka njemu
+  const target = desc.scrollHeight;
+  desc.style.maxHeight = target + "px";
+
+  // 5) Po završetku skini inline maxHeight, ali SAMO ako je i dalje expanded
+  const onEnd = (e)=>{
+    if (e.propertyName !== "max-height") return;
+    if (box.classList.contains("is-expanded")){
+      desc.style.maxHeight = "none";
     }
+    desc.removeEventListener("transitionend", onEnd);
+  };
+  desc.addEventListener("transitionend", onEnd);
+}
 
-    const desc = box.querySelector(".desc");
-    if (!desc) return;
+function collapseBox(box){
+  console.log("collapseBox", box);
+  box.setAttribute("aria-expanded", "false");
 
-    const startH = getLineHeightPx(desc);
-    // priprema
-    desc.classList.add("animating");
-    desc.style.transition = "none";
-    desc.style.maxHeight = startH + "px";
-    console.log("startH ", startH);
-    // dupli rAF = garantujemo da browser registruje start vrednost
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const target = Math.min(
-          desc.scrollHeight,
-          Math.round(window.innerHeight * 0.7)
-        );
-        desc.style.transition = "max-height 650ms ";
-        desc.style.maxHeight = target + "px";
-        const onEnd = (ev) => {
-          if (ev.propertyName !== "max-height") return;
-          desc.removeEventListener("transitionend", onEnd);
-          // čisto stanje za expanded
-          desc.classList.remove("animating");
-          desc.style.transition = "";
-          desc.style.maxHeight = "";
-          desc.style.overflow = "auto";
-        };
-        desc.addEventListener("transitionend", onEnd);
-      });
-    });
-  }
+  const desc = box.querySelector(".desc");
+  const video = box.closest(".card")?.querySelector("video");
+  if (video) video.style.filter = "none";
+  if (!desc) return;
 
-  function collapseBox(box) {
-    box.setAttribute("aria-expanded", "false");
+  // 1) Kreni sa trenutne realne visine (čak i kad je 'none')
+  const start = desc.offsetHeight || desc.scrollHeight;
+  desc.style.maxHeight = start + "px";
 
-    const desc = box.querySelector(".desc");
-    const video = box.closest(".card")?.querySelector("video");
-    if (video) video.style.filter = "none";
+  // 2) Forsiraj reflow pa spusti na “2 linije”
+  void desc.offsetHeight;
+  const collapsed = getCollapsedPx(desc);
+  desc.style.maxHeight = collapsed + "px";
 
-    if (!desc) {
-      box.classList.remove("expanded");
-      return;
-    }
+  // 3) Po završetku vrati clamp state
+  const onEnd = (e)=>{
+    if (e.propertyName !== "max-height") return;
+    box.classList.remove("is-expanded");
+    // ostavi inline maxHeight na collapsed da clamp uvek krene glatko
+    desc.removeEventListener("transitionend", onEnd);
+  };
+  desc.addEventListener("transitionend", onEnd);
+}
 
-    // start od pune visine → do 1 linije
-    const start = desc.scrollHeight;
-    const endH = getLineHeightPx(desc);
 
-    desc.classList.add("animating");
-    desc.style.transition = "none";
-    desc.style.maxHeight = start + "px";
-    console.log("startH ", startH);
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        desc.style.transition = "max-height 520ms ";
-        desc.style.maxHeight = endH + "px";
-        const onEnd = (ev) => {
-          if (ev.propertyName !== "max-height") return;
-          desc.removeEventListener("transitionend", onEnd);
-          box.classList.remove("expanded");
-          // vrati clamp stanje
-          desc.classList.remove("animating");
-          desc.style.transition = "";
-          desc.style.maxHeight = "";
-          desc.style.overflow = "hidden";
-        };
-        desc.addEventListener("transitionend", onEnd);
-      });
-    });
-  }
 });

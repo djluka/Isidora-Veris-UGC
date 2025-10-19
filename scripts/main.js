@@ -3,7 +3,6 @@ const observer = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('typewriter_animation');
       observer.unobserve(entry.target);
-      console.log('Animation started for:', entry.target);
     }
   });
 });

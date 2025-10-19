@@ -107,7 +107,6 @@
   animation-range: entry -10% cover 30%;
   padding: 0;
   margin: 20px auto;
-
 }
 /* ===== ANIMATIONS ===== */
 @keyframes slider_section_apper {
@@ -185,66 +184,38 @@
   );
   cursor: pointer;
   z-index: 5;
-    overflow: hidden;
-
-}
-
-.desc {
-  margin: 0;
-  line-height: 1.25;
-  max-width: 100%;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   overflow: hidden;
-    transform: none !important;
-  opacity: 1;
-  transition: none;     
-transition: max-height 0.4s ease, transform 0.6s ease, opacity 0.6s ease;
+
 }
-.desc.animating {
-  -webkit-line-clamp: unset;
+.desc{
+  --lh:20px;
+  --lines:2;
+  line-height:var(--lh);
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:var(--lines);
+  max-height:calc(var(--lh) * var(--lines));
+  transition:max-height 520ms cubic-bezier(.16,1,.3,1);
 }
+
+
+/* OTVORENO — NIKAKAV flex ovde */
+.is-expanded .desc{
+  display:block;            /* NE flex! */
+  -webkit-line-clamp:unset; /* ukini clamp */
+  transition:max-height 520ms cubic-bezier(.16,1,.3,1);
+}
+/* Respectuje korisnike sa smanjenim animacijama */
+@media (prefers-reduced-motion: reduce) {
+  .desc { transition: none; }
+  .is-expanded .desc { transition: none; }
+}
+
 .desc::-webkit-scrollbar {
   /* Chrome, Edge, Safari */
   display: none;
 }
-
-.card_box.show .desc {
-  transform: translateY(0%);
-  opacity: 1;
-  transition: 0.5s all;
-}
-.card_box.expanded .desc {
-  -webkit-line-clamp: unset;
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    transform: translateY(10px);
-  }
-  to {
-    transform: translateY(0px);
-  }
-}
-/* skroz ukloni pogrešnu animaciju visine */
-.card .card_box.expanded {
-  animation:none !important;
-}
-
-/* nežan “podigni se” efekat */
-@keyframes overlayRise {
-  from {
-    transform: translateY(20px);
-    opacity: 0.95;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
 .card .card_box .card_header_box {
   display: flex;
   justify-content: space-between;
@@ -382,10 +353,6 @@ a.more_on_instagram img {
   .card {
     flex: 0 0 calc(50% - 10px); /* 2 kartice po redu, - gap/2 */
   }
-  .desc {
-    max-height: 30pt;
-    font-size: 15pt;
-  }
 }
 
 /* Još veći ekran (npr. desktop) */
@@ -503,12 +470,8 @@ a.more_on_instagram img {
     width: 90%;
   }
   .desc {
-    max-height: 30pt; /* skraćeno stanje */
-    text-overflow: ellipsis;
-    position: relative;
-    transition: 0.5s all;
     font-size: 14pt;
-    max-width: 250px;
+    letter-spacing: 1px;
   }
 
   .dot {
