@@ -25,7 +25,7 @@
   /* Scroll-driven animation (shows final state when unsupported) */
   animation: clients_apper 0.3s ease;
   animation-timeline: view();
-  animation-range: entry -10% cover 30%;
+  animation-range: entry -10% cover 50%;
   padding: 0;
   margin: 0 auto;
 }
@@ -37,7 +37,7 @@
   }
   to {
     opacity: 1;
-    transform: translatX(0px) scale(1);
+    transform: translateX(0px) scale(1);
   }
 }
 .clients .clients_text p.client_header {

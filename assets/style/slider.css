@@ -213,6 +213,7 @@
 }
 
 .desc::-webkit-scrollbar {
+  
   /* Chrome, Edge, Safari */
   display: none;
 }

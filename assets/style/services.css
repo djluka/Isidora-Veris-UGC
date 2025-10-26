@@ -20,14 +20,13 @@
   flex-wrap: wrap;
   gap: 20px;
 }
-.service_card {
+a.service_card {
   /* Scroll-driven animation (shows final state when unsupported) */
   animation: service_card_apper 0.5s ease;
   animation-timeline: view();
   animation-range: entry -10% cover 50%;
   padding: 0;
   margin: 0 auto;
-
 }
 /* ===== ANIMATIONS ===== */
 @keyframes service_card_apper {
@@ -45,54 +44,89 @@
   text-decoration: none;
 
   background-color: #d5bdaf;
+
   color: white;
   margin: 5px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  height: 500px;
+  height: fit-content;
+
   text-align: center;
   border: 2px solid transparent;
 
-  max-width: 300px;
+  max-width: 320px;
   border-radius: 10px;
   padding: 25px;
   transition: 0.3s all ease-in;
 
   -webkit-box-shadow: 0px 7px 11px 6px transparent;
   box-shadow: 0px 7px 11px 6px transparent;
-
 }
-.services .services_box .service_card:hover,
-.services .services_box .service_card:active {
-  -webkit-box-shadow: 0px 7px 11px 6px rgba(0, 0, 0, 0.28);
-  box-shadow: 0px 7px 11px 6px rgba(0, 0, 0, 0.28);
-  scale: 1.01;
-  border: 2px solid #57432a59;
-
-  transition: 0.3s all ease-in-out;
-}
-.services .services_box .service_card p:nth-child(1) {
+.services .services_box .service_card p.service_header {
   font-size: 1.5em;
   font-weight: bold;
   font-family: TheSeasonsBold;
+  text-align: center;
 }
-.services .services_box .service_card p:nth-child(2) {
+.services .services_box .service_card .service_desc p {
+  font-size: 1.1em;
+  font-weight: normal;
+  font-family: CormorantGaramond;
+  text-align: unset;
+}
+.services .services_box .service_card .service_desc p {
   font-size: 1.2em;
   font-weight: normal;
   font-family: CormorantGaramond;
+  text-align: unset;
+padding: 20px;
+  --lh: 25px;
+  --lines: 7;
+  --transition-text-duration: 520ms;
+  line-height: var(--lh);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--lines);
+  max-height: calc(var(--lh) * var(--lines));
+  transition: max-height 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #d5bdaf;
+
+  background: none;
+  -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+
+    /* Tranzicija samo visine i maske */
+  transition:
+    max-height var(--transition-text-duration) ease,
+    -webkit-mask-image var(--transition-text-duration) ease,
+    mask-image var(--transition-text-duration) ease,
+    opacity var(--transition-text-duration) ease;
+
 }
-.services .services_box .service_card p:nth-child(3) {
-  font-size: 1.3em;
+.services .services_box .service_card .service_desc button {
+  margin-top: 15px;
+  background-color: transparent;
+  border: none;
+  color: #57432aea;
+  font-size: 1.2em;
+  font-family: CormorantGaramond;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.services .services_box .service_card a.mail {
+  font-size: 1.5em;
   font-weight: normal;
   font-family: CormorantGaramond;
   border: 1px solid white;
-  color:#57432aea;
+  color: #57432aea;
   background-color: white;
   border-radius: 50px;
   padding: 12px;
-
+  text-decoration: none;
+  margin-top: 15px;
 }
 
 @media (min-width: 1200px) {
@@ -122,4 +156,3 @@
     padding: 20px;
   }
 }
-
