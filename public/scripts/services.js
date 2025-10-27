@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         msg.style.color = " #7b6b61";
         msg.innerHTML =
-          '<span>✔</span> Hvala na kontaktiranju! Uskoro ćete dobiti detaljan opis usluge na svoju email adresu.';
+          '<span>✔</span> Hvala na prijavi! Uskoro ćete dobiti detaljan opis usluge na svoju email adresu.';
         input.value = "";
 
         // auto flip nazad nakon 4s
