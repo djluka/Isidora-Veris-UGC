@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".service-flip-card").forEach((card) => {
     const form  = card.querySelector(".emailForm");
     const input = card.querySelector(".emailInput");
+    console.log(card);
 
     if (!form || !input) return; // nema forme u ovoj kartici
 
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!msg) {
       msg = document.createElement("p");
       msg.className = "formMessage";
-      form.appendChild(msg);
+      form.appendChild(card);
     }
     msg.setAttribute("aria-live", "polite");
 
@@ -71,9 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
           throw new Error(data.error || "Greška pri slanju.");
         }
 
-        msg.style.color = "green";
+        msg.style.color = " #7b6b61";
         msg.innerHTML =
-          '<span style="font-weight:700;">✔</span> Hvala na kontaktiranju! Uskoro ćete dobiti detaljan opis usluge na svoju email adresu.';
+          '<span>✔</span> Hvala na kontaktiranju! Uskoro ćete dobiti detaljan opis usluge na svoju email adresu.';
         input.value = "";
 
         // auto flip nazad nakon 4s

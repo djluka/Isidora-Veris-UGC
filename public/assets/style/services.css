@@ -147,6 +147,12 @@
   cursor: pointer;
   font-family: CormorantGaramond;
 }
+.formMessage {
+  font-family: CormorantGaramond;
+  font-size: 1.2em;
+  color: #7b6b61;
+  padding: 20px;
+}
 @media (min-width: 1200px) {
   .services-box {
     flex-direction: row;
