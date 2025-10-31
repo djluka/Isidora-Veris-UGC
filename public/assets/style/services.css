@@ -80,6 +80,7 @@
   border: none;
   cursor: pointer;
   font-family: CormorantGaramond;
+  display: none;
 }
 .flip-card-front a {
   text-decoration: none;
