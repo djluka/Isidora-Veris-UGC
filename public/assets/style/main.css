@@ -191,7 +191,7 @@ body {
 }
 /* UGC */
 .main .main_text_box .instagram_highlights .highlights a:nth-child(2) > div {
-  background-image: url(/public/assets/ugc_highlights.webp);
+  background-image: url(/assets/ugc_highlights.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -202,7 +202,7 @@ body {
 }
 /* Product */
 .main .main_text_box .instagram_highlights .highlights a:nth-child(4) > div {
-  background-image: url(/public/assets/product_highlights.webp);
+  background-image: url(/assets/product_highlights.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -267,7 +267,7 @@ a.more_on_instagram::before {
   position: absolute;
   left: 0;
   top: 0;
-  background-image: url(/public/assets/insta_profile.webp);
+  background-image: url(/assets/insta_profile.webp);
   background-position: initial;
   background-size: cover;
   background-repeat: no-repeat;
