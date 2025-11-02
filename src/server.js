@@ -24,8 +24,9 @@ app.post("/save-email", (req, res) => {
     return res.status(400).json({ ok: false, error: "Email je obavezan." });
   }
 
-  const timestamp = new Date().toISOString();
-  const line = `${timestamp}\t${service || "unknown"}\t${email}\n`;
+  const d = new Date();
+  const dateTime = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " | " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " | ";
+  const line = `${dateTime}\t${service || "unknown"} | ${email}\n`;
 
   const filePath = path.join(__dirname, "mail.txt");
   fs.appendFile(filePath, line, (err) => {

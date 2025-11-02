@@ -82,7 +82,7 @@
   border: none;
   cursor: pointer;
   font-family: CormorantGaramond;
-  display: none;
+  /* display: none; */
 }
 .flip-card-front a {
   text-decoration: none;
