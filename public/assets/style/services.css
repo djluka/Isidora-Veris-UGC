@@ -67,10 +67,12 @@
 .flip-card-front h2.service_header {
   font-family: CormorantGaramond;
   font-size: 1.8em;
+  color: #57432a;
 }
 .flip-card-front p.service-desc {
   font-family: CormorantGaramond;
   font-size: 1.2em;
+  color: #57432a;
 }
 .flip-card-front button.learn_more {
   padding: 10px 20px;
