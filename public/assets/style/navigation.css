@@ -33,11 +33,14 @@ nav .mobile_menu::after {
 nav .mobile_menu .site_title {
   font-size: 18pt;
   letter-spacing: 3px;
-  font-family: TheSeasonsBold;
   position: relative;
   text-align: center;
 }
-nav .menu .site_title p:nth-child(2) {
+nav .site_title p:nth-child(1) {
+  font-family: TheSeasonsBold;
+  background-color: pink;
+}
+nav .site_title p:nth-child(2) {
   font-family: TheSeasonsLight;
   background-color: red;
 }
@@ -213,7 +216,6 @@ nav .menu .site_title p:nth-child(2) {
     font-size: 10pt;
     margin: 0 auto;
     margin-right: -10px;
-    background-color: red;
   }
 
   nav .menu li:nth-child(1) p {
