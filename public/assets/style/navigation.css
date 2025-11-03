@@ -39,8 +39,7 @@ nav .mobile_menu .site_title {
 }
 nav .menu .site_title p:nth-child(2) {
   font-family: TheSeasonsLight;
-  
-
+  background-color: red;
 }
 #menu_toggle {
   z-index: 1;
@@ -207,13 +206,14 @@ nav .menu .site_title p:nth-child(2) {
   }
 
   nav .menu .site_title p:nth-child(2) {
-    /* font-family: TheSeasonsLight; */
+    font-family: TheSeasonsLight;
     font-size: 12pt;
     max-width: 120px;
     margin-top: 10px;
     font-size: 10pt;
     margin: 0 auto;
     margin-right: -10px;
+    background-color: red;
   }
 
   nav .menu li:nth-child(1) p {
