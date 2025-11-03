@@ -82,7 +82,7 @@
   border: none;
   cursor: pointer;
   font-family: CormorantGaramond;
-  display: none;
+  /* display: none; */
 }
 .flip-card-front a {
   text-decoration: none;
@@ -157,13 +157,36 @@
   padding: 20px;
 }
 @media (min-width: 1200px) {
+
+
+.services h1.title {
+  font-size: 40pt;
+  font-family: TheSeasonsBold;
+
+  font-weight: 600;
+  color: black;
+  margin-bottom: 20px;
+}
+.services-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.service-flip-card {
+  margin: 0;
+  background-color: transparent;
+  width: 350px;
+  height: 500px;
+  perspective: 1000px;
+}
+
+
+
+
   .services-box {
     flex-direction: row;
-  }
-
-  .flip-card-front p.service-desc {
-    font-family: CormorantGaramond;
-    font-size: 1em;
   }
   .flip-card-front button.learn_more {
     padding: 10px 20px;
