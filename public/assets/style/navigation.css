@@ -38,11 +38,9 @@ nav .mobile_menu .site_title {
 }
 nav .site_title p:nth-child(1) {
   font-family: TheSeasonsBold;
-  background-color: pink;
 }
 nav .site_title p:nth-child(2) {
   font-family: TheSeasonsLight;
-  background-color: red;
 }
 #menu_toggle {
   z-index: 1;
