@@ -37,9 +37,12 @@ nav .mobile_menu .site_title {
   position: relative;
   text-align: center;
 }
+nav .mobile_menu .site_title p:nth-child(2) {
+  font-family: TheSeasonsLight;
+  font-size: 13pt;
+}
 nav .menu .site_title p:nth-child(2) {
   font-family: TheSeasonsLight;
-  
 
 }
 #menu_toggle {
