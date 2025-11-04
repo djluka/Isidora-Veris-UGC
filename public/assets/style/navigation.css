@@ -11,80 +11,76 @@
     justify-content: space-between;
   }
 
-  nav .mobile_menu {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    padding: 20px;
-  }
-  nav .mobile_menu::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: #f4eade;
-    position: absolute;
-    left: 0%;
-    z-index: -5;
-  }
+nav .mobile_menu {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+nav .mobile_menu::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #f4eade;
+  position: absolute;
+  left: 0%;
+  z-index: -5;
+}
+nav .mobile_menu .site_title {
+  font-size: 18pt;
+  letter-spacing: 3px;
+  font-family: TheSeasonsBold;
+  position: relative;
+  text-align: center;
+}
+nav .menu .site_title p:nth-child(2) {
+  font-family: TheSeasonsLight;
+  
 
-  nav .mobile_menu .site_title {
-    font-size: 18pt;
-    letter-spacing: 3px;
-    font-family: TheSeasonsBold;
-    position: relative;
-    text-align: center;
-  }
-    nav .mobile_menu .site_title p:nth-child(2) {
-    font-size: 15pt;
-  }
-  nav .menu .site_title p:nth-child(2) {
-    font-family: TheSeasonsLight;
-    
-
-  }
-  #menu_toggle {
-    z-index: 1;
-    -webkit-user-select: none;
-    user-select: none;
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 35px;
-    height: 35px;
-  }
-  #menu_toggle::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 0;
-  }
-  #menu_toggle input {
-    display: block;
-    width: 35px;
-    height: 40px;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 3;
-    -webkit-touch-callout: none;
-    position: relative;
-    padding: 0;
-    margin: 0;
-  }
-  #menu_toggle .burger_line {
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    width: 35px;
-    height: 33px;
-  }
+}
+#menu_toggle {
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 35px;
+  height: 35px;
+}
+#menu_toggle::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+#menu_toggle input {
+  display: block;
+  width: 35px;
+  height: 40px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 3;
+  -webkit-touch-callout: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+#menu_toggle .burger_line {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 35px;
+  height: 33px;
+}
 
   #menu_toggle .burger_line span {
     display: block;
@@ -210,15 +206,15 @@
       text-align: center;
     }
 
-    nav .menu .site_title p:nth-child(2) {
-      /* font-family: TheSeasonsLight; */
-      font-size: 12pt;
-      max-width: 120px;
-      margin-top: 10px;
-      font-size: 10pt;
-      margin: 0 auto;
-      margin-right: -10px;
-    }
+  nav .menu .site_title p:nth-child(2) {
+    /* font-family: TheSeasonsLight; */
+    font-size: 12pt;
+    max-width: 120px;
+    margin-top: 10px;
+    font-size: 10pt;
+    margin: 0 auto;
+    margin-right: -10px;
+  }
 
     nav .menu li:nth-child(1) p {
       background-color: transparent;
