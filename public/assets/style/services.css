@@ -7,10 +7,9 @@
 }
 .services h1.title {
   font-size: 40pt;
-  font-family: TheSeasonsBold;
-
+font-family: RomateHood;  
   font-weight: 600;
-  color: black;
+  color: #57432a;
   margin-bottom: 20px;
 }
 .services-box {
@@ -77,8 +76,8 @@
 .flip-card-front button.learn_more {
   padding: 10px 20px;
   font-size: 1em;
-  background-color: #000;
-  color: #fff;
+  background-color:  #f4eade;;
+  color: #57432a;
   border: none;
   cursor: pointer;
   font-family: CormorantGaramond;
@@ -143,8 +142,8 @@
 
   font-size: 1em;
   margin: 3px;
-  background-color: #000;
-  border: 1px solid #000;
+  background-color:  #f4eade;;
+
   color: #fff;
   border: none;
   cursor: pointer;

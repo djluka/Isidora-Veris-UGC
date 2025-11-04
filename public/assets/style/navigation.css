@@ -1,270 +1,274 @@
-/* Default za telefon (mobile-first) */
-nav .menu {
-  display: none;
-}
-
-nav {
-  margin: 0px auto 0px auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-nav .mobile_menu {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  padding: 20px;
-}
-nav .mobile_menu::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #f4eade;
-  position: absolute;
-  left: 0%;
-  z-index: -5;
-}
-nav .mobile_menu .site_title {
-  font-size: 18pt;
-  letter-spacing: 3px;
-  font-family: TheSeasonsBold;
-  position: relative;
-  text-align: center;
-}
-nav .menu .site_title p:nth-child(2) {
-  font-family: TheSeasonsLight;
-  
-
-}
-#menu_toggle {
-  z-index: 1;
-  -webkit-user-select: none;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 35px;
-  height: 35px;
-}
-#menu_toggle::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 0;
-}
-#menu_toggle input {
-  display: block;
-  width: 35px;
-  height: 40px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 3;
-  -webkit-touch-callout: none;
-  position: relative;
-  padding: 0;
-  margin: 0;
-}
-#menu_toggle .burger_line {
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  width: 35px;
-  height: 33px;
-}
-
-#menu_toggle .burger_line span {
-  display: block;
-  width: 35px;
-  height: 4px;
-  margin: 5px 0 5px 0;
-  position: relative;
-  background-color: #f4eade;
-  background-color: #fff;
-
-  border-radius: 3px;
-
-  z-index: 1;
-
-  transform-origin: 4px 0px;
-
-  transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.2s ease;
-}
-
-#burger_menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-  box-sizing: border-box;
-  overflow: hidden;
-  background: rgba(237, 237, 237, 0.9);
-  -webkit-font-smoothing: antialiased;
-
-  transform: translate(100%, 0);
-  transform-origin: 0% 0%;
-
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-
-  position: fixed;
-  right: 0;
-  top: 0;
-
-  width: 100vw;
-  height: 100vh;
-}
-
-#burger_menu li {
-  cursor: pointer;
-  background-color: transparent;
-  margin: 30px;
-}
-#burger_menu li a {
-  text-decoration: none;
-  color: #57432a;
-  font-family: TheSeassonsBold;
-  font-size: 14pt;
-  cursor: pointer;
-  padding: 5px;
-  border-bottom: 1px solid transparent;
-  transition: 0.2s all;
-}
-#burger_menu li a:active {
-  border-bottom: 1px solid black;
-  transition: 0.2s all;
-}
-
-#menu_toggle input:checked ~ #burger_menu {
-  transform: none;
-}
-
-#menu_toggle .burger_line span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menu_toggle .burger_line span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-#menu_toggle input:checked + .burger_line span:nth-child(1) {
-  transform: rotate(45deg) translate(4px, -7px);
-  background-color: #fff;
-}
-
-#menu_toggle input:checked ~ .burger_line span:nth-child(2) {
-  transform: rotate(0deg) scale(0.2, 0.2);
-  opacity: 0;
-  background-color: #fff;
-}
-
-#menu_toggle input:checked ~ .burger_line span:nth-child(3) {
-  transform: rotate(-45deg) translate(2px, 5px);
-  background-color: #fff;
-}
-.no_scroll {
-  overflow: hidden;
-  height: 100vh;
-}
-/* Veći ekran (npr. tablet) */
-@media (min-width: 768px) {
-  nav .mobile_menu {
+  /* Default za telefon (mobile-first) */
+  nav .menu {
     display: none;
   }
+
   nav {
-    flex-wrap: wrap;
+    margin: 0px auto 0px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav .mobile_menu {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+  }
+  nav .mobile_menu::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #f4eade;
+    position: absolute;
+    left: 0%;
+    z-index: -5;
+  }
+
+  nav .mobile_menu .site_title {
+    font-size: 18pt;
+    letter-spacing: 3px;
+    font-family: TheSeasonsBold;
+    position: relative;
+    text-align: center;
+  }
+    nav .mobile_menu .site_title p:nth-child(2) {
+    font-size: 15pt;
+  }
+  nav .menu .site_title p:nth-child(2) {
+    font-family: TheSeasonsLight;
+    
+
+  }
+  #menu_toggle {
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 35px;
+    height: 35px;
+  }
+  #menu_toggle::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+  #menu_toggle input {
+    display: block;
+    width: 35px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 3;
+    -webkit-touch-callout: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+  #menu_toggle .burger_line {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 35px;
+    height: 33px;
+  }
+
+  #menu_toggle .burger_line span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    margin: 5px 0 5px 0;
+    position: relative;
+    background-color: #f4eade;
+    background-color: #fff;
+
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.2s ease;
+  }
+
+  #burger_menu {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5px;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  nav .menu {
-    display: block;
-    list-style: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: rgba(237, 237, 237, 0.9);
+    -webkit-font-smoothing: antialiased;
+
+    transform: translate(100%, 0);
+    transform-origin: 0% 0%;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    width: 100vw;
+    height: 100vh;
   }
 
-  nav .menu li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    margin: 20px;
-    padding: 10px;
-    text-align: center;
-  }
-
-  nav .menu .site_title p:nth-child(2) {
-    /* font-family: TheSeasonsLight; */
-    font-size: 12pt;
-    max-width: 120px;
-    margin-top: 10px;
-    font-size: 10pt;
-    margin: 0 auto;
-    margin-right: -10px;
-  }
-
-  nav .menu li:nth-child(1) p {
+  #burger_menu li {
+    cursor: pointer;
     background-color: transparent;
-    text-align: center;
-    font-size: 24pt;
-    font-weight: 600;
-    letter-spacing: 5px;
-    font-size: none;
+    margin: 30px;
+  }
+  #burger_menu li a {
     text-decoration: none;
-    transition: 0.3s all;
-  }
-  nav .menu li a {
-    font-size: 15pt;
-    text-decoration: none;
-    color: black;
-    margin: 10px;
-    padding: 10px 15px;
-    border: 1px solid transparent;
-    background-color: #f4eade;
-  }
-  nav .menu li a:hover {
-    transform: scale(1);
-    transition: 0.3s all;
-    border: 1px solid black;
-  }
-  nav .menu li a:active {
-    background-color: #b9b5b0;
-  }
-}
-
-/* Još veći ekran (npr. desktop) */
-@media (min-width: 1200px) {
-  nav .mobile_menu {
-    display: none;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    color: #57432a;
+    font-family: TheSeassonsBold;
+    font-size: 14pt;
+    cursor: pointer;
     padding: 5px;
-    text-align: center;
-    max-width: 1300px;
-    margin: 0 auto;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s all;
   }
-  nav .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  #burger_menu li a:active {
+    border-bottom: 1px solid black;
+    transition: 0.2s all;
   }
-}
+
+  #menu_toggle input:checked ~ #burger_menu {
+    transform: none;
+  }
+
+  #menu_toggle .burger_line span:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  #menu_toggle .burger_line span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+  #menu_toggle input:checked + .burger_line span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, -7px);
+    background-color: #fff;
+  }
+
+  #menu_toggle input:checked ~ .burger_line span:nth-child(2) {
+    transform: rotate(0deg) scale(0.2, 0.2);
+    opacity: 0;
+    background-color: #fff;
+  }
+
+  #menu_toggle input:checked ~ .burger_line span:nth-child(3) {
+    transform: rotate(-45deg) translate(2px, 5px);
+    background-color: #fff;
+  }
+  .no_scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+  /* Veći ekran (npr. tablet) */
+  @media (min-width: 768px) {
+    nav .mobile_menu {
+      display: none;
+    }
+    nav {
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    nav .menu {
+      display: block;
+      list-style: none;
+    }
+
+    nav .menu li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      margin: 20px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav .menu .site_title p:nth-child(2) {
+      /* font-family: TheSeasonsLight; */
+      font-size: 12pt;
+      max-width: 120px;
+      margin-top: 10px;
+      font-size: 10pt;
+      margin: 0 auto;
+      margin-right: -10px;
+    }
+
+    nav .menu li:nth-child(1) p {
+      background-color: transparent;
+      text-align: center;
+      font-size: 24pt;
+      font-weight: 600;
+      letter-spacing: 5px;
+      font-size: none;
+      text-decoration: none;
+      transition: 0.3s all;
+    }
+    nav .menu li a {
+      font-size: 15pt;
+      text-decoration: none;
+      color: black;
+      margin: 10px;
+      padding: 10px 15px;
+      border: 1px solid transparent;
+      background-color: #f4eade;
+    }
+    nav .menu li a:hover {
+      transform: scale(1);
+      transition: 0.3s all;
+      border: 1px solid black;
+    }
+    nav .menu li a:active {
+      background-color: #b9b5b0;
+    }
+  }
+
+  /* Još veći ekran (npr. desktop) */
+  @media (min-width: 1200px) {
+    nav .mobile_menu {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      text-align: center;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    nav .menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
