@@ -37,7 +37,6 @@ nav .mobile_menu .site_title {
   position: relative;
   text-align: center;
 }
-
 nav .mobile_menu .site_title p:nth-child(2) {
   font-family: TheSeasonsLight;
   font-size: 13pt;
@@ -45,6 +44,7 @@ nav .mobile_menu .site_title p:nth-child(2) {
 nav .menu .site_title p:nth-child(2) {
   font-family: TheSeasonsLight;
   
+
 }
 #menu_toggle {
   z-index: 1;
@@ -102,7 +102,7 @@ nav .menu .site_title p:nth-child(2) {
     transform-origin: 4px 0px;
 
     transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1),
-      background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.2s ease;
+    background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.2s ease;
   }
 
   #burger_menu {
