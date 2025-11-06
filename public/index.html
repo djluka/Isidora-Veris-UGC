@@ -19,9 +19,17 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/assets/favicon.webp" />
 
+    <link rel="preload" as="style" href="assets/style/fonts.css" />
     <link rel="stylesheet" href="assets/style/fonts.css" />
+
+    <link rel="preload" as="style" href="assets/style/navigation.css" />
     <link rel="stylesheet" href="assets/style/navigation.css" />
+    <link rel="stylesheet" href="assets/style/navigation.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="assets/style/navigation.css" /></noscript>
+
+    <link rel="preload" as="style" href="assets/style/main.css" />
     <link rel="stylesheet" href="assets/style/main.css" />
+
     <link rel="stylesheet" href="assets/style/scroll_to_top.css" />
     <link rel="stylesheet" href="assets/style/slider.css" />
     <link rel="stylesheet" href="assets/style/services.css" />
@@ -1168,13 +1176,13 @@
         </a>
       </div>
     </footer>
-    <script src="scripts/burger_menu.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/scroll_to_top.js"></script>
-    <script src="scripts/slider.js"></script>
-    <script src="scripts/video.js"></script>
-    <script src="scripts/about_me.js"></script>
-    <script src="scripts/clients.js"></script>
-    <script src="scripts/services.js"></script>
+    <script src="scripts/burger_menu.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/scroll_to_top.js" defer></script>
+    <script src="scripts/slider.js" defer></script>
+    <script src="scripts/video.js" defer></script>
+    <script src="scripts/about_me.js" defer></script>
+    <script src="scripts/clients.js" defer></script>
+    <script src="scripts/services.js" defer></script>
   </body>
 </html>

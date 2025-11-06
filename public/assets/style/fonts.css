@@ -1,17 +1,21 @@
 @font-face {
   font-family: "TheSeasonsBold";
   src: url("/fonts/fonnts.com-The-Seasons-Bold.otf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "TheSeasonsLight";
   src: url("/fonts/fonnts.com-The-Seasons-Light.otf");
+  font-display: swap;
 }
 @font-face {
   font-family: "RomateHood";
   src: url("/fonts/RomateHood-p73Ed.otf");
+  font-display: swap;
 }
 @font-face {
   font-family: "CormorantGaramond";
   src: url("/fonts/CormorantGaramond-Regular.ttf");
+  font-display: swap;
 }
