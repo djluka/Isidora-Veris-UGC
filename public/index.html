@@ -29,6 +29,14 @@
     <link rel="stylesheet" href="assets/style/comments.css" />
     <link rel="stylesheet" href="assets/style/about_me.css" />
     <link rel="stylesheet" href="assets/style/footer.css" />
+
+    <link
+      rel="preload"
+      as="image"
+      href="media/images/profile_poster.webp"
+      imagesrcset="media/images/profile_poster.webp 1200w"
+      imagesizes="100vw"
+    />
   </head>
 
   <body>
@@ -110,13 +118,11 @@
       <div class="main">
         <div class="profile_wrapper">
           <video
-            src="media/videos/profile_video.mp4"
             class="profile"
             muted
-            autoplay
             playsinline
             loop
-            loading="lazy"
+            poster="media/images/profile_poster.webp"
           ></video>
         </div>
         <div class="main_text_box">
@@ -228,12 +234,12 @@
               <div class="card">
                 <div class="video_wrapper">
                   <video
-                    src="media/videos/ugc/multiactiv.mp4"
+                    data-src="media/videos/ugc/multiactiv.mp4"
                     muted
                     autoplay
                     playsinline
+                    poster="media/clients/12.webp"
                     loop
-                    loading="lazy"
                   ></video>
                   <button class="play_button"></button>
                 </div>
@@ -267,12 +273,12 @@
               <div class="card">
                 <div class="video_wrapper">
                   <video
-                    src="media/videos/ugc/rocko.mp4"
+                    data-src="media/videos/ugc/rocko.mp4"
                     muted
                     autoplay
                     playsinline
+                    poster="media/clients/23.webp"
                     loop
-                    loading="lazy"
                   ></video>
                   <button class="play_button"></button>
                 </div>
@@ -302,12 +308,12 @@
               <div class="card">
                 <div class="video_wrapper">
                   <video
-                    src="media/videos/ugc/biguanelle.mp4"
+                    data-src="media/videos/ugc/biguanelle.mp4"
                     muted
                     autoplay
                     playsinline
+                    poster="media/clients/16.webp"
                     loop
-                    loading="lazy"
                   ></video>
                   <button class="play_button"></button>
                 </div>
@@ -337,12 +343,12 @@
               <div class="card">
                 <div class="video_wrapper">
                   <video
-                    src="media/videos/ugc/studioMint.mp4"
+                    data-src="media/videos/ugc/studioMint.mp4"
                     muted
                     autoplay
                     playsinline
+                    poster="media/clients/22.webp"
                     loop
-                    loading="lazy"
                   ></video>
                   <button class="play_button"></button>
                 </div>
@@ -372,12 +378,12 @@
               <div class="card">
                 <div class="video_wrapper">
                   <video
-                    src="media/videos/ugc/tmnz.mp4"
+                    data-src="media/videos/ugc/tmnz.mp4"
                     muted
                     autoplay
                     playsinline
+                    poster="media/clients/14.webp"
                     loop
-                    loading="lazy"
                   ></video>
                   <button class="play_button"></button>
                 </div>
@@ -407,12 +413,12 @@
               <div class="card">
                 <div class="video_wrapper">
                   <video
-                    src="media/videos/ugc/kuky.mp4"
+                    data-src="media/videos/ugc/kuky.mp4"
                     muted
                     autoplay
                     playsinline
+                    poster="media/clients/5.webp"
                     loop
-                    loading="lazy"
                   ></video>
                   <button class="play_button"></button>
                 </div>
@@ -481,12 +487,12 @@
               <div class="card">
                 <div class="video_wrapper">
                   <video
-                    src="media/videos/content/ellie&mo.mp4"
+                    data-src="media/videos/content/ellie&mo.mp4"
                     muted
                     autoplay
                     playsinline
+                    poster="media/clients/11.webp"
                     loop
-                    loading="lazy"
                   ></video>
                   <button class="play_button"></button>
                 </div>
@@ -515,12 +521,12 @@
               <div class="card">
                 <div class="video_wrapper">
                   <video
-                    src="media/videos/content/mlaf.mp4"
+                    data-src="media/videos/content/mlaf.mp4"
                     muted
                     autoplay
                     playsinline
+                    poster="media/clients/18.webp"
                     loop
-                    loading="lazy"
                   ></video>
                   <button class="play_button"></button>
                 </div>
@@ -549,12 +555,12 @@
               <div class="card">
                 <div class="video_wrapper">
                   <video
-                    src="media/videos/content/soppy.mp4"
+                    data-src="media/videos/content/soppy.mp4"
                     muted
                     autoplay
                     playsinline
+                    poster="media/clients/8.webp"
                     loop
-                    loading="lazy"
                   ></video>
                   <button class="play_button"></button>
                 </div>
@@ -583,13 +589,12 @@
               <div class="card">
                 <div class="video_wrapper">
                   <video
-                    src="media/videos/content/mondoBambino.mp4
-                    "
+                    data-src="media/videos/content/mondoBambino.mp4"
                     muted
                     autoplay
                     playsinline
+                    poster="media/clients/10.webp"
                     loop
-                    loading="lazy"
                   ></video>
                   <button class="play_button"></button>
                 </div>
@@ -618,12 +623,12 @@
               <div class="card">
                 <div class="video_wrapper">
                   <video
-                    src="media/videos/content/ellie&mo2.mp4"
+                    data-src="media/videos/content/ellie&mo2.mp4"
                     muted
                     autoplay
                     playsinline
+                    poster="media/clients/11.webp"
                     loop
-                    loading="lazy"
                   ></video>
                   <button class="play_button"></button>
                 </div>
@@ -793,7 +798,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
