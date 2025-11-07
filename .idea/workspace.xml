@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4903386f-091b-4443-8070-0e1cd4723124" name="Changes" comment="Update IntelliJ IDEA project settings: modify default changelist comment, update git widget branch, and increment local task counter">
+    <list default="true" id="4903386f-091b-4443-8070-0e1cd4723124" name="Changes" comment="Update IntelliJ IDEA project settings: add new changelists and tasks related to &quot;about me&quot; script refactoring.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/about_me.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/about_me.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,23 +127,7 @@
       <option name="project" value="LOCAL" />
       <updated>1762478844820</updated>
     </task>
-    <task id="LOCAL-00004" summary="Update IntelliJ IDEA project settings: add shelved changes for tracking uncommitted modifications.">
-      <option name="closed" value="true" />
-      <created>1762479583088</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1762479583088</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Update IntelliJ IDEA project settings: modify default changelist comment, update git widget branch, and increment local task counter">
-      <option name="closed" value="true" />
-      <created>1762479738124</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1762479738124</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,9 +203,6 @@
     <MESSAGE value="Reorder navigation links and remove placeholder text from form message" />
     <MESSAGE value="Refactor video handling: implement responsive video sources, remove obsolete code, and optimize &quot;about me&quot; script logic." />
     <MESSAGE value="Update IntelliJ IDEA project settings: add new changelists and tasks related to &quot;about me&quot; script refactoring." />
-    <MESSAGE value="Improve animations and styling consistency for services and slider components, enable &quot;Learn More&quot; buttons, and update IntelliJ IDEA project settings" />
-    <MESSAGE value="Update IntelliJ IDEA project settings: add shelved changes for tracking uncommitted modifications." />
-    <MESSAGE value="Update IntelliJ IDEA project settings: modify default changelist comment, update git widget branch, and increment local task counter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update IntelliJ IDEA project settings: modify default changelist comment, update git widget branch, and increment local task counter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update IntelliJ IDEA project settings: add new changelists and tasks related to &quot;about me&quot; script refactoring." />
   </component>
 </project>
