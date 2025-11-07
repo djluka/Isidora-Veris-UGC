@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".service-flip-card").forEach((card) => {
     const form  = card.querySelector(".emailForm");
     const input = card.querySelector(".emailInput");
-    console.log(card);
+    // console.log(card);
 
     if (!form || !input) return; // nema forme u ovoj kartici
 

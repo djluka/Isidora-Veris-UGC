@@ -1,34 +1,29 @@
-// function onElementInView(elementSelector, callback) {
-//   const element = document.querySelector(elementSelector);
+document.addEventListener("DOMContentLoaded", () => {
+    loop();
+})
 
-//   if (!element) {
-//     console.error("Element not found:", elementSelector);
-//     return;
-//   }
+function loop() {
+    const video = document.querySelector(".about_me .about_me_content video.profile_loop_video");
+    const videoSrcMobile = video.dataset.src_mobile;
+    const videoSrcDesktop = video.dataset.src_desktop;
 
-//   const observer = new IntersectionObserver(
-//     (entries, observer) => {
-//       entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//           callback(entry.target); // pokreće funkciju
-//           // ako hoćeš da se samo jednom okine, otkomentariši sledeću liniju:
-//           // observer.unobserve(entry.target);
-//         } else {
-//           const text = document.getElementById("text");
-//           console.log("nije u view-u");
-//           text.classList.remove("visible");
-//         }
-//       });
-//     },
-//     { threshold: 0.1 } // 0.1 znači da 10% elementa mora biti u view-u
-//   );
+    window.addEventListener("resize", function () {
+        console.log("Promenjena je veličina prozora!");
 
-//   observer.observe(element);
-// }
+        if (window.innerWidth < 1400) {
+            video.src = videoSrcMobile;
+            console.log(video);
 
-// // Primer upotrebe
-// onElementInView("#myElement", (el) => {
-//   const text = document.getElementById("text");
-//   console.log(" u view-u");
-//   text.classList.add("visible");
-// });
+        } else {
+            video.src = videoSrcDesktop;
+            console.log(video);
+
+        }
+        if (video.src) {
+            video.load();
+            video.play()
+        }
+    });
+
+
+}
