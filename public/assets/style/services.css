@@ -1,208 +1,239 @@
 .services {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+}
+.service-flip-card{
+    /* Scroll-driven animation (shows final state when unsupported) */
+    animation: service_apper 0.5s ease;
+    animation-timeline: view();
+    animation-range: entry -10% cover 30%;
+    padding: 0;
+    margin: 20px auto;
+}
+/* ===== ANIMATIONS ===== */
+@keyframes service_apper {
+    from {
+        scale: 0.5;
+    }
+    to {
+        scale: 1;
+    }
 }
 .services h1.title {
-  font-size: 40pt;
-font-family: RomateHood;  
-  font-weight: 600;
-  color: #57432a;
-  margin-bottom: 20px;
+    font-size: 40pt;
+    font-family: RomateHood;
+    font-weight: 600;
+    color: #57432a;
+    margin-bottom: 20px;
 }
+
 .services-box {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
+
 .service-flip-card {
-  background-color: transparent;
-  margin: 10px;
-  width: 300px;
-  height: 500px;
-  perspective: 1000px;
+    background-color: transparent;
+    margin: 10px;
+    width: 300px;
+    height: 500px;
+    perspective: 1000px;
 }
 
 .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .service-flip-card .flip-card-inner {
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
 .service-flip-card.flip .flip-card-inner {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .flip-card-front,
 .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  background-color: #d5bdaf;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: #d5bdaf;
 }
+
 .flip-card-front {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 
-  padding: 50px;
+    padding: 50px;
 }
+
 .flip-card-front h2.service_header {
-  font-family: CormorantGaramond;
-  font-size: 1.8em;
-  color: #57432a;
+    font-family: CormorantGaramond;
+    font-size: 1.8em;
+    color: #57432a;
 }
+
 .flip-card-front p.service-desc {
-  font-family: CormorantGaramond;
-  font-size: 1.2em;
-  color: #57432a;
-}
-.flip-card-front button.learn_more {
-  padding: 10px 20px;
-  font-size: 1em;
-  background-color:  #f4eade;;
-  color: #57432a;
-  border: none;
-  cursor: pointer;
-  font-family: CormorantGaramond;
-  /* display: none; */
-}
-.flip-card-front a {
-  text-decoration: none;
-}
-.flip-card-front small {
-  margin-top: 1em;
-  font-family: CormorantGaramond;
-  color: #7b6b61;
-  text-decoration: none;
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-}
-.flip-card-back h2 {
-  font-family: CormorantGaramond;
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-.flip-card-back form.emailForm {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-}
-.flip-card-back input[type="email"] {
-  padding: 10px;
-  width: 70%;
-  height: 100%;
-  margin-bottom: 15px;
-  border: none;
-  border-bottom: 1px solid black;
-  font-family: CormorantGaramond;
-  background-color: transparent;
-  font-size: 1em;
-  align-self: baseline;
-  transition: 0.3s all ease-in-out;
-}
-.flip-card-back input[type="email"]::placeholder {
-  font-family: CormorantGaramond;
-  color: #7b6b61;
-}
-.flip-card-back input[type="email"]:focus {
-  outline: none;
-  border: 1px solid black;
-  transition: 0.3s all ease-in-out;
-}
-.flip-card-back button[type="submit"] {
-  width: 30%;
-  height: 100%;
-
-  font-size: 1em;
-  margin: 3px;
-  background-color:  #f4eade;;
-
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-family: CormorantGaramond;
-}
-.formMessage {
-  font-family: CormorantGaramond;
-  font-size: 1.2em;
-  color: #7b6b61;
-  padding: 20px;
-}
-@media (min-width: 1200px) {
-
-
-.services h1.title {
-  font-size: 40pt;
-  font-family: TheSeasonsBold;
-
-  font-weight: 600;
-  color: black;
-  margin-bottom: 20px;
-}
-.services-box {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.service-flip-card {
-  margin: 0;
-  background-color: transparent;
-  width: 350px;
-  height: 500px;
-  perspective: 1000px;
-}
-
-
-
-
-  .services-box {
-    flex-direction: row;
-  }
-  .flip-card-front button.learn_more {
-    padding: 10px 20px;
+    font-family: CormorantGaramond;
     font-size: 1.2em;
-    background-color: #000;
-    color: #fff;
+    color: #57432a;
+}
+
+.flip-card-front button.learn_more {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #f4eade;;
+    color: #57432a;
     border: none;
     cursor: pointer;
     font-family: CormorantGaramond;
-  }
-  .flip-card-front a {
+    /* display: none; */
+}
+
+.flip-card-front a {
     text-decoration: none;
-  }
-  .flip-card-front small {
-    margin-top: 15px;
+}
+
+.flip-card-front small {
+    margin-top: 1em;
     font-family: CormorantGaramond;
     color: #7b6b61;
     text-decoration: none;
-  }
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flip-card-back h2 {
+    font-family: CormorantGaramond;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.flip-card-back form.emailForm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.flip-card-back input[type="email"] {
+    padding: 10px;
+    width: 70%;
+    height: 100%;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-family: CormorantGaramond;
+    background-color: transparent;
+    font-size: 1em;
+    align-self: baseline;
+    transition: 0.3s all ease-in-out;
+}
+
+.flip-card-back input[type="email"]::placeholder {
+    font-family: CormorantGaramond;
+    color: #7b6b61;
+}
+
+.flip-card-back input[type="email"]:focus {
+    outline: none;
+    border: 1px solid black;
+    transition: 0.3s all ease-in-out;
+}
+
+.flip-card-back button[type="submit"] {
+    width: 30%;
+    height: 100%;
+
+    font-size: 1em;
+    margin: 3px;
+    background-color: #f4eade;;
+
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-family: CormorantGaramond;
+}
+
+.formMessage {
+    font-family: CormorantGaramond;
+    font-size: 1.2em;
+    color: #7b6b61;
+    padding: 20px;
+}
+
+@media (min-width: 1200px) {
+
+
+    .services h1.title {
+        font-size: 40pt;
+        font-family: TheSeasonsBold;
+
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .services-box {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .service-flip-card {
+        margin: 0;
+        width: 350px;
+        height: 500px;
+        perspective: 1000px;
+    }
+
+
+    .services-box {
+        flex-direction: row;
+    }
+
+    .flip-card-front button.learn_more {
+        padding: 10px 20px;
+        font-size: 1.2em;
+        border: none;
+        cursor: pointer;
+        font-family: CormorantGaramond;
+    }
+
+    .flip-card-front a {
+        text-decoration: none;
+    }
+
+    .flip-card-front small {
+        margin-top: 15px;
+        font-family: CormorantGaramond;
+        text-decoration: none;
+    }
 }
