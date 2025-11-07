@@ -18,7 +18,7 @@ function loop() {
     logic()
 
     window.addEventListener("resize", function () {
-        logic()
+        // logic()
     });
 
 
