@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4903386f-091b-4443-8070-0e1cd4723124" name="Changes" comment="Update IntelliJ IDEA project settings: add new changelists and tasks related to &quot;about me&quot; script refactoring.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/style/services.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/style/services.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/style/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/style/slider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +70,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "C:/Users/Luka/Desktop/Isidora-Veris-UGC",
     "node.js.detected.package.eslint": "true",

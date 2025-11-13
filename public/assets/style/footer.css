@@ -1,6 +1,7 @@
 /* mobile first */
 footer {
   max-height: 100vh;
+    background-color: #f4eade;
 }
 
 .page_wrapper_footer {
@@ -62,9 +63,7 @@ footer a.credits {
   color: grey;
 
   font-family: CormorantGaramond;
-
-  background-color: rgba(128, 128, 128, 0.034);
-
+    background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
