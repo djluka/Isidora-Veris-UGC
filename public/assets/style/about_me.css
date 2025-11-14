@@ -60,10 +60,9 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  margin-top: 30px;
 }
 
-.about_me_header {
+p.about_me_header {
   position: sticky;
   top: 0;
   z-index: 3;
@@ -73,18 +72,17 @@ body {
 
   display: grid;
   place-items: center;
-
   font-family: RomateHood;
   font-weight: 800;
-  font-size: 3em;
+  font-size: 4em;
   color: #57432a;
 
-  /* padding: 16px; */
+
   text-align: center;
+    align-self: center;
   backdrop-filter: blur(3px);
   background: rgba(244, 234, 222, 0.473);
 }
-
 .profile_loop_video {
   position: sticky;
   top: var(--header-height);
@@ -164,6 +162,7 @@ body {
 
   .about_me_header {
     font-size: 3.2em;
+      background-color: red;
   }
 
   .text-scroll p {

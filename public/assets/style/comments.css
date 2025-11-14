@@ -32,8 +32,6 @@ body {
   border-radius: 50px;
   display: none;
   transform: translateX(-100%);
-
-  
 }
 .comment_header {
   width: 100%;
@@ -82,6 +80,7 @@ body {
   text-align: center;
   height: 90%;
 }
+
 p.comment_txt {
   font-size: 1em;
   padding: 10px;
