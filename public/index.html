@@ -37,8 +37,10 @@
     <link rel="stylesheet" href="assets/style/comments.css" />
     <link rel="stylesheet" href="assets/style/about_me.css" />
     <link rel="stylesheet" href="assets/style/footer.css" />
+      <link rel="stylesheet" href="assets/style/credits.css" />
 
-    <link
+
+      <link
       rel="preload"
       as="image"
       href="media/images/profile_poster.webp"
@@ -57,11 +59,11 @@
           </div>
         </li>
         <li>
-          <a href="#content">CONTENT</a>
+            <a href="#content">CONTENT</a>
             <a href="#services">SERVICES</a>
             <a href="#clients">CLIENTS</a>
             <a href="#about">ABOUT</a>
-          <a href="#contact">CONTACT</a>
+            <a href="#contact">CONTACT</a>
         </li>
       </ul>
       <div class="mobile_menu">
@@ -92,16 +94,16 @@
             </li>
             <li>
               <a
-                href="#clients"
+                href="#services"
                 onclick="document.getElementById('menu_checkbox').checked = false;"
-                >CLIENTS</a
+                >SERVICES</a
               >
             </li>
             <li>
               <a
-                href="#services"
+                href="#clients"
                 onclick="document.getElementById('menu_checkbox').checked = false;"
-                >SERVICES</a
+                >CLIENTS</a
               >
             </li>
             <li>
@@ -1144,7 +1146,7 @@
         ></video>
         <div class="text-scroll">
           <p>
-            Trogodišnjim iskustvom stečenim kroz rad u marketingu za mali brend,
+            Višegodišnjim iskustvom stečenim kroz rad u marketingu za mali brend,
             razvila sam razumevanje kako strategija i kreativnost mogu napraviti
             razliku. Danas pomažem i drugim brendovima da, kroz pažljivo
             osmišljene i estetične video sadržaje, povećaju prodaju i povežu se
@@ -1157,27 +1159,31 @@
       </div>
     </div>
     <footer id="contact">
-      <div class="page_wrapper_footer">
-        <img src="assets/foother_img.webp" loading="lazy" alt="Loading..." />
-        <div class="txt_box">
-          <p>ZAINTERESOVANI STE ZA SARADNJU ?</p>
-          <p>pišite mi</p>
+        <div class="footer_content">
+            <div class="footer_text">
+                <h1>ZAINTERESOVANI STE ZA SARADNJU ?</h1>
+                <p>pišite mi</p>
+            </div>
+            <a class="footer_icons" href="mailto:info@isidoraverisugc.com">
+                <div class="icons">
+                    <img src="assets/point_arrow.webp" alt="Loading...">
+                    <img src="assets/mail_handwritten.png" alt="Loading...">
+                </div>
+                <p>info@isidoraverisugc.com</p>
+            </a>
         </div>
-          <div class="icon_box">
-              <img src="assets/point_arrow.webp" alt="Loading..." loading="lazy" />
-              <img src="assets/" alt="loading..." loading="lazy" />
-          </div>
-      </div>
-      <div class="credits">
-        <a
-          class="credits"
-          href="mailto:luka.djordjevic7017@gmail.com"
-          data-tooltip="CLICK FOR MY MAIL"
-        >
-          &copy; 2025 All rights reserved | Luka Đorđević
-        </a>
-      </div>
+        <img class="footer_img" src="assets/footer_img_transparent.PNG" alt="Loading...">
+
     </footer>
+    <div class="credits">
+        <a
+                class="credits"
+                href="mailto:luka.djordjevic7017@gmail.com"
+                data-tooltip="CLICK FOR MY MAIL"
+        >
+            &copy; 2025 All rights reserved | Luka Đorđević
+        </a>
+    </div>
 
     <script src="scripts/burger_menu.js" defer></script>
     <script src="scripts/main.js" defer></script>
