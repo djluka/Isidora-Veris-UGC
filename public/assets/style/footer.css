@@ -1,133 +1,57 @@
-/* mobile first */
-footer {
-  max-height: 100vh;
-    background-color: #f4eade;
+footer img{
+    width: 120px;
 }
+footer{
+    background-color:#f3ebde;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .footer_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 310px;
 
-.page_wrapper_footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  padding: 40px;
+}
+footer h1{
+    font-family: TheSeasonsBold;
+    text-align: center;
+    color: #745852;
+    font-size: 1.9em;
+}
+/*footer .footer_content{*/
+/*    background-image:url(/public/assets/footer_img_transparent.PNG);*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: right;*/
+/*    background-size: contain;*/
+/*    box-sizing: border-box;*/
 
-  font-family: TheSeasons;
-}
+/*    height: 80vh;*/
+/*    padding: 20px;*/
 
-footer img {
-  max-width: 300px;
-  margin: 0 auto;
-}
-footer .txt_box {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  text-align: center;
-}
-footer .txt_box p:nth-child(1) {
-  margin-top: 30px;
-  font-size: 3em;
-  text-align: center;
-  font-family: TheSeasons;
-}
-footer .txt_box p:nth-child(2) {
-  font-size: 2em;
-  margin-top: 30px;
-}
-footer .txt_box a {
-  text-decoration: none;
-  color: black;
-  border: 1px solid black;
-  padding: 30px;
-  font-size: 2em;
-  margin-top: 30px;
-  border-radius: 50px;
-  transition: 0.2s;
-}
-footer .txt_box a:hover {
-  background-color: black;
-  color: white;
-  transition: 0.2s;
-}
-footer .txt_box a:active {
-  transform: scale(1.1);
-  background-color: black;
-}
-/* credits */
-footer a.credits {
-  text-decoration: none;
-  color: grey;
-
-  font-family: CormorantGaramond;
-    background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-
-  padding: 10px;
-  font-size: 1em;
-
-  position: relative;
-  text-align: center;
-}
-
-footer a.credits:hover {
-  text-decoration: underline;
-}
-
-/* Tooltip */
-.credits::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 120%; /* iznad linka */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
-  font-size: 0.8em;
-  padding: 8px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-}
-
-.credits:hover::after {
-  opacity: 1;
-}
-
-@media only screen and (max-width: 600px) {
-  footer img {
-    max-width: 320px;
-    margin: 0 auto;
-  }
-  footer .txt_box p:nth-child(1) {
+/*}*/
+footer p{
+    font-family: RomateHood;
+    text-align: left;
     font-size: 2em;
-  }
-  footer .txt_box p:nth-child(2) {
+    color: #745852;
+    margin: 20px;
+
+}
+footer .footer_content a.footer_icons{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+}
+footer .footer_content a.footer_icons img:nth-child(2){
+    transform: rotate(10deg);
+}
+footer .footer_content a.footer_icons p{
+    font-family: CormorantGaramond;
     font-size: 1.5em;
-  }
-  footer .txt_box a {
-    padding: 20px;
-    font-size: 1.5em;
-  }
-}
-/* Veći ekran (npr. tablet) */
-@media (min-width: 768px) {
-}
-@media (min-width: 1200px) {
-  .page_wrapper_footer {
-  max-width: 1500px;
-}
-  footer img {
-    max-width: 400px;
-    margin: 0 auto;
-  }
+    color: #745852;
 }
