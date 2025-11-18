@@ -132,6 +132,8 @@
     font-size: 1.2em;
     margin-bottom: 20px;
     padding: 20px;
+    color: #57432a;
+
 }
 
 .flip-card-back form.emailForm {
@@ -175,7 +177,7 @@
     margin: 3px;
     background-color: #f4eade;;
 
-    color: #000;
+    color: #57432a;
     border: none;
     cursor: pointer;
     font-family: CormorantGaramond;
@@ -184,7 +186,7 @@
 .formMessage {
     font-family: CormorantGaramond;
     font-size: 1.2em;
-    color: #7b6b61;
+    color: #57432a;
     padding: 20px;
 }
 
