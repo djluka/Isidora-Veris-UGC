@@ -1,7 +1,6 @@
-
-
-
-
+.credits{
+    display: block;
+}
 a.credits {
     text-decoration: none;
     color: grey;
