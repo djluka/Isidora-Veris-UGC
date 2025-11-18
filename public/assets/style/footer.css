@@ -1,13 +1,16 @@
 footer img{
-    width: 120px;
+    width: 100px;
 }
 footer{
     background-color:#f3ebde;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    height: 70vh;
 }
 footer .footer_text{
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,11 +42,12 @@ footer p{
     margin: 20px;
 
 }
+
 footer .footer_content a.footer_icons{
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
     text-decoration: none;
 }
@@ -54,4 +58,20 @@ footer .footer_content a.footer_icons p{
     font-family: CormorantGaramond;
     font-size: 1.5em;
     color: #745852;
+    text-align: start;
+}
+footer img.footer_img{
+    width: 250px;
+    position: absolute;
+    bottom: 0;
+    right:0 ;
+}
+footer a.footer_mail{
+    color: #745852;
+    position: absolute;
+    text-decoration: none;
+    left: 10px;
+    font-size: 1.5em;
+    font-family: CormorantGaramond;
+    top: 90%;
 }
