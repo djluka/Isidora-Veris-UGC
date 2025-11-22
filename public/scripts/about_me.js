@@ -6,7 +6,6 @@ function loop() {
     const video = document.querySelector(".about_me .about_me_content video.profile_loop_video");
     const videoSrcMobile = video.dataset.src_mobile;
     const videoSrcDesktop = video.dataset.src_desktop;
-    console.log(video);
 
     function logic(){
         if (window.innerWidth < 1400) {

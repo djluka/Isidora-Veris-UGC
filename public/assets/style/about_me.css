@@ -156,8 +156,9 @@ p.about_me_header {
 /* ===== DESKTOP TWEAKS ===== */
 @media (min-width: 1200px) {
   .about_me {
+      --video-txt-width: 70%;
+      --video-txt-height: 70svh;
     margin: 0 auto;
-    --video-txt-width: 80%;
   }
 
   .about_me_header {
@@ -168,4 +169,22 @@ p.about_me_header {
   .text-scroll p {
     font-size: 2em;
   }
+    .profile_loop_video {
+
+        position: sticky;
+        top: var(--header-height);
+        z-index: 0;
+
+        display: block;
+        width: var(--video-txt-width);
+        max-width: 100%;
+        height: var(--video-txt-height);
+        object-fit: cover;
+        object-position: center;
+
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        margin: 0 auto;
+        padding: 1px;
+
+    }
 }

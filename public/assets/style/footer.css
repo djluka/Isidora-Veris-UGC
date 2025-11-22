@@ -1,36 +1,54 @@
-footer img{
+footer img {
     width: 100px;
 }
-footer{
-    background-color:#f3ebde;
+
+footer {
+    --bckg-img: 250px;
+
+    background-color: #f3ebde;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    height: 80vh;
 
     background-image: url(/assets/footer_img_transparent.PNG);
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position-x: right;
+    background-position-x: 255%; /* startuje skroz desno */
     background-position-y: bottom;
     box-sizing: border-box;
-    background-size: max(250px);
+    background-size: max(var(--bckg-img));
+    transition: background-position-x 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
-footer .footer_text{
+
+/* Aktivna animacija */
+footer.animate-footer {
+    background-position-x: right;
+    transition-delay: 0.30s;
+
+}
+
+footer .footer_text {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 310px;
-
 }
-footer h1{
+
+footer .footer_content {
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+}
+
+footer h1 {
     font-family: TheSeasonsBold;
     text-align: center;
     color: #745852;
     font-size: 1.9em;
 }
+
 /*footer .footer_content{*/
 /*    background-image:url(/public/assets/footer_img_transparent.PNG);*/
 /*    background-repeat: no-repeat;*/
@@ -42,35 +60,107 @@ footer h1{
 /*    padding: 20px;*/
 
 /*}*/
-footer p{
+footer p {
     font-family: RomateHood;
     text-align: left;
     font-size: 2em;
     color: #745852;
     margin: 10px;
-
+    margin-left: 15px;
 }
 
-footer .footer_content a.footer_icons{
 
+footer .footer_content a.footer_icons {
+    padding: 0px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
     text-decoration: none;
+    margin-bottom: calc(var(--bckg-img) - 50px);
 }
-footer .footer_content a.footer_icons img:nth-child(2){
+
+footer .footer_content a.footer_icons img:nth-child(2) {
     transform: rotate(10deg);
 }
-footer .footer_content a.footer_icons p{
+
+footer .footer_content a.footer_icons p {
     font-family: CormorantGaramond;
     font-size: 1.5em;
     color: #745852;
     text-align: center;
+
+    background-color: rgba(243, 235, 222, 0.34);
+    border-radius: 50px;
+    padding: 10px;
 }
-footer img.footer_img{
-    width: 250px;
-    position: absolute;
-    bottom: 0;
-    right:0 ;
+
+/* ===== DESKTOP TWEAKS ===== */
+@media (min-width: 1200px) {
+    footer {
+        background-image: none;
+        background-color: #f3ebde;
+    }
+
+    footer .footer_wrapper {
+        --bckg-img: 300px;
+
+        background-color: #f3ebde;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        width: 1200px;
+
+        background-image: url(/assets/footer_img_transparent.PNG);
+        background-repeat: no-repeat;
+        background-position-x: 125%; /* startuje skroz desno */
+        background-position-y: bottom;
+        box-sizing: border-box;
+        background-size: max(var(--bckg-img));
+        transition: background-position-x 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+
+    /* Aktivna animacija */
+    footer .footer_wrapper.animate-footer {
+        background-position-x: right;
+        transition-delay: 0.30s;
+
+    }
+
+    footer .footer_content {
+
+        max-height: 500px;
+        margin-left: 200px;
+    }
+
+    footer h1 {
+        font-family: TheSeasonsBold;
+        text-align: center;
+        color: #745852;
+        font-size: 2em;
+    }
+
+    footer p {
+        font-family: RomateHood;
+        text-align: left;
+        font-size: 3em;
+        color: #745852;
+        margin: 10px;
+        margin-left: 15px;
+    }
+
+    footer .footer_content a.footer_icons p {
+        font-family: CormorantGaramond;
+        font-size: 2em;
+        color: #745852;
+        text-align: center;
+
+        background-color: rgba(225, 177, 99, 0.34);
+        border-radius: 50px;
+        padding: 20px;
+
+    }
+
+
 }
