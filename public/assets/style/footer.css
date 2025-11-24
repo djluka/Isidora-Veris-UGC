@@ -1,33 +1,47 @@
+footer {
+    background: #f4eade;
+}
+
 footer img {
     width: 100px;
 }
 
-footer {
-    --bckg-img: 250px;
+footer .footer_desktop {
+    display: none;
+}
 
+footer .footer_mobile {
+    display: block;
+}
+
+.footer_mobile {
+    --bckg-img: 240px;
     background-color: #f3ebde;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-
-    background-image: url(/assets/footer_img_transparent.PNG);
+    background-image: url(/assets/footer_img_transparent.webp);
     background-repeat: no-repeat;
-    background-position-x: 255%; /* startuje skroz desno */
+    background-position-x: 240%; /* startuje skroz desno */
     background-position-y: bottom;
     box-sizing: border-box;
     background-size: max(var(--bckg-img));
-    transition: background-position-x 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: background-position-x 1.2s cubic-bezier(0.22, 1.25, 0.55, 0.1);
+    height: 85vh;
+
+    padding: 50px;
 }
 
-/* Aktivna animacija */
-footer.animate-footer {
+/* Aktivna animacija*/
+.footer_mobile.animate-footer {
     background-position-x: right;
     transition-delay: 0.30s;
+    cubic-bezier(0.22, 1.25, 0.55, 1);
 
 }
 
-footer .footer_text {
+.footer_mobile .footer_text {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -35,32 +49,21 @@ footer .footer_text {
     max-width: 310px;
 }
 
-footer .footer_content {
-    backdrop-filter: blur(5px);
+.footer_mobile .footer_content {
     display: flex;
     flex-direction: column;
-    max-height: 400px;
+    justify-content: center;
+    align-items: center;
 }
 
-footer h1 {
+.footer_mobile .footer_content .footer_text h1 {
     font-family: TheSeasonsBold;
     text-align: center;
     color: #745852;
     font-size: 1.9em;
 }
 
-/*footer .footer_content{*/
-/*    background-image:url(/public/assets/footer_img_transparent.PNG);*/
-/*    background-repeat: no-repeat;*/
-/*    background-position: right;*/
-/*    background-size: contain;*/
-/*    box-sizing: border-box;*/
-
-/*    height: 80vh;*/
-/*    padding: 20px;*/
-
-/*}*/
-footer p {
+.footer_mobile .footer_content .footer_text p {
     font-family: RomateHood;
     text-align: left;
     font-size: 2em;
@@ -69,19 +72,30 @@ footer p {
     margin-left: 15px;
 }
 
-
-footer .footer_content a.footer_icons {
-    padding: 0px;
+.footer_mobile .footer_content a.footer_icons {
+    padding: 0;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
     text-decoration: none;
     margin-bottom: calc(var(--bckg-img) - 50px);
+    position: relative;
 }
 
-footer .footer_content a.footer_icons img:nth-child(2) {
-    transform: rotate(10deg);
+.footer_mobile .footer_content a.footer_icons img:nth-child(1) {
+    transform: rotate(-50deg) scaleX(-1);
+    width: 100px;
+    position: relative;
+    left: 50%;
+    top: 20px;
+}
+
+.footer_mobile .footer_content a.footer_icons img:nth-child(2) {
+    transform: rotate(20deg);
+    position: absolute;
+    bottom: -90%;
+    left: 0;
 }
 
 footer .footer_content a.footer_icons p {
@@ -90,77 +104,104 @@ footer .footer_content a.footer_icons p {
     color: #745852;
     text-align: center;
 
-    background-color: rgba(243, 235, 222, 0.34);
+    background-color: transparent;
     border-radius: 50px;
     padding: 10px;
+    background-color: #d6bdae;
+
+    border: none;
 }
 
-/* ===== DESKTOP TWEAKS ===== */
 @media (min-width: 1200px) {
-    footer {
-        background-image: none;
-        background-color: #f3ebde;
+    footer .footer_desktop {
+        display: block;
+
     }
 
-    footer .footer_wrapper {
-        --bckg-img: 300px;
+    footer .footer_mobile {
+        display: none;
+    }
 
-        background-color: #f3ebde;
+    footer .footer_desktop {
+
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 50vh;
+    }
+
+    footer .footer_desktop .footer_content {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        position: relative;
-        width: 1200px;
-
-        background-image: url(/assets/footer_img_transparent.PNG);
-        background-repeat: no-repeat;
-        background-position-x: 125%; /* startuje skroz desno */
-        background-position-y: bottom;
-        box-sizing: border-box;
-        background-size: max(var(--bckg-img));
-        transition: background-position-x 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        justify-content: center;
+        align-items: center;
     }
 
-    /* Aktivna animacija */
-    footer .footer_wrapper.animate-footer {
-        background-position-x: right;
-        transition-delay: 0.30s;
-
-    }
-
-    footer .footer_content {
-
-        max-height: 500px;
-        margin-left: 200px;
-    }
-
-    footer h1 {
+    footer .footer_desktop .footer_content .footer_text h1 {
         font-family: TheSeasonsBold;
         text-align: center;
         color: #745852;
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
-    footer p {
+    footer .footer_desktop .footer_content .footer_text p {
         font-family: RomateHood;
         text-align: left;
-        font-size: 3em;
+        font-size: 5em;
         color: #745852;
         margin: 10px;
-        margin-left: 15px;
+
     }
 
-    footer .footer_content a.footer_icons p {
-        font-family: CormorantGaramond;
+    footer .footer_desktop .footer_content a.footer_icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 50px;
+        width: 100%;
+        text-decoration: none;
+        position: relative;
+
+    }
+
+    footer .footer_desktop .footer_content a.footer_icons p {
         font-size: 2em;
+        font-family: CormorantGaramond;
+        font-size: 3em;
         color: #745852;
         text-align: center;
-
-        background-color: rgba(225, 177, 99, 0.34);
-        border-radius: 50px;
+        background-color: #d6bdae;
         padding: 20px;
+        border-radius: 50px;
+    }
+
+    footer .footer_desktop .footer_content a.footer_icons .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        right: -40%;
+        bottom: -50%;
+    }
+
+    footer .footer_desktop .footer_content a.footer_icons .icons img:nth-child(1),
+    footer .footer_desktop .footer_content a.footer_icons .icons img:nth-child(2) {
+        width: 200px;
+    }
+
+    footer .footer_desktop .footer_content a.footer_icons .icons img:nth-child(2) {
+        transform: rotate(20deg);
 
     }
 
+    footer .footer_desktop .footer_img {
+        width: 350px;
+    }
 
 }

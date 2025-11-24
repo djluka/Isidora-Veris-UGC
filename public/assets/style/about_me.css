@@ -2,50 +2,52 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html,
 body {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 /* ===== ABOUT ME ===== */
 .about_me {
-  /*without including scrollbar width */
-  --header-height: 100px;
-  --video-txt-width: 100%;
-  --video-txt-height: 100svh;
+    /*without including scrollbar width */
+    --header-height: 100px;
+    --video-txt-width: 100%;
+    --video-txt-height: 100svh;
 
-  width: 100%;
-  margin: 0px auto;
-  background: #f4eade;
+    width: 100%;
+    margin: 0px auto;
+    background: #f4eade;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  scroll-margin-top: calc(var(--header-height) + 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-margin-top: calc(var(--header-height) + 20px);
 }
+
 .about_me {
-  /* Scroll-driven animation (shows final state when unsupported) */
-  animation: about_me_apper 0.5s ease;
-  animation-timeline: view();
-  animation-range: entry -10% cover 25%;
-  padding: 0;
-  margin: 0 auto;
+    /* Scroll-driven animation (shows final state when unsupported) */
+    animation: about_me_apper 0.5s ease;
+    animation-timeline: view();
+    animation-range: entry -10% cover 25%;
+    padding: 0;
+    margin: 0 auto;
 }
+
 /* ===== ANIMATIONS ===== */
 @keyframes about_me_apper {
-  from {
-    opacity: 0;
-    scale: 0.8;
-  }
-  to {
-    opacity: 1;
-    scale: 1;
-  }
+    from {
+        opacity: 0;
+        scale: 0.8;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
 }
 
 /* @supports not (height: 100svh) {
@@ -55,120 +57,124 @@ body {
 } */
 
 .about_me_content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
 
 p.about_me_header {
-  position: sticky;
-  top: 0;
-  z-index: 3;
+    position: sticky;
+    top: 0;
+    z-index: 3;
 
-  width: 100%;
-  min-height: var(--header-height);
+    width: 100%;
+    min-height: var(--header-height);
 
-  display: grid;
-  place-items: center;
-  font-family: RomateHood;
-  font-weight: 800;
-  font-size: 3em;
-  color: #57432a;
+    display: grid;
+    place-items: center;
+    font-family: RomateHood;
+    font-weight: 800;
+    font-size: 3em;
+    color: #57432a;
 
 
-  text-align: center;
+    text-align: center;
     align-self: center;
-  backdrop-filter: blur(3px);
-  background: rgba(244, 234, 222, 0.473);
+    backdrop-filter: blur(3px);
+    background: rgba(244, 234, 222, 0.473);
+
 }
+
 .profile_loop_video {
-  position: sticky;
-  top: var(--header-height);
-  z-index: 0;
+    position: sticky;
+    top: var(--header-height);
+    z-index: 0;
 
-  display: block;
-  width: var(--video-txt-width);
-  max-width: 100%;
-  height: var(--video-txt-height);
-  object-fit: cover;
-  object-position: center;
+    display: block;
+    width: var(--video-txt-width);
+    max-width: 100%;
+    height: var(--video-txt-height);
+    object-fit: cover;
+    object-position: center;
 
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  margin: 0 auto;
-  padding: 1px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    margin: 0 auto;
+    padding: 1px;
 }
 
 .text-scroll {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 
-  width: var(--video-txt-width);
-  min-height: var(--video-txt-height);
+    width: var(--video-txt-width);
+    min-height: var(--video-txt-height);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
-  color: #57432a;
-  background: rgba(255, 248, 241, 0.9);
-  padding-block: clamp(24px, 6vh, 48px);
+    color: #57432a;
+    background: rgba(255, 248, 241, 0.9);
 
-  /* Scroll-driven animation (shows final state when unsupported) */
-  animation: text_scroll_on_stage 0.5s ease both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 50%;
-  padding: 0;
-  margin: 0 auto;
+    padding-block: clamp(24px, 6vh, 48px);
+
+    /* Scroll-driven animation (shows final state when unsupported) */
+    animation: text_scroll_on_stage 0.5s ease both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+    padding: 0;
+    margin: 0 auto;
 }
 
 .text-scroll p {
-  font-family: CormorantGaramond, serif;
-  font-size: 1.2em;
-  line-height: 1.6;
-  padding: 20px;
-  max-width: 60ch;
-  margin: 0 auto;
+    font-family: CormorantGaramond, serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 60ch;
+    margin: 0 auto;
 }
 
 /* ===== ANIMATIONS ===== */
 @keyframes text_scroll_on_stage {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* ===== ACCESSIBILITY ===== */
 @media (prefers-reduced-motion: reduce) {
-  .text-scroll {
-    animation: none;
-  }
+    .text-scroll {
+        animation: none;
+    }
 }
 
 /* ===== DESKTOP TWEAKS ===== */
 @media (min-width: 1200px) {
-  .about_me {
-      --video-txt-width: 70%;
-      --video-txt-height: 70svh;
-    margin: 0 auto;
-  }
+    .about_me {
+        --video-txt-width: 70%;
+        --video-txt-height: 70svh;
+        margin: 0 auto;
+    }
 
-  .about_me_header {
-    font-size: 3.2em;
-      background-color: red;
-  }
+    .about_me_header {
+        font-size: 3.2em;
+        background-color: red;
+    }
 
-  .text-scroll p {
-    font-size: 2em;
-  }
+    .text-scroll p {
+        font-size: 2em;
+    }
+
     .profile_loop_video {
 
         position: sticky;

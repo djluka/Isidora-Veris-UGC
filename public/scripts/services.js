@@ -10,6 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
       if (msg) { msg.textContent = ""; msg.style.opacity = "0"; msg.removeAttribute("data-state"); }
     });
   });
+    //  Flip na X
+    document.querySelectorAll("button.close-card").forEach((closeBtn) => {
+        closeBtn.addEventListener("click", () => {
+            const card = closeBtn.closest(".service-flip-card");
+            if (!card) return;
+            card.classList.remove("flip");
+            // očisti eventualnu staru poruku
+            const msg = card.querySelector(".formMessage");
+            if (msg) { msg.textContent = ""; msg.style.opacity = "0"; msg.removeAttribute("data-state"); }
+        });
+    });
 
   // Inicijalizacija formi na svim karticama
   document.querySelectorAll(".service-flip-card").forEach((card) => {
@@ -82,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
           card.classList.remove("flip");
           msg.textContent = "";
           msg.style.opacity = "0";
-        }, 4000);
+        }, 3000);
       } catch (err) {
         console.error(err);
         msg.style.color = "red";

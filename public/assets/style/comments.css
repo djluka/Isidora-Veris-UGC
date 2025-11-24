@@ -57,7 +57,6 @@ body {
   /* bottom: 10px;
   right: 10px; */
   border-radius: 200px;
-  font-size: 2em;
   height: 50px;
   width: 50px;
   display: flex;
@@ -71,6 +70,10 @@ body {
   border: 1px solid transparent;
 
   border: none;
+}
+.comment button img{
+    width: 30px;
+    height: 30px;
 }
 .comment_content {
   display: flex;
