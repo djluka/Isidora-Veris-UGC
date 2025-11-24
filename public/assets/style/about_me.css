@@ -172,11 +172,10 @@ p.about_me_header {
     }
 
     .text-scroll p {
-        font-size: 2em;
+        font-size: 1.5em;
     }
 
     .profile_loop_video {
-
         position: sticky;
         top: var(--header-height);
         z-index: 0;
