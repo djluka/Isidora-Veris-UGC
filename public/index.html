@@ -1225,8 +1225,46 @@
             <a class="footer_icons" href="mailto:info@isidoraverisugc.com">
                 <p>info@isidoraverisugc.com</p>
                 <div class="icons">
-                    <img src="assets/point_arrow.webp" alt="Loading...">
-                    <img src="assets/mail_handwritten.webp" alt="Loading.cc..">
+                    <div class="arrow-container">
+                        <svg
+                                class="arrow-svg"
+                                viewBox="0 -40 700 420"
+                                fill="none"
+                                stroke="#d5b8a8"
+                                stroke-width="30"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        >
+
+                            <!-- GLAVNI PUT (kriva strelica) -->
+                            <path id="arrowBodyMobile"
+                                  d="
+                                    M30 -20
+                                    C-10 190, 100 230, 185 255
+                                    C320 280, 390 170, 280 110
+                                    C180 60, 150 210, 330 305
+                                    C470 380, 610 340, 660 300
+                                  "
+                            />
+
+                            <!-- ARROWHEAD LEVA LINIJA -->
+                            <path id="arrowHead1Mobile"
+                                  d="
+                                    M660 300
+                                    L615 280
+                                  "
+                            />
+
+                            <!-- ARROWHEAD DESNA LINIJA -->
+                            <path id="arrowHead2Mobile"
+                                  d="
+                                    M660 300
+                                    L639 360
+                                  "
+                            />
+                        </svg>
+                    </div>
+                    <img id="mailIconFooterMobile" src="assets/mail_handwritten.webp" alt="Loading.cc..">
                 </div>
             </a>
         </div>
@@ -1245,7 +1283,6 @@
                 </div>
             </a>
         </div>
-        <img class="footer_img" src="assets/footer_img.webp">
 
     </div>
 </footer>
