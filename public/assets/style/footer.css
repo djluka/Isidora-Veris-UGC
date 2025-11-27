@@ -29,18 +29,16 @@ footer .footer_mobile {
     background-position-y: bottom;
     box-sizing: border-box;
     background-size: max(var(--bckg-img));
-    transition: background-position-x 1.2s cubic-bezier(0.22, 1.25, 0.55, 0.1);
+    transition: background-position-x 1.2s ease-in-out;
     height: 85vh;
-
     padding: 40px;
+
 }
 
 /* Aktivna animacija*/
 .footer_mobile.animate-footer {
     background-position-x: right;
     transition-delay: 0.30s;
-cubic-bezier(0.22, 1.25, 0.55, 1);
-
 }
 
 .footer_mobile .footer_text {
@@ -85,15 +83,16 @@ cubic-bezier(0.22, 1.25, 0.55, 1);
     position: relative;
 }
 
+
+/*=================================================================*/
+
 .footer_mobile .footer_content a.footer_icons .icons .arrow-container {
-    transform: rotate(30deg);
+    transform: rotate(-70deg) scaleX(-1);
     width: 100px;
     position: relative;
     left: 10%;
     top: 15px;
 }
-
-/*=================================================================*/
 
 .arrow-svg {
     width: 100%;
@@ -146,8 +145,8 @@ cubic-bezier(0.22, 1.25, 0.55, 1);
 .footer_mobile .footer_content a.footer_icons .icons img#mailIconFooterMobile {
     transform: rotate(20deg);
     position: absolute;
-    right: -10%;
-    bottom: -70%;
+    left: -30%;
+    bottom: -110%;
     opacity: 0;
 }
 
@@ -158,7 +157,7 @@ cubic-bezier(0.22, 1.25, 0.55, 1);
 
 @keyframes mailOnStage {
     to {
-        right: 20%;
+        left: 0%;
         opacity: 1;
     }
 }
@@ -197,7 +196,9 @@ footer .footer_content a.footer_icons p {
         align-items: center;
 
         max-height: 70vh;
-        padding: 70px;
+
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
 
     footer .footer_desktop .footer_content {
@@ -242,8 +243,14 @@ footer .footer_content a.footer_icons p {
         background-color: #d6bdae;
         padding: 20px;
         border-radius: 50px;
+        transition: 0.3s all;
     }
+    footer .footer_desktop .footer_content a.footer_icons p:hover {
+        color: white;
+        transition: 0.3s all;
 
+
+    }
     footer .footer_desktop .footer_content a.footer_icons .icons {
         display: flex;
         flex-direction: row;
@@ -251,22 +258,90 @@ footer .footer_content a.footer_icons p {
         align-items: center;
 
         position: absolute;
-        right: -20%;
-        bottom: -42%;
+        right: 0;
+        bottom: -35%;
     }
 
-    footer .footer_desktop .footer_content a.footer_icons .icons img:nth-child(1),
-    footer .footer_desktop .footer_content a.footer_icons .icons img:nth-child(2) {
-        width: 150px;
+    /*========================================================================*/
+    .footer_desktop .footer_content a.footer_icons .icons .arrow-container {
+        width: 200px;
+        position: relative;
+        left: -25%;
+        bottom: -100%;
     }
 
-    footer .footer_desktop .footer_content a.footer_icons .icons img:nth-child(2) {
+    .arrow-svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* GLAVNA LINIJA */
+    #arrowBodyDesktop {
+        stroke-dasharray: 2500;
+        stroke-dashoffset: 2500;
+    }
+
+    /* ARROWHEAD - LEVA STRANA */
+    #arrowHead1Desktop {
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
+        animation-delay: 1s; /* KREĆE POSLE GLAVNE LINIJE */
+    }
+
+    /* ARROWHEAD - DESNA STRANA */
+    #arrowHead2Desktop {
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
+        animation-delay: 1.1s; /* MALO KASNIJE RADI LEPŠEG EFEKTA */
+    }
+
+    .animate-arrow-desktop {
+        animation: drawBodyDesktop 2s cubic-bezier(.55, 0, .25, 1) forwards;
+
+    }
+
+    @keyframes drawBodyDesktop {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    .animate-arrow-head-desktop {
+        animation: drawHeadDesktop 0.6s cubic-bezier(.55, 0, .25, 1) forwards;
+
+    }
+
+    @keyframes drawHeadDesktop {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    footer .footer_desktop .footer_content a.footer_icons .icons img#mailIconFooterDesktop {
+        width: 200px;
         transform: rotate(20deg);
-
+        position: absolute;
+        top: -25%;
+        right: -80%;
+        opacity: 1;
     }
+
+    .animate_footer_img-desktop {
+        animation: mailOnStageDesktop 0.6s cubic-bezier(.55, 0, .25, 1) forwards;
+        animation-delay: 1.5s; /* MALO KASNIJE RADI LEPŠEG EFEKTA */
+    }
+
+    @keyframes mailOnStageDesktopp {
+        to {
+            left: 0%;
+            opacity: 1;
+        }
+    }
+
 
     footer .footer_desktop .footer_img {
-        width: 300px;
+        width: 350px;
+        margin-left: 100px;
     }
 
 }
