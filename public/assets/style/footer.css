@@ -321,9 +321,9 @@ footer .footer_content a.footer_icons p {
         width: 200px;
         transform: rotate(20deg);
         position: absolute;
-        top: -25%;
-        right: -80%;
-        opacity: 1;
+        top: -15%;
+        right: -70%;
+        opacity: 0;
     }
 
     .animate_footer_img-desktop {
@@ -331,9 +331,10 @@ footer .footer_content a.footer_icons p {
         animation-delay: 1.5s; /* MALO KASNIJE RADI LEPŠEG EFEKTA */
     }
 
-    @keyframes mailOnStageDesktopp {
+    @keyframes mailOnStageDesktop{
         to {
-            left: 0%;
+            top: -25%;
+            right: -80%;
             opacity: 1;
         }
     }
