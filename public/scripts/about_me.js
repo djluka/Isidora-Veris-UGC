@@ -7,18 +7,13 @@ function loop() {
     const videoSrcMobile = video.dataset.src_mobile;
     const videoSrcDesktop = video.dataset.src_desktop;
 
-    function logic(){
+    function logic() {
         if (window.innerWidth < 1400) {
             video.src = videoSrcMobile;
         } else {
             video.src = videoSrcDesktop;
         }
     }
+
     logic()
-
-    window.addEventListener("resize", function () {
-        // logic()
-    });
-
-
 }
