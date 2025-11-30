@@ -113,7 +113,7 @@ p.about_me_header {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
 
@@ -137,6 +137,35 @@ p.about_me_header {
     padding: 20px;
     max-width: 60ch;
     margin: 0 auto;
+    color: #57432a;
+}
+
+.text-scroll a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s all ease-in-out;
+    opacity: 1;
+    font-size: 1em;
+
+    transform: translateY(10px);
+}
+
+.text-scroll a.pdf-section:hover,
+.text-scroll a.pdf-section:focus,
+.text-scroll a.pdf-section:visited{
+
+    border-bottom: 2px solid #57432a;
+    transform: translateY(0px);
+}
+.text-scroll a.pdf-section p{
+    padding: 0;
+}
+.text-scroll a.pdf-section img{
+    width: 40px;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -168,7 +197,6 @@ p.about_me_header {
 
     .about_me_header {
         font-size: 3.2em;
-        background-color: red;
     }
 
     .text-scroll p {
@@ -191,5 +219,26 @@ p.about_me_header {
         margin: 0 auto;
         padding: 1px;
 
+    }.text-scroll a {
+         text-decoration: none;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 5px;
+         border-bottom: 2px solid transparent;
+         transition: 0.3s all ease-in-out;
+         opacity: 0.8;
+         font-size: 1em;
+
+         transform: translateY(10px);
+     }
+
+    .text-scroll a.pdf-section:hover,
+    .text-scroll a.pdf-section:focus,
+    .text-scroll a.pdf-section:visited{
+
+        border-bottom: 2px solid #57432a;
+        opacity: 1;
+        transform: translateY(0px);
     }
 }

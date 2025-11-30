@@ -263,7 +263,7 @@ a.more_on_instagram {
   color: #fff;
   display: flex;
   justify-content: start;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   position: relative;
   overflow: hidden;
@@ -308,7 +308,7 @@ a.more_on_instagram .more_on_instagram_content img{
 }
 a.more_on_instagram .more_on_instagram_content :nth-child(2){
     transform: scaleX(-1) rotate(45deg);
-    max-width: 100px;
+    max-width: 80px;
     position: absolute;
     top: 30%;
     left: 40%;
@@ -540,7 +540,7 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3){
     }
     a.more_on_instagram .more_on_instagram_content :nth-child(2){
         transform: scaleX(-1) rotate(45deg);
-        max-width: 100px;
+        max-width: 80px;
         position: absolute;
         top: 33%;
         left: 40%;
