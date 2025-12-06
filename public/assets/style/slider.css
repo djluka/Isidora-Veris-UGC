@@ -1,95 +1,102 @@
 /* Default za telefon (mobile-first) */
 .slider_section {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
 
-  max-width: 100%;
-  max-height: fit-content;
-  position: relative;
-  margin-top: 50px;
+    width: 100%;
+    max-height: fit-content;
+    position: relative;
+    margin-top: 50px;
 }
+
 .slider_section::after {
-  content: "";
-  width: 100%;
-  height: 103%;
-  display: block;
-  background-color: #f4eade;
-  position: absolute;
-  top: -20px;
-  z-index: -1;
+    content: "";
+    width: 100%;
+    height: 103%;
+    display: block;
+    background-color: #f4eade;
+    position: absolute;
+    top: -20px;
+    z-index: -1;
 }
+
 .slider_section .header_txt {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  margin: 5px;
-  margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin: 5px;
+    margin-bottom: 5px;
 }
+
 .slider_section .header_txt p {
-  margin-bottom: 5px;
-  font-size: 2em;
-  letter-spacing: 1px;
-  font-family: TheSeasonsBold;
+    margin-bottom: 5px;
+    font-size: 2em;
+    letter-spacing: 1px;
+    font-family: TheSeasonsBold;
 }
+
 .slider_section .header_txt p:nth-child(2) {
-  font-size: 1em;
-  font-weight: normal;
-  font-family: TheSeasonsLight;
-  text-transform: lowercase;
+    font-size: 1em;
+    font-weight: normal;
+    font-family: TheSeasonsLight;
+    text-transform: lowercase;
 }
 
 .ugc {
-  max-height: 100vh;
-  position: relative;
-  padding: 0;
+    max-height: 100vh;
+    position: relative;
+    padding: 0;
 }
+
 .content_branding {
-  margin-top: 50px;
+    margin-top: 50px;
 }
+
 .slider_wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 0;
-  max-width: 350px;
-  max-height: 100%;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 350px;
+    max-height: 100%;
+    position: relative;
 }
 
 .pre_btn,
 .nxt_btn {
-  display: none;
+    display: none;
 }
 
 .slider {
-  display: flex;
-  max-width: 85%;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  gap: 20px;
-  padding: 0;
+    display: flex;
+    max-width: 85%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 20px;
+    padding: 0;
 }
 
 .slider {
-  /* Scroll-driven animation (shows final state when unsupported) */
-  animation: slider_apper 2s ease;
-  animation-timeline: load();
-  animation-range: entry -10% cover 40%;
+    /* Scroll-driven animation (shows final state when unsupported) */
+    animation: slider_apper 2s ease;
+    animation-timeline: load();
+    animation-range: entry -10% cover 40%;
 
-  padding: 0;
-  margin: 10px auto;
+    padding: 0;
+    margin: 10px auto;
 }
+
 /* ===== ANIMATIONS ===== */
 @keyframes slider_apper {
     from {
@@ -99,6 +106,7 @@
         opacity: 1;
     }
 }
+
 .slider_section,
 .slider_section::after {
     /* Scroll-driven animation (shows final state when unsupported) */
@@ -108,444 +116,497 @@
     padding: 0;
     margin: 20px auto;
 }
+
 /* ===== ANIMATIONS ===== */
 @keyframes slider_section_apper {
-  from {
-    scale: 0.8;
-  }
-  to {
-    scale: 1;
-  }
+    from {
+        scale: 0.8;
+    }
+    to {
+        scale: 1;
+    }
 }
 
 .slider::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .card {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  max-width: 100%;
-  max-height: 500px;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  transition: all 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    max-width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
 }
 
 .card .video_wrapper {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
+
 .card .video_wrapper video {
-  width: 100%;
-  height: 100%;
-  display: block;
-  aspect-ratio: 9/16;
-  object-fit: cover;
-  padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    padding: 0;
 }
+
 .card .video_wrapper video[poster] {
-  object-fit: contain;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
+    object-fit: contain;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
+
 .card .video_wrapper button.play_button {
-  background-color: transparent;
-  border: 0;
-  outline: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 5em;
-  color: #e8e3de;
-  z-index: 1;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5em;
+    color: #e8e3de;
+    z-index: 1;
 }
+
 .card_box {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: fit-content;
-  padding: 12px;
-  color: #fff;
-  font-family: CormorantGaramond;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.4) 30%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
-  cursor: pointer;
-  z-index: 5;
-  overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    padding: 12px;
+    color: #fff;
+    font-family: CormorantGaramond;
+    background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.4) 30%,
+            rgba(0, 0, 0, 0.9) 100%
+    );
+    cursor: pointer;
+    z-index: 5;
+    overflow: hidden;
 }
+
 .desc {
-  --lh: 20px;
-  --lines: 2;
-  line-height: var(--lh);
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: var(--lines);
-  max-height: calc(var(--lh) * var(--lines));
-  transition: max-height 520ms cubic-bezier(0.16, 1, 0.3, 1);
+    --lh: 20px;
+    --lines: 2;
+    line-height: var(--lh);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--lines);
+    max-height: calc(var(--lh) * var(--lines));
+    transition: max-height 520ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* OTVORENO — NIKAKAV flex ovde */
 .is-expanded .desc {
-  display: block; /* NE flex! */
-  -webkit-line-clamp: unset; /* ukini clamp */
-  transition: max-height 520ms cubic-bezier(0.16, 1, 0.3, 1);
+    display: block; /* NE flex! */
+    -webkit-line-clamp: unset; /* ukini clamp */
+    transition: max-height 520ms cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 /* Respectuje korisnike sa smanjenim animacijama */
 @media (prefers-reduced-motion: reduce) {
-  .desc {
-    transition: none;
-  }
-  .is-expanded .desc {
-    transition: none;
-  }
+    .desc {
+        transition: none;
+    }
+
+    .is-expanded .desc {
+        transition: none;
+    }
 }
 
 .desc::-webkit-scrollbar {
-  /* Chrome, Edge, Safari */
-  display: none;
+    /* Chrome, Edge, Safari */
+    display: none;
 }
+
 .card .card_box .card_header_box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
 }
+
 .card .card_box .card_header_box .brand {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 .card .card_box .card_header_box .brand img {
-  max-width: 40px;
-  padding-right: 5px;
+    max-width: 40px;
+    padding-right: 5px;
 }
 
 .card .card_box .card_header_box .views {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
 
-  display: none;
+    display: none;
 }
+
 .card .card_box .card_header_box .views img {
-  max-width: 20px;
+    max-width: 20px;
 }
 
 .card .card_box img {
-  width: 50px;
+    width: 50px;
 }
 
 a.more_on_instagram {
-  text-decoration: none;
-  color: #fff;
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
+
 a.more_on_instagram::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-image: url(/assets/insta_profile.webp);
-  background-position: initial;
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: brightness(0.5) blur(1px);
-  transition: 0.2s;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(/assets/insta_profile.webp);
+    background-position: initial;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(0.5) blur(1px);
+    transition: 0.2s;
 }
+
 a.more_on_instagram .more_on_instagram_content {
-  z-index: 5;
-  display: flex;
-  justify-content: space-around;
-  align-items: start;
-  flex-direction: column;
-    margin-top: 40px ;
+    z-index: 5;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-direction: column;
+    margin-top: 40px;
 }
+
 a.more_on_instagram:hover::before {
-  transform: scale(1.2);
-  transition: 0.2s;
-  filter: brightness(0.4) blur(5px);
+    transform: scale(1.2);
+    transition: 0.2s;
+    filter: brightness(0.4) blur(5px);
 }
 
 a.more_on_instagram p.header {
-  transition: 0.3s all;
-  font-size: 1.7em;
-  text-align: center;
-  padding: 20px;
+    transition: 0.3s all;
+    font-size: 1.7em;
+    text-align: center;
+    padding: 20px;
 }
-a.more_on_instagram .more_on_instagram_content img{
-  transition: 0.3s all;
-  max-width: 200px;
+
+a.more_on_instagram .more_on_instagram_content img {
+    transition: 0.3s all;
+    max-width: 200px;
 }
-a.more_on_instagram .more_on_instagram_content :nth-child(2){
+
+a.more_on_instagram .more_on_instagram_content :nth-child(2) {
     transform: scaleX(-1) rotate(45deg);
     max-width: 100px;
     position: absolute;
     top: 30%;
     left: 40%;
 }
-a.more_on_instagram .more_on_instagram_content :nth-child(3){
+
+a.more_on_instagram .more_on_instagram_content :nth-child(3) {
     max-width: 100px;
     position: absolute;
     top: 41%;
     left: 15%;
 }
+
 .dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  background-color: #57432a59;
-  border-radius: 50%;
-  transition: background-color 0.3s;
-  cursor: pointer;
+    width: 10px;
+    height: 10px;
+    background-color: #57432a59;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    cursor: pointer;
 }
 
 .dot.active {
-  background-color: #57432a;
+    background-color: #57432a;
 }
 
 .content_branding_branding {
-  max-height: 100vh;
+    max-height: 100vh;
 }
+
 .content_branding_branding p.header {
-  text-align: right;
-  margin-top: 50px;
-  margin-bottom: 30px;
+    text-align: right;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
+
 .opacity_low {
-  opacity: 0.4;
-  pointer-events: none;
-  cursor: default;
-  transition: 0.2s all;
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: default;
+    transition: 0.2s all;
 }
 
 /* Veći ekran (npr. tablet) */
 @media (min-width: 768px) {
-  .slider_wrap {
-    max-width: 650px;
-  }
+    .slider_wrap {
+        max-width: 650px;
+    }
 
-  .pre_btn,
-  .nxt_btn {
-    display: none;
-  }
-  .slider {
-    max-width: 100%;
-    position: relative;
-    gap: 20px;
-  }
+    .pre_btn,
+    .nxt_btn {
+        display: none;
+    }
 
-  .card {
-    flex: 0 0 calc(50% - 10px); /* 2 kartice po redu, - gap/2 */
-  }
+    .slider {
+        max-width: 100%;
+        position: relative;
+        gap: 20px;
+    }
+
+    .card {
+        flex: 0 0 calc(50% - 10px); /* 2 kartice po redu, - gap/2 */
+    }
 }
 
 /* Još veći ekran (npr. desktop) */
 @media (min-width: 1200px) {
-  .slider_section {
-    max-height: 200vh;
-    margin: 0;
-    padding: 0;
-  }
-  .ugc {
-    padding: 0;
-    /* padding-right: 10%; */
-    align-self: flex-start;
-    padding: 10px;
-  }
-  .content_branding {
-    padding: 0;
-    /* padding-left: 10%; */
-    align-self: flex-end;
-    padding: 10px;
-  }
+    .slider_section {
+        max-height: 200vh;
+        margin: 0;
+        padding: 0;
+    }
 
-  .slider_section {
-    max-width: 80vw;
-    margin: 50px auto;
-    padding: 0;
-  }
-  .slider_section::after {
-    content: "";
-    width: 90vw;
-    height: 95%;
-    display: block;
-    background-color: #f4eade;
-    position: absolute;
-    top: 50px;
-    z-index: -1;
-  }
-  .slider_section .header_txt p {
-    font-size: 2.5em;
-  }
-  .slider_section .header_txt p:nth-child(2) {
-    font-size: 1.5em;
-  }
+    .ugc {
+        padding: 0;
+        /* padding-right: 10%; */
+        align-self: flex-start;
+        padding: 10px;
+    }
 
-  .slider_wrap {
-    max-width: 1000px;
-    padding: 0;
-  }
-  .slider {
-    position: relative;
-    gap: 30px;
-    padding: 0;
-  }
-  .card .video_wrapper video {
-    width: 100%;
-    aspect-ratio: 9 / 16;
-    object-fit: contain;
-    display: block;
-    filter: brightness(0.8) blur(0.6px);
-    transition: 0.5s all;
-  }
-  .card .video_wrapper:hover > video {
-    filter: brightness(1) opacity(1);
-    transition: 0.5s all;
-  }
-  .card .video_wrapper button {
-    transition: 0.5s all;
-  }
-  .card .video_wrapper:hover > button {
-    font-size: 6em;
-    transition: 0.5s all;
-  }
-  .pre_btn,
-  .nxt_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    z-index: 9;
-    cursor: pointer;
-    border: none;
-    padding: 20px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    transition: 0.2s all;
-  }
-  .pre_btn:hover,
-  .nxt_btn:hover {
-    background-color: #aca8a5;
-    transition: 0.2s all;
-  }
-  .pre_btn {
-    left: -10%;
-  }
-  .nxt_btn {
-    right: -10%;
-  }
-  .pre_btn img {
-    transform: rotate(-90deg);
-  }
+    .content_branding {
+        padding: 0;
+        /* padding-left: 10%; */
+        align-self: flex-end;
+        padding: 10px;
+    }
 
-  .nxt_btn img {
-    transform: rotate(90deg);
-  }
+    .slider_section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0;
 
-  .pre_btn img,
-  .nxt_btn img {
-    width: 30px;
-  }
-  .card {
-    flex: 0 0 calc((100% / 3 - 20px));
-    transition: all 0.3s ease;
-  }
-  .card .card_box {
-    width: 90%;
-  }
-  .desc {
-    font-size: 14pt;
-    letter-spacing: 1px;
-  }
+        width: 70%;
+        margin: 0 auto;
+        max-height: fit-content;
+        position: relative;
+        margin-top: 50px;
+    }
 
-  .dot {
-    display: none;
-  }
-  /*
-    ==================================
-    animation
-    ================================== 
-    */
+    .slider_section::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: #f4eade;
+        position: absolute;
+        top: -20px;
+        z-index: -1;
+    }
 
-  .hovered_card {
-    z-index: 10;
-    filter: brightness(1.05);
-    transition: all 0.3s ease;
-    transition-delay: 0.2s;
-  }
+    .slider_section .header_txt p {
+        font-size: 2.5em;
+    }
 
-  .other_cards {
-    opacity: 0.8;
-    filter: blur(0.3px) brightness(0.9) grayscale(0.1);
-    pointer-events: none;
-    transition: all 0.3s ease;
-  }
+    .slider_section .header_txt p:nth-child(2) {
+        font-size: 1.5em;
+    }
 
-  .title_animation {
-    transform: translateY(-100px);
-    opacity: 1;
-    transition: all 0.3s ease;
-  }
+    .slider_wrap {
+        max-width: 1000px;
+        padding: 0;
+    }
 
-  .desc_animation {
-    opacity: 1;
-    transform: translateY(180px);
-    transition: all 0.3s ease;
-  }
+    .slider {
+        position: relative;
+        gap: 30px;
+        padding: 0;
+    }
+
+    .card .video_wrapper video {
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        object-fit: contain;
+        display: block;
+        filter: brightness(0.8) blur(0.6px);
+        transition: 0.5s all;
+    }
+
+    .card .video_wrapper:hover > video {
+        filter: brightness(1) opacity(1);
+        transition: 0.5s all;
+    }
+
+    .card .video_wrapper button {
+        transition: 0.5s all;
+    }
+
+    .card .video_wrapper:hover > button {
+        font-size: 6em;
+        transition: 0.5s all;
+    }
+
+    .pre_btn,
+    .nxt_btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 9;
+        cursor: pointer;
+        border: none;
+        padding: 20px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        transition: 0.2s all;
+    }
+
+    .pre_btn:hover,
+    .nxt_btn:hover {
+        background-color: #aca8a5;
+        transition: 0.2s all;
+    }
+
+    .pre_btn {
+        left: -10%;
+    }
+
+    .nxt_btn {
+        right: -10%;
+    }
+
+    .pre_btn img {
+        transform: rotate(-90deg);
+    }
+
+    .nxt_btn img {
+        transform: rotate(90deg);
+    }
+
+    .pre_btn img,
+    .nxt_btn img {
+        width: 30px;
+    }
+
+    .card {
+        flex: 0 0 calc((100% / 3 - 20px));
+        transition: all 0.3s ease;
+    }
+
+    .card .card_box {
+        width: 90%;
+    }
+
+    .desc {
+        font-size: 14pt;
+        letter-spacing: 1px;
+    }
+
+    .dot {
+        display: none;
+    }
+
+    /*
+      ==================================
+      animation
+      ==================================
+      */
+    .hovered_card {
+        z-index: 10;
+        filter: brightness(1.05);
+        transition: all 0.3s ease;
+        transition-delay: 0.2s;
+    }
+
+    .other_cards {
+        opacity: 0.8;
+        filter: blur(0.3px) brightness(0.9) grayscale(0.1);
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .title_animation {
+        transform: translateY(-100px);
+        opacity: 1;
+        transition: all 0.3s ease;
+    }
+
+    .desc_animation {
+        opacity: 1;
+        transform: translateY(180px);
+        transition: all 0.3s ease;
+    }
+
     a.more_on_instagram p.header {
         transition: 0.3s all;
         font-size: 2em;
         text-align: center;
         padding: 20px;
     }
-    a.more_on_instagram .more_on_instagram_content img{
+
+    a.more_on_instagram .more_on_instagram_content img {
         transition: 0.3s all;
         max-width: 200px;
     }
-    a.more_on_instagram .more_on_instagram_content :nth-child(2){
+
+    a.more_on_instagram .more_on_instagram_content :nth-child(2) {
         transform: scaleX(-1) rotate(45deg);
         max-width: 100px;
         position: absolute;
         top: 33%;
         left: 40%;
     }
-    a.more_on_instagram .more_on_instagram_content :nth-child(3){
+
+    a.more_on_instagram .more_on_instagram_content :nth-child(3) {
         max-width: 100px;
         position: absolute;
         top: 41%;
