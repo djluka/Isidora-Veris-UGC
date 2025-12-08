@@ -313,7 +313,8 @@
     left: 50%;
     bottom: 0;
     width: 300px;
-      margin: 20px;
+      padding: 10px;
+
   }
   /* .clients .clients_text::after {
     content: "";

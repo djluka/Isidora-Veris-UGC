@@ -113,6 +113,7 @@
     animation-range: entry -10% cover 30%;
     padding: 0;
     margin: 20px auto;
+    width: 100vw;
 
 
 }
@@ -428,19 +429,17 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3) {
     }
 
     .slider_section {
-        max-width: 100vw;
         margin: 50px auto;
         padding: 0;
     }
 
     .slider_section::after {
         content: "";
-        width: 100vw;
         height: 90%;
         display: block;
         background-color: #f4eade;
-        position: absolute;
         top: 20px;
+        margin: 0 auto;
         z-index: -1;
     }
 
