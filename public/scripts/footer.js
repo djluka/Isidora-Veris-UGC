@@ -28,6 +28,6 @@ const io = new IntersectionObserver((entries) => {
             mailIconFooterDesktop.classList.add('animate_footer_img-desktop');
         }
     });
-}, {threshold: 0.2});
+}, {threshold: 0.5});
 
 io.observe(footer);
