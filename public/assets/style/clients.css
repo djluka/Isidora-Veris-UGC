@@ -64,6 +64,8 @@
   align-self: center;
   text-align: center;
   width: 100%;
+    padding: 10px;
+    padding-bottom: 50px;
 }
 .clients .clients_box {
   display: flex;

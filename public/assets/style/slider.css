@@ -9,7 +9,6 @@
 
   max-width: 100%;
   max-height: fit-content;
-  position: relative;
   margin-top: 50px;
 }
 .slider_section::after {
@@ -28,7 +27,6 @@
   justify-content: start;
   align-items: center;
   margin: 5px;
-  margin-bottom: 5px;
 }
 .slider_section .header_txt p {
   margin-bottom: 5px;
@@ -84,7 +82,7 @@
 .slider {
   /* Scroll-driven animation (shows final state when unsupported) */
   animation: slider_apper 2s ease;
-  animation-timeline: load();
+  animation-timeline:view();
   animation-range: entry -10% cover 40%;
 
   padding: 0;
@@ -402,12 +400,12 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3){
   }
   .slider_section::after {
     content: "";
-    width: 90vw;
-    height: 95%;
+    width: 100vw;
+    height: 90%;
     display: block;
     background-color: #f4eade;
     position: absolute;
-    top: 50px;
+    top: 20px;
     z-index: -1;
   }
   .slider_section .header_txt p {
