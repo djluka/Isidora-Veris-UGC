@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  src:
+    build:
+      context: ./src
+    # volumes:
+    #   - ./src:/app
+    ports:
+      - "3000:3000"
+
+  public:
+    build:
+      context: ./public
+    volumes:
+      - ./public:/usr/local/apache2/htdocs
+    ports:
+      - "80:80"
