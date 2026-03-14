@@ -21,7 +21,7 @@ export async function sendConfirmationEmail(email, service) {
     const serviceInfo = SERVICE_DETAILS[service];
 
     await resend.emails.send({
-        from: 'Isidora Veris <onboarding@resend.dev>',
+        from: 'Isidora Veris <info@isidoraverisugc.com>',
         to: email,
         subject: `Hvala na upitu — ${serviceInfo.naziv}`,
         html: `
