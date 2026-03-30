@@ -1,37 +1,41 @@
 import { Resend } from 'resend';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const SERVICE_DETAILS = {
     'ugc': {
         naziv: 'UGC Kreiranje Sadržaja',
-        opis: 'Kreiramo autentičan korisnički sadržaj koji povećava poverenje i prodaju.'
+        emailFolder: 'izrada_videa_cenovnik'
     },
     'kontent-strategija': {
         naziv: 'Kontent Strategija',
-        opis: 'Razvijamo strategiju sadržaja prilagođenu vašem brendu i ciljevima.'
+        emailFolder: 'kontent_strategija_cenovnik'
     },
     'konsultacije': {
         naziv: 'Konsultacije',
-        opis: 'Individualne konsultacije za unapređenje vašeg digitalnog prisustva.'
+        emailFolder: 'konsultacije_cenovnik'
     }
 };
 
 export async function sendConfirmationEmail(email, service) {
     const serviceInfo = SERVICE_DETAILS[service];
 
+    if (!serviceInfo) {
+        console.error(`Nepoznata usluga: ${service}`);
+        return;
+    }
+
+    const htmlPath = path.join(__dirname, '..', 'public', 'emails', serviceInfo.emailFolder, 'email.html');
+    const html = fs.readFileSync(htmlPath, 'utf-8');
+
     await resend.emails.send({
         from: 'Isidora Veris <info@isidoraverisugc.com>',
         to: email,
         subject: `Hvala na upitu — ${serviceInfo.naziv}`,
-        html: `
-            <h2>Zdravo!</h2>
-            <p>Hvala što ste poslali upit za <strong>${serviceInfo.naziv}</strong>.</p>
-            <p>${serviceInfo.opis}</p>
-            <p>Javićemo vam se u najkraćem mogućem roku.</p>
-            <br/>
-            <p>Srdačno,</p>
-            <p><strong>Isidora Veris</strong></p>
-        `
+        html
     });
 }
