@@ -8,7 +8,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const SERVICE_DETAILS = {
     'ugc': {
-        naziv: 'UGC Kreiranje Sadržaja',
+        naziv: 'Izrada videa',
         emailFolder: 'izrada_videa_cenovnik'
     },
     'kontent-strategija': {

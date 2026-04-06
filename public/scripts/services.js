@@ -1,3 +1,22 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const serviceCardsBtn = document.querySelectorAll('.learn_more');
+    serviceCardsBtn.forEach(cardBtn => {
+        cardBtn.addEventListener('click', () => {
+            serviceCardsBtn.forEach(otherCard => {
+                if (otherCard !== cardBtn){
+                    otherCard.closest('.flip-card-inner').classList.remove('flipped');
+
+                }
+            });
+            cardBtn.closest('.flip-card-inner').classList.toggle('flipped');
+            cardBtn.parentElement.nextElementSibling.querySelector('.emailForm').reset();
+
+        });
+    })
+})
+
+
+
 document.querySelectorAll('.emailForm').forEach(form =>{
     form.addEventListener('submit',async (e) => {
         e.preventDefault();

@@ -68,7 +68,7 @@
     transform: rotateY(180deg);
 }
 
-.service-flip-card:hover .flip-card-inner {
+.flipped {
     transform: rotateY(180deg);
     transition: transform 0.3s;
 
