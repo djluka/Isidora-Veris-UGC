@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-import fs from 'fs';
+import fs from 'fs/promises'; // Menjamo 'fs' u 'fs/promises' da dobijemo async verziju
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -30,7 +30,9 @@ export async function sendConfirmationEmail(email, service) {
     }
 
     const htmlPath = path.join(__dirname, '..', 'public', 'emails', serviceInfo.emailFolder, 'email.html');
-    const html = fs.readFileSync(htmlPath, 'utf-8');
+
+    // Jedina prava promena - readFileSync -> await fs.readFile
+    const html = await fs.readFile(htmlPath, 'utf-8');
 
     await resend.emails.send({
         from: 'Isidora Veris <info@isidoraverisugc.com>',

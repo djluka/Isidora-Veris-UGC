@@ -1,52 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // ===== FLIP KARTICE =====
     const serviceCardsBtn = document.querySelectorAll('.learn_more');
     serviceCardsBtn.forEach(cardBtn => {
         cardBtn.addEventListener('click', () => {
+            // Zatvori sve ostale kartice
             serviceCardsBtn.forEach(otherCard => {
-                if (otherCard !== cardBtn){
+                if (otherCard !== cardBtn) {
                     otherCard.closest('.flip-card-inner').classList.remove('flipped');
-
                 }
             });
+            // Toggle kliknuta kartica
             cardBtn.closest('.flip-card-inner').classList.toggle('flipped');
+            // Reset forme kada se kartica otvori
             cardBtn.parentElement.nextElementSibling.querySelector('.emailForm').reset();
-
         });
-    })
-})
+    });
 
+    // ===== EMAIL FORME =====
+    document.querySelectorAll('.emailForm').forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
+            const email = form.querySelector('.emailInput').value;
+            const service = form.closest('.service-flip-card').dataset.service;
+            const messageEl = form.nextElementSibling;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const turnstileToken = form.querySelector('[name="cf-turnstile-response"]')?.value;
 
-document.querySelectorAll('.emailForm').forEach(form =>{
-    form.addEventListener('submit',async (e) => {
-        e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Šaljem...';
 
-        const email = form.querySelector('.emailInput').value;
-        const service = form.closest('.service-flip-card').dataset.service;
-        const messageEl = form.nextElementSibling;
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, service, turnstileToken })
+                });
+                const data = await response.json();
 
-
-        try{
-            const response = await fetch('/api/subscribe',{
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({email, service})
-            });
-            const data = await response.json()
-            if (response.ok) {
-                messageEl.textContent = 'Hvala! Uskoro ćemo vas kontaktirati.';
-                messageEl.style.color = 'green';
-                form.reset();
-            } else {
-                messageEl.textContent = data.message || 'Došlo je do greške.';
+                if (response.ok) {
+                    messageEl.textContent = 'Hvala! Uskoro ćemo vas kontaktirati.';
+                    messageEl.style.color = 'green';
+                    form.reset();
+                    turnstile.reset(form.querySelector('.cf-turnstile'));
+                } else {
+                    messageEl.textContent = data.message || 'Došlo je do greške.';
+                    messageEl.style.color = 'red';
+                    turnstile.reset(form.querySelector('.cf-turnstile'));
+                }
+            } catch (err) {
+                messageEl.textContent = 'Nije moguće povezati se sa serverom.';
                 messageEl.style.color = 'red';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Pošalji';
             }
-        }
-        catch(err){
-            messageEl.textContent = 'Nije moguće povezati se sa serverom.';
-            messageEl.style.color = 'red';
-        }
-    })
-})
+        });
+    });
+
+});

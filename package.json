@@ -20,11 +20,12 @@
   },
   "homepage": "https://github.com/djluka/Isidora-Veris-UGC#readme",
   "dependencies": {
-    "dotenv": "^17.3.1",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "express-rate-limit": "^8.3.1",
+    "express-rate-limit": "^8.3.2",
     "mongodb": "^7.1.0",
     "mongoose": "^9.2.3",
+    "node-fetch": "^3.3.2",
     "resend": "^6.9.3",
     "validator": "^13.15.26"
   },

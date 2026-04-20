@@ -19,4 +19,8 @@ const subscriberSchema = new mongoose.Schema({
     }
 });
 
+// Unique index na kombinaciji email + service
+// Znači isti email može da se prijavi za različite servise, ali ne dva puta za isti
+subscriberSchema.index({ email: 1, service: 1 }, { unique: true });
+
 export const Subscriber = mongoose.model('Subscriber', subscriberSchema);
