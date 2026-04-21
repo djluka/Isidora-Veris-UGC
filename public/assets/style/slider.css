@@ -6,7 +6,6 @@
     align-items: center;
     flex-direction: column;
     padding: 0;
-
     max-width: 100%;
     max-height: fit-content;
     margin-top: 50px;
@@ -83,59 +82,43 @@
     -ms-overflow-style: none;
     gap: 20px;
     padding: 0;
-}
-
-.slider {
-    /* Scroll-driven animation (shows final state when unsupported) */
-    animation: slider_apper 2s ease;
+    margin: 10px auto;
+    animation: slider_appear 2s ease;
     animation-timeline: view();
     animation-range: entry -10% cover 40%;
-
-    padding: 0;
-    margin: 10px auto;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes slider_apper {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.slider_section,
-.slider_section::after {
-    /* Scroll-driven animation (shows final state when unsupported) */
-    animation: slider_section_apper 0.5s ease;
-    animation-timeline: view();
-    animation-range: entry -10% cover 30%;
-    padding: 0;
-    margin: 20px auto;
-    width: 100vw;
-
-
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes slider_section_apper {
-    from {
-        scale: 0.8;
-    }
-    to {
-        scale: 1;
-    }
 }
 
 .slider::-webkit-scrollbar {
     display: none;
 }
 
+/* ===== ANIMATIONS ===== */
+@keyframes slider_appear {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.slider_section,
+.slider_section::after {
+    animation: slider_section_appear 0.5s ease;
+    animation-timeline: view();
+    animation-range: entry -10% cover 30%;
+    padding: 0;
+    margin: 20px auto;
+    width: 100vw;
+}
+
+@keyframes slider_section_appear {
+    from { scale: 0.8; }
+    to   { scale: 1; }
+}
+
+/* ===== CARD ===== */
 .card {
     flex: 0 0 100%;
     scroll-snap-align: start;
-    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 9 / 16;
     max-height: 500px;
     overflow: hidden;
     padding: 0;
@@ -159,23 +142,16 @@
     width: 100%;
     height: 100%;
     display: block;
-    aspect-ratio: 9/16;
     object-fit: cover;
     padding: 0;
 }
 
-.card .video_wrapper video[poster] {
-    object-fit: contain;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+/* poster koristi isti object-fit: cover kao i video — nema potrebe za overrideom */
 
 .card .video_wrapper button.play_button {
     background-color: transparent;
-    border: 0;
-    outline: 0;
+    border: none;
+    outline: none;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -187,27 +163,50 @@
     font-size: 5em;
     color: #e8e3de;
     z-index: 1;
+    cursor: pointer;
 }
 
+/* ===== CARD BOX ===== */
 .card_box {
     position: absolute;
     bottom: 0;
     width: 100%;
+    max-width: 100%;
     height: fit-content;
-    padding: 12px;
+    padding: 15px;
     color: #fff;
     font-family: CormorantGaramond;
     background: linear-gradient(
             180deg,
-            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0)   0%,
             rgba(0, 0, 0, 0.4) 30%,
             rgba(0, 0, 0, 0.9) 100%
     );
     cursor: pointer;
     z-index: 5;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
+.card .card_box .card_header_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.card .card_box .card_header_box .brand {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.card .card_box .card_header_box .brand img {
+    max-width: 40px;
+    padding-right: 5px;
+}
+
+/* ===== DESC ===== */
 .desc {
     --lh: 20px;
     --lines: 2;
@@ -220,133 +219,24 @@
     transition: max-height 520ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* OTVORENO — NIKAKAV flex ovde */
 .is-expanded .desc {
-    display: block; /* NE flex! */
-    -webkit-line-clamp: unset; /* ukini clamp */
+    display: block;
+    -webkit-line-clamp: unset;
     transition: max-height 520ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Respectuje korisnike sa smanjenim animacijama */
-@media (prefers-reduced-motion: reduce) {
-    .desc {
-        transition: none;
-    }
+.desc::-webkit-scrollbar {
+    display: none;
+}
 
+@media (prefers-reduced-motion: reduce) {
+    .desc,
     .is-expanded .desc {
         transition: none;
     }
 }
 
-.desc::-webkit-scrollbar {
-    /* Chrome, Edge, Safari */
-    display: none;
-}
-
-.card .card_box .card_header_box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 10px;
-}
-
-.card .card_box .card_header_box .brand {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.card .card_box .card_header_box .brand img {
-    max-width: 40px;
-    padding-right: 5px;
-}
-
-.card .card_box .card_header_box .views {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-
-    display: none;
-}
-
-.card .card_box .card_header_box .views img {
-    max-width: 20px;
-}
-
-.card .card_box img {
-    width: 50px;
-}
-
-a.more_on_instagram {
-    text-decoration: none;
-    color: #fff;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-}
-
-a.more_on_instagram::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-image: url(/assets/insta_profile.webp);
-    background-position: initial;
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: brightness(0.5) blur(1px);
-    transition: 0.2s;
-}
-
-a.more_on_instagram .more_on_instagram_content {
-    z-index: 5;
-    display: flex;
-    justify-content: space-around;
-    align-items: start;
-    flex-direction: column;
-    margin-top: 40px;
-}
-
-a.more_on_instagram:hover::before {
-    transform: scale(1.2);
-    transition: 0.2s;
-    filter: brightness(0.4) blur(5px);
-}
-
-a.more_on_instagram p.header {
-    transition: 0.3s all;
-    font-size: 1.7em;
-    text-align: center;
-    padding: 20px;
-}
-
-a.more_on_instagram .more_on_instagram_content img {
-    transition: 0.3s all;
-    max-width: 200px;
-}
-
-a.more_on_instagram .more_on_instagram_content :nth-child(2) {
-    transform: scaleX(-1) rotate(45deg);
-    max-width: 100px;
-    position: absolute;
-    top: 30%;
-    left: 40%;
-}
-
-a.more_on_instagram .more_on_instagram_content :nth-child(3) {
-    max-width: 100px;
-    position: absolute;
-    top: 41%;
-    left: 15%;
-}
-
+/* ===== DOTS ===== */
 .dots {
     display: flex;
     justify-content: center;
@@ -366,10 +256,92 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3) {
 .dot.active {
     background-color: #57432a;
 }
+/* ===== MORE ON INSTAGRAM ===== */
+a.more_on_instagram {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 9 / 16;
+    width: 100%;
+    max-height: 500px;
+}
 
+a.more_on_instagram::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(/assets/insta_profile.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(0.45) blur(2px);
+    transition: 0.3s;
+}
 
+a.more_on_instagram:hover::before {
+    transform: scale(1.08);
+    filter: brightness(0.3) blur(6px);
+}
 
+/* Content wrapper */
+a.more_on_instagram .more_on_instagram_content {
+    z-index: 5;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+}
 
+a.more_on_instagram p.header {
+    font-size: 1.7em;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+}
+
+/* Strelica — izlazi iz teksta, pokazuje prema ikonici dole */
+a.more_on_instagram .more_on_instagram_content img:nth-child(2) {
+    position: absolute;
+    width: 100px;
+    top: 45%;   /* tik ispod teksta */
+    left: 20%;  /* malo desno od centra teksta */
+    transform: rotate(15deg); /* prema dole-levo ka ikonici */
+    opacity: 0.85;
+    transition: 0.3s all;
+}
+
+/* Instagram ikonica */
+a.more_on_instagram .more_on_instagram_content img:nth-child(3) {
+position: relative;
+    left: 50px;
+    top: -15px;
+    width: 80px;
+    opacity: 0.9;
+    transition: 0.3s all;
+}
+
+a.more_on_instagram:hover .more_on_instagram_content img:nth-child(2) {
+    opacity: 1;
+    transform: rotate(130deg) scale(1.1);
+}
+
+a.more_on_instagram:hover .more_on_instagram_content img:nth-child(3) {
+    opacity: 1;
+    transform: scale(1.08);
+}
+/* ===== UTILITY ===== */
 .opacity_low {
     opacity: 0.4;
     pointer-events: none;
@@ -377,7 +349,7 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3) {
     transition: 0.2s all;
 }
 
-/* Veći ekran (npr. tablet) */
+/* ===== TABLET (768px+) ===== */
 @media (min-width: 768px) {
     .slider_wrap {
         max-width: 650px;
@@ -395,49 +367,21 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3) {
     }
 
     .card {
-        flex: 0 0 calc(50% - 10px); /* 2 kartice po redu, - gap/2 */
+        flex: 0 0 calc(50% - 10px);
     }
 }
 
-/* Još veći ekran (npr. desktop) */
+/* ===== DESKTOP (1200px+) ===== */
 @media (min-width: 1200px) {
     .slider_section {
         max-height: 200vh;
-        margin: 0;
-        padding: 0;
-    }
-
-    .ugc {
-        padding: 0;
-        /* padding-right: 10%; */
-        align-self: flex-start;
-        padding: 10px;
-    }
-
-    .content_branding {
-        padding: 0;
-        /* padding-left: 10%; */
-        align-self: flex-end;
-        padding: 10px;
-    }
-    .product{        padding: 0;
-        /* padding-right: 10%; */
-        align-self: flex-start;
-        padding: 10px;}
-
-    .slider_section {
         margin: 50px auto;
         padding: 0;
     }
 
     .slider_section::after {
-        content: "";
         height: 90%;
-        display: block;
-        background-color: #f4eade;
         top: 20px;
-        margin: 0 auto;
-        z-index: -1;
     }
 
     .slider_section .header_txt p {
@@ -446,6 +390,16 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3) {
 
     .slider_section .header_txt p:nth-child(2) {
         font-size: 1.5em;
+    }
+
+    .ugc {
+        align-self: flex-start;
+        padding: 10px;
+    }
+
+    .content_branding {
+        align-self: flex-end;
+        padding: 10px;
     }
 
     .slider_wrap {
@@ -457,6 +411,11 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3) {
         position: relative;
         gap: 30px;
         padding: 0;
+    }
+
+    .card {
+        flex: 0 0 calc(100% / 3 - 20px);
+        transition: all 0.3s ease;
     }
 
     .card .video_wrapper video {
@@ -480,6 +439,10 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3) {
     .card .video_wrapper:hover > button {
         font-size: 6em;
         transition: 0.5s all;
+    }
+
+    .card .card_box {
+        width: 90%;
     }
 
     .pre_btn,
@@ -524,15 +487,6 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3) {
         width: 30px;
     }
 
-    .card {
-        flex: 0 0 calc((100% / 3 - 20px));
-        transition: all 0.3s ease;
-    }
-
-    .card .card_box {
-        width: 90%;
-    }
-
     .desc {
         font-size: 14pt;
         letter-spacing: 1px;
@@ -542,11 +496,7 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3) {
         display: none;
     }
 
-    /*
-      ==================================
-      animation
-      ==================================
-      */
+    /* ===== HOVER ANIMATIONS ===== */
     .hovered_card {
         z-index: 10;
         filter: brightness(1.05);
@@ -574,30 +524,14 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3) {
     }
 
     a.more_on_instagram p.header {
-        transition: 0.3s all;
         font-size: 2em;
-        text-align: center;
-        padding: 20px;
-    }
-
-    a.more_on_instagram .more_on_instagram_content img {
-        transition: 0.3s all;
-        max-width: 200px;
     }
 
     a.more_on_instagram .more_on_instagram_content :nth-child(2) {
-        transform: scaleX(-1) rotate(45deg);
-        max-width: 100px;
-        position: absolute;
-        top: 33%;
-        left: 40%;
+        width: 60px;
     }
 
     a.more_on_instagram .more_on_instagram_content :nth-child(3) {
-        max-width: 100px;
-        position: absolute;
-        top: 41%;
-        left: 15%;
+        max-width: 75px;
     }
-
 }

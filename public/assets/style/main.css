@@ -290,7 +290,7 @@ body {
     max-width: 1100px;
   }
   .main {
-    max-height: 100vh;
+    max-height: 90vh;
   }
   .main .profile_wrapper {
     max-width: 350px;
