@@ -367,15 +367,8 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3) {
     background-color: #57432a;
 }
 
-.content_branding_branding {
-    max-height: 100vh;
-}
 
-.content_branding_branding p.header {
-    text-align: right;
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
+
 
 .opacity_low {
     opacity: 0.4;
@@ -427,6 +420,10 @@ a.more_on_instagram .more_on_instagram_content :nth-child(3) {
         align-self: flex-end;
         padding: 10px;
     }
+    .product{        padding: 0;
+        /* padding-right: 10%; */
+        align-self: flex-start;
+        padding: 10px;}
 
     .slider_section {
         margin: 50px auto;
