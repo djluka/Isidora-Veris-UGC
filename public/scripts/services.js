@@ -23,20 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const service = form.closest('.service-flip-card').dataset.service;
             const messageEl = form.nextElementSibling;
             const submitBtn = form.querySelector('button[type="submit"]');
-            const turnstileWidget = form.querySelector('.cf-turnstile');
+            const turnstileToken = form.querySelector('[name="cf-turnstile-response"]')?.value;
 
             submitBtn.disabled = true;
             submitBtn.textContent = 'Šaljem...';
 
             try {
-                // Eksplicitno pokrećemo Turnstile i čekamo token
-                const turnstileToken = await new Promise((resolve, reject) => {
-                    turnstile.execute(turnstileWidget, {
-                        callback: (token) => resolve(token),
-                        'error-callback': () => reject(new Error('Turnstile failed'))
-                    });
-                });
-
                 const response = await fetch('/api/subscribe', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -48,11 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     messageEl.textContent = 'Hvala! Uskoro ćemo vas kontaktirati.';
                     messageEl.style.color = 'green';
                     form.reset();
-                    turnstile.reset(turnstileWidget);
+                    turnstile.reset(form.querySelector('.cf-turnstile'));
                 } else {
                     messageEl.textContent = data.message || 'Došlo je do greške.';
                     messageEl.style.color = 'red';
-                    turnstile.reset(turnstileWidget);
+                    turnstile.reset(form.querySelector('.cf-turnstile'));
                 }
             } catch (err) {
                 messageEl.textContent = 'Nije moguće povezati se sa serverom.';
