@@ -31,13 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 // Invisible mode - ručno pokrećemo i čekamo token
                 const turnstileToken = await new Promise((resolve, reject) => {
-                    turnstile.ready(() => {
-                        turnstile.execute(turnstileWidget, {
+                    turnstile.execute(turnstileWidget, {
                             callback: (token) => resolve(token),
                             'error-callback': () => reject(new Error('Turnstile failed'))
                         });
                     });
-                });
 
                 const response = await fetch('/api/subscribe', {
                     method: 'POST',
