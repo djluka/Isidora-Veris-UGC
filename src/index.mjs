@@ -52,6 +52,7 @@ app.post('/api/subscribe', ipTotalLimiter, ipServiceLimiter, emailLimiter, async
             })
         });
         const verifyData = await verifyRes.json();
+        console.log('Turnstile response:', JSON.stringify(verifyData)); // dodaj ovo
 
         if (!verifyData.success) {
             return res.status(403).json({ message: 'Bot detekcija nije prošla. Pokušajte ponovo.' });
