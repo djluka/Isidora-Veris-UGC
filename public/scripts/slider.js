@@ -129,7 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return lh * lines;
   }
   function expandBox(box) {
-    console.log("expandBox", box);
     box.setAttribute("aria-expanded", "true");
 
     const video = box.closest(".card")?.querySelector("video");
@@ -167,7 +166,6 @@ document.addEventListener("DOMContentLoaded", function () {
     desc.addEventListener("transitionend", onEnd);
   }
   function collapseBox(box) {
-    console.log("collapseBox", box);
     box.setAttribute("aria-expanded", "false");
 
     const desc = box.querySelector(".desc");
