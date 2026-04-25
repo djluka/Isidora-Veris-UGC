@@ -7,6 +7,7 @@ import { Subscriber } from './models/Subscriber.js';
 import { sendConfirmationEmail } from './email.js';
 import { ipServiceLimiter, ipTotalLimiter, emailLimiter } from './middlewares/limiters.js';
 import fetch from 'node-fetch';
+import { posaljiNotifikaciju } from './mailer.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,19 +25,16 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 app.post('/api/subscribe', ipTotalLimiter, ipServiceLimiter, emailLimiter, async (req, res) => {
     const { email, service, turnstileToken } = req.body;
 
-    // Validacija emaila
     if (!email || typeof email !== 'string' || !emailRegex.test(email.trim())) {
         return res.status(400).json({ message: 'Invalid email address' });
     }
 
-    // Validacija servisa
     if (!service || !VALID_SERVICES.includes(service)) {
         return res.status(400).json({
             message: `Invalid service. Must be one of: ${VALID_SERVICES.join(', ')}`
         });
     }
 
-    // Turnstile verifikacija
     if (!turnstileToken) {
         return res.status(403).json({ message: 'Bot detekcija nije prošla. Pokušajte ponovo.' });
     }
@@ -61,12 +59,15 @@ app.post('/api/subscribe', ipTotalLimiter, ipServiceLimiter, emailLimiter, async
         return res.status(500).json({ message: 'Greška pri verifikaciji, pokušajte ponovo.' });
     }
 
-    // DB upit i slanje emaila
     try {
-        await Subscriber.create({ email, service });
+        const noviKlijent = await Subscriber.create({ email, service });
         await sendConfirmationEmail(email, service);
+        await posaljiNotifikaciju(noviKlijent);
         res.status(200).json({ message: 'OK' });
     } catch (err) {
+        if (err.code === 11000) {
+            return res.status(409).json({ message: 'Već ste prijavljeni za ovu uslugu.' });
+        }
         console.error('DB insert error:', err);
         res.status(500).json({ message: 'Internal server error' });
     }
