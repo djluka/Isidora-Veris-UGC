@@ -16,7 +16,7 @@ export async function posaljiNotifikaciju(noviKlijent) {
 
     await resend.emails.send({
         from: 'onboarding@resend.dev',
-        to: 'luka.djordjevic7017@gmail.com',
+        to: 'info@isidoraverisugc.com',
         subject: `🔔 Novi klijent: ${noviKlijent.email}`,
         html: `
             <h2 style="color:#333;">Novi klijent se prijavio!</h2>
