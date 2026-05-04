@@ -24,7 +24,7 @@ export async function posaljiNotifikaciju(noviKlijent) {
 
     await transporter.sendMail({
         from: 'luka.djordjevic7017@gmail.com',
-        to: 'info@isidoraverisugc.com',
+        to: 'luka.djordjevic7017@gmail.com',
         subject: `🔔 Novi klijent: ${noviKlijent.email}`,
         html: `
       <h2 style="color:#333;">Novi klijent se prijavio!</h2>
