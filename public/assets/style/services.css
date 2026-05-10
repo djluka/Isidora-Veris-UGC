@@ -134,8 +134,8 @@
     transform: rotateY(180deg);
 
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: stretch;
     flex-direction: column;
 }
 

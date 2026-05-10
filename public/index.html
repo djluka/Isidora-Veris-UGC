@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="assets/style/scroll_to_top.css"/>
     <link rel="stylesheet" href="assets/style/slider.css"/>
     <link rel="stylesheet" href="assets/style/services.css"/>
+    <link rel="stylesheet" href="assets/style/conversion.css"/>
     <link rel="stylesheet" href="assets/style/clients.css"/>
     <link rel="stylesheet" href="assets/style/comments.css"/>
     <link rel="stylesheet" href="assets/style/about_me.css"/>
@@ -60,8 +61,10 @@
         </li>
         <li>
             <a href="#content">PRIMERI</a>
+            <a href="#pricing">CENE</a>
             <a href="#services">USLUGE</a>
             <a href="#clients">KLIJENTI</a>
+            <a href="#faq">FAQ</a>
             <a href="#about">O MENI</a>
             <a href="#contact">KONTAKT</a>
         </li>
@@ -94,6 +97,13 @@
                 </li>
                 <li>
                     <a
+                            href="#pricing"
+                            onclick="document.getElementById('menu_checkbox').checked = false;"
+                    >CENE</a
+                    >
+                </li>
+                <li>
+                    <a
                             href="#services"
                             onclick="document.getElementById('menu_checkbox').checked = false;"
                     >USLUGE</a
@@ -104,6 +114,13 @@
                             href="#clients"
                             onclick="document.getElementById('menu_checkbox').checked = false;"
                     >KLIJENTI</a
+                    >
+                </li>
+                <li>
+                    <a
+                            href="#faq"
+                            onclick="document.getElementById('menu_checkbox').checked = false;"
+                    >FAQ</a
                     >
                 </li>
                 <li>
@@ -148,6 +165,14 @@
                 gradi poverenje i podstiče prodaju, prilagođavajući svoj rad
                 njihovim ciljevima i publici.
             </p>
+            <p class="hero_subtitle">
+                UGC i video za brendove u beauty, wellness, modi i D2C prostoru — spremni
+                Reels-i, oglasi i strategija objava.
+            </p>
+            <div class="hero_cta_row">
+                <a class="hero_cta hero_cta--primary" href="#pricing">Paketi i cene</a>
+                <a class="hero_cta hero_cta--secondary" href="#lead">Pošalji upit</a>
+            </div>
             <a class="contact_me" href="mailto:info@isidoraverisugc.com">
                 <img
                         class="mail"
@@ -803,9 +828,82 @@
             </div>
         </div>
     </div>
+    <!-- Cene i paketi -->
+    <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+        <h2 class="pricing_title" id="pricing-heading">Cene i paketi</h2>
+        <p class="pricing_lead">
+            Sve cene su u evrima. Posle upita šaljem detaljan opis obima, rokova i načina saradnje na mejl.
+        </p>
+        <p class="pricing_note">
+            Za domaće fakture i plaćanje u dinarima moguć je odgovarajući iznos po srednjem kursu NBS.
+        </p>
+        <div class="pricing_grid">
+            <div class="pricing_block">
+                <h3>Konsultacije</h3>
+                <p class="block_intro">Zoom do 60 min. Jednokratno dobijate analizu i šestomesečni plan objava; mesečni paket uključuje dve konsultacije.</p>
+                <table class="price_table">
+                    <thead>
+                    <tr><th>Usluga</th><th>Cena</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>Jednokratne konsultacije</td><td>130 €</td></tr>
+                    <tr><td>Mesečne (2 × konsultacije)</td><td>155 € / mes.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pricing_block">
+                <h3>UGC reklame</h3>
+                <p class="block_intro">Autentičan sadržaj iz ugla potrošača — za organik i plaćene kampanje.</p>
+                <table class="price_table">
+                    <thead>
+                    <tr><th>Paket</th><th>Cena</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>1 video</td><td>190 €</td></tr>
+                    <tr><td>3 videa</td><td>500 €</td></tr>
+                    <tr><td>5 videa</td><td>750 €</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pricing_block">
+                <h3>Branding video</h3>
+                <p class="block_intro">Video iz ugla brenda — storytelling, estetika, produkcija spremna za objavu.</p>
+                <table class="price_table">
+                    <thead>
+                    <tr><th>Paket</th><th>Cena</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>1 video</td><td>150 €</td></tr>
+                    <tr><td>3 videa</td><td>400 €</td></tr>
+                    <tr><td>5 videa</td><td>600 €</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pricing_block">
+                <h3>Kontent strategija</h3>
+                <p class="block_intro">Mesečni plan sa 9 ili 12 unapred definisanih objava (teme, format, poruke, raspored).</p>
+                <table class="price_table">
+                    <thead>
+                    <tr><th>Obim</th><th>Cena</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>9 objava / mesec</td><td>770 €</td></tr>
+                    <tr><td>12 objava / mesec</td><td>900 €</td></tr>
+                    </tbody>
+                </table>
+                <p class="pricing_legend">Uz strategiju možete dogovoriti i produkciju videa odvojeno, prema potrebi.</p>
+            </div>
+        </div>
+        <div class="pricing_cta_wrap">
+            <a class="pricing_cta" href="#lead">Pošalji upit za izabrani paket</a>
+        </div>
+    </section>
     <!-- Usluge -->
     <div class="services" id="services">
         <h1 class="title">usluge</h1>
+        <p class="pricing_lead" style="margin-top:-10px;margin-bottom:24px;">
+            Kratak pregled šta dobijate; flip kartica otkriva detalje. Jedna forma ispod — birate uslugu i ostavljate mejl.
+        </p>
         <div class="services-box">
             <!--KONSULTACIJE -->
             <div class="service-flip-card" data-service="konsultacije">
@@ -813,122 +911,122 @@
                     <div class="flip-card-front">
                         <h2 class="service_header">Konsultacije</h2>
                         <p class="service-desc">
-                            Jednosatni Zoom sastanak uz unapred pripremljen
-                            personalizovani plan i strategiju za unapređenje prisustva na
-                            društvenim mrežama, sa mogućnošću mesečnog praćenja progresa.
+                            Jedan fokusiran Zoom gde dobijate jasan plan za društvene mreže — šta objavljivati,
+                            kako da zvuči vaš brend i koje korake prvo.
                         </p>
-                        <button class="learn_more" type="button" >
-                            Saznaj više
-                        </button>
+                        <p class="service_price_teaser">od <strong>130 €</strong> jednokratno · <strong>155 €</strong> / mes. uz praćenje</p>
+                        <button class="learn_more" type="button">Saznaj više</button>
                         <small>info@isidoraverisugc.com</small>
                     </div>
-
                     <div class="flip-card-back">
-
-                        <h2>
-                            Unesite svoj email i saznajte sve detalje o usluzi koja vas
-                            zanima.
-                        </h2>
-                        <form class="emailForm">
-                            <input
-                                    type="email"
-                                    class="emailInput"
-                                    placeholder="vaš@email.com"
-                                    required
-                            />
-                            <div class="cf-turnstile" data-sitekey="0x4AAAAAADAPXg_XGdPminYh" data-size="invisible"></div>
-
-                            <button type="submit">Pošalji</button>
-                        </form>
-
-                        <p class="formMessage"></p>
+                        <div class="flip-back-scroll">
+                            <h2 class="flip-back-heading">Šta je uključeno</h2>
+                            <ul class="service_includes">
+                                <li>do 60 minuta rada uživo na Zoom-u</li>
+                                <li>jednokratno: analiza profila + šestomesečni plan objava</li>
+                                <li>mesečni paket: dve konsultacije mesečno + praćenje napretka</li>
+                                <li>pisan sažetak dogovora i sledećih koraka posle poziva</li>
+                            </ul>
+                            <p class="flip_back_note">Tačan obim i rok potvrđujem mejlom posle upita.</p>
+                            <a class="btn_to_lead" href="#lead" data-service="konsultacije">Pošalji upit za konsultacije</a>
+                            <button type="button" class="card_flip_back">Nazad</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- KREIRANJE UGC SADRŽAJA -->
+            <!-- VIDEO -->
             <div class="service-flip-card" data-service="ugc">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <h2 class="service_header">VIDEO sadržaj</h2>
                         <p class="service-desc">
-                            Autentično prikazivanje proizvoda ili usluge iz ugla potrošača ili brenda.
-                            Oba pristupa donose bolje prodajne rezultate i povećavaju angažovanost publike.
-                            UGC sadržaj gradi poverenje jer deluje kao iskrena preporuka, a ne kao reklama — dok „branding“
-                            video služi za priču o samom brendu.
+                            UGC iz ugla kupca gradi poverenje; branding video pojačava priču o brendu.
+                            Oba formata su spremna za Reels, oglase i sajt.
                         </p>
-                        <button class="learn_more" type="button" >
-                            Saznaj više
-                        </button>
-                        <a href="mailto:info@isidoraverisugc.com">
-                            <small>info@isidoraverisugc.com</small>
-                        </a>
+                        <p class="service_price_teaser">UGC od <strong>190 €</strong> · branding od <strong>150 €</strong> po videu</p>
+                        <button class="learn_more" type="button">Saznaj više</button>
+                        <a href="mailto:info@isidoraverisugc.com"><small>info@isidoraverisugc.com</small></a>
                     </div>
-
                     <div class="flip-card-back">
-                        <h2>
-                            Unesite svoj email i saznajte sve detalje o usluzi koja vas zanima.
-
-                        </h2>
-                        <form class="emailForm">
-                            <input
-                                    type="email"
-                                    class="emailInput"
-                                    placeholder="vaš@email.com"
-                                    required
-                            />
-                            <div class="cf-turnstile" data-sitekey="0x4AAAAAADAPXg_XGdPminYh" data-size="invisible"></div>
-
-                            <button type="submit">Pošalji</button>
-                        </form>
-
-                        <p class="formMessage"></p>
+                        <div class="flip-back-scroll">
+                            <h2 class="flip-back-heading">Šta je uključeno</h2>
+                            <ul class="service_includes">
+                                <li>scenarij / struktura klipa (hook, demo, poziv na akciju)</li>
+                                <li>snimanje i montaža, titlovi i zvuk po dogovoru</li>
+                                <li>isporuka u formatima za Instagram / TikTok / Meta oglase</li>
+                                <li>1 runda korekcija u okviru dogovorenog paketa</li>
+                            </ul>
+                            <p class="flip_back_note">Rok isporuke i dostava proizvoda dogovaraju se pri javljanju.</p>
+                            <a class="btn_to_lead" href="#lead" data-service="ugc">Pošalji upit za video</a>
+                            <button type="button" class="card_flip_back">Nazad</button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!--  KONTENT STRATEGIJA -->
+            <!-- KONTENT STRATEGIJA -->
             <div class="service-flip-card" data-service="kontent-strategija">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <h2 class="service_header">Kontent strategija</h2>
                         <p class="service-desc">
-                            Podrazumeva 9 ili 12 unapred isplaniranih objava na mesečnom nivou.
-                            Ove objave donose jasan sistem, doslednost i sadržaj koji
-                            gradi poverenje, sa ciljem unapređenja prodaje i jačanja
-                            svesti o brendu.
+                            Mesečni plan sa 9 ili 12 objava — jasna mapa šta, kada i zašto objaviti,
+                            da tim ili agencija mogu dosledno da izvršavaju.
                         </p>
-                        <button class="learn_more" type="button">
-                            Saznaj više
-                        </button>
+                        <p class="service_price_teaser"><strong>770 €</strong> (9 objava) · <strong>900 €</strong> (12 objava)</p>
+                        <button class="learn_more" type="button">Saznaj više</button>
                         <small>info@isidoraverisugc.com</small>
                     </div>
-
                     <div class="flip-card-back">
-                        <h2>
-                            Unesite svoj email i saznajte sve detalje o usluzi koja vas zanima.
-                        </h2>
-                        <form class="emailForm">
-                            <input
-                                    type="email"
-                                    class="emailInput"
-                                    placeholder="vaš@email.com"
-                                    required
-                            />
-                            <div class="cf-turnstile" data-sitekey="0x4AAAAAADAPXg_XGdPminYh" data-size="invisible"></div>
-
-                            <button type="submit">Pošalji</button>
-                        </form>
-                        <p class="formMessage"></p>
+                        <div class="flip-back-scroll">
+                            <h2 class="flip-back-heading">Šta je uključeno</h2>
+                            <ul class="service_includes">
+                                <li>kalendar objava za mesec dana</li>
+                                <li>za svaku objavu: tema, format, ključna poruka, predlog CTA</li>
+                                <li>usklađivanje sa ciljevima brenda (prodaja / community / lansiranje)</li>
+                                <li>kratak vodič za implementaciju (ko šta radi)</li>
+                            </ul>
+                            <p class="flip_back_note">Kreiranje samih videa i grafika može ići kao poseban dogovor.</p>
+                            <a class="btn_to_lead" href="#lead" data-service="kontent-strategija">Pošalji upit za strategiju</a>
+                            <button type="button" class="card_flip_back">Nazad</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <section class="lead_section" id="lead" aria-labelledby="lead-heading">
+            <h2 class="lead_title" id="lead-heading">Započni saradnju</h2>
+            <p class="lead_intro">
+                Izaberite uslugu i ostavite email. U roku od nekoliko minuta stiže detaljan opis paketa i sledeći koraci
+                (uključujući kako zakazujemo termin).
+            </p>
+            <form id="leadForm" class="emailForm lead_form" autocomplete="on">
+                <label class="visually_hidden" for="serviceSelect">Izaberite uslugu</label>
+                <select id="serviceSelect" name="service" class="service_select" required>
+                    <option value="" selected>Izaberite uslugu…</option>
+                    <option value="konsultacije">Konsultacije</option>
+                    <option value="ugc">VIDEO — UGC i branding</option>
+                    <option value="kontent-strategija">Kontent strategija</option>
+                </select>
+                <label class="visually_hidden" for="leadEmail">Email</label>
+                <input
+                        id="leadEmail"
+                        type="email"
+                        class="emailInput"
+                        name="email"
+                        placeholder="vaš@email.com"
+                        required
+                />
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAADAPXg_XGdPminYh" data-size="invisible"></div>
+                <button type="submit">Pošalji upit</button>
+            </form>
+            <p class="formMessage" id="leadFormMessage"></p>
+        </section>
     </div>
     <!--Rezultati-->
     <div class="clients" id="clients">
         <div class="clients_text">
             <p class="client_header">rezultati</p>
-            <p class="clients_title1">PREKO 50</p>
+            <p class="clients_title1">PREKO 70</p>
             <p class="clients_title2">zadovoljnih klijenata</p>
         </div>
         <div class="clients_box">
@@ -1321,6 +1419,49 @@
 
         </div>
     </div>
+    <!-- FAQ -->
+    <section class="faq_section" id="faq" aria-labelledby="faq-heading">
+        <h2 class="faq_title" id="faq-heading">Često postavljana pitanja</h2>
+        <details class="faq_item">
+            <summary>Kako teče saradnja od upita do prvog videa?</summary>
+            <div class="faq_answer">
+                Ostavite upit preko forme — na mejl stiže detaljan opis paketa. Dogovorimo rok, brief i isporuku
+                materijala; nakon toga krećem sa scenarijem i produkcijom. Rokovi zavise od paketa i reda posla i
+                uvek su jasno naznačeni u ponudi.
+            </div>
+        </details>
+        <details class="faq_item">
+            <summary>Da li mogu da koristim video u Meta oglasima?</summary>
+            <div class="faq_answer">
+                Da, uz dogovor o licenciranju i trajanju korišćenja. U ponuci definišemo gde i koliko dugo možete
+                koristiti materijal (organski vs. plaćeno), kako bi obe strane bile zaštićene.
+            </div>
+        </details>
+        <details class="faq_item">
+            <summary>Koliko korekcija je uključeno?</summary>
+            <div class="faq_answer">
+                Jedna runda razumne korekcije u okviru dogovorenog paketa (titlovi, tempo, mali rezovi). Veće
+                promene koncepta ili dodatne runde mogu ići kao dopuna po dogovoru.
+            </div>
+        </details>
+        <details class="faq_item">
+            <summary>Šta treba da pripremim kao brend?</summary>
+            <div class="faq_answer">
+                Proizvod ili uzorak, kratak brief (cilj, publika, ton), logotip i eventualno brend vodič ako postoji.
+                Šta tačno tražim šaljem i u mejlu posle upita kako bismo ubrzali start.
+            </div>
+        </details>
+        <details class="faq_item">
+            <summary>Kako ide plaćanje?</summary>
+            <div class="faq_answer">
+                Avans i završna uplata dogovaraju se u ponudi (zavisno od paketa). Moguća je faktura u dinarima po
+                kursu NBS ili dogovor za inostrane klijente.
+            </div>
+        </details>
+        <div class="pricing_cta_wrap" style="margin-top:28px;">
+            <a class="pricing_cta" href="#lead">Pošalji upit</a>
+        </div>
+    </section>
 </div>
 
 <!--About me-->
@@ -1342,7 +1483,8 @@
             <p>
                 Višegodišnjim iskustvom stečenim kroz rad u marketingu za mali brend,
                 razvila sam razumevanje kako strategija i kreativnost mogu napraviti
-                razliku. Danas pomažem i drugim brendovima da, kroz pažljivo
+                razliku. Više od četiri godine radim UGC i video produkciju; saradivala
+                sam sa preko 70 brendova. Danas pomažem i drugim brendovima da, kroz pažljivo
                 osmišljene i estetične video sadržaje, povećaju prodaju i povežu se
                 sa svojom ciljnom publikom. Fokusiram se na kreiranje sadržaja koji
                 pored privlačenja pažnje gradi i autentičnu vezu između brenda i
@@ -1476,7 +1618,7 @@
             href="mailto:luka.djordjevic7017@gmail.com"
             data-tooltip="CLICK FOR MY MAIL"
     >
-        &copy; 2025 All rights reserved | Luka Đorđević
+        &copy; 2026 All rights reserved | Luka Đorđević
     </a>
 </div>
 
