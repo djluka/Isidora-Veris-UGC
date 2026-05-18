@@ -29,8 +29,8 @@
         <link rel="stylesheet" href="assets/style/navigation.css"/>
     </noscript>
 
-    <link rel="preload" as="style" href="assets/style/main.css"/>
-    <link rel="stylesheet" href="assets/style/main.css"/>
+    <link rel="preload" as="style" href="assets/style/hero.css"/>
+    <link rel="stylesheet" href="assets/style/hero.css"/>
 
     <link rel="stylesheet" href="assets/style/scroll_to_top.css"/>
     <link rel="stylesheet" href="assets/style/slider.css"/>
@@ -143,113 +143,189 @@
 </nav>
 
 <div class="page_wrapper">
-    <div class="main">
-        <div class="profile_wrapper">
-            <video
-                    class="profile"
-                    muted
-                    playsinline
-                    loop
-                    poster="media/images/profile_poster.webp"
-            ></video>
-        </div>
-        <div class="main_text_box">
-            <p class="main_txt">
-                ISIDORA VERIŠ<br/><span>UGC & Content Creator</span>
-            </p>
+    <nav aria-label="Glavna navigacija">
+        <ul class="menu">
+            <li>
+                <div class="site_title">
+                    <p>Studio Veriš</p>
+                    <p>by Isidora</p>
+                </div>
+            </li>
+            <li>
+                <a href="#content">PRIMERI</a>
+                <a href="#services">USLUGE</a>
+                <a href="#clients">KLIJENTI</a>
+                <a href="#about">O MENI</a>
+                <a href="#contact">KONTAKT</a>
+            </li>
+        </ul>
+        <div class="mobile_menu">
+            <div class="site_title">
+                <p>Studio Veriš</p>
+                <p>by Isidora</p>
+            </div>
 
-            <p class="description_txt">
-                Pomažem brendovima da se povežu sa publikom kroz autentičan
-                storytelling i estetičan sadržaj. Fokusiram se na predstavljanje
-                proizvoda i vrednosti brenda na način koji povećava vidljivost,
-                gradi poverenje i podstiče prodaju, prilagođavajući svoj rad
-                njihovim ciljevima i publici.
-            </p>
-            <p class="hero_subtitle">
-                UGC i video za brendove u beauty, wellness, modi i D2C prostoru — spremni
-                Reels-i, oglasi i strategija objava.
-            </p>
-            <div class="hero_cta_row">
-                <a class="hero_cta hero_cta--primary" href="#pricing">Paketi i cene</a>
-                <a class="hero_cta hero_cta--secondary" href="#lead">Pošalji upit</a>
-            </div>
-            <a class="contact_me" href="mailto:info@isidoraverisugc.com">
-                <img
-                        class="mail"
-                        src="assets/mail.webp"
-                        loading="lazy"
-                        alt="Loading..."
+            <div id="menu_toggle">
+                <input
+                        type="checkbox"
+                        id="menu_checkbox"
+                        aria-controls="burger_menu"
+                        aria-label="Otvori/zatvori meni"
                 />
-                <p>info@isidoraverisugc.com</p>
-            </a>
-            <a
-                    class="contact_me"
-                    href="https://www.instagram.com/isidoraverisugc/"
-                    target="_blank"
-            >
-                <img
-                        class="instagram"
-                        src="assets/instagram.webp"
-                        loading="lazy"
-                        alt="Loading..."
-                />
-                <p>isidoraverisugc</p>
-                <img
-                        src="assets/point_arrow.webp"
-                        class="point_arrow"
-                        alt="Loading..."
-                        loading="lazy"
-                />
-            </a>
-            <div class="contact_me">
-                <img
-                        class="location"
-                        src="assets/location.webp"
-                        loading="lazy"
-                        alt="Loading..."
-                />
-                <p>Novi Sad, Srbija</p>
-            </div>
-            <div class="instagram_highlights">
-                <div class="highlights">
-                    <a
-                            href="https://www.instagram.com/stories/highlights/17996375435610923/"
-                            target="_blank"
-                    >
-                        <div class="content_highlight"></div>
-                        <p>Content</p>
-                    </a>
-                    <a
-                            href="https://www.instagram.com/stories/highlights/18065078143744381/"
-                            target="_blank"
-                    >
-                        <div class="ugc_highlight"></div>
-                        <p>UGC</p>
-                    </a>
-                    <a
-                            href="https://www.instagram.com/stories/highlights/18079061467980510/?hl=en"
-                            target="_blank"
-                    >
-                        <div class="edits_highlight"></div>
-                        <p>Edits</p>
-                    </a>
-                    <a
-                            href="https://www.instagram.com/stories/highlights/17938906661990422/"
-                            target="_blank"
-                    >
-                        <div class="product_highlight"></div>
-                        <p>Product</p>
-                    </a>
+                <div class="burger_line">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <div class="typewriter">
-                    <p class="highlight_desc">
-                        Klikni na highlight za sve primere sadržaja
-                    </p>
+                <ul id="burger_menu">
+                    <li>
+                        <a
+                                href="#content"
+                                onclick="document.getElementById('menu_checkbox').checked = false;"
+                        >PRIMERI</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                                href="#services"
+                                onclick="document.getElementById('menu_checkbox').checked = false;"
+                        >USLUGE</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                                href="#clients"
+                                onclick="document.getElementById('menu_checkbox').checked = false;"
+                        >KLIJENTI</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                                href="#about"
+                                onclick="document.getElementById('menu_checkbox').checked = false;"
+                        >O MENI</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                                href="#contact"
+                                onclick="document.getElementById('menu_checkbox').checked = false;"
+                        >KONTAKT</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page_wrapper">
+        <div class="main">
+            <div class="profile_wrapper">
+                <video
+                        class="profile"
+                        muted
+                        playsinline
+                        loop
+                        poster="media/images/profile_poster.webp"
+                ></video>
+                <div class="video_overlay_text">
+                    <p>sadržaja koji <strong>SIGURNO</strong> drži pažnju gledalaca</p>
+                </div>
+                <div class="social_proof_badge">
+                    <p class="badge_number">70+</p>
+                    <p class="badge_text">brendova mi veruje</p>
+                </div>
+            </div>
+            <div class="main_text_box">
+                <p class="main_txt">
+                    ISIDORA VERIŠ
+                </p>
+                <p class="hero_hook">UGC video koji prodaje.</p>
+                <p class="hero_tagline">ADS READY&ensp;|&ensp;AUTENTIČNO&ensp;|&ensp;REZULTATI</p>
+
+                <p class="description_txt">
+                    Pomažem brendovima da se povežu sa publikom kroz autentičan
+                    storytelling i estetičan sadržaj. Fokusiram se na proizvode i vrednosti
+                    brenda na način koji povećava vidljivost, gradi poverenje i podstiče prodaju.
+                </p>
+
+                <!-- Benefits -->
+                <div class="hero_benefits">
+                    <div class="hero_benefit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7b6853" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        <div>
+                            <p class="benefit_title">Video za reklame</p>
+                            <p class="benefit_desc">koji zadržava pažnju</p>
+                        </div>
+                    </div>
+                    <div class="hero_benefit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7b6853" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <div>
+                            <p class="benefit_title">Sadržaj koji gradi poverenje</p>
+                            <p class="benefit_desc">i donosi rezultate</p>
+                        </div>
+                    </div>
+                    <div class="hero_benefit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7b6853" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                        <div>
+                            <p class="benefit_title">Veća stopa konverzije</p>
+                            <p class="benefit_desc">i bolji povrat ulaganja u oglase</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Box -->
+                <div class="hero_cta_box">
+                    <p class="cta_headline">UGC i branding video od 150€</p>
+                    <p class="cta_sub">Pogledaj pakete i izaberi ono što ti treba.</p>
+                    <a class="cta_button" href="#services">POGLEDAJ USLUGE &nbsp;→</a>
+                </div>
+
+                <!-- Contact Group -->
+                <div class="contact_group">
+                    <a class="contact_me" href="mailto:info@isidoraverisugc.com">
+                        <img class="mail" src="assets/mail.webp" loading="lazy" alt="Email"/>
+                        <p>info@isidoraverisugc.com</p>
+                    </a>
+                    <a class="contact_me" href="https://www.instagram.com/isidoraverisugc/" target="_blank">
+                        <img class="instagram" src="assets/instagram.webp" loading="lazy" alt="Instagram"/>
+                        <p>isidoraverisugc</p>
+                    </a>
+                    <div class="contact_me">
+                        <img class="location" src="assets/location.webp" loading="lazy" alt="Lokacija"/>
+                        <p>Novi Sad, Srbija</p>
+                    </div>
+                </div>
+
+                <!-- Highlights -->
+                <div class="instagram_highlights">
+                    <div class="highlights">
+                        <a href="https://www.instagram.com/stories/highlights/17996375435610923/" target="_blank">
+                            <div class="content_highlight"></div>
+                            <p>Content</p>
+                        </a>
+                        <a href="https://www.instagram.com/stories/highlights/18065078143744381/" target="_blank">
+                            <div class="ugc_highlight"></div>
+                            <p>UGC</p>
+                        </a>
+                        <a href="https://www.instagram.com/stories/highlights/18079061467980510/?hl=en" target="_blank">
+                            <div class="edits_highlight"></div>
+                            <p>Edits</p>
+                        </a>
+                        <a href="https://www.instagram.com/stories/highlights/17938906661990422/" target="_blank">
+                            <div class="product_highlight"></div>
+                            <p>Product</p>
+                        </a>
+                    </div>
+                    <div class="typewriter">
+                        <p class="highlight_desc">
+                            Klikni na highlight za sve primere sadržaja
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Scroll to top -->
+</div>    <!-- Scroll to top -->
     <div class="scroll_to_top">
         <img src="assets/arrow.webp" loading="lazy" alt="Loading..."/>
     </div>
