@@ -44,6 +44,7 @@ body {
     }
 }
 
+/* ===== PROFILE VIDEO ===== */
 .main .profile_wrapper {
     position: relative;
     max-width: 250px;
@@ -68,53 +69,6 @@ body {
     top: 30px;
     left: -30px;
     z-index: -1;
-}
-
-/* Video overlay text */
-.video_overlay_text {
-    position: absolute;
-    bottom: 15px;
-    left: 10px;
-    right: 10px;
-    z-index: 2;
-    background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(4px);
-    border-radius: 8px;
-    padding: 10px 14px;
-}
-.video_overlay_text p {
-    color: #fff;
-    font-family: CormorantGaramond;
-    font-size: 11pt;
-    text-align: center;
-    line-height: 1.4;
-}
-.video_overlay_text strong {
-    font-family: TheSeasonsBold;
-    color: #f4eade;
-    font-size: 12pt;
-}
-
-/* Social proof badge */
-.social_proof_badge {
-    position: absolute;
-    top: -10px;
-    left: -40px;
-    z-index: 3;
-    text-align: center;
-}
-.social_proof_badge .badge_number {
-    font-family: TheSeasonsBold;
-    font-size: 28pt;
-    color: #7b6853;
-    line-height: 1;
-}
-.social_proof_badge .badge_text {
-    font-family: CormorantGaramond;
-    font-size: 10pt;
-    color: #7b6853;
-    max-width: 80px;
-    line-height: 1.2;
 }
 
 /* ===== MAIN TEXT BOX ===== */
@@ -146,26 +100,30 @@ body {
     font-size: 20pt;
     text-align: center;
     color: #1a1a1a;
-    margin-top: 5px;
-    line-height: 1.3;
+    margin-top: 8px;
+    line-height: 1.4;
+    background-color: #f4eade;
+    display: inline-block;
+    padding: 8px 22px;
+    border-radius: 4px;
 }
 
 /* Tagline */
 .main .main_text_box .hero_tagline {
     font-family: CormorantGaramond;
-    font-size: 11pt;
+    font-size: 10pt;
     letter-spacing: 3px;
     color: #7b6853;
-    margin-top: 12px;
+    margin-top: 14px;
     text-align: center;
 }
 
 .main .main_text_box p.description_txt {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    font-size: 14pt;
-    letter-spacing: 1px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    font-size: 13pt;
+    letter-spacing: 0.5px;
     font-family: CormorantGaramond;
     line-height: 1.5;
 }
@@ -174,65 +132,90 @@ body {
 .hero_benefits {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
+    background-color: #f2ece8;
+    padding: 10px;
+    border-radius: 10px;
+
 }
 .hero_benefit {
     display: flex;
     align-items: center;
     gap: 12px;
+    padding: 10px;
+}
+.hero_benefit .benefit_icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 50%;
+    background-color: #f4eade;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero_benefit  img {
+    width: 35px;
+    height: 35px;
 }
 .hero_benefit svg {
     flex-shrink: 0;
 }
 .hero_benefit .benefit_title {
     font-family: TheSeasonsBold;
-    font-size: 11pt;
+    font-size: 13pt;
     color: #1a1a1a;
+    line-height: 1.3;
 }
 .hero_benefit .benefit_desc {
     font-family: CormorantGaramond;
-    font-size: 10.5pt;
+    font-size: 11pt;
     color: #7b6853;
-    margin-top: 2px;
+    margin-top: 1px;
+    line-height: 1.3;
 }
 
 /* ===== CTA BOX ===== */
 .hero_cta_box {
     width: 100%;
-    background-color: #f4eade;
-    border-radius: 12px;
-    padding: 24px 20px;
+    background-color: #f0e7da;
+    border-radius: 16px;
+    padding: 22px 20px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 .hero_cta_box .cta_headline {
     font-family: TheSeasonsBold;
-    font-size: 16pt;
-    color: #1a1a1a;
-    margin-bottom: 6px;
+    font-size: 15pt;
+
+    color: black;
+    margin-bottom: 4px;
 }
 .hero_cta_box .cta_sub {
     font-family: CormorantGaramond;
-    font-size: 12pt;
-    color: #7b6853;
-    margin-bottom: 18px;
+    font-size: 11pt;
+    color: black;
+    margin-bottom: 16px;
 }
 .hero_cta_box .cta_button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-family: TheSeasonsBold;
-    font-size: 11pt;
+    font-size: 10.5pt;
     letter-spacing: 2px;
-    color: #fff;
-    background-color: #7b6853;
-    padding: 14px 32px;
-    border-radius: 6px;
+    color: white;
+    background-color: black;
+    padding: 13px 30px;
+    border-radius: 4px;
     text-decoration: none;
+    border: 1px solid #57432a;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .hero_cta_box .cta_button:hover {
-    background-color: #5e4f3d;
+    background-color: #3e2f1b;
     transform: translateY(-1px);
 }
 .hero_cta_box .cta_button:active {
@@ -243,42 +226,58 @@ body {
 .contact_group {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 4px;
+    align-items: start;
+    justify-content: start;
+    gap: 2px;
     margin-bottom: 20px;
     width: 100%;
+    padding-left: 4px;
 }
 
 .main .main_text_box .contact_me {
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-family: CormorantGaramond;
+    padding: 4px 0;
+    transition: color 0.2s ease;
 }
 
 .main .main_text_box .contact_me img {
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
 }
 
-.main .main_text_box .contact_me,
 .main .main_text_box .contact_me p {
-    margin: 5px;
-    font-size: 14pt;
+    margin: 0;
+    font-size: 12pt;
     text-decoration: none;
-    color: black;
+    color: inherit;
     font-family: CormorantGaramond;
 }
-.main .main_text_box a.contact_me {
-    transition: color 0.2s ease;
-}
-.main .main_text_box a.contact_me:hover {
-    color: #7b6853;
-}
+.main .main_text_box a.contact_me:hover,
 .main .main_text_box a.contact_me:hover p {
     color: #7b6853;
 }
+/*ARROW*/
 
+.arrow-to-highlight{
+    rotate: 180deg;
+    transform: scaleX(-1);
+    position: absolute;
+    left: 200px;
+    bottom: 160px;
+}
+
+.arrow-to-highlight{
+    width: 100px;
+    height: 100px;
+
+
+}
 /* ===== HIGHLIGHTS ===== */
 .main .main_text_box .instagram_highlights {
     display: flex;
@@ -286,74 +285,72 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 24px;
 }
 .main .main_text_box .instagram_highlights .highlights {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 16px;
 }
 .main .main_text_box .instagram_highlights .highlights a {
-    margin-top: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-decoration: none;
-    color: black;
+    color: #1a1a1a;
     font-family: CormorantGaramond;
-    font-size: 1.2em;
+    font-size: 1em;
     transition: transform 0.2s ease;
+    gap: 8px;
 }
 .main .main_text_box .instagram_highlights .highlights a:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
-.main .main_text_box .instagram_highlights .highlights a div {
-    padding: 30px;
-    margin: 10px;
-    border-radius: 50px;
+.main .main_text_box .instagram_highlights .highlights a .highlight_circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 2px solid #c4b5a5;
+    background-color: #efe3d6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
     position: relative;
     z-index: 3;
 }
-.main .main_text_box .instagram_highlights .highlights a div::after {
-    content: "";
-    background-color: #dbdee200;
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50px;
-    z-index: -1;
-    padding: 33px;
+.main .main_text_box .instagram_highlights .highlights a .highlight_circle::after {
+    display: none;
 }
-/* Content */
-.main .main_text_box .instagram_highlights .highlights a:nth-child(1) > div {
-    background-color: #d6ccc2;
+.main .main_text_box .instagram_highlights .highlights a .highlight_circle img {
+    width: 35px;
+    height: 35px;
 }
-/* UGC */
-.main .main_text_box .instagram_highlights .highlights a:nth-child(2) > div {
-    background-image: url(/assets/ugc_highlights.webp);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.main .main_text_box .instagram_highlights .highlights a p {
+    font-family: CormorantGaramond;
+    font-size: 1.05em;
+    color: #1a1a1a;
 }
-/* Edits */
-.main .main_text_box .instagram_highlights .highlights a:nth-child(3) > div {
-    background-color: #e3d5ca;
-}
-/* Product */
-.main .main_text_box .instagram_highlights .highlights a:nth-child(4) > div {
-    background-image: url(/assets/product_highlights.webp);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 .main .main_text_box .instagram_highlights p.highlight_desc {
-    padding: 10px;
+    padding: 14px 10px 0;
     text-align: center;
-    font-family: TheSeasonsLight;
-    font-weight: 0;
-    font-size: 10pt;
+    font-family: RomateHood;
+    font-size: 13pt;
+    color: #7b6853;
+}
+
+/* Point arrow between contacts and highlights */
+.main .main_text_box .point_arrow {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    rotate: -90deg;
+    transform: scaleX(-1);
 }
 .main .main_text_box .instagram_highlights .typewriter {
     margin: 0 auto;
@@ -374,21 +371,12 @@ body {
 
 /* The typing effect */
 @keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+    from { width: 0; }
+    to { width: 100%; }
 }
 @keyframes blink-caret {
-    from,
-    to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: black;
-    }
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
 }
 
 /* ========================================
@@ -406,27 +394,32 @@ body {
         max-width: 300px;
     }
     .main .main_text_box p.main_txt {
-        font-size: 25pt;
+        font-size: 30pt;
     }
     .main .main_text_box .hero_hook {
         font-size: 22pt;
     }
     .main .main_text_box .hero_tagline {
-        font-size: 12pt;
+        font-size: 11pt;
     }
     .hero_benefits {
         flex-direction: row;
         justify-content: center;
-        gap: 24px;
+        gap: 20px;
     }
     .hero_benefit {
         flex-direction: column;
         text-align: center;
+        align-items: center;
         gap: 8px;
         flex: 1;
     }
-    .hero_benefit div {
+    .hero_benefit div:not(.benefit_icon) {
         text-align: center;
+    }
+    .contact_group {
+        align-items: center;
+        padding-left: 0;
     }
     .main .main_text_box .instagram_highlights {
         position: relative;
@@ -459,11 +452,17 @@ body {
         max-width: 1100px;
     }
     .main {
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 20px 0;
         max-height: none;
     }
     .main .profile_wrapper {
         max-width: 350px;
-        margin: 20px auto;
+        min-width: 320px;
+        margin: 20px 0;
+        flex-shrink: 0;
     }
 
     .main .profile_wrapper::after {
@@ -472,88 +471,85 @@ body {
     }
 
     .main .main_text_box {
-        max-width: 500px;
-        align-items: start;
+        max-width: 600px;
+        flex: 1;
+        align-items: center;
     }
 
     .main .main_text_box p.main_txt {
         letter-spacing: 5px;
-        font-size: 40pt;
-        text-align: left;
-        align-items: start;
+        font-size: 38pt;
+        text-align: center;
+        align-items: center;
     }
 
     .main .main_text_box .hero_hook {
-        font-size: 26pt;
-        text-align: left;
+        font-size: 24pt;
+        text-align: center;
+        padding: 10px 28px;
     }
     .main .main_text_box .hero_tagline {
-        font-size: 12pt;
-        text-align: left;
+        font-size: 11pt;
+        text-align: center;
+        letter-spacing: 4px;
     }
     .main .main_text_box p.description_txt {
-        font-size: 15pt;
-        text-align: left;
+        font-size: 14pt;
+        text-align: center;
+        max-width: 480px;
     }
 
     .hero_benefits {
         flex-direction: row;
-        gap: 28px;
+        gap: 24px;
+        justify-content: center;
     }
     .hero_benefit {
         flex-direction: column;
         text-align: center;
+        align-items: center;
         gap: 8px;
+        flex: 1;
+
     }
-    .hero_benefit div {
+    .hero_benefit div:not(.benefit_icon) {
         text-align: center;
     }
 
     .hero_cta_box {
-        text-align: left;
-        padding: 28px 30px;
+        padding: 24px 30px;
     }
     .hero_cta_box .cta_button {
-        font-size: 12pt;
-        padding: 16px 36px;
+        font-size: 11pt;
+        padding: 14px 34px;
     }
 
     .contact_group {
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 20px;
-    }
-
-    .social_proof_badge {
-        top: -20px;
-        left: -60px;
-    }
-    .social_proof_badge .badge_number {
-        font-size: 36pt;
-    }
-    .social_proof_badge .badge_text {
-        font-size: 11pt;
+        flex-direction: column;
+        align-items: start;
+        gap: 2px;
+        padding-left: 0;
     }
 
     .main .main_text_box .instagram_highlights {
         position: relative;
         left: 0%;
-        top: 40px;
+        top: 30px;
         transform: translateX(0%);
     }
-    .main .main_text_box .instagram_highlights img.point_arrow {
-        max-width: 100px;
-        rotate: -90deg;
-        transform: scaleX(-1);
-        position: absolute;
-        top: -100px;
-        right: 150px;
+    .main .main_text_box .instagram_highlights .highlights a .highlight_circle {
+        width: 80px;
+        height: 80px;
+    }
+    .main .main_text_box .instagram_highlights .highlights a .highlight_circle svg {
+        width: 34px;
+        height: 34px;
     }
     .main .main_text_box .instagram_highlights .highlights a {
-        font-size: 1.3em;
+        font-size: 1.15em;
     }
     .main .main_text_box .instagram_highlights p.highlight_desc {
-        font-size: 1.1em;
+        font-size: 14pt;
     }
     .main .main_text_box .instagram_highlights .typewriter {
         margin-top: 10px;

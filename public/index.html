@@ -24,10 +24,6 @@
 
     <link rel="preload" as="style" href="assets/style/navigation.css"/>
     <link rel="stylesheet" href="assets/style/navigation.css"/>
-    <link rel="stylesheet" href="assets/style/navigation.css" media="print" onload="this.media='all'"/>
-    <noscript>
-        <link rel="stylesheet" href="assets/style/navigation.css"/>
-    </noscript>
 
     <link rel="preload" as="style" href="assets/style/hero.css"/>
     <link rel="stylesheet" href="assets/style/hero.css"/>
@@ -143,1405 +139,1336 @@
 </nav>
 
 <div class="page_wrapper">
-    <nav aria-label="Glavna navigacija">
-        <ul class="menu">
-            <li>
-                <div class="site_title">
-                    <p>Studio Veriš</p>
-                    <p>by Isidora</p>
-                </div>
-            </li>
-            <li>
-                <a href="#content">PRIMERI</a>
-                <a href="#services">USLUGE</a>
-                <a href="#clients">KLIJENTI</a>
-                <a href="#about">O MENI</a>
-                <a href="#contact">KONTAKT</a>
-            </li>
-        </ul>
-        <div class="mobile_menu">
-            <div class="site_title">
-                <p>Studio Veriš</p>
-                <p>by Isidora</p>
-            </div>
 
-            <div id="menu_toggle">
-                <input
-                        type="checkbox"
-                        id="menu_checkbox"
-                        aria-controls="burger_menu"
-                        aria-label="Otvori/zatvori meni"
-                />
-                <div class="burger_line">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul id="burger_menu">
-                    <li>
-                        <a
-                                href="#content"
-                                onclick="document.getElementById('menu_checkbox').checked = false;"
-                        >PRIMERI</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                                href="#services"
-                                onclick="document.getElementById('menu_checkbox').checked = false;"
-                        >USLUGE</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                                href="#clients"
-                                onclick="document.getElementById('menu_checkbox').checked = false;"
-                        >KLIJENTI</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                                href="#about"
-                                onclick="document.getElementById('menu_checkbox').checked = false;"
-                        >O MENI</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                                href="#contact"
-                                onclick="document.getElementById('menu_checkbox').checked = false;"
-                        >KONTAKT</a
-                        >
-                    </li>
-                </ul>
-            </div>
+    <div class="main">
+        <div class="profile_wrapper">
+            <video
+                    class="profile"
+                    muted
+                    playsinline
+                    loop
+                    poster="media/images/profile_poster.webp"
+            ></video>
+
         </div>
-    </nav>
-
-    <div class="page_wrapper">
-        <div class="main">
-            <div class="profile_wrapper">
-                <video
-                        class="profile"
-                        muted
-                        playsinline
-                        loop
-                        poster="media/images/profile_poster.webp"
-                ></video>
-                <div class="video_overlay_text">
-                    <p>sadržaja koji <strong>SIGURNO</strong> drži pažnju gledalaca</p>
-                </div>
-                <div class="social_proof_badge">
-                    <p class="badge_number">70+</p>
-                    <p class="badge_text">brendova mi veruje</p>
-                </div>
-            </div>
-            <div class="main_text_box">
-                <p class="main_txt">
-                    ISIDORA VERIŠ
-                </p>
-                <p class="hero_hook">UGC video koji prodaje.</p>
-                <p class="hero_tagline">ADS READY&ensp;|&ensp;AUTENTIČNO&ensp;|&ensp;REZULTATI</p>
-
-                <p class="description_txt">
-                    Pomažem brendovima da se povežu sa publikom kroz autentičan
-                    storytelling i estetičan sadržaj. Fokusiram se na proizvode i vrednosti
-                    brenda na način koji povećava vidljivost, gradi poverenje i podstiče prodaju.
-                </p>
-
-                <!-- Benefits -->
-                <div class="hero_benefits">
-                    <div class="hero_benefit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7b6853" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        <div>
-                            <p class="benefit_title">Video za reklame</p>
-                            <p class="benefit_desc">koji zadržava pažnju</p>
-                        </div>
-                    </div>
-                    <div class="hero_benefit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7b6853" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        <div>
-                            <p class="benefit_title">Sadržaj koji gradi poverenje</p>
-                            <p class="benefit_desc">i donosi rezultate</p>
-                        </div>
-                    </div>
-                    <div class="hero_benefit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7b6853" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-                        <div>
-                            <p class="benefit_title">Veća stopa konverzije</p>
-                            <p class="benefit_desc">i bolji povrat ulaganja u oglase</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA Box -->
-                <div class="hero_cta_box">
-                    <p class="cta_headline">UGC i branding video od 150€</p>
-                    <p class="cta_sub">Pogledaj pakete i izaberi ono što ti treba.</p>
-                    <a class="cta_button" href="#services">POGLEDAJ USLUGE &nbsp;→</a>
-                </div>
-
-                <!-- Contact Group -->
-                <div class="contact_group">
-                    <a class="contact_me" href="mailto:info@isidoraverisugc.com">
-                        <img class="mail" src="assets/mail.webp" loading="lazy" alt="Email"/>
-                        <p>info@isidoraverisugc.com</p>
-                    </a>
-                    <a class="contact_me" href="https://www.instagram.com/isidoraverisugc/" target="_blank">
-                        <img class="instagram" src="assets/instagram.webp" loading="lazy" alt="Instagram"/>
-                        <p>isidoraverisugc</p>
-                    </a>
-                    <div class="contact_me">
-                        <img class="location" src="assets/location.webp" loading="lazy" alt="Lokacija"/>
-                        <p>Novi Sad, Srbija</p>
-                    </div>
-                </div>
-
-                <!-- Highlights -->
-                <div class="instagram_highlights">
-                    <div class="highlights">
-                        <a href="https://www.instagram.com/stories/highlights/17996375435610923/" target="_blank">
-                            <div class="content_highlight"></div>
-                            <p>Content</p>
-                        </a>
-                        <a href="https://www.instagram.com/stories/highlights/18065078143744381/" target="_blank">
-                            <div class="ugc_highlight"></div>
-                            <p>UGC</p>
-                        </a>
-                        <a href="https://www.instagram.com/stories/highlights/18079061467980510/?hl=en" target="_blank">
-                            <div class="edits_highlight"></div>
-                            <p>Edits</p>
-                        </a>
-                        <a href="https://www.instagram.com/stories/highlights/17938906661990422/" target="_blank">
-                            <div class="product_highlight"></div>
-                            <p>Product</p>
-                        </a>
-                    </div>
-                    <div class="typewriter">
-                        <p class="highlight_desc">
-                            Klikni na highlight za sve primere sadržaja
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-</div>    <!-- Scroll to top -->
-    <div class="scroll_to_top">
-        <img src="assets/arrow.webp" loading="lazy" alt="Loading..."/>
-    </div>
-    <!--Slider-->
-    <div class="slider_section" id="content">
-        <div class="ugc">
-            <div class="header_txt">
-                <p>UGC |</p>
-                <p>User Generated Content</p>
-            </div>
-            <div class="slider_wrap">
-                <button class="pre_btn">
-                    <img src="assets/arrow.webp" loading="lazy" alt="Loading..."/>
-                </button>
-                <div class="slider">
-                    <!-- Multiaktiv -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/ugc/multiactiv.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/12.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/12.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>Multiactiv</p>
-                                </div>
-                            </div>
-                            <p class="desc">
-                                Predstavljanje proizvoda implementacijom sopstvenog lica, storytellinga, vizuala i profesionalnog editovanja videa koji drži pažnju gledaoca.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- CherryFlower -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/ugc/CherryFlower.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/24.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/24.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>CherryFlower</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Predstavljanje rezultata pre i posle korišćenja proizvoda, implementacijom sopstvenog lica, storytellinga, vizuala i profesionalnog editovanja videa koji drži pažnju gledaoca.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Studio Mint -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/ugc/studioMint.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/22.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/22.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>Studio Mint</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Predstavljanje usluge realnom pričom, autentičnim snimcima, vizualima i efektima za privlačenje pažnje gledaoca.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Cvetni Zidovi -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/ugc/CvetniZidovi.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/25.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/25.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>Cvetni Zidovi</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Predstavljanje proizvoda iz zanimljivog ugla potrošača pomoću storytellinga, vizuala i profesionalnog editovanja videa koji drži pažnju gledaoca.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- SpeltAnimal -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/ugc/SpeltAnimal.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/19.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/19.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>SpeltAnimal</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Predstavljanje brenda i proizvoda implementacijom sopstvenog lica, storytellinga, vizuala i profesionalnog editovanja videa koji drži pažnju gledaoca.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- MORE ON INSTAGRAM -->
-                    <a
-                            class="card more_on_instagram"
-                            href="https://www.instagram.com/isidoraverisugc/"
-                            target="_blank"
-                    >
-                        <div class="more_on_instagram_content">
-                            <p class="header">Više na mom instagram profilu</p>
-                            <img src="assets/point_arrow.webp" alt="Loading...">
-                            <img
-                                    src="assets/instagram.webp"
-                                    alt="loading..."
-                                    loading="lazy"
-                            />
-                        </div>
-                    </a>
-                </div>
-                <div class="dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <button class="nxt_btn">
-                    <img src="assets/arrow.webp" alt="Loading..." loading="lazy"/>
-                </button>
-            </div>
-        </div>
-        <div class="content_branding">
-            <div class="header_txt">
-                <p>CONTENT |</p>
-                <p>branding</p>
-            </div>
-            <div class="slider_wrap">
-                <button class="pre_btn">
-                    <img src="assets/arrow.webp" loading="lazy" alt="Loading..."/>
-                </button>
-                <div class="slider">
-                    <!-- Roco.co -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/content/Rokoco_brending.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/23.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/23.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>Roco.Co</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Prodajni video iz ugla brenda predstavljen lepim vizualima, sopstvenim licem, storytellingom i profesionalnim editovanjem sa efektima za privlačenje pažnje gledaoca.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Ellie&Mo prodajni -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/content/Ellie_prodajni.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/11.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/11.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>Ellie&amp;Mo</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Prodajni video iz ugla brenda predstavljen lepim vizualima, storytellingom i profesionalnim editovanjem sa efektima za privlačenje pažnje gledaoca.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Herbafast 15S-->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/content/Herbafast_15s.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/26.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/26.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>Herbafast</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Prodajni video iz ugla brenda predstavljen lepim vizualima, sopstvenim licem, storytellingom i profesionalnim editovanjem sa efektima za privlačenje pažnje gledaoca.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Mondo Bamibno -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/content/mondoBambino.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/10.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/10.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>Mondo Bambino</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Autentičan sadržaj za rođendaonicu sa profesionalnim snimanjem i editovanjem.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Soppy ASMR -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/content/Soppy_ASMR.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/8.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/8.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>Soppy</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Predstavljanje proizvoda kroz estetične vizuale, ASMR efekte i profesionalno editovanje za privlačenje pažnje gledaoca.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- MORE ON INSTAGRAM -->
-                    <a
-                            class="card more_on_instagram"
-                            href="https://www.instagram.com/isidoraverisugc/"
-                            target="_blank"
-                    >
-                        <div class="more_on_instagram_content">
-                            <p class="header">Više na mom instagram profilu</p>
-                            <img src="assets/point_arrow.webp" alt="Loading...">
-                            <img
-                                    src="assets/instagram.webp"
-                                    alt="loading..."
-                                    loading="lazy"
-                            />
-                        </div>
-                    </a>
-                </div>
-
-                <div class="dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-
-                <button class="nxt_btn">
-                    <img src="assets/arrow.webp" alt="Loading..." loading="lazy"/>
-                </button>
-            </div>
-        </div>
-        <div class="Product">
-            <div class="header_txt">
-                <p>PRODUCT</p>
-            </div>
-            <div class="slider_wrap">
-                <button class="pre_btn">
-                    <img src="assets/arrow.webp" loading="lazy" alt="Loading..."/>
-                </button>
-                <div class="slider">
-                    <!-- soppy crveni set -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/products/Soppy_crveni_set.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/8.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/8.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>Soppy</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Profesionalno studijsko snimanje proizvoda sa lepim vizualima, estetičnom pozadinom i zvučnim efektima.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- sweet moon -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/products/Sweet_Moon.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/27.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/27.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>Sweet Moon</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Proces studijskog snimanja proizvoda sa lepim vizualima, estetičnom pozadinom i pratećom muzikom.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- mlaf-->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/products/MLaf_Uskrs.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/18.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/18.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>MLaf</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Studijsko produkt snimanje proizvoda sa tekstualnim efektima, lepim vizualima i estetičnom pozadinom.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- ellie -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/products/ellie&mo.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/11.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/11.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>Ellie&amp;Mo</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Prikazivanje proizvoda jedinstvenim editom i lepim vizualima sa estetičnom pozadinom.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Soppy  -->
-                    <div class="card">
-                        <div class="video_wrapper">
-                            <video
-                                    data-src="media/videos/products/Soppy_beli_set.mp4"
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster="media/clients/8.webp"
-                                    loop
-                            ></video>
-                            <button class="play_button"></button>
-                        </div>
-                        <div class="card_box">
-                            <div class="card_header_box">
-                                <div class="brand">
-                                    <img
-                                            src="media/clients/8.webp"
-                                            alt="Loading..."
-                                            loading="lazy"
-                                    />
-                                    <p>Soppy</p>
-                                </div>
-
-                            </div>
-                            <p class="desc">
-                                Studijsko produkt snimanje proizvoda sa lepim vizualima, storytellingom i tekstualnim efektima.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- MORE ON INSTAGRAM -->
-                    <a
-                            class="card more_on_instagram"
-                            href="https://www.instagram.com/isidoraverisugc/"
-                            target="_blank"
-                    >
-                        <div class="more_on_instagram_content">
-                            <p class="header">Više na mom instagram profilu</p>
-                            <img src="assets/point_arrow.webp" alt="Loading...">
-                            <img
-                                    src="assets/instagram.webp"
-                                    alt="loading..."
-                                    loading="lazy"
-                            />
-                        </div>
-                    </a>
-                </div>
-
-                <div class="dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-
-                <button class="nxt_btn">
-                    <img src="assets/arrow.webp" alt="Loading..." loading="lazy"/>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!-- Cene i paketi -->
-    <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
-        <h2 class="pricing_title" id="pricing-heading">Cene i paketi</h2>
-        <p class="pricing_lead">
-            Sve cene su u evrima. Posle upita šaljem detaljan opis obima, rokova i načina saradnje na mejl.
-        </p>
-        <p class="pricing_note">
-            Za domaće fakture i plaćanje u dinarima moguć je odgovarajući iznos po srednjem kursu NBS.
-        </p>
-        <div class="pricing_grid">
-            <div class="pricing_block">
-                <h3>Konsultacije</h3>
-                <p class="block_intro">Zoom do 60 min. Jednokratno dobijate analizu i šestomesečni plan objava; mesečni paket uključuje dve konsultacije.</p>
-                <table class="price_table">
-                    <thead>
-                    <tr><th>Usluga</th><th>Cena</th></tr>
-                    </thead>
-                    <tbody>
-                    <tr><td>Jednokratne konsultacije</td><td>130 €</td></tr>
-                    <tr><td>Mesečne (2 × konsultacije)</td><td>155 € / mes.</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="pricing_block">
-                <h3>UGC reklame</h3>
-                <p class="block_intro">Autentičan sadržaj iz ugla potrošača — za organik i plaćene kampanje.</p>
-                <table class="price_table">
-                    <thead>
-                    <tr><th>Paket</th><th>Cena</th></tr>
-                    </thead>
-                    <tbody>
-                    <tr><td>1 video</td><td>190 €</td></tr>
-                    <tr><td>3 videa</td><td>500 €</td></tr>
-                    <tr><td>5 videa</td><td>750 €</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="pricing_block">
-                <h3>Branding video</h3>
-                <p class="block_intro">Video iz ugla brenda — storytelling, estetika, produkcija spremna za objavu.</p>
-                <table class="price_table">
-                    <thead>
-                    <tr><th>Paket</th><th>Cena</th></tr>
-                    </thead>
-                    <tbody>
-                    <tr><td>1 video</td><td>150 €</td></tr>
-                    <tr><td>3 videa</td><td>400 €</td></tr>
-                    <tr><td>5 videa</td><td>600 €</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="pricing_block">
-                <h3>Kontent strategija</h3>
-                <p class="block_intro">Mesečni plan sa 9 ili 12 unapred definisanih objava (teme, format, poruke, raspored).</p>
-                <table class="price_table">
-                    <thead>
-                    <tr><th>Obim</th><th>Cena</th></tr>
-                    </thead>
-                    <tbody>
-                    <tr><td>9 objava / mesec</td><td>770 €</td></tr>
-                    <tr><td>12 objava / mesec</td><td>900 €</td></tr>
-                    </tbody>
-                </table>
-                <p class="pricing_legend">Uz strategiju možete dogovoriti i produkciju videa odvojeno, prema potrebi.</p>
-            </div>
-        </div>
-        <div class="pricing_cta_wrap">
-            <a class="pricing_cta" href="#lead">Pošalji upit za izabrani paket</a>
-        </div>
-    </section>
-    <!-- Usluge -->
-    <div class="services" id="services">
-        <h1 class="title">usluge</h1>
-        <p class="pricing_lead" style="margin-top:-10px;margin-bottom:24px;">
-            Kratak pregled šta dobijate; flip kartica otkriva detalje. Jedna forma ispod — birate uslugu i ostavljate mejl.
-        </p>
-        <div class="services-box">
-            <!--KONSULTACIJE -->
-            <div class="service-flip-card" data-service="konsultacije">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <h2 class="service_header">Konsultacije</h2>
-                        <p class="service-desc">
-                            Jedan fokusiran Zoom gde dobijate jasan plan za društvene mreže — šta objavljivati,
-                            kako da zvuči vaš brend i koje korake prvo.
-                        </p>
-                        <p class="service_price_teaser">od <strong>130 €</strong> jednokratno · <strong>155 €</strong> / mes. uz praćenje</p>
-                        <button class="learn_more" type="button">Saznaj više</button>
-                        <small>info@isidoraverisugc.com</small>
-                    </div>
-                    <div class="flip-card-back">
-                        <div class="flip-back-scroll">
-                            <h2 class="flip-back-heading">Šta je uključeno</h2>
-                            <ul class="service_includes">
-                                <li>do 60 minuta rada uživo na Zoom-u</li>
-                                <li>jednokratno: analiza profila + šestomesečni plan objava</li>
-                                <li>mesečni paket: dve konsultacije mesečno + praćenje napretka</li>
-                                <li>pisan sažetak dogovora i sledećih koraka posle poziva</li>
-                            </ul>
-                            <p class="flip_back_note">Tačan obim i rok potvrđujem mejlom posle upita.</p>
-                            <a class="btn_to_lead" href="#lead" data-service="konsultacije">Pošalji upit za konsultacije</a>
-                            <button type="button" class="card_flip_back">Nazad</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- VIDEO -->
-            <div class="service-flip-card" data-service="ugc">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <h2 class="service_header">VIDEO sadržaj</h2>
-                        <p class="service-desc">
-                            UGC iz ugla kupca gradi poverenje; branding video pojačava priču o brendu.
-                            Oba formata su spremna za Reels, oglase i sajt.
-                        </p>
-                        <p class="service_price_teaser">UGC od <strong>190 €</strong> · branding od <strong>150 €</strong> po videu</p>
-                        <button class="learn_more" type="button">Saznaj više</button>
-                        <a href="mailto:info@isidoraverisugc.com"><small>info@isidoraverisugc.com</small></a>
-                    </div>
-                    <div class="flip-card-back">
-                        <div class="flip-back-scroll">
-                            <h2 class="flip-back-heading">Šta je uključeno</h2>
-                            <ul class="service_includes">
-                                <li>scenarij / struktura klipa (hook, demo, poziv na akciju)</li>
-                                <li>snimanje i montaža, titlovi i zvuk po dogovoru</li>
-                                <li>isporuka u formatima za Instagram / TikTok / Meta oglase</li>
-                                <li>1 runda korekcija u okviru dogovorenog paketa</li>
-                            </ul>
-                            <p class="flip_back_note">Rok isporuke i dostava proizvoda dogovaraju se pri javljanju.</p>
-                            <a class="btn_to_lead" href="#lead" data-service="ugc">Pošalji upit za video</a>
-                            <button type="button" class="card_flip_back">Nazad</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- KONTENT STRATEGIJA -->
-            <div class="service-flip-card" data-service="kontent-strategija">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <h2 class="service_header">Kontent strategija</h2>
-                        <p class="service-desc">
-                            Mesečni plan sa 9 ili 12 objava — jasna mapa šta, kada i zašto objaviti,
-                            da tim ili agencija mogu dosledno da izvršavaju.
-                        </p>
-                        <p class="service_price_teaser"><strong>770 €</strong> (9 objava) · <strong>900 €</strong> (12 objava)</p>
-                        <button class="learn_more" type="button">Saznaj više</button>
-                        <small>info@isidoraverisugc.com</small>
-                    </div>
-                    <div class="flip-card-back">
-                        <div class="flip-back-scroll">
-                            <h2 class="flip-back-heading">Šta je uključeno</h2>
-                            <ul class="service_includes">
-                                <li>kalendar objava za mesec dana</li>
-                                <li>za svaku objavu: tema, format, ključna poruka, predlog CTA</li>
-                                <li>usklađivanje sa ciljevima brenda (prodaja / community / lansiranje)</li>
-                                <li>kratak vodič za implementaciju (ko šta radi)</li>
-                            </ul>
-                            <p class="flip_back_note">Kreiranje samih videa i grafika može ići kao poseban dogovor.</p>
-                            <a class="btn_to_lead" href="#lead" data-service="kontent-strategija">Pošalji upit za strategiju</a>
-                            <button type="button" class="card_flip_back">Nazad</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <section class="lead_section" id="lead" aria-labelledby="lead-heading">
-            <h2 class="lead_title" id="lead-heading">Započni saradnju</h2>
-            <p class="lead_intro">
-                Izaberite uslugu i ostavite email. U roku od nekoliko minuta stiže detaljan opis paketa i sledeći koraci
-                (uključujući kako zakazujemo termin).
+        <div class="main_text_box">
+            <p class="main_txt">
+                ISIDORA VERIŠ
             </p>
-            <form id="leadForm" class="emailForm lead_form" autocomplete="on">
-                <label class="visually_hidden" for="serviceSelect">Izaberite uslugu</label>
-                <select id="serviceSelect" name="service" class="service_select" required>
-                    <option value="" selected>Izaberite uslugu…</option>
-                    <option value="konsultacije">Konsultacije</option>
-                    <option value="ugc">VIDEO — UGC i branding</option>
-                    <option value="kontent-strategija">Kontent strategija</option>
-                </select>
-                <label class="visually_hidden" for="leadEmail">Email</label>
-                <input
-                        id="leadEmail"
-                        type="email"
-                        class="emailInput"
-                        name="email"
-                        placeholder="vaš@email.com"
-                        required
-                />
-                <div class="cf-turnstile" data-sitekey="0x4AAAAAADAPXg_XGdPminYh" data-size="invisible"></div>
-                <button type="submit">Pošalji upit</button>
-            </form>
-            <p class="formMessage" id="leadFormMessage"></p>
-        </section>
-    </div>
-    <!--Rezultati-->
-    <div class="clients" id="clients">
-        <div class="clients_text">
-            <p class="client_header">rezultati</p>
-            <p class="clients_title1">PREKO 70</p>
-            <p class="clients_title2">zadovoljnih klijenata</p>
-        </div>
-        <div class="clients_box">
-            <div class="logo_strip">
-                <button class="logo">
-                    <img src="media/clients/1.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
-                <button class="logo">
-                    <img src="media/clients/3.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
-                <button class="logo" data-logo="7">
-                    <div class="logo_inner"></div>
-                    <img src="media/clients/7.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
-                <button class="logo" data-logo="4">
-                    <div class="logo_inner"></div>
-                    <img src="media/clients/4.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
+            <p class="hero_hook">UGC video koji prodaje.</p>
+            <p class="hero_tagline">ADS READY&ensp;|&ensp;AUTENTIČNO&ensp;|&ensp;REZULTATI</p>
 
-                <button class="logo">
-                    <img src="media/clients/5.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
-                <button class="logo" data-logo="2">
-                    <div class="logo_inner"></div>
-                    <img src="media/clients/2.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
-                <button class="logo">
-                    <img src="media/clients/6.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
-            </div>
-            <div class="logo_strip">
-                <button class="logo">
-                    <img src="media/clients/9.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
+            <p class="description_txt">
+                Pomažem brendovima da se povežu sa publikom kroz autentičan
+                storytelling i estetičan sadržaj. Fokusiram se na proizvode i vrednosti
+                brenda na način koji povećava vidljivost, gradi poverenje i podstiče prodaju.
+            </p>
 
-                <button class="logo">
-                    <img src="media/clients/10.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
-                <button class="logo" data-logo="11">
-                    <div class="logo_inner"></div>
-                    <img src="media/clients/11.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
-                <button class="logo" data-logo="12">
-                    <div class="logo_inner"></div>
-                    <img src="media/clients/12.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
-                <button class="logo" data-logo="8">
-                    <div class="logo_inner"></div>
-                    <img src="media/clients/8.webp"
-                         alt="Loading..."
-                         loading="lazy"/>
-                </button>
-                <button class="logo">
-                    <img src="media/clients/13.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
-                <button class="logo">
-                    <img src="media/clients/14.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
-            </div>
-            <div class="logo_strip">
-                <button class="logo">
-                    <img
-                            src="media/clients/15.webp"
-                            alt="Loading..."
-                            loading="lazy"
-                    />
-                </button>
-                <button class="logo">
-                    <img
-                            src="media/clients/16.webp"
-                            alt="Loading..."
-                            loading="lazy"
-                    />
-                </button>
-                <button class="logo">
-                    <img
-                            src="media/clients/17.webp"
-                            alt="Loading..."
-                            loading="lazy"
-                    />
-                </button>
-                <button class="logo" data-logo="19">
-                    <!-- SpeltAnimal -->
-                    <div class="logo_inner"></div>
-                    <img
-                            src="media/clients/19.webp"
-                            alt="Loading..."
-                            loading="lazy"
-                    />
-                </button>
-                <button class="logo">
-                    <img
-                            src="media/clients/18.webp"
-                            alt="Loading..."
-                            loading="lazy"
-                    />
-                </button>
-                <button class="logo" data-logo="23">
-                    <!-- Rocko -->
-                    <div class="logo_inner"></div>
-                    <img
-                            src="media/clients/23.webp"
-                            alt="Loading..."
-                    >
-                </button>
-                <button class="logo">
-                    <img
-                            src="media/clients/20.webp"
-                            alt="Loading..."
-                            loading="lazy"
-                    />
-                </button>
-                <button class="logo" data-logo="24">
-                    <div class="logo_inner"></div>
-                    <img src="media/clients/24.webp"
-                         alt="Loading..."
-                         loading="lazy"
-                    />
-                </button>
-                <button class="logo">
-                    <img
-                            src="media/clients/21.webp"
-                            alt="Loading..."
-                            loading="lazy"
-                    />
-                </button>
-            </div>
-        </div>
-        <p class="clients_desc">Klikni na logo za iskustva klijenata</p>
-        <div class="comments">
-            <div class="comment" data-logo="11">
-                <div class="comment_header">
-                    <img
-                            src="media/clients/11.webp"
-                            alt="Loading..."
-                            loading="lazy"
-                    />
-                    <p>Ellie&amp;Mo</p>
-                </div>
-                <div class="comment_content">
-                    <p class="comment_txt">
-                        Isidora je kreativna, posvećena i spremna da razume naše potrebe
-                        prilikom kreiranja sadržaja. Vrlo je uspešna u kreiranju
-                        organskih, ali i reklama koje su namenjene za oglašavanje. Rado
-                        je uvek preporučujemo.
-                    </p>
-                    <div class="comment_rating">
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+            <!-- Benefits -->
+            <div class="hero_benefits">
+                <div class="hero_benefit">
+                    <img src="assets/play.png">
+                    <div>
+                        <p class="benefit_title">Video za reklame</p>
+                        <p class="benefit_desc">koji zadržava pažnju</p>
                     </div>
-                    <button class="close_comment"><img src="assets/close.webp"></button>
                 </div>
-            </div>
-            <div class="comment" data-logo="8">
-                <div class="comment_header">
-                    <img src="media/clients/8.webp" alt="Loading..." loading="lazy"/>
-                    <p>Soppy</p>
-                </div>
-                <div class="comment_content">
-                    <p class="comment_txt">
-                        Odgovorna i sa mnogo truda i kreativnosti, kako bi u potpunosti
-                        zadovoljila naša očekivanja... To je Isidora. Reel koji nam je
-                        pravila privukao je mnogo pažnje i bio je potpuno jedinstven na
-                        mrežama. Nastavljamo saradnju na obostrano zadovoljstvo!
-                    </p>
-                    <div class="comment_rating">
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                    </div>
-                    <button class="close_comment"><img src="assets/close.webp"></button>
-                </div>
-            </div>
-            <div class="comment" data-logo="7">
-                <div class="comment_header">
-                    <img src="media/clients/7.webp" alt="Loading..." loading="lazy"/>
-                    <p>MK</p>
-                </div>
-                <div class="comment_content">
-                    <p class="comment_txt">
-                        Prezadovoljna sam saradnjom sa dragom Isidorom! Oduševljena sam
-                        njenim načinom rada i veoma mi je važno što smo zajednički došle
-                        do idealnog sadržaja za moj nakit. Njena estetika je upravo ono
-                        što upotpunjuje moj rad. Kreira sadržaj tačno po mojoj meri i
-                        uvek ću je sa zadovoljstvom preporučiti!
-                    </p>
-                    <div class="comment_rating">
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                    </div>
-                    <button class="close_comment"><img src="assets/close.webp"></button>
-                </div>
-            </div>
-            <div class="comment" data-logo="4">
-                <div class="comment_header">
-                    <img src="media/clients/4.webp" alt="Loading..." loading="lazy"/>
-                    <p>Natural Way</p>
-                </div>
-                <div class="comment_content">
-                    <p class="comment_txt">
-                        Isidora je izuzetno kreativna i profesionalna. Saradnja sa njom
-                        je pravo zadovoljstvo – uvek je brza, tačna i poštuje sve
-                        dogovore. Njeni radovi su kvalitetni, pažljivo osmišljeni i uvek
-                        isporučeni na vreme. Topla preporuka za svakoga ko želi
-                        pouzdanog i talentovanog saradnika!
-                    </p>
-                    <div class="comment_rating">
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                    </div>
-                    <button class="close_comment"><img src="assets/close.webp"></button>
-                </div>
-            </div>
-            <div class="comment" data-logo="19">
-                <div class="comment_header">
-                    <img
-                            src="media/clients/19.webp"
-                            alt="Loading..."
-                            loading="lazy"
-                    />
-                    <p>SpeltAnimal</p>
-                </div>
-                <div class="comment_content">
-                    <p class="comment_txt">
-                        Isidora je izuzetno kreativna i profesionalna. Saradnja sa njom
-                        je pravo zadovoljstvo – uvek je brza, tačna i poštuje sve
-                        dogovore. Njeni radovi su kvalitetni, pažljivo osmišljeni i uvek
-                        isporučeni na vreme. Topla preporuka za svakoga ko želi
-                        pouzdanog i talentovanog saradnika!
-                    </p>
-                    <div class="comment_rating">
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                    </div>
-                    <button class="close_comment"><img src="assets/close.webp"></button>
-                </div>
-            </div>
-            <div class="comment" data-logo="12">
-                <div class="comment_header">
-                    <img
-                            src="media/clients/12.webp"
-                            alt="Loading..."
-                            loading="lazy"
-                    />
-                    <p>Multiactiv</p>
-                </div>
-                <div class="comment_content">
-                    <p class="comment_txt">
-                        Oduševljeni smo Isidorinom kreativnošću, talentom i istinskim
-                        osećajem za estetiku! Zaista ima oko da prepozna šta će to
-                        ljudima privući pažnju. Svi materijali koje je pravila za nas
-                        bili su autentični i uvek isporučeni na vreme, bez izuzetka.
-                        Komunikacija sa njom je laka i prijatna, zato sa zadovoljstvom
-                        nastavljamo saradnju! Toplo preporučujemo i vama!
-                    </p>
-                    <div class="comment_rating">
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                    </div>
-                    <button class="close_comment"><img src="assets/close.webp"></button>
-                </div>
-            </div>
-            <div class="comment" data-logo="2">
-                <div class="comment_header">
-                    <img src="media/clients/2.webp" alt="Loading..." loading="lazy"/>
-                    <p>Shelly's Smash Burgers</p>
-                </div>
-                <div class="comment_content">
-                    <p class="comment_txt">
-                        Isidorin samo jedan video nam je poboljšao prodaju i doveo nove
-                        zadovoljne klijente. Dali smo joj potpunu slobodu i poverenje da
-                        svoj posao odradi kako ona misli da treba sa našim prvobitnim
-                        smernicama, što nam se pokazalo kao stvarno najbolja reklama do
-                        sada koja nam je mnogo značila za povećanje obima posla. Sve
-                        preporuke!
-                    </p>
-                    <div class="comment_rating">
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                    </div>
-                    <button class="close_comment"><img src="assets/close.webp"></button>
-                </div>
-            </div>
-            <div class="comment" data-logo="24">
-                <div class="comment_header">
-                    <img src="media/clients/24.webp" alt="Loading..." loading="lazy"/>
-                    <p>Cherry flower</p>
-                </div>
-                <div class="comment_content">
-                    <p class="comment_txt">
-                        Odlučila sam se za Isidoru jer je već na prvi pogled delovala izuzetno pristupačno, nisam
-                        pogrešila. Saradnja na kreiranju UGC videa protekla je besprekorno. Svaki moj komentar i
-                        predlog
-                        bili su uvaženi, a Isidora je pokalazala ne samo profesionalnost, već toplinu, podršku i
-                        spremnost da sasluša i udeli savršen savet. Tokom cele saradnje imala sam osećaj da se znamo
-                        godinama. Isidora je zaista osoba kojoj možete verovati. Cenim profesionalnost i ljudskost,
-                        a to
-                        ćete u saradnji sa njom i dobiti.
+                <div class="hero_benefit">
+                    <img src="assets/target.png">
 
-                    </p>
-                    <div class="comment_rating">
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <div>
+                        <p class="benefit_title">Sadržaj koji gradi poverenje</p>
+                        <p class="benefit_desc">i donosi rezultate</p>
                     </div>
-                    <button class="close_comment"><img src="assets/close.webp"></button>
                 </div>
-            </div>
-            <div class="comment" data-logo="23">
-                <div class="comment_header">
-                    <img src="media/clients/23.webp" alt="Loading..." loading="lazy"/>
-                    <p>Rokoco</p>
-                </div>
-                <div class="comment_content">
-                    <p class="comment_txt">
-                        Sa Isidorom sarađujemo više od pola godine i svakog meseca uspe da nas prijatno iznenadi. Ogroman trud koji ne poznaje granice, redovno praćenje i primena aktuelnih trendova iz oblasti digitala, kao i za nas najvažnije – rad sa jasnim smislom i poentom koji donosi rezultate, tri su ključne karakteristike koje bismo izdvojili (uz izuzetnu količinu kreativnosti i vedrog duha).
-                        Dogovor je uvek lak i brz, a Isidora nam često deluje kao produžena ruka tima i sigurna podrška u svim nedoumicama.
-                        Isidoru preporučujemo od srca. ❤️                    </p>
-                    <div class="comment_rating">
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
-                        <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                <div class="hero_benefit">
+                    <img src="assets/bar-chart.png">
+
+                    <div>
+                        <p class="benefit_title">Veća stopa konverzije</p>
+                        <p class="benefit_desc">i bolji povrat ulaganja u oglase</p>
                     </div>
-                    <button class="close_comment"><img src="assets/close.webp"></button>
                 </div>
             </div>
 
+            <!-- CTA Box -->
+            <div class="hero_cta_box">
+                <p class="cta_headline">UGC i branding video od 150€</p>
+                <p class="cta_sub">Pogledaj pakete i izaberi ono što ti treba.</p>
+                <a class="cta_button" href="#services">POGLEDAJ USLUGE &nbsp;→</a>
+            </div>
+
+            <!-- Contact Group -->
+            <div class="contact_group">
+                <a class="contact_me" href="mailto:info@isidoraverisugc.com">
+                    <img class="mail" src="assets/mail.webp" loading="lazy" alt="Email"/>
+                    <p>info@isidoraverisugc.com</p>
+                </a>
+                <a class="contact_me" href="https://www.instagram.com/isidoraverisugc/" target="_blank" rel="noopener noreferrer">
+                    <img class="instagram" src="assets/instagram.webp" loading="lazy" alt="Instagram"/>
+                    <p>isidoraverisugc</p>
+                </a>
+                <div class="contact_me">
+                    <img class="location" src="assets/location.webp" loading="lazy" alt="Lokacija"/>
+                    <p>Novi Sad, Srbija</p>
+                </div>
+
+                <img class="arrow-to-highlight" src="assets/arrow.png" loading="lazy" alt="Arrow">
+            </div>
+
+            <!-- Highlights -->
+            <div class="instagram_highlights">
+                <div class="highlights">
+                    <a href="https://www.instagram.com/stories/highlights/17996375435610923/" target="_blank" rel="noopener noreferrer">
+                        <div class="highlight_circle">
+                            <img src="assets/iphone.png">
+                        </div>
+                        <p>Content</p>
+                    </a>
+                    <a href="https://www.instagram.com/stories/highlights/18065078143744381/" target="_blank" rel="noopener noreferrer">
+                        <div class="highlight_circle">
+                            <img src="assets/user-avatar.png">
+                        </div>
+                        <p>UGC</p>
+                    </a>
+                    <a href="https://www.instagram.com/stories/highlights/18079061467980510/?hl=en" target="_blank" rel="noopener noreferrer">
+                        <div class="highlight_circle">
+                            <img src="assets/film.png">
+                        </div>
+                        <p>Edits</p>
+                    </a>
+                    <a href="https://www.instagram.com/stories/highlights/17938906661990422/" target="_blank" rel="noopener noreferrer">
+                        <div class="highlight_circle">
+                            <img src="assets/parcel.png">
+                        </div>
+                        <p>Product</p>
+                    </a>
+                </div>
+                <div class="typewriter">
+                    <p class="highlight_desc">
+                        Klikni na highlight za sve primere sadržaja
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- FAQ -->
-    <section class="faq_section" id="faq" aria-labelledby="faq-heading">
-        <h2 class="faq_title" id="faq-heading">Često postavljana pitanja</h2>
-        <details class="faq_item">
-            <summary>Kako teče saradnja od upita do prvog videa?</summary>
-            <div class="faq_answer">
-                Ostavite upit preko forme — na mejl stiže detaljan opis paketa. Dogovorimo rok, brief i isporuku
-                materijala; nakon toga krećem sa scenarijem i produkcijom. Rokovi zavise od paketa i reda posla i
-                uvek su jasno naznačeni u ponudi.
-            </div>
-        </details>
-        <details class="faq_item">
-            <summary>Da li mogu da koristim video u Meta oglasima?</summary>
-            <div class="faq_answer">
-                Da, uz dogovor o licenciranju i trajanju korišćenja. U ponuci definišemo gde i koliko dugo možete
-                koristiti materijal (organski vs. plaćeno), kako bi obe strane bile zaštićene.
-            </div>
-        </details>
-        <details class="faq_item">
-            <summary>Koliko korekcija je uključeno?</summary>
-            <div class="faq_answer">
-                Jedna runda razumne korekcije u okviru dogovorenog paketa (titlovi, tempo, mali rezovi). Veće
-                promene koncepta ili dodatne runde mogu ići kao dopuna po dogovoru.
-            </div>
-        </details>
-        <details class="faq_item">
-            <summary>Šta treba da pripremim kao brend?</summary>
-            <div class="faq_answer">
-                Proizvod ili uzorak, kratak brief (cilj, publika, ton), logotip i eventualno brend vodič ako postoji.
-                Šta tačno tražim šaljem i u mejlu posle upita kako bismo ubrzali start.
-            </div>
-        </details>
-        <details class="faq_item">
-            <summary>Kako ide plaćanje?</summary>
-            <div class="faq_answer">
-                Avans i završna uplata dogovaraju se u ponudi (zavisno od paketa). Moguća je faktura u dinarima po
-                kursu NBS ili dogovor za inostrane klijente.
-            </div>
-        </details>
-        <div class="pricing_cta_wrap" style="margin-top:28px;">
-            <a class="pricing_cta" href="#lead">Pošalji upit</a>
+<!-- Scroll to top -->
+<div class="scroll_to_top">
+    <img src="assets/arrow.webp" loading="lazy" alt="Loading..."/>
+</div>
+<!--Slider-->
+<div class="slider_section" id="content">
+    <div class="ugc">
+        <div class="header_txt">
+            <p>UGC |</p>
+            <p>User Generated Content</p>
         </div>
+        <div class="slider_wrap">
+            <button class="pre_btn">
+                <img src="assets/arrow.webp" loading="lazy" alt="Loading..."/>
+            </button>
+            <div class="slider">
+                <!-- Multiaktiv -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/ugc/multiactiv.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/12.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/12.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>Multiactiv</p>
+                            </div>
+                        </div>
+                        <p class="desc">
+                            Predstavljanje proizvoda implementacijom sopstvenog lica, storytellinga, vizuala i profesionalnog editovanja videa koji drži pažnju gledaoca.
+                        </p>
+                    </div>
+                </div>
+                <!-- CherryFlower -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/ugc/CherryFlower.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/24.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/24.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>CherryFlower</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Predstavljanje rezultata pre i posle korišćenja proizvoda, implementacijom sopstvenog lica, storytellinga, vizuala i profesionalnog editovanja videa koji drži pažnju gledaoca.
+                        </p>
+                    </div>
+                </div>
+                <!-- Studio Mint -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/ugc/studioMint.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/22.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/22.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>Studio Mint</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Predstavljanje usluge realnom pričom, autentičnim snimcima, vizualima i efektima za privlačenje pažnje gledaoca.
+                        </p>
+                    </div>
+                </div>
+                <!-- Cvetni Zidovi -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/ugc/CvetniZidovi.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/25.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/25.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>Cvetni Zidovi</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Predstavljanje proizvoda iz zanimljivog ugla potrošača pomoću storytellinga, vizuala i profesionalnog editovanja videa koji drži pažnju gledaoca.
+                        </p>
+                    </div>
+                </div>
+                <!-- SpeltAnimal -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/ugc/SpeltAnimal.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/19.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/19.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>SpeltAnimal</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Predstavljanje brenda i proizvoda implementacijom sopstvenog lica, storytellinga, vizuala i profesionalnog editovanja videa koji drži pažnju gledaoca.
+                        </p>
+                    </div>
+                </div>
+                <!-- MORE ON INSTAGRAM -->
+                <a
+                        class="card more_on_instagram"
+                        href="https://www.instagram.com/isidoraverisugc/"
+                        target="_blank"
+                >
+                    <div class="more_on_instagram_content">
+                        <p class="header">Više na mom Instagram profilu</p>
+                        <img src="assets/point_arrow.webp" alt="Loading...">
+                        <img
+                                src="assets/instagram.webp"
+                                alt="loading..."
+                                loading="lazy"
+                        />
+                    </div>
+                </a>
+            </div>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <button class="nxt_btn">
+                <img src="assets/arrow.webp" alt="Loading..." loading="lazy"/>
+            </button>
+        </div>
+    </div>
+    <div class="content_branding">
+        <div class="header_txt">
+            <p>CONTENT |</p>
+            <p>branding</p>
+        </div>
+        <div class="slider_wrap">
+            <button class="pre_btn">
+                <img src="assets/arrow.webp" loading="lazy" alt="Loading..."/>
+            </button>
+            <div class="slider">
+                <!-- Roco.co -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/content/Rokoco_brending.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/23.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/23.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>Roco.Co</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Prodajni video iz ugla brenda predstavljen lepim vizualima, sopstvenim licem, storytellingom i profesionalnim editovanjem sa efektima za privlačenje pažnje gledaoca.
+                        </p>
+                    </div>
+                </div>
+                <!-- Ellie&Mo prodajni -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/content/Ellie_prodajni.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/11.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/11.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>Ellie&amp;Mo</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Prodajni video iz ugla brenda predstavljen lepim vizualima, storytellingom i profesionalnim editovanjem sa efektima za privlačenje pažnje gledaoca.
+                        </p>
+                    </div>
+                </div>
+                <!-- Herbafast 15S-->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/content/Herbafast_15s.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/26.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/26.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>Herbafast</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Prodajni video iz ugla brenda predstavljen lepim vizualima, sopstvenim licem, storytellingom i profesionalnim editovanjem sa efektima za privlačenje pažnje gledaoca.
+                        </p>
+                    </div>
+                </div>
+                <!-- Mondo Bamibno -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/content/mondoBambino.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/10.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/10.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>Mondo Bambino</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Autentičan sadržaj za rođendaonicu sa profesionalnim snimanjem i editovanjem.
+                        </p>
+                    </div>
+                </div>
+                <!-- Soppy ASMR -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/content/Soppy_ASMR.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/8.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/8.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>Soppy</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Predstavljanje proizvoda kroz estetične vizuale, ASMR efekte i profesionalno editovanje za privlačenje pažnje gledaoca.
+                        </p>
+                    </div>
+                </div>
+                <!-- MORE ON INSTAGRAM -->
+                <a
+                        class="card more_on_instagram"
+                        href="https://www.instagram.com/isidoraverisugc/"
+                        target="_blank"
+                >
+                    <div class="more_on_instagram_content">
+                        <p class="header">Više na mom Instagram profilu</p>
+                        <img src="assets/point_arrow.webp" alt="Loading...">
+                        <img
+                                src="assets/instagram.webp"
+                                alt="loading..."
+                                loading="lazy"
+                        />
+                    </div>
+                </a>
+            </div>
+
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <button class="nxt_btn">
+                <img src="assets/arrow.webp" alt="Loading..." loading="lazy"/>
+            </button>
+        </div>
+    </div>
+    <div class="Product">
+        <div class="header_txt">
+            <p>PRODUCT</p>
+        </div>
+        <div class="slider_wrap">
+            <button class="pre_btn">
+                <img src="assets/arrow.webp" loading="lazy" alt="Loading..."/>
+            </button>
+            <div class="slider">
+                <!-- soppy crveni set -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/products/Soppy_crveni_set.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/8.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/8.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>Soppy</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Profesionalno studijsko snimanje proizvoda sa lepim vizualima, estetičnom pozadinom i zvučnim efektima.
+                        </p>
+                    </div>
+                </div>
+                <!-- sweet moon -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/products/Sweet_Moon.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/27.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/27.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>Sweet Moon</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Proces studijskog snimanja proizvoda sa lepim vizualima, estetičnom pozadinom i pratećom muzikom.
+                        </p>
+                    </div>
+                </div>
+                <!-- mlaf-->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/products/MLaf_Uskrs.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/18.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/18.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>MLaf</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Studijsko produkt snimanje proizvoda sa tekstualnim efektima, lepim vizualima i estetičnom pozadinom.
+                        </p>
+                    </div>
+                </div>
+                <!-- ellie -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/products/ellie&mo.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/11.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/11.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>Ellie&amp;Mo</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Prikazivanje proizvoda jedinstvenim editom i lepim vizualima sa estetičnom pozadinom.
+                        </p>
+                    </div>
+                </div>
+                <!-- Soppy  -->
+                <div class="card">
+                    <div class="video_wrapper">
+                        <video
+                                data-src="media/videos/products/Soppy_beli_set.mp4"
+                                muted
+                                autoplay
+                                playsinline
+                                poster="media/clients/8.webp"
+                                loop
+                        ></video>
+                        <button class="play_button"></button>
+                    </div>
+                    <div class="card_box">
+                        <div class="card_header_box">
+                            <div class="brand">
+                                <img
+                                        src="media/clients/8.webp"
+                                        alt="Loading..."
+                                        loading="lazy"
+                                />
+                                <p>Soppy</p>
+                            </div>
+
+                        </div>
+                        <p class="desc">
+                            Studijsko produkt snimanje proizvoda sa lepim vizualima, storytellingom i tekstualnim efektima.
+                        </p>
+                    </div>
+                </div>
+                <!-- MORE ON INSTAGRAM -->
+                <a
+                        class="card more_on_instagram"
+                        href="https://www.instagram.com/isidoraverisugc/"
+                        target="_blank"
+                >
+                    <div class="more_on_instagram_content">
+                        <p class="header">Više na mom Instagram profilu</p>
+                        <img src="assets/point_arrow.webp" alt="Loading...">
+                        <img
+                                src="assets/instagram.webp"
+                                alt="loading..."
+                                loading="lazy"
+                        />
+                    </div>
+                </a>
+            </div>
+
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <button class="nxt_btn">
+                <img src="assets/arrow.webp" alt="Loading..." loading="lazy"/>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- Cene i paketi -->
+<section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+    <h2 class="pricing_title" id="pricing-heading">Cene i paketi</h2>
+    <p class="pricing_lead">
+        Sve cene su u evrima. Posle upita šaljem detaljan opis obima, rokova i načina saradnje na mejl.
+    </p>
+    <p class="pricing_note">
+        Za domaće fakture i plaćanje u dinarima moguć je odgovarajući iznos po srednjem kursu NBS.
+    </p>
+    <div class="pricing_grid">
+        <div class="pricing_block">
+            <h3>Konsultacije</h3>
+            <p class="block_intro">Zoom do 60 min. Jednokratno dobijate analizu i šestomesečni plan objava; mesečni paket uključuje dve konsultacije.</p>
+            <table class="price_table">
+                <thead>
+                <tr><th>Usluga</th><th>Cena</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>Jednokratne konsultacije</td><td>130 €</td></tr>
+                <tr><td>Mesečne (2 × konsultacije)</td><td>155 € / mes.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pricing_block">
+            <h3>UGC reklame</h3>
+            <p class="block_intro">Autentičan sadržaj iz ugla potrošača — za organik i plaćene kampanje.</p>
+            <table class="price_table">
+                <thead>
+                <tr><th>Paket</th><th>Cena</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>1 video</td><td>190 €</td></tr>
+                <tr><td>3 videa</td><td>500 €</td></tr>
+                <tr><td>5 videa</td><td>750 €</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pricing_block">
+            <h3>Branding video</h3>
+            <p class="block_intro">Video iz ugla brenda — storytelling, estetika, produkcija spremna za objavu.</p>
+            <table class="price_table">
+                <thead>
+                <tr><th>Paket</th><th>Cena</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>1 video</td><td>150 €</td></tr>
+                <tr><td>3 videa</td><td>400 €</td></tr>
+                <tr><td>5 videa</td><td>600 €</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pricing_block">
+            <h3>Kontent strategija</h3>
+            <p class="block_intro">Mesečni plan sa 9 ili 12 unapred definisanih objava (teme, format, poruke, raspored).</p>
+            <table class="price_table">
+                <thead>
+                <tr><th>Obim</th><th>Cena</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>9 objava / mesec</td><td>770 €</td></tr>
+                <tr><td>12 objava / mesec</td><td>900 €</td></tr>
+                </tbody>
+            </table>
+            <p class="pricing_legend">Uz strategiju možete dogovoriti i produkciju videa odvojeno, prema potrebi.</p>
+        </div>
+    </div>
+    <div class="pricing_cta_wrap">
+        <a class="pricing_cta" href="#lead">Pošalji upit za izabrani paket</a>
+    </div>
+</section>
+<!-- Usluge -->
+<div class="services" id="services">
+    <h1 class="title">usluge</h1>
+    <p class="pricing_lead" style="margin-top:-10px;margin-bottom:24px;">
+        Kratak pregled šta dobijate; flip kartica otkriva detalje. Jedna forma ispod — birate uslugu i ostavljate mejl.
+    </p>
+    <div class="services-box">
+        <!--KONSULTACIJE -->
+        <div class="service-flip-card" data-service="konsultacije">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h2 class="service_header">Konsultacije</h2>
+                    <p class="service-desc">
+                        Jedan fokusiran Zoom gde dobijate jasan plan za društvene mreže — šta objavljivati,
+                        kako da zvuči vaš brend i koje korake prvo.
+                    </p>
+                    <p class="service_price_teaser">od <strong>130 €</strong> jednokratno · <strong>155 €</strong> / mes. uz praćenje</p>
+                    <button class="learn_more" type="button">Saznaj više</button>
+                    <small>info@isidoraverisugc.com</small>
+                </div>
+                <div class="flip-card-back">
+                    <div class="flip-back-scroll">
+                        <h2 class="flip-back-heading">Šta je uključeno</h2>
+                        <ul class="service_includes">
+                            <li>do 60 minuta rada uživo na Zoom-u</li>
+                            <li>jednokratno: analiza profila + šestomesečni plan objava</li>
+                            <li>mesečni paket: dve konsultacije mesečno + praćenje napretka</li>
+                            <li>pisan sažetak dogovora i sledećih koraka posle poziva</li>
+                        </ul>
+                        <p class="flip_back_note">Tačan obim i rok potvrđujem mejlom posle upita.</p>
+                        <a class="btn_to_lead" href="#lead" data-service="konsultacije">Pošalji upit za konsultacije</a>
+                        <button type="button" class="card_flip_back">Nazad</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- VIDEO -->
+        <div class="service-flip-card" data-service="ugc">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h2 class="service_header">VIDEO sadržaj</h2>
+                    <p class="service-desc">
+                        UGC iz ugla kupca gradi poverenje; branding video pojačava priču o brendu.
+                        Oba formata su spremna za Reels, oglase i sajt.
+                    </p>
+                    <p class="service_price_teaser">UGC od <strong>190 €</strong> · branding od <strong>150 €</strong> po videu</p>
+                    <button class="learn_more" type="button">Saznaj više</button>
+                    <a href="mailto:info@isidoraverisugc.com"><small>info@isidoraverisugc.com</small></a>
+                </div>
+                <div class="flip-card-back">
+                    <div class="flip-back-scroll">
+                        <h2 class="flip-back-heading">Šta je uključeno</h2>
+                        <ul class="service_includes">
+                            <li>scenarij / struktura klipa (hook, demo, poziv na akciju)</li>
+                            <li>snimanje i montaža, titlovi i zvuk po dogovoru</li>
+                            <li>isporuka u formatima za Instagram / TikTok / Meta oglase</li>
+                            <li>1 runda korekcija u okviru dogovorenog paketa</li>
+                        </ul>
+                        <p class="flip_back_note">Rok isporuke i dostava proizvoda dogovaraju se pri javljanju.</p>
+                        <a class="btn_to_lead" href="#lead" data-service="ugc">Pošalji upit za video</a>
+                        <button type="button" class="card_flip_back">Nazad</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- KONTENT STRATEGIJA -->
+        <div class="service-flip-card" data-service="kontent-strategija">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h2 class="service_header">Kontent strategija</h2>
+                    <p class="service-desc">
+                        Mesečni plan sa 9 ili 12 objava — jasna mapa šta, kada i zašto objaviti,
+                        da tim ili agencija mogu dosledno da izvršavaju.
+                    </p>
+                    <p class="service_price_teaser"><strong>770 €</strong> (9 objava) · <strong>900 €</strong> (12 objava)</p>
+                    <button class="learn_more" type="button">Saznaj više</button>
+                    <small>info@isidoraverisugc.com</small>
+                </div>
+                <div class="flip-card-back">
+                    <div class="flip-back-scroll">
+                        <h2 class="flip-back-heading">Šta je uključeno</h2>
+                        <ul class="service_includes">
+                            <li>kalendar objava za mesec dana</li>
+                            <li>za svaku objavu: tema, format, ključna poruka, predlog CTA</li>
+                            <li>usklađivanje sa ciljevima brenda (prodaja / community / lansiranje)</li>
+                            <li>kratak vodič za implementaciju (ko šta radi)</li>
+                        </ul>
+                        <p class="flip_back_note">Kreiranje samih videa i grafika može ići kao poseban dogovor.</p>
+                        <a class="btn_to_lead" href="#lead" data-service="kontent-strategija">Pošalji upit za strategiju</a>
+                        <button type="button" class="card_flip_back">Nazad</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="lead_section" id="lead" aria-labelledby="lead-heading">
+        <h2 class="lead_title" id="lead-heading">Započni saradnju</h2>
+        <p class="lead_intro">
+            Izaberite uslugu i ostavite email. U roku od nekoliko minuta stiže detaljan opis paketa i sledeći koraci
+            (uključujući kako zakazujemo termin).
+        </p>
+        <form id="leadForm" class="emailForm lead_form" autocomplete="on">
+            <label class="visually_hidden" for="serviceSelect">Izaberite uslugu</label>
+            <select id="serviceSelect" name="service" class="service_select" required>
+                <option value="" selected>Izaberite uslugu…</option>
+                <option value="konsultacije">Konsultacije</option>
+                <option value="ugc">VIDEO — UGC i branding</option>
+                <option value="kontent-strategija">Kontent strategija</option>
+            </select>
+            <label class="visually_hidden" for="leadEmail">Email</label>
+            <input
+                    id="leadEmail"
+                    type="email"
+                    class="emailInput"
+                    name="email"
+                    placeholder="vaš@email.com"
+                    required
+            />
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAADAPXg_XGdPminYh" data-size="invisible"></div>
+            <button type="submit">Pošalji upit</button>
+        </form>
+        <p class="formMessage" id="leadFormMessage"></p>
     </section>
+</div>
+<!--Rezultati-->
+<div class="clients" id="clients">
+    <div class="clients_text">
+        <p class="client_header">rezultati</p>
+        <p class="clients_title1">PREKO 70</p>
+        <p class="clients_title2">zadovoljnih klijenata</p>
+    </div>
+    <div class="clients_box">
+        <div class="logo_strip">
+            <button class="logo">
+                <img src="media/clients/1.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+            <button class="logo">
+                <img src="media/clients/3.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+            <button class="logo" data-logo="7">
+                <div class="logo_inner"></div>
+                <img src="media/clients/7.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+            <button class="logo" data-logo="4">
+                <div class="logo_inner"></div>
+                <img src="media/clients/4.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+
+            <button class="logo">
+                <img src="media/clients/5.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+            <button class="logo" data-logo="2">
+                <div class="logo_inner"></div>
+                <img src="media/clients/2.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+            <button class="logo">
+                <img src="media/clients/6.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+        </div>
+        <div class="logo_strip">
+            <button class="logo">
+                <img src="media/clients/9.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+
+            <button class="logo">
+                <img src="media/clients/10.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+            <button class="logo" data-logo="11">
+                <div class="logo_inner"></div>
+                <img src="media/clients/11.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+            <button class="logo" data-logo="12">
+                <div class="logo_inner"></div>
+                <img src="media/clients/12.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+            <button class="logo" data-logo="8">
+                <div class="logo_inner"></div>
+                <img src="media/clients/8.webp"
+                     alt="Loading..."
+                     loading="lazy"/>
+            </button>
+            <button class="logo">
+                <img src="media/clients/13.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+            <button class="logo">
+                <img src="media/clients/14.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+        </div>
+        <div class="logo_strip">
+            <button class="logo">
+                <img
+                        src="media/clients/15.webp"
+                        alt="Loading..."
+                        loading="lazy"
+                />
+            </button>
+            <button class="logo">
+                <img
+                        src="media/clients/16.webp"
+                        alt="Loading..."
+                        loading="lazy"
+                />
+            </button>
+            <button class="logo">
+                <img
+                        src="media/clients/17.webp"
+                        alt="Loading..."
+                        loading="lazy"
+                />
+            </button>
+            <button class="logo" data-logo="19">
+                <!-- SpeltAnimal -->
+                <div class="logo_inner"></div>
+                <img
+                        src="media/clients/19.webp"
+                        alt="Loading..."
+                        loading="lazy"
+                />
+            </button>
+            <button class="logo">
+                <img
+                        src="media/clients/18.webp"
+                        alt="Loading..."
+                        loading="lazy"
+                />
+            </button>
+            <button class="logo" data-logo="23">
+                <!-- Rocko -->
+                <div class="logo_inner"></div>
+                <img
+                        src="media/clients/23.webp"
+                        alt="Loading..."
+                >
+            </button>
+            <button class="logo">
+                <img
+                        src="media/clients/20.webp"
+                        alt="Loading..."
+                        loading="lazy"
+                />
+            </button>
+            <button class="logo" data-logo="24">
+                <div class="logo_inner"></div>
+                <img src="media/clients/24.webp"
+                     alt="Loading..."
+                     loading="lazy"
+                />
+            </button>
+            <button class="logo">
+                <img
+                        src="media/clients/21.webp"
+                        alt="Loading..."
+                        loading="lazy"
+                />
+            </button>
+        </div>
+    </div>
+    <p class="clients_desc">Klikni na logo za iskustva klijenata</p>
+    <div class="comments">
+        <div class="comment" data-logo="11">
+            <div class="comment_header">
+                <img
+                        src="media/clients/11.webp"
+                        alt="Loading..."
+                        loading="lazy"
+                />
+                <p>Ellie&amp;Mo</p>
+            </div>
+            <div class="comment_content">
+                <p class="comment_txt">
+                    Isidora je kreativna, posvećena i spremna da razume naše potrebe
+                    prilikom kreiranja sadržaja. Vrlo je uspešna u kreiranju
+                    organskih, ali i reklama koje su namenjene za oglašavanje. Rado
+                    je uvek preporučujemo.
+                </p>
+                <div class="comment_rating">
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                </div>
+                <button class="close_comment"><img src="assets/close.webp"></button>
+            </div>
+        </div>
+        <div class="comment" data-logo="8">
+            <div class="comment_header">
+                <img src="media/clients/8.webp" alt="Loading..." loading="lazy"/>
+                <p>Soppy</p>
+            </div>
+            <div class="comment_content">
+                <p class="comment_txt">
+                    Odgovorna i sa mnogo truda i kreativnosti, kako bi u potpunosti
+                    zadovoljila naša očekivanja... To je Isidora. Reel koji nam je
+                    pravila privukao je mnogo pažnje i bio je potpuno jedinstven na
+                    mrežama. Nastavljamo saradnju na obostrano zadovoljstvo!
+                </p>
+                <div class="comment_rating">
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                </div>
+                <button class="close_comment"><img src="assets/close.webp"></button>
+            </div>
+        </div>
+        <div class="comment" data-logo="7">
+            <div class="comment_header">
+                <img src="media/clients/7.webp" alt="Loading..." loading="lazy"/>
+                <p>MK</p>
+            </div>
+            <div class="comment_content">
+                <p class="comment_txt">
+                    Prezadovoljna sam saradnjom sa dragom Isidorom! Oduševljena sam
+                    njenim načinom rada i veoma mi je važno što smo zajednički došle
+                    do idealnog sadržaja za moj nakit. Njena estetika je upravo ono
+                    što upotpunjuje moj rad. Kreira sadržaj tačno po mojoj meri i
+                    uvek ću je sa zadovoljstvom preporučiti!
+                </p>
+                <div class="comment_rating">
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                </div>
+                <button class="close_comment"><img src="assets/close.webp"></button>
+            </div>
+        </div>
+        <div class="comment" data-logo="4">
+            <div class="comment_header">
+                <img src="media/clients/4.webp" alt="Loading..." loading="lazy"/>
+                <p>Natural Way</p>
+            </div>
+            <div class="comment_content">
+                <p class="comment_txt">
+                    Isidora je izuzetno kreativna i profesionalna. Saradnja sa njom
+                    je pravo zadovoljstvo – uvek je brza, tačna i poštuje sve
+                    dogovore. Njeni radovi su kvalitetni, pažljivo osmišljeni i uvek
+                    isporučeni na vreme. Topla preporuka za svakoga ko želi
+                    pouzdanog i talentovanog saradnika!
+                </p>
+                <div class="comment_rating">
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                </div>
+                <button class="close_comment"><img src="assets/close.webp"></button>
+            </div>
+        </div>
+        <div class="comment" data-logo="19">
+            <div class="comment_header">
+                <img
+                        src="media/clients/19.webp"
+                        alt="Loading..."
+                        loading="lazy"
+                />
+                <p>SpeltAnimal</p>
+            </div>
+            <div class="comment_content">
+                <p class="comment_txt">
+                    Isidora je izuzetno kreativna i profesionalna. Saradnja sa njom
+                    je pravo zadovoljstvo – uvek je brza, tačna i poštuje sve
+                    dogovore. Njeni radovi su kvalitetni, pažljivo osmišljeni i uvek
+                    isporučeni na vreme. Topla preporuka za svakoga ko želi
+                    pouzdanog i talentovanog saradnika!
+                </p>
+                <div class="comment_rating">
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                </div>
+                <button class="close_comment"><img src="assets/close.webp"></button>
+            </div>
+        </div>
+        <div class="comment" data-logo="12">
+            <div class="comment_header">
+                <img
+                        src="media/clients/12.webp"
+                        alt="Loading..."
+                        loading="lazy"
+                />
+                <p>Multiactiv</p>
+            </div>
+            <div class="comment_content">
+                <p class="comment_txt">
+                    Oduševljeni smo Isidorinom kreativnošću, talentom i istinskim
+                    osećajem za estetiku! Zaista ima oko da prepozna šta će to
+                    ljudima privući pažnju. Svi materijali koje je pravila za nas
+                    bili su autentični i uvek isporučeni na vreme, bez izuzetka.
+                    Komunikacija sa njom je laka i prijatna, zato sa zadovoljstvom
+                    nastavljamo saradnju! Toplo preporučujemo i vama!
+                </p>
+                <div class="comment_rating">
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                </div>
+                <button class="close_comment"><img src="assets/close.webp"></button>
+            </div>
+        </div>
+        <div class="comment" data-logo="2">
+            <div class="comment_header">
+                <img src="media/clients/2.webp" alt="Loading..." loading="lazy"/>
+                <p>Shelly's Smash Burgers</p>
+            </div>
+            <div class="comment_content">
+                <p class="comment_txt">
+                    Isidorin samo jedan video nam je poboljšao prodaju i doveo nove
+                    zadovoljne klijente. Dali smo joj potpunu slobodu i poverenje da
+                    svoj posao odradi kako ona misli da treba sa našim prvobitnim
+                    smernicama, što nam se pokazalo kao stvarno najbolja reklama do
+                    sada koja nam je mnogo značila za povećanje obima posla. Sve
+                    preporuke!
+                </p>
+                <div class="comment_rating">
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                </div>
+                <button class="close_comment"><img src="assets/close.webp"></button>
+            </div>
+        </div>
+        <div class="comment" data-logo="24">
+            <div class="comment_header">
+                <img src="media/clients/24.webp" alt="Loading..." loading="lazy"/>
+                <p>Cherry flower</p>
+            </div>
+            <div class="comment_content">
+                <p class="comment_txt">
+                    Odlučila sam se za Isidoru jer je već na prvi pogled delovala izuzetno pristupačno, nisam
+                    pogrešila. Saradnja na kreiranju UGC videa protekla je besprekorno. Svaki moj komentar i
+                    predlog
+                    bili su uvaženi, a Isidora je pokazala ne samo profesionalnost, već toplinu, podršku i
+                    spremnost da sasluša i udeli savršen savet. Tokom cele saradnje imala sam osećaj da se znamo
+                    godinama. Isidora je zaista osoba kojoj možete verovati. Cenim profesionalnost i ljudskost,
+                    a to
+                    ćete u saradnji sa njom i dobiti.
+
+                </p>
+                <div class="comment_rating">
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                </div>
+                <button class="close_comment"><img src="assets/close.webp"></button>
+            </div>
+        </div>
+        <div class="comment" data-logo="23">
+            <div class="comment_header">
+                <img src="media/clients/23.webp" alt="Loading..." loading="lazy"/>
+                <p>Rokoco</p>
+            </div>
+            <div class="comment_content">
+                <p class="comment_txt">
+                    Sa Isidorom sarađujemo više od pola godine i svakog meseca uspe da nas prijatno iznenadi. Ogroman trud koji ne poznaje granice, redovno praćenje i primena aktuelnih trendova iz oblasti digitala, kao i za nas najvažnije – rad sa jasnim smislom i poentom koji donosi rezultate, tri su ključne karakteristike koje bismo izdvojili (uz izuzetnu količinu kreativnosti i vedrog duha).
+                    Dogovor je uvek lak i brz, a Isidora nam često deluje kao produžena ruka tima i sigurna podrška u svim nedoumicama.
+                    Isidoru preporučujemo od srca. ❤️                    </p>
+                <div class="comment_rating">
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/star.webp" alt="Loading..." loading="lazy"/>
+                </div>
+                <button class="close_comment"><img src="assets/close.webp"></button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- FAQ -->
+<section class="faq_section" id="faq" aria-labelledby="faq-heading">
+    <h2 class="faq_title" id="faq-heading">Često postavljana pitanja</h2>
+    <details class="faq_item">
+        <summary>Kako teče saradnja od upita do prvog videa?</summary>
+        <div class="faq_answer">
+            Ostavite upit preko forme — na mejl stiže detaljan opis paketa. Dogovorimo rok, brief i isporuku
+            materijala; nakon toga krećem sa scenarijem i produkcijom. Rokovi zavise od paketa i reda posla i
+            uvek su jasno naznačeni u ponudi.
+        </div>
+    </details>
+    <details class="faq_item">
+        <summary>Da li mogu da koristim video u Meta oglasima?</summary>
+        <div class="faq_answer">
+            Da, uz dogovor o licenciranju i trajanju korišćenja. U ponudi definišemo gde i koliko dugo možete
+            koristiti materijal (organski vs. plaćeno), kako bi obe strane bile zaštićene.
+        </div>
+    </details>
+    <details class="faq_item">
+        <summary>Koliko korekcija je uključeno?</summary>
+        <div class="faq_answer">
+            Jedna runda razumne korekcije u okviru dogovorenog paketa (titlovi, tempo, mali rezovi). Veće
+            promene koncepta ili dodatne runde mogu ići kao dopuna po dogovoru.
+        </div>
+    </details>
+    <details class="faq_item">
+        <summary>Šta treba da pripremim kao brend?</summary>
+        <div class="faq_answer">
+            Proizvod ili uzorak, kratak brief (cilj, publika, ton), logotip i eventualno brend vodič ako postoji.
+            Šta tačno tražim šaljem i u mejlu posle upita kako bismo ubrzali start.
+        </div>
+    </details>
+    <details class="faq_item">
+        <summary>Kako ide plaćanje?</summary>
+        <div class="faq_answer">
+            Avans i završna uplata dogovaraju se u ponudi (zavisno od paketa). Moguća je faktura u dinarima po
+            kursu NBS ili dogovor za inostrane klijente.
+        </div>
+    </details>
+    <div class="pricing_cta_wrap" style="margin-top:28px;">
+        <a class="pricing_cta" href="#lead">Pošalji upit</a>
+    </div>
+</section>
 </div>
 
 <!--About me-->
-<div class="about_me" >
+<div class="about_me">
     <div class="about_me_content">
         <p class="about_me_header">o meni</p>
         <video
@@ -1555,11 +1482,11 @@
                 loading="lazy"
                 id="about"
         ></video>
-        <div class="text-scroll" >
+        <div class="text-scroll">
             <p>
                 Višegodišnjim iskustvom stečenim kroz rad u marketingu za mali brend,
                 razvila sam razumevanje kako strategija i kreativnost mogu napraviti
-                razliku. Više od četiri godine radim UGC i video produkciju; saradivala
+                razliku. Više od četiri godine radim UGC i video produkciju; sarađivala
                 sam sa preko 70 brendova. Danas pomažem i drugim brendovima da, kroz pažljivo
                 osmišljene i estetične video sadržaje, povećaju prodaju i povežu se
                 sa svojom ciljnom publikom. Fokusiram se na kreiranje sadržaja koji
@@ -1682,7 +1609,7 @@
                 </div>
             </a>
         </div>
-        <img class="footer_img" src="assets/footer_img.webp">
+        <img class="footer_img" src="assets/footer_img.webp" alt="Isidora Veriš" loading="lazy">
 
     </div>
 </footer>
