@@ -443,7 +443,11 @@ body {
         font-size: 32pt;
     }
 }
-
+.arrow-to-highlight{
+    position: absolute;
+    right: -500px;
+    bottom: 110px;
+}
 /* ========================================
    DESKTOP (1200px+)
    ======================================== */
@@ -555,4 +559,3 @@ body {
         margin-top: 10px;
         max-width: 500px;
     }
-}

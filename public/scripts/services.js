@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const leadForm = document.getElementById('leadForm');
     const leadMessage = document.getElementById('leadFormMessage');
 
+    /* ===== PRESELECT SERVICE ===== */
     function preselectService(value) {
         if (!serviceSelect || !value) return;
         const opt = serviceSelect.querySelector(`option[value="${value}"]`);
@@ -11,43 +12,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    document.querySelectorAll('a[href="#lead"][data-service]').forEach((link) => {
-        link.addEventListener('click', () => {
+    /* CTA buttons inside cards → preselect + scroll to lead */
+    document.querySelectorAll('.service-card-cta[data-service]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
             preselectService(link.dataset.service);
+            const leadSection = document.getElementById('lead');
+            if (leadSection) {
+                leadSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         });
     });
 
-    document.querySelectorAll('.btn_to_lead[data-service]').forEach((btn) => {
-        btn.addEventListener('click', () => {
-            preselectService(btn.dataset.service);
-        });
-    });
-
+    /* URL param ?usluga=... */
     const params = new URLSearchParams(window.location.search);
     const serviceParam = params.get('usluga');
     if (serviceParam) {
         preselectService(serviceParam);
     }
 
-    // ===== FLIP KARTICE =====
-    document.querySelectorAll('.learn_more').forEach((cardBtn) => {
-        cardBtn.addEventListener('click', () => {
-            document.querySelectorAll('.flip-card-inner').forEach((inner) => {
-                if (inner !== cardBtn.closest('.flip-card-inner')) {
-                    inner.classList.remove('flipped');
-                }
-            });
-            cardBtn.closest('.flip-card-inner').classList.toggle('flipped');
-        });
-    });
-
-    document.querySelectorAll('.card_flip_back').forEach((btn) => {
-        btn.addEventListener('click', () => {
-            btn.closest('.flip-card-inner')?.classList.remove('flipped');
-        });
-    });
-
-    // ===== LEAD FORMA =====
+    /* ===== LEAD FORM ===== */
     if (leadForm) {
         leadForm.addEventListener('submit', async (e) => {
             e.preventDefault();

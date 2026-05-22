@@ -1,27 +1,10 @@
+/* ===== SERVICES SECTION ===== */
 .services {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 50px 0;
-}
-
-.service-flip-card {
-    /* Scroll-driven animation (shows final state when unsupported) */
-    animation: service_apper 0.5s ease;
-    animation-timeline: view();
-    animation-range: entry -10% cover 30%;
-    padding: 0;
-    margin: 20px auto;
-}
-/* ===== ANIMATIONS ===== */
-@keyframes service_apper {
-    from {
-        scale: 0.5;
-    }
-    to {
-        scale: 1;
-    }
+    padding: 60px 20px 40px;
 }
 
 .services h1.title {
@@ -29,227 +12,545 @@
     font-family: RomateHood;
     font-weight: 600;
     color: #57432a;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
+.services_subtitle {
+    font-family: CormorantGaramond, serif;
+    font-size: 1.15em;
+    color: #7b6b61;
+    text-align: center;
+    max-width: 540px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+/* ===== CARDS GRID ===== */
 .services-box {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 1120px;
+}
+
+/* ===== SINGLE CARD ===== */
+.service-card {
+    background: #fff;
+    border: 1px solid #e8ddd4;
+    border-radius: 4px;
+    padding: 40px 32px 32px;
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
+
+    /* Scroll-driven animation */
+    animation: cardReveal 0.6s ease both;
+    animation-timeline: view();
+    animation-range: entry -10% cover 30%;
+}
+
+.service-card:hover {
+    box-shadow: 0 8px 32px rgba(87, 67, 42, 0.1);
+    transform: translateY(-5px);
+}
+
+
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===== CARD ICON ===== */
+.service-card-icon {
+    margin-bottom: 20px;
+    border-radius: 100px;
+    background-color: #e8dbd2;
+    padding: 20px;
+
+}
+.service-card-icon img{
+    width: 60px;
+}
+
+
+/* ===== CARD TITLE ===== */
+.service-card-title {
+    font-family: CormorantGaramond, serif;
+    font-size: 1.65em;
+    font-weight: 700;
+    color: #57432a;
+    margin-bottom: 10px;
+}
+
+/* ===== CARD DESCRIPTION ===== */
+.service-card-desc {
+    font-family: CormorantGaramond, serif;
+    font-size: 1.05em;
+    color: #7b6b61;
+    line-height: 1.55;
+    margin-bottom: 24px;
+    max-width: 280px;
+}
+
+/* ===== PACKAGES ===== */
+.service-card-packages {
+    width: 100%;
+    margin-bottom: 24px;
+    border-top: 1px solid #ede5dc;
+    padding-top: 20px;
+}
+
+.package-item {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.package-item:last-child {
+    margin-bottom: 0;
+}
+
+.package-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: CormorantGaramond, serif;
+    font-size: 1em;
+    color: #57432a;
+    margin-bottom: 2px;
+}
+
+.package-bullet {
+    width: 7px;
+    height: 7px;
+    background: #57432a;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.package-detail {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.92em;
+    color: #9a8a7e;
+    margin-left: 15px;
+    margin-bottom: 2px;
+}
+
+.package-price {
+    font-family: CormorantGaramond, serif;
+    font-size: 1.05em;
+    font-weight: 700;
+    color: #57432a;
+    margin-left: 15px;
+}
+
+/* ===== VIDEO TIERS ===== */
+.video-tier {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.video-tier:last-child {
+    margin-bottom: 0;
+}
+
+.tier-title {
+    font-family: CormorantGaramond, serif;
+    font-size: 1em;
+    font-weight: 700;
+    color: #57432a;
+    margin-bottom: 6px;
+}
+
+.tier-tag {
+    font-weight: 400;
+    color: #9a8a7e;
+    font-size: 0.9em;
+}
+
+.tier-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tier-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: CormorantGaramond, serif;
+    font-size: 0.95em;
+    color: #7b6b61;
+    padding: 3px 0;
+}
+
+.tier-price {
+    font-weight: 700;
+    color: #57432a;
+}
+
+/* ===== CARD CTA ===== */
+.service-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    font-family: CormorantGaramond, serif;
+    font-size: 1.05em;
+    color: #57432a;
+    background: transparent;
+    border: 1px solid #57432a;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-bottom: 14px;
+    margin-top: auto;
+}
+
+.service-card-cta:hover {
+    background: black;
+    color: #fff;
+}
+
+.cta-arrow {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.service-card-cta:hover .cta-arrow {
+    transform: translateX(4px);
+}
+
+/* ===== CARD FOOTNOTE ===== */
+.service-card-footnote {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.85em;
+    color: #b3a294;
+    letter-spacing: 0.02em;
+}
+
+/* ===== TRUST SECTION ===== */
+.trust-section {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-}
-
-.service-flip-card {
-    background-color: transparent;
-    margin: 10px;
-    width: 300px;
-    height: 500px;
-    perspective: 1000px;
-}
-
-.flip-card-inner {
-    position: relative;
+    margin-top: 56px;
+    padding: 36px 20px;
+    border-top: 1px solid #ede5dc;
+    border-bottom: 1px solid #ede5dc;
     width: 100%;
-    height: 100%;
+    max-width: 1000px;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    gap: 6px;
+    width: 140px;
 }
 
-.service-flip-card .flip-card-inner {
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+.trust-icon {
+    margin-bottom: 4px;
 }
 
-
-.service-flip-card.flip .flip-card-inner {
-    transform: rotateY(180deg);
+.trust-title {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.95em;
+    color: #57432a;
+    line-height: 1.3;
 }
 
-.flipped {
-    transform: rotateY(180deg);
-    transition: transform 0.3s;
-
+.trust-sub {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.82em;
+    color: #b3a294;
 }
 
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
+/* ===== UNSURE CTA ===== */
+.unsure-cta {
     width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    background-color: #d5bdaf;
+    max-width: 800px;
+    margin-top: 48px;
+    padding: 0 20px;
 }
 
-.flip-card-front {
+.unsure-cta-inner {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     flex-direction: column;
-
-    padding: 50px;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    background: #f7f1eb;
+    border-radius: 12px;
+    padding: 36px 28px;
 }
 
-.flip-card-front h2.service_header {
-    font-family: CormorantGaramond;
+.unsure-icon {
+    flex-shrink: 0;
+}
+
+.unsure-icon img{
+width: 55px;}
+
+.unsure-heading {
+    font-family: CormorantGaramond, serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #57432a;
+    margin: 0;
+}
+
+.unsure-sub {
+    font-family: CormorantGaramond, serif;
+    font-size: 1em;
+    color: #7b6b61;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.unsure-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    font-family: CormorantGaramond, serif;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #fff;
+    background: black;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.unsure-btn:hover {
+    background: #3e2f1d;
+    transform: translateY(-1px);
+}
+
+.unsure-btn img {
+    width: 20px;
+}
+
+/* ===== LEAD SECTION ===== */
+.lead_section {
+    margin-top: 56px;
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.lead_title {
+    font-family: CormorantGaramond, serif;
     font-size: 1.8em;
+    font-weight: 700;
     color: #57432a;
+    margin-bottom: 10px;
 }
 
-.flip-card-front p.service-desc {
-    font-family: CormorantGaramond;
-    font-size: 1.2em;
-    color: #57432a;
-}
-
-.flip-card-front button.learn_more {
-    padding: 10px 20px;
+.lead_intro {
+    font-family: CormorantGaramond, serif;
     font-size: 1em;
-    background-color: #f4eade;;
-    color: #57432a;
-    border: none;
-    cursor: pointer;
-    font-family: CormorantGaramond;
-     /*display: none;*/
-}
-
-.flip-card-front a {
-    text-decoration: none;
-}
-
-
-
-
-.flip-card-front small {
-    margin-top: 1em;
-    font-family: CormorantGaramond;
     color: #7b6b61;
-    text-decoration: none;
+    line-height: 1.6;
+    margin-bottom: 24px;
 }
 
-.flip-card-back {
-    transform: rotateY(180deg);
-
+.lead_form {
     display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
     flex-direction: column;
-}
-
-
-.flip-card-back h2 {
-    font-family: CormorantGaramond;
-    font-size: 1.3em;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 30px;
-    color: #57432a;
-
-}
-
-.flip-card-back form.emailForm {
-    display: flex;
-    flex-direction: row;
+    gap: 12px;
     align-items: center;
-    justify-content: center;
-    height: 40px;
 }
 
-.flip-card-back input[type="email"] {
-    padding: 10px;
-    width: 70%;
-    height: 100%;
-    margin-bottom: 15px;
-    border: 1px solid transparent;
-    border-bottom: 1px solid black;
-    font-family: CormorantGaramond;
-    background-color: transparent;
+.service_select,
+.lead_form .emailInput {
+    width: 100%;
+    max-width: 380px;
+    padding: 14px 16px;
+    font-family: CormorantGaramond, serif;
     font-size: 1em;
-    align-self: baseline;
-    transition: 0.3s all ease-in-out;
-}
-
-.flip-card-back input[type="email"]::placeholder {
-    font-family: CormorantGaramond;
-    color: #7b6b61;
-}
-
-.flip-card-back input[type="email"]:focus {
-    outline: none;
-    border: 1px solid black;
-    transition: 0.5s all;
-}
-
-.flip-card-back button[type="submit"] {
-    width: 30%;
-    height: 100%;
-
-    font-size: 1.2em;
-    margin: 3px;
-    background-color: #f4eade;;
-
     color: #57432a;
-    border: none;
+    background: #fff;
+    border: 1px solid #d5c8bb;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.service_select {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2357432a' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
     cursor: pointer;
-    font-family: CormorantGaramond;
+}
+
+.service_select:focus,
+.lead_form .emailInput:focus {
+    outline: none;
+    border-color: #57432a;
+}
+
+.lead_form .emailInput::placeholder {
+    font-family: CormorantGaramond, serif;
+    color: #b3a294;
+}
+
+.lead_form button[type="submit"] {
+    padding: 14px 36px;
+    font-family: CormorantGaramond, serif;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #fff;
+    background: #57432a;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 4px;
+}
+
+.lead_form button[type="submit"]:hover {
+    background: #3e2f1d;
+    transform: translateY(-1px);
+}
+
+.lead_form button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
 
 .formMessage {
-    font-family: CormorantGaramond;
-    font-size: 1.2em;
+    font-family: CormorantGaramond, serif;
+    font-size: 1.1em;
     color: #57432a;
-    padding: 20px;
+    padding: 16px 0 0;
 }
 
-@media (min-width: 1200px) {
+.visually_hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
 
+/* ===== DESKTOP ===== */
+@media (min-width: 1200px) {
+    .services {
+        padding: 80px 40px 60px;
+    }
 
     .services h1.title {
         font-size: 40pt;
         font-family: TheSeasonsBold;
-
         font-weight: 600;
-        margin-bottom: 20px;
     }
 
-    .services-box {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+    .services_subtitle {
+        font-size: 1.2em;
+        margin-bottom: 50px;
     }
-
-    .service-flip-card {
-        margin: 0;
-        width: 350px;
-        height: 500px;
-        perspective: 1000px;
-    }
-
 
     .services-box {
         flex-direction: row;
+        align-items: stretch;
+        justify-content: center;
+        gap: 28px;
     }
 
-    .flip-card-front button.learn_more {
-        padding: 10px 20px;
-        font-size: 1.2em;
-        border: none;
-        cursor: pointer;
-        font-family: CormorantGaramond;
+    .service-card {
+        max-width: 350px;
+        padding: 44px 36px 36px;
+        background-color: #f5efeb;
     }
 
-    .flip-card-front a {
-        text-decoration: none;
+    .trust-section {
+        gap: 48px;
+        margin-top: 64px;
+        padding: 44px 20px;
     }
 
-    .flip-card-front small {
-        margin-top: 15px;
-        font-family: CormorantGaramond;
-        text-decoration: none;
+    .trust-item {
+        width: 180px;
+    }
+
+    .unsure-cta {
+        margin-top: 56px;
+    }
+
+    .unsure-cta-inner {
+        flex-direction: row;
+        text-align: left;
+        padding: 40px 48px;
+        gap: 24px;
+    }
+
+    .unsure-text {
+        flex: 1;
+    }
+
+    .unsure-btn {
+        flex-shrink: 0;
+    }
+
+    .lead_form {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .service_select,
+    .lead_form .emailInput {
+        max-width: 260px;
+    }
+}
+
+/* ===== TABLET ===== */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .services-box {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .service-card {
+        max-width: 320px;
+    }
+
+    .trust-section {
+        gap: 32px;
+    }
+
+    .trust-item {
+        width: 160px;
     }
 }
