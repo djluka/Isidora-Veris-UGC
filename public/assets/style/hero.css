@@ -18,22 +18,22 @@ body {
     margin: 0 auto;
 }
 
-.main {
+.hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     position: relative;
 }
-.main {
-    animation: main_apper 0.5s ease;
+.hero {
+    animation: hero_apper 0.5s ease;
     animation-timeline: load();
     animation-range: entry 20% cover 40%;
     padding: 0;
     margin: 0 auto;
 }
 /* ===== ANIMATIONS ===== */
-@keyframes main_apper {
+@keyframes hero_apper {
     from {
         opacity: 0;
         transform: translateY(100px) scale(0.8);
@@ -45,21 +45,21 @@ body {
 }
 
 /* ===== PROFILE VIDEO ===== */
-.main .profile_wrapper {
+.hero .profile_wrapper {
     position: relative;
     max-width: 250px;
     display: block;
     margin: 50px auto;
 }
 
-.main video.profile {
+.hero video.profile {
     width: 100%;
     height: 100%;
     display: block;
     z-index: 1;
 }
 
-.main .profile_wrapper::after {
+.hero .profile_wrapper::after {
     content: "";
     width: 100%;
     height: 100%;
@@ -71,8 +71,8 @@ body {
     z-index: -1;
 }
 
-/* ===== MAIN TEXT BOX ===== */
-.main .main_text_box {
+/* ===== hero TEXT BOX ===== */
+.hero .hero_text_box {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -82,7 +82,7 @@ body {
     transition-delay: 0.2s;
 }
 
-.main .main_text_box p.main_txt {
+.hero .hero_text_box p.hero_txt {
     margin: 0 auto;
     text-align: center;
     letter-spacing: 2px;
@@ -95,7 +95,7 @@ body {
 }
 
 /* Hook headline */
-.main .main_text_box .hero_hook {
+.hero .hero_text_box .hero_hook {
     font-family: TheSeasonsBold;
     font-size: 20pt;
     text-align: center;
@@ -109,7 +109,7 @@ body {
 }
 
 /* Tagline */
-.main .main_text_box .hero_tagline {
+.hero .hero_text_box .hero_tagline {
     font-family: CormorantGaramond;
     font-size: 10pt;
     letter-spacing: 3px;
@@ -118,7 +118,7 @@ body {
     text-align: center;
 }
 
-.main .main_text_box p.description_txt {
+.hero .hero_text_box p.description_txt {
     text-align: center;
     margin-top: 16px;
     margin-bottom: 24px;
@@ -234,7 +234,7 @@ body {
     padding-left: 4px;
 }
 
-.main .main_text_box .contact_me {
+.hero .hero_text_box .contact_me {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -246,20 +246,20 @@ body {
     transition: color 0.2s ease;
 }
 
-.main .main_text_box .contact_me img {
+.hero .hero_text_box .contact_me img {
     width: 35px;
     height: 35px;
 }
 
-.main .main_text_box .contact_me p {
+.hero .hero_text_box .contact_me p {
     margin: 0;
     font-size: 12pt;
     text-decoration: none;
     color: inherit;
     font-family: CormorantGaramond;
 }
-.main .main_text_box a.contact_me:hover,
-.main .main_text_box a.contact_me:hover p {
+.hero .hero_text_box a.contact_me:hover,
+.hero .hero_text_box a.contact_me:hover p {
     color: #7b6853;
 }
 /*ARROW*/
@@ -279,7 +279,7 @@ body {
 
 }
 /* ===== HIGHLIGHTS ===== */
-.main .main_text_box .instagram_highlights {
+.hero .hero_text_box .instagram_highlights {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -287,13 +287,13 @@ body {
     margin: 0 auto;
     margin-top: 24px;
 }
-.main .main_text_box .instagram_highlights .highlights {
+.hero .hero_text_box .instagram_highlights .highlights {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
 }
-.main .main_text_box .instagram_highlights .highlights a {
+.hero .hero_text_box .instagram_highlights .highlights a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -305,10 +305,10 @@ body {
     transition: transform 0.2s ease;
     gap: 8px;
 }
-.main .main_text_box .instagram_highlights .highlights a:hover {
+.hero .hero_text_box .instagram_highlights .highlights a:hover {
     transform: scale(1.08);
 }
-.main .main_text_box .instagram_highlights .highlights a .highlight_circle {
+.hero .hero_text_box .instagram_highlights .highlights a .highlight_circle {
     width: 72px;
     height: 72px;
     border-radius: 50%;
@@ -322,20 +322,20 @@ body {
     position: relative;
     z-index: 3;
 }
-.main .main_text_box .instagram_highlights .highlights a .highlight_circle::after {
+.hero .hero_text_box .instagram_highlights .highlights a .highlight_circle::after {
     display: none;
 }
-.main .main_text_box .instagram_highlights .highlights a .highlight_circle img {
+.hero .hero_text_box .instagram_highlights .highlights a .highlight_circle img {
     width: 35px;
     height: 35px;
 }
-.main .main_text_box .instagram_highlights .highlights a p {
+.hero .hero_text_box .instagram_highlights .highlights a p {
     font-family: CormorantGaramond;
     font-size: 1.05em;
     color: #1a1a1a;
 }
 
-.main .main_text_box .instagram_highlights p.highlight_desc {
+.hero .hero_text_box .instagram_highlights p.highlight_desc {
     padding: 14px 10px 0;
     text-align: center;
     font-family: RomateHood;
@@ -344,7 +344,7 @@ body {
 }
 
 /* Point arrow between contacts and highlights */
-.main .main_text_box .point_arrow {
+.hero .hero_text_box .point_arrow {
     width: 80px;
     height: auto;
     display: block;
@@ -352,14 +352,14 @@ body {
     rotate: -90deg;
     transform: scaleX(-1);
 }
-.main .main_text_box .instagram_highlights .typewriter {
+.hero .hero_text_box .instagram_highlights .typewriter {
     margin: 0 auto;
     margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.main .main_text_box .instagram_highlights .typewriter .typewriter_animation {
+.hero .hero_text_box .instagram_highlights .typewriter .typewriter_animation {
     overflow: hidden;
     border-right: 0.1em solid black;
     white-space: nowrap;
@@ -387,19 +387,19 @@ body {
         max-width: 750px;
     }
 
-    .main {
+    .hero {
         max-height: 150vh;
     }
-    .main .profile_wrapper {
+    .hero .profile_wrapper {
         max-width: 300px;
     }
-    .main .main_text_box p.main_txt {
+    .hero .hero_text_box p.hero_txt {
         font-size: 30pt;
     }
-    .main .main_text_box .hero_hook {
+    .hero .hero_text_box .hero_hook {
         font-size: 22pt;
     }
-    .main .main_text_box .hero_tagline {
+    .hero .hero_text_box .hero_tagline {
         font-size: 11pt;
     }
     .hero_benefits {
@@ -421,13 +421,13 @@ body {
         align-items: center;
         padding-left: 0;
     }
-    .main .main_text_box .instagram_highlights {
+    .hero .hero_text_box .instagram_highlights {
         position: relative;
         right: -50%;
         top: 20px;
         transform: translateX(-50%);
     }
-    .main .main_text_box .instagram_highlights img.point_arrow {
+    .hero .hero_text_box .instagram_highlights img.point_arrow {
         max-width: 80px;
         rotate: -90deg;
         transform: scaleX(-1);
@@ -452,52 +452,72 @@ body {
    DESKTOP (1200px+)
    ======================================== */
 @media (min-width: 1200px) {
+
     .page_wrapper {
         max-width: 1100px;
     }
-    .main {
+
+    .contact_group{
+        position: relative
+    }
+
+    .arrow-to-highlight{
+        rotate: 180deg;
+        transform: scaleX(-1);
+        position: absolute;
+        right: 0px;
+        bottom: -30px;
+    }
+
+    .arrow-to-highlight{
+        width: 100px;
+        height: 100px;
+
+
+    }
+    .hero {
         flex-wrap: nowrap;
         align-items: flex-start;
         gap: 40px;
         padding: 20px 0;
         max-height: none;
     }
-    .main .profile_wrapper {
+    .hero .profile_wrapper {
         max-width: 350px;
         min-width: 320px;
         margin: 20px 0;
         flex-shrink: 0;
     }
 
-    .main .profile_wrapper::after {
+    .hero .profile_wrapper::after {
         top: 50px;
         left: -50px;
     }
 
-    .main .main_text_box {
+    .hero .hero_text_box {
         max-width: 600px;
         flex: 1;
         align-items: center;
     }
 
-    .main .main_text_box p.main_txt {
+    .hero .hero_text_box p.hero_txt {
         letter-spacing: 5px;
         font-size: 38pt;
         text-align: center;
         align-items: center;
     }
 
-    .main .main_text_box .hero_hook {
+    .hero .hero_text_box .hero_hook {
         font-size: 24pt;
         text-align: center;
         padding: 10px 28px;
     }
-    .main .main_text_box .hero_tagline {
+    .hero .hero_text_box .hero_tagline {
         font-size: 11pt;
         text-align: center;
         letter-spacing: 4px;
     }
-    .main .main_text_box p.description_txt {
+    .hero .hero_text_box p.description_txt {
         font-size: 14pt;
         text-align: center;
         max-width: 480px;
@@ -535,27 +555,37 @@ body {
         padding-left: 0;
     }
 
-    .main .main_text_box .instagram_highlights {
+
+    .hero .hero_text_box .instagram_highlights {
         position: relative;
         left: 0%;
         top: 30px;
         transform: translateX(0%);
     }
-    .main .main_text_box .instagram_highlights .highlights a .highlight_circle {
+    .hero .hero_text_box .instagram_highlights .highlights a .highlight_circle {
         width: 80px;
         height: 80px;
     }
-    .main .main_text_box .instagram_highlights .highlights a .highlight_circle svg {
+    .hero .hero_text_box .instagram_highlights .highlights a .highlight_circle svg {
         width: 34px;
         height: 34px;
     }
-    .main .main_text_box .instagram_highlights .highlights a {
+    .hero .hero_text_box .instagram_highlights .highlights a {
         font-size: 1.15em;
     }
-    .main .main_text_box .instagram_highlights p.highlight_desc {
+    .hero .hero_text_box .instagram_highlights p.highlight_desc {
         font-size: 14pt;
     }
-    .main .main_text_box .instagram_highlights .typewriter {
+    .hero .hero_text_box .instagram_highlights .typewriter {
         margin-top: 10px;
         max-width: 500px;
     }
+    .hero .hero_text_box .contact_me p {
+        margin: 5px;
+        font-size: 15pt;
+        text-decoration: none;
+        color: inherit;
+        font-family: CormorantGaramond;
+    }
+}
+

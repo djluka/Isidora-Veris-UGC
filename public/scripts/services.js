@@ -1,53 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const serviceSelect = document.getElementById('serviceSelect');
-    const leadForm = document.getElementById('leadForm');
-    const leadMessage = document.getElementById('leadFormMessage');
 
-    /* ===== PRESELECT SERVICE ===== */
-    function preselectService(value) {
-        if (!serviceSelect || !value) return;
-        const opt = serviceSelect.querySelector(`option[value="${value}"]`);
-        if (opt) {
-            serviceSelect.value = value;
-        }
-    }
+    /* ===== CARD EXPAND TOGGLE ===== */
+    document.querySelectorAll('.service-card-cta[data-target]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+            const expandEl = document.getElementById(targetId);
+            if (!expandEl) return;
 
-    /* CTA buttons inside cards → preselect + scroll to lead */
-    document.querySelectorAll('.service-card-cta[data-service]').forEach((link) => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            preselectService(link.dataset.service);
-            const leadSection = document.getElementById('lead');
-            if (leadSection) {
-                leadSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const isOpen = expandEl.classList.contains('open');
+
+            // Close all expanded sections first
+            document.querySelectorAll('.card-expand.open').forEach(el => {
+                el.classList.remove('open');
+            });
+
+            // Reset all CTA arrows
+            document.querySelectorAll('.service-card-cta[data-target]').forEach(b => {
+                b.querySelector('.cta-arrow').textContent = '→';
+            });
+
+            // Toggle the clicked one (if it wasn't already open)
+            if (!isOpen) {
+                expandEl.classList.add('open');
+                btn.querySelector('.cta-arrow').textContent = '↑';
+
+                // Smooth scroll to show the expanded content
+                setTimeout(() => {
+                    expandEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 150);
             }
         });
     });
 
-    /* URL param ?usluga=... */
+    /* ===== URL PARAM ?usluga=... AUTO-OPEN ===== */
     const params = new URLSearchParams(window.location.search);
     const serviceParam = params.get('usluga');
     if (serviceParam) {
-        preselectService(serviceParam);
+        const targetBtn = document.querySelector(`.service-card-cta[data-target="expand-${serviceParam}"]`);
+        if (targetBtn) {
+            targetBtn.click();
+        }
     }
 
-    /* ===== LEAD FORM ===== */
-    if (leadForm) {
-        leadForm.addEventListener('submit', async (e) => {
+    /* ===== EXPAND FORM SUBMIT ===== */
+    document.querySelectorAll('.expand-form').forEach(form => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const email = leadForm.querySelector('.emailInput')?.value;
-            const service = serviceSelect?.value;
-            const submitBtn = leadForm.querySelector('button[type="submit"]');
-            const turnstileWidget = leadForm.querySelector('.cf-turnstile');
-
-            if (!service) {
-                if (leadMessage) {
-                    leadMessage.textContent = 'Izaberite uslugu iz liste.';
-                    leadMessage.style.color = '#8b4513';
-                }
-                return;
-            }
+            const email = form.querySelector('.expand-input')?.value;
+            const service = form.dataset.service;
+            const submitBtn = form.querySelector('.expand-submit');
+            const messageEl = form.closest('.card-expand-inner').querySelector('.expand-form-message');
+            const turnstileWidget = form.querySelector('.cf-turnstile');
 
             submitBtn.disabled = true;
             submitBtn.textContent = 'Šaljem...';
@@ -68,29 +72,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (response.ok) {
-                    if (leadMessage) {
-                        leadMessage.textContent =
-                            'Hvala! Proverite email — stiže detaljan opis i sledeći koraci. Javite se za termin ako želite da odmah zakoračimo u produkciju.';
-                        leadMessage.style.color = 'green';
+                    if (messageEl) {
+                        messageEl.textContent =
+                            'Hvala! Proverite email — stiže detaljan opis i sledeći koraci.';
+                        messageEl.style.color = 'green';
                     }
-                    leadForm.reset();
+                    form.reset();
                     turnstile.reset(turnstileWidget);
                 } else {
-                    if (leadMessage) {
-                        leadMessage.textContent = data.message || 'Došlo je do greške.';
-                        leadMessage.style.color = 'red';
+                    if (messageEl) {
+                        messageEl.textContent = data.message || 'Došlo je do greške.';
+                        messageEl.style.color = 'red';
                     }
                     turnstile.reset(turnstileWidget);
                 }
             } catch (err) {
-                if (leadMessage) {
-                    leadMessage.textContent = 'Nije moguće povezati se sa serverom.';
-                    leadMessage.style.color = 'red';
+                if (messageEl) {
+                    messageEl.textContent = 'Nije moguće povezati se sa serverom.';
+                    messageEl.style.color = 'red';
                 }
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Pošalji upit';
             }
         });
-    }
+    });
 });

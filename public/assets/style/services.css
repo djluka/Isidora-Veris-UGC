@@ -49,8 +49,6 @@
     text-align: center;
     position: relative;
     transition: box-shadow 0.35s ease, transform 0.35s ease;
-
-    /* Scroll-driven animation */
     animation: cardReveal 0.6s ease both;
     animation-timeline: view();
     animation-range: entry -10% cover 30%;
@@ -60,7 +58,6 @@
     box-shadow: 0 8px 32px rgba(87, 67, 42, 0.1);
     transform: translateY(-5px);
 }
-
 
 @keyframes cardReveal {
     from {
@@ -79,12 +76,11 @@
     border-radius: 100px;
     background-color: #e8dbd2;
     padding: 20px;
-
 }
-.service-card-icon img{
+
+.service-card-icon img {
     width: 60px;
 }
-
 
 /* ===== CARD TITLE ===== */
 .service-card-title {
@@ -234,6 +230,110 @@
     transform: translateX(4px);
 }
 
+/* ===== CARD EXPAND ===== */
+.card-expand {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease,
+    margin 0.4s ease;
+    margin-bottom: 0;
+}
+
+.card-expand.open {
+    max-height: 320px;
+    opacity: 1;
+    margin-bottom: 20px;
+}
+
+.card-expand-inner {
+    border-top: 1px solid #ede5dc;
+    padding: 24px 0 8px;
+    text-align: center;
+}
+
+.expand-title {
+    font-family: CormorantGaramond, serif;
+    font-size: 1.15em;
+    font-weight: 700;
+    color: #57432a;
+    margin-bottom: 6px;
+}
+
+.expand-desc {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.95em;
+    color: #7b6b61;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.expand-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.expand-input {
+    width: 100%;
+    max-width: 260px;
+    padding: 12px 16px;
+    font-family: CormorantGaramond, serif;
+    font-size: 1em;
+    color: #57432a;
+    background: #fff;
+    border: 1px solid #d5c8bb;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.expand-input:focus {
+    outline: none;
+    border-color: #57432a;
+}
+
+.expand-input::placeholder {
+    font-family: CormorantGaramond, serif;
+    color: #b3a294;
+}
+
+.expand-submit {
+    padding: 12px 32px;
+    font-family: CormorantGaramond, serif;
+    font-size: 1em;
+    font-weight: 600;
+    color: #fff;
+    background: #57432a;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.expand-submit:hover {
+    background: #3e2f1d;
+    transform: translateY(-1px);
+}
+
+.expand-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.expand-form-message {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.95em;
+    color: #57432a;
+    min-height: 20px;
+}
+
 /* ===== CARD FOOTNOTE ===== */
 .service-card-footnote {
     font-family: CormorantGaramond, serif;
@@ -267,6 +367,11 @@
 
 .trust-icon {
     margin-bottom: 4px;
+}
+
+.trust-icon img {
+    width: 24px;
+    height: 24px;
 }
 
 .trust-title {
@@ -305,8 +410,9 @@
     flex-shrink: 0;
 }
 
-.unsure-icon img{
-width: 55px;}
+.unsure-icon img {
+    width: 55px;
+}
 
 .unsure-heading {
     font-family: CormorantGaramond, serif;
@@ -489,6 +595,10 @@ width: 55px;}
         max-width: 350px;
         padding: 44px 36px 36px;
         background-color: #f5efeb;
+    }
+
+    .expand-input {
+        background: #fff;
     }
 
     .trust-section {
