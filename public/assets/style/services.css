@@ -230,7 +230,7 @@
     transform: translateX(4px);
 }
 
-/* ===== CARD EXPAND ===== */
+/* ===== CARD EXPAND (mobile) ===== */
 .card-expand {
     width: 100%;
     max-height: 0;
@@ -340,6 +340,62 @@
     font-size: 0.85em;
     color: #b3a294;
     letter-spacing: 0.02em;
+}
+
+/* ===== DESKTOP EXPAND PANEL ===== */
+.desktop-expand-panel {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease,
+    margin 0.4s ease;
+    margin-top: 0;
+}
+
+.desktop-expand-panel.open {
+    max-height: 320px;
+    opacity: 1;
+    margin-top: 36px;
+}
+
+.desktop-expand-inner {
+    background: #f5efeb;
+    border: 1px solid #e8ddd4;
+    border-radius: 8px;
+    padding: 36px 48px;
+    text-align: center;
+    position: relative;
+}
+
+.desktop-expand-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    color: #9a8a7e;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s ease;
+}
+
+.desktop-expand-close:hover {
+    color: #57432a;
+}
+
+.desktop-expand-inner .expand-form {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+}
+
+.desktop-expand-inner .expand-input {
+    max-width: 280px;
 }
 
 /* ===== TRUST SECTION ===== */
@@ -641,6 +697,16 @@
     .lead_form .emailInput {
         max-width: 260px;
     }
+
+    /* Sakrij inline expand na desktopu */
+    .card-expand {
+        display: none !important;
+    }
+
+    /* Pokaži desktop panel */
+    .desktop-expand-panel {
+        display: block;
+    }
 }
 
 /* ===== TABLET ===== */
@@ -662,5 +728,24 @@
 
     .trust-item {
         width: 160px;
+    }
+}
+.blooom{
+    animation: bloom 1s backwards linear;
+    animation-delay: 0.5s;
+}
+@keyframes bloom {
+    0% {
+        box-shadow: none;
+        transform:none;
+
+    }
+    50%{
+        box-shadow: 0 8px 32px rgba(87, 67, 42, 0.2);
+        transform: translateY(-5px);
+    }
+    100%{
+        box-shadow: none;
+        transform:none;
     }
 }

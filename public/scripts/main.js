@@ -17,3 +17,12 @@ const observer = new IntersectionObserver((entries) => {
 
 // dodaj observer na sve elemente koje želiš da animiraš
 document.querySelectorAll('.highlight_desc').forEach((el) => observer.observe(el));
+
+document.querySelector(".cta_button").addEventListener("click", (e) => {
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach((entry) => {
+        entry.classList.toggle('blooom');
+        console.log(entry);
+    })
+
+})

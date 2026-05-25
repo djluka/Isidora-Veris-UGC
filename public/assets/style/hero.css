@@ -263,18 +263,20 @@ body {
     color: #7b6853;
 }
 /*ARROW*/
-
+.contact_group{
+    position: relative;
+}
 .arrow-to-highlight{
     rotate: 180deg;
     transform: scaleX(-1);
     position: absolute;
     left: 200px;
-    bottom: 160px;
+    top:60px ;
 }
 
 .arrow-to-highlight{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 
 
 }
