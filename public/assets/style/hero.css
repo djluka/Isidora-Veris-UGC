@@ -589,5 +589,11 @@ body {
         color: inherit;
         font-family: CormorantGaramond;
     }
+    .hero .profile_wrapper {
+        position: relative;
+        max-width: 450px;
+        display: block;
+        margin: 50px auto;
+    }
 }
 
