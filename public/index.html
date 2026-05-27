@@ -833,12 +833,11 @@
 </div>
 <!--SERVICES-->
 <div class="services" id="services">
-        <h1 class="title">usluge</h1>
-        <p class="services_subtitle">
+    <h1 class="title">usluge</h1>
+    <p class="services_subtitle">
             Sve što ti treba za autentičan sadržaj koji privlači pažnju i donosi rezultate.
         </p>
-
-        <div class="services-box">
+    <div class="services-box">
             <!-- KONSULTACIJE -->
             <div class="service-card" data-service="konsultacije">
                 <div class="service-card-icon">
@@ -1015,7 +1014,66 @@
 
                 <p class="service-card-footnote">Istraživanje • Plan • Ideje • Smernice</p>
             </div>
+            <!-- VOĐENJE PROFILA — PREMIUM -->
+            <div class="service-card service-card--premium" data-service="vodjenje-profila">
+            <span class="premium-badge">Premium</span>
+            <div class="service-card-icon service-card-icon--premium">
+                <img src="assets/star.webp" alt="Vođenje profila" loading="lazy"/>
+            </div>
+            <h2 class="service-card-title">Vođenje profila</h2>
+            <p class="service-card-desc">
+                Kompletno upravljanje tvojim prisustvom — od strategije i kreiranja sadržaja do objava i mesečnog izveštaja.
+            </p>
+
+            <div class="service-card-packages">
+                <div class="package-item">
+                    <div class="package-header">
+                        <span class="package-bullet"></span>
+                        <strong>Starter</strong>
+                    </div>
+                    <p class="package-detail">12 objava mesečno + strategija + izveštaj</p>
+                    <p class="package-price">150.000 RSD</p>
+                </div>
+                <div class="package-item">
+                    <div class="package-header">
+                        <span class="package-bullet"></span>
+                        <strong>Full Management</strong>
+                    </div>
+                    <p class="package-detail">20 objava + reels + stories + community</p>
+                    <p class="package-price">220.000 RSD</p>
+                </div>
+            </div>
+
+            <button type="button" class="service-card-cta" data-target="expand-vodjenje-profila">
+                Saznaj više <span class="cta-arrow">→</span>
+            </button>
+
+            <div class="card-expand" id="expand-vodjenje-profila">
+                <div class="card-expand-inner">
+                    <h3 class="expand-title">Pokreni vođenje profila</h3>
+                    <p class="expand-desc">
+                        Ostavi email i šaljem ti detaljan opis paketa, proces saradnje i kako započinjemo.
+                    </p>
+                    <form class="expand-form" data-service="vodjenje-profila" autocomplete="on">
+                        <label class="visually_hidden" for="email-vodjenje">Email</label>
+                        <input
+                                id="email-vodjenje"
+                                type="email"
+                                class="expand-input"
+                                name="email"
+                                placeholder="vaš@email.com"
+                                required
+                        />
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAADAPXg_XGdPminYh" data-size="invisible"></div>
+                        <button type="submit" class="expand-submit">Pošalji upit</button>
+                    </form>
+                    <p class="expand-form-message"></p>
+                </div>
+            </div>
+
+            <p class="service-card-footnote">Sve uključeno • Mesečna saradnja</p>
         </div>
+    </div>
     <!-- DESKTOP EXPAND PANEL (ispod kartica) -->
     <div class="desktop-expand-panel" id="desktopExpandPanel">
         <div class="desktop-expand-inner">
@@ -1038,8 +1096,8 @@
             <p class="expand-form-message" id="desktopExpandMessage"></p>
         </div>
     </div>
-        <!-- TRUST / SOCIAL PROOF -->
-        <div class="trust-section">
+    <!-- TRUST / SOCIAL PROOF -->
+    <div class="trust-section">
             <div class="trust-item">
                 <div class="trust-icon">
                     <img src="assets/star.webp" alt="star" loading="lazy">
@@ -1069,9 +1127,8 @@
                 <span class="trust-sub">Kvalitet na svakom kadru</span>
             </div>
         </div>
-
-        <!-- NISI SIGURAN CTA -->
-        <div class="unsure-cta">
+    <!-- NISI SIGURAN CTA -->
+    <div class="unsure-cta">
             <div class="unsure-cta-inner">
                 <div class="unsure-icon">
                     <img src="assets/question.webp" alt="Loading..." loading="lazy"/>

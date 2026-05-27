@@ -15,7 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
         'kontent-strategija': {
             title: 'Pokreni kontent strategiju',
             desc: 'Ostavi email i šaljem ti detaljan opis paketa, način saradnje i kako zakazujemo prvi korak.'
+        },
+        'vodjenje-profila': {
+            title: 'Pokreni vođenje profila',
+            desc: 'Ostavi email i šaljem ti detaljan opis paketa, proces saradnje i kako započinjemo.'
         }
+
+
     };
 
     /* ===== DESKTOP PANEL ELEMENTS ===== */

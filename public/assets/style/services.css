@@ -648,7 +648,7 @@
     }
 
     .service-card {
-        max-width: 350px;
+        max-width: 450px;
         padding: 44px 36px 36px;
         background-color: #f5efeb;
     }
@@ -747,5 +747,182 @@
     100%{
         box-shadow: none;
         transform:none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* ===== PREMIUM CARD ===== */
+
+.service-card--premium {
+    background-color: #d6bdae;
+    border: 1px solid #a69387;
+    position: relative;
+    overflow: visible;
+}
+
+.service-card--premium:hover {
+    box-shadow: 0 8px 32px rgba(87, 67, 42, 0.1);
+
+}
+
+/* — Badge — */
+.premium-badge {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: CormorantGaramond, serif;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(135deg, #f4eade, #c4a57a);
+    padding: 4px 20px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* — Icon override — */
+.service-card-icon--premium {
+    background-color: rgba(212, 184, 150, 0.15);
+    border: 1px solid rgba(212, 184, 150, 0.2);
+
+    background-color: rgba(122, 110, 93, 0.15);
+    border: 1px solid rgb(243, 235, 222);
+}
+
+/* — Typography overrides — */
+.service-card--premium .service-card-title {
+    color: #f0e6da;
+
+    color: #fff;
+
+}
+
+.service-card--premium .service-card-desc {
+    color: #b8a899;
+    color: #fff;
+
+}
+
+.service-card--premium .service-card-packages {
+    border-top-color: rgba(212, 184, 150, 0.18);
+    border-top-color: rgba(255, 255, 255, 0.18);
+
+}
+
+.service-card--premium .package-header {
+    color: #e8ddd4;
+    color: #fff;
+
+}
+
+.service-card--premium .package-bullet {
+    background: #a69387;
+}
+
+.service-card--premium .package-detail {
+    color: #9a8a7e;
+    color: #fff;
+
+}
+
+.service-card--premium .package-price {
+    color: #d4b896;
+    color: #fff;
+
+}
+
+/* — CTA button — */
+.service-card--premium .service-card-cta {
+    color: #d4b896;
+    color: #fff;
+
+    border-color:#fff;
+
+}
+
+.service-card--premium .service-card-cta:hover {
+    background: #d4b896;
+    color: #3a2a18;
+}
+
+/* — Footnote — */
+.service-card--premium .service-card-footnote {
+    color: #7b6b61;
+    color: #fff;
+
+}
+
+/* — Mobile expand inside premium card — */
+.service-card--premium .card-expand-inner {
+    border-top-color: rgba(212, 184, 150, 0.18);
+}
+
+.service-card--premium .expand-title {
+    color: #f0e6da;
+}
+
+.service-card--premium .expand-desc {
+    color: #b8a899;
+}
+
+.service-card--premium .expand-input {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(212, 184, 150, 0.3);
+    color: #f0e6da;
+}
+
+.service-card--premium .expand-input::placeholder {
+    color: #7b6b61;
+}
+
+.service-card--premium .expand-input:focus {
+    border-color: #d4b896;
+}
+
+.service-card--premium .expand-submit {
+    background: #d4b896;
+    color: #3a2a18;
+}
+
+.service-card--premium .expand-submit:hover {
+    background: #c4a57a;
+}
+
+/* ===== DESKTOP: 4 cards in a row ===== */
+@media (min-width: 1200px) {
+    .service-card--premium {
+        /*background: #3a2a18;*/
+
+    }
+
+    /* Adjust grid for 4 cards */
+    .services-box {
+        flex-wrap: nowrap;
+    }
+
+    .service-card {
+        max-width: 390px;
+    }
+
+    .service-card--premium {
+        max-width: 290px;
+    }
+}
+
+/* ===== TABLET: premium card full-width below row ===== */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .service-card--premium {
+        max-width: 320px;
     }
 }
