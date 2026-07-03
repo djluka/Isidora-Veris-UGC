@@ -1,100 +1,87 @@
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+html {
     scroll-behavior: smooth;
 }
-
 body {
     background-color: #faf9f8;
+    overflow-x: hidden; /* sprečava horizontalni scroll od dekorativne strelice */
 }
-
 .blur {
     filter: blur(5px);
 }
-/* MOBILE FIRST  */
+
+/* ============================================================
+   PAGE WRAPPER  (mobile-first)
+   ============================================================ */
 .page_wrapper {
     max-width: 375px;
     margin: 0 auto;
+    padding: 0 12px;
 }
 
+/* ============================================================
+   HERO  ── MOBILE FIRST (sve poređano vertikalno, centrirano)
+   ============================================================ */
 .hero {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     position: relative;
-}
-.hero {
     animation: hero_apper 0.5s ease;
-    animation-timeline: load();
-    animation-range: entry 20% cover 40%;
-    padding: 0;
-    margin: 0 auto;
-}
-/* ===== ANIMATIONS ===== */
-@keyframes hero_apper {
-    from {
-        opacity: 0;
-        transform: translateY(100px) scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0px) scale(1);
-    }
 }
 
-/* ===== PROFILE VIDEO ===== */
+@keyframes hero_apper {
+    from { opacity: 0; transform: translateY(100px) scale(0.8); }
+    to   { opacity: 1; transform: translateY(0)     scale(1);   }
+}
+
+/* ---------- PROFILE VIDEO ---------- */
 .hero .profile_wrapper {
     position: relative;
+    width: 100%;
     max-width: 250px;
-    display: block;
     margin: 50px auto;
 }
-
 .hero video.profile {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
+    position: relative;
     z-index: 1;
 }
-
 .hero .profile_wrapper::after {
     content: "";
-    width: 100%;
-    height: 100%;
-    display: block;
-    background-color: #f4eade;
     position: absolute;
     top: 30px;
     left: -30px;
+    width: 100%;
+    height: 100%;
+    background-color: #f3eadd;
     z-index: -1;
 }
 
-/* ===== hero TEXT BOX ===== */
+/* ---------- TEXT BOX ---------- */
 .hero .hero_text_box {
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    width: 100%;
     max-width: 330px;
-    transition-delay: 0.2s;
-}
-
-.hero .hero_text_box p.hero_txt {
     margin: 0 auto;
+}
+.hero .hero_text_box p.hero_txt {
     text-align: center;
     letter-spacing: 2px;
     font-family: TheSeasonsBold;
     font-size: 28pt;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
-
-/* Hook headline */
 .hero .hero_text_box .hero_hook {
     font-family: TheSeasonsBold;
     font-size: 20pt;
@@ -102,13 +89,10 @@ body {
     color: #1a1a1a;
     margin-top: 8px;
     line-height: 1.4;
-    background-color: #f4eade;
-    display: inline-block;
+    background-color: #d4bdad;
     padding: 8px 22px;
     border-radius: 4px;
 }
-
-/* Tagline */
 .hero .hero_text_box .hero_tagline {
     font-family: CormorantGaramond;
     font-size: 10pt;
@@ -117,28 +101,25 @@ body {
     margin-top: 14px;
     text-align: center;
 }
-
 .hero .hero_text_box p.description_txt {
     text-align: center;
-    margin-top: 16px;
-    margin-bottom: 24px;
+    margin: 16px 0 24px;
     font-size: 13pt;
     letter-spacing: 0.5px;
     font-family: CormorantGaramond;
     line-height: 1.5;
 }
 
-/* ===== BENEFITS ===== */
+/* ---------- BENEFITS ---------- */
 .hero_benefits {
     display: flex;
     flex-direction: column;
     gap: 14px;
     width: 100%;
     margin-bottom: 24px;
-    background-color: #f2ece8;
+    background-color: #f3eadd;
     padding: 10px;
     border-radius: 10px;
-
 }
 .hero_benefit {
     display: flex;
@@ -146,21 +127,9 @@ body {
     gap: 12px;
     padding: 10px;
 }
-.hero_benefit .benefit_icon {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
-    border-radius: 50%;
-    background-color: #f4eade;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.hero_benefit  img {
+.hero_benefit img {
     width: 35px;
     height: 35px;
-}
-.hero_benefit svg {
     flex-shrink: 0;
 }
 .hero_benefit .benefit_title {
@@ -177,10 +146,10 @@ body {
     line-height: 1.3;
 }
 
-/* ===== CTA BOX ===== */
+/* ---------- CTA BOX ---------- */
 .hero_cta_box {
     width: 100%;
-    background-color: #f0e7da;
+    background-color: #f3eadd;
     border-radius: 16px;
     padding: 22px 20px;
     text-align: center;
@@ -189,14 +158,13 @@ body {
 .hero_cta_box .cta_headline {
     font-family: TheSeasonsBold;
     font-size: 15pt;
-
-    color: black;
+    color: #000;
     margin-bottom: 4px;
 }
 .hero_cta_box .cta_sub {
     font-family: CormorantGaramond;
     font-size: 11pt;
-    color: black;
+    color: #000;
     margin-bottom: 16px;
 }
 .hero_cta_box .cta_button {
@@ -206,12 +174,11 @@ body {
     font-family: TheSeasonsBold;
     font-size: 10.5pt;
     letter-spacing: 2px;
-    color: white;
-    background-color: black;
+    color: #fff;
+    background-color: #d4bdad;
     padding: 13px 30px;
     border-radius: 4px;
     text-decoration: none;
-    border: 1px solid #57432a;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .hero_cta_box .cta_button:hover {
@@ -222,39 +189,34 @@ body {
     transform: translateY(0);
 }
 
-/* ===== CONTACT GROUP ===== */
+/* ---------- CONTACT GROUP ---------- */
 .contact_group {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    justify-content: start;
+    align-items: flex-start;
     gap: 2px;
-    margin-bottom: 20px;
     width: 100%;
+    margin-bottom: 20px;
     padding-left: 4px;
 }
-
 .hero .hero_text_box .contact_me {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
     text-decoration: none;
-    color: #1a1a1a;
+    color: #57432a;
     font-family: CormorantGaramond;
     padding: 4px 0;
     transition: color 0.2s ease;
 }
-
 .hero .hero_text_box .contact_me img {
     width: 35px;
     height: 35px;
 }
-
 .hero .hero_text_box .contact_me p {
     margin: 0;
     font-size: 12pt;
-    text-decoration: none;
     color: inherit;
     font-family: CormorantGaramond;
 }
@@ -262,32 +224,25 @@ body {
 .hero .hero_text_box a.contact_me:hover p {
     color: #7b6853;
 }
-/*ARROW*/
-.contact_group{
-    position: relative;
-}
-.arrow-to-highlight{
-    rotate: 180deg;
-    transform: scaleX(-1);
-    position: absolute;
-    left: 200px;
-    top:60px ;
-}
 
-.arrow-to-highlight{
+/* ---------- ARROW (dekorativna, pokazuje ka highlights) ---------- */
+.arrow-to-highlight {
+    position: absolute;
+    top: 60px;
+    left: 200px;
     width: 80px;
     height: 80px;
-
-
+    rotate: 180deg;
+    transform: scaleX(-1);
+    pointer-events: none;
 }
-/* ===== HIGHLIGHTS ===== */
+
+/* ---------- INSTAGRAM HIGHLIGHTS ---------- */
 .hero .hero_text_box .instagram_highlights {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    margin-top: 24px;
+    margin: 24px auto 0;
 }
 .hero .hero_text_box .instagram_highlights .highlights {
     display: flex;
@@ -297,15 +252,13 @@ body {
 }
 .hero .hero_text_box .instagram_highlights .highlights a {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
     color: #1a1a1a;
     font-family: CormorantGaramond;
-    font-size: 1em;
     transition: transform 0.2s ease;
-    gap: 8px;
 }
 .hero .hero_text_box .instagram_highlights .highlights a:hover {
     transform: scale(1.08);
@@ -314,18 +267,10 @@ body {
     width: 72px;
     height: 72px;
     border-radius: 50%;
-    border: 2px solid #c4b5a5;
-    background-color: #efe3d6;
+    background-color: #f3eadd;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    z-index: 3;
-}
-.hero .hero_text_box .instagram_highlights .highlights a .highlight_circle::after {
-    display: none;
 }
 .hero .hero_text_box .instagram_highlights .highlights a .highlight_circle img {
     width: 35px;
@@ -336,64 +281,33 @@ body {
     font-size: 1.05em;
     color: #1a1a1a;
 }
-
+.hero .hero_text_box .instagram_highlights .typewriter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
 .hero .hero_text_box .instagram_highlights p.highlight_desc {
     padding: 14px 10px 0;
     text-align: center;
     font-family: RomateHood;
     font-size: 13pt;
-    color: #7b6853;
+    color: #57432a;
 }
 
-/* Point arrow between contacts and highlights */
-.hero .hero_text_box .point_arrow {
-    width: 80px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-    rotate: -90deg;
-    transform: scaleX(-1);
-}
-.hero .hero_text_box .instagram_highlights .typewriter {
-    margin: 0 auto;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.hero .hero_text_box .instagram_highlights .typewriter .typewriter_animation {
-    overflow: hidden;
-    border-right: 0.1em solid black;
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: 1px;
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-    transition: all 0.6s ease-out;
-}
-
-/* The typing effect */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: black; }
-}
-
-/* ========================================
-   TABLET (768px+)
-   ======================================== */
+/* ============================================================
+   TABLET  (768px+)  ── i dalje složeno vertikalno, ali šire;
+   benefiti idu u red, sadržaj centriran
+   ============================================================ */
 @media (min-width: 768px) {
     .page_wrapper {
         max-width: 750px;
     }
-
-    .hero {
-        max-height: 150vh;
-    }
     .hero .profile_wrapper {
         max-width: 300px;
+    }
+    .hero .hero_text_box {
+        max-width: 560px;
     }
     .hero .hero_text_box p.hero_txt {
         font-size: 30pt;
@@ -404,6 +318,8 @@ body {
     .hero .hero_text_box .hero_tagline {
         font-size: 11pt;
     }
+
+    /* benefiti u red */
     .hero_benefits {
         flex-direction: row;
         justify-content: center;
@@ -411,117 +327,71 @@ body {
     }
     .hero_benefit {
         flex-direction: column;
-        text-align: center;
         align-items: center;
+        text-align: center;
         gap: 8px;
         flex: 1;
     }
-    .hero_benefit div:not(.benefit_icon) {
-        text-align: center;
-    }
+
+    /* kontakt centriran na tabletu */
     .contact_group {
         align-items: center;
         padding-left: 0;
     }
-    .hero .hero_text_box .instagram_highlights {
-        position: relative;
-        right: -50%;
-        top: 20px;
-        transform: translateX(-50%);
-    }
-    .hero .hero_text_box .instagram_highlights img.point_arrow {
-        max-width: 80px;
-        rotate: -90deg;
-        transform: scaleX(-1);
-        position: absolute;
-        top: -80px;
-        right: 50px;
-    }
-    .social_proof_badge {
-        top: -15px;
-        left: -50px;
-    }
-    .social_proof_badge .badge_number {
-        font-size: 32pt;
+    /* na tabletu strelica bi smetala u centriranom layoutu -> sakrij */
+    .arrow-to-highlight {
+        display: none;
     }
 }
-.arrow-to-highlight{
-    position: absolute;
-    right: -500px;
-    bottom: 110px;
-}
-/* ========================================
-   DESKTOP (1200px+)
-   ======================================== */
-@media (min-width: 1200px) {
 
+/* ============================================================
+   LAPTOP / DESKTOP  (1200px+)  ── profil levo, tekst desno
+   ============================================================ */
+@media (min-width: 1200px) {
     .page_wrapper {
         max-width: 1100px;
     }
 
-    .contact_group{
-        position: relative
-    }
-
-    .arrow-to-highlight{
-        rotate: 180deg;
-        transform: scaleX(-1);
-        position: absolute;
-        right: 0px;
-        bottom: -30px;
-    }
-
-    .arrow-to-highlight{
-        width: 100px;
-        height: 100px;
-
-
-    }
     .hero {
-        flex-wrap: nowrap;
+        flex-direction: row;
         align-items: flex-start;
+        justify-content: center;
         gap: 40px;
         padding: 20px 0;
-        max-height: none;
-    }
-    .hero .profile_wrapper {
-        max-width: 350px;
-        min-width: 320px;
-        margin: 20px 0;
-        flex-shrink: 0;
     }
 
+    /* PROFIL — levo, fiksne širine, ne skuplja se */
+    .hero .profile_wrapper {
+        flex-shrink: 0;
+        max-width: 400px;
+        min-width: 320px;
+        margin: 20px 0;
+    }
     .hero .profile_wrapper::after {
         top: 50px;
         left: -50px;
     }
 
+    /* TEKST — desno, popunjava ostatak */
     .hero .hero_text_box {
-        max-width: 600px;
         flex: 1;
+        max-width: 600px;
         align-items: center;
     }
-
     .hero .hero_text_box p.hero_txt {
-        letter-spacing: 5px;
         font-size: 38pt;
-        text-align: center;
-        align-items: center;
+        letter-spacing: 5px;
     }
-
     .hero .hero_text_box .hero_hook {
         font-size: 24pt;
-        text-align: center;
         padding: 10px 28px;
     }
     .hero .hero_text_box .hero_tagline {
         font-size: 11pt;
-        text-align: center;
         letter-spacing: 4px;
     }
     .hero .hero_text_box p.description_txt {
         font-size: 14pt;
-        text-align: center;
         max-width: 480px;
     }
 
@@ -529,17 +399,6 @@ body {
         flex-direction: row;
         gap: 24px;
         justify-content: center;
-    }
-    .hero_benefit {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        gap: 8px;
-        flex: 1;
-
-    }
-    .hero_benefit div:not(.benefit_icon) {
-        text-align: center;
     }
 
     .hero_cta_box {
@@ -550,27 +409,22 @@ body {
         padding: 14px 34px;
     }
 
+    /* kontakt nazad u kolonu, levo poravnat */
     .contact_group {
-        flex-direction: column;
-        align-items: start;
-        gap: 2px;
+        align-items: flex-start;
         padding-left: 0;
     }
+    .hero .hero_text_box .contact_me p {
+        font-size: 15pt;
+    }
 
-
+    /* highlights veći */
     .hero .hero_text_box .instagram_highlights {
-        position: relative;
-        left: 0%;
-        top: 30px;
-        transform: translateX(0%);
+        margin-top: 30px;
     }
     .hero .hero_text_box .instagram_highlights .highlights a .highlight_circle {
         width: 80px;
         height: 80px;
-    }
-    .hero .hero_text_box .instagram_highlights .highlights a .highlight_circle svg {
-        width: 34px;
-        height: 34px;
     }
     .hero .hero_text_box .instagram_highlights .highlights a {
         font-size: 1.15em;
@@ -578,22 +432,4 @@ body {
     .hero .hero_text_box .instagram_highlights p.highlight_desc {
         font-size: 14pt;
     }
-    .hero .hero_text_box .instagram_highlights .typewriter {
-        margin-top: 10px;
-        max-width: 500px;
-    }
-    .hero .hero_text_box .contact_me p {
-        margin: 5px;
-        font-size: 15pt;
-        text-decoration: none;
-        color: inherit;
-        font-family: CormorantGaramond;
-    }
-    .hero .profile_wrapper {
-        position: relative;
-        max-width: 450px;
-        display: block;
-        margin: 50px auto;
-    }
 }
-
