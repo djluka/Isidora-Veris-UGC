@@ -3,6 +3,68 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ===== HELPERS ===== */
     const isDesktop = () => window.innerWidth >= 1200;
 
+    const viewportH = () =>
+        window.innerHeight || document.documentElement.clientHeight;
+
+    /* Pokrece callback tek kad se expand animacija (max-height) zavrsi.
+       Fallback timeout ako transitionend ne opali. */
+    function afterExpand(el, callback) {
+        let done = false;
+        const run = () => {
+            if (done) return;
+            done = true;
+            el.removeEventListener('transitionend', onEnd);
+            callback();
+        };
+        const onEnd = (e) => {
+            if (e.target !== el || e.propertyName !== 'max-height') return;
+            run();
+        };
+        el.addEventListener('transitionend', onEnd);
+        setTimeout(run, 600); // animacija traje 0.5s
+    }
+
+    /* MOBILE: dovedi celu karticu (ikonica -> forma) u kadar.
+       Ako staje -> centriraj; ako je previsoka -> poravnaj dno da forma bude vidljiva. */
+    function scrollMobileCard(card) {
+        if (!card) return;
+        const vh = viewportH();
+        const rect = card.getBoundingClientRect();
+        const top = rect.top + window.pageYOffset;
+        const bottom = rect.bottom + window.pageYOffset;
+        const margin = 16;
+
+        let target;
+        if (rect.height <= vh - margin * 2) {
+            target = top - (vh - rect.height) / 2;   // cela kartica u centru
+        } else {
+            target = bottom - vh + margin;           // dno (forma) uz donju ivicu
+        }
+        window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+    }
+
+    /* DESKTOP: dovedi ceo red kartica GORE + panel DOLE u kadar.
+       Ako grupa staje -> centriraj je; ako je previsoka -> poravnaj dno panela. */
+    function scrollDesktopPanel(panel) {
+        if (!panel) return;
+        const box = document.querySelector('.services-box');
+        const vh = viewportH();
+        const margin = 20;
+
+        const boxTop = (box ? box.getBoundingClientRect().top : panel.getBoundingClientRect().top)
+            + window.pageYOffset;
+        const panelBottom = panel.getBoundingClientRect().bottom + window.pageYOffset;
+        const groupHeight = panelBottom - boxTop;
+
+        let target;
+        if (groupHeight <= vh - margin * 2) {
+            target = boxTop - (vh - groupHeight) / 2; // kartice + panel centrirani kao grupa
+        } else {
+            target = panelBottom - vh + margin;       // panel uz donju ivicu, kartice iznad
+        }
+        window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+    }
+
     const serviceData = {
         'konsultacije': {
             title: 'Zakaži konsultaciju',
@@ -20,8 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Pokreni vođenje profila',
             desc: 'Ostavi email i šaljem ti detaljan opis paketa, proces saradnje i kako započinjemo.'
         }
-
-
     };
 
     /* ===== DESKTOP PANEL ELEMENTS ===== */
@@ -62,9 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isOpen) {
             expandEl.classList.add('open');
             btn.querySelector('.cta-arrow').textContent = '↑';
-            setTimeout(() => {
-                expandEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 150);
+            const card = btn.closest('.service-card');
+            afterExpand(expandEl, () => scrollMobileCard(card));
         }
     }
 
@@ -81,6 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        const wasOpen = desktopPanel.classList.contains('open');
+
         // Populate panel
         desktopTitle.textContent = data.title;
         desktopDesc.textContent = data.desc;
@@ -96,9 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
         resetAllArrows();
         btn.querySelector('.cta-arrow').textContent = '↓';
 
-        setTimeout(() => {
-            desktopPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 150);
+        if (wasOpen) {
+            // Panel je vec bio otvoren (prebacivanje izmedju kartica) ->
+            // max-height se ne menja, transitionend ne opali, skroluj odmah.
+            requestAnimationFrame(() => scrollDesktopPanel(desktopPanel));
+        } else {
+            afterExpand(desktopPanel, () => scrollDesktopPanel(desktopPanel));
+        }
     }
 
     /* ===== CLOSE BUTTON ===== */

@@ -6,61 +6,62 @@
     padding: 0;
     box-sizing: border-box;
 }
-html {
-    scroll-behavior: smooth;
-}
+/* scroll-behavior handled by scroll_center.js for centered positioning */
 body {
     background-color: #faf9f8;
-    overflow-x: hidden; /* sprečava horizontalni scroll od dekorativne strelice */
+    overflow-x: hidden;
 }
 .blur {
     filter: blur(5px);
 }
 
 /* ============================================================
-   PAGE WRAPPER  (mobile-first)
+   PAGE WRAPPER  — fluid, no hard cap on mobile
    ============================================================ */
 .page_wrapper {
-    max-width: 375px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 12px;
+    padding: 0 clamp(14px, 5vw, 28px);
 }
 
 /* ============================================================
-   HERO  ── MOBILE FIRST (sve poređano vertikalno, centrirano)
+   HERO  — mobile first, column layout
    ============================================================ */
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    animation: hero_apper 0.5s ease;
+    padding-bottom: 24px;
+    animation: hero_appear 0.55s ease;
 }
 
-@keyframes hero_apper {
-    from { opacity: 0; transform: translateY(100px) scale(0.8); }
-    to   { opacity: 1; transform: translateY(0)     scale(1);   }
+@keyframes hero_appear {
+    from { opacity: 0; transform: translateY(48px) scale(0.94); }
+    to   { opacity: 1; transform: translateY(0)    scale(1);    }
 }
 
 /* ---------- PROFILE VIDEO ---------- */
 .hero .profile_wrapper {
     position: relative;
-    width: 100%;
-    max-width: 250px;
-    margin: 50px auto;
+    width: min(280px, 74vw);
+    margin: 40px auto 32px;
+    flex-shrink: 0;
 }
+
 .hero video.profile {
     width: 100%;
     height: auto;
     display: block;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
+
 .hero .profile_wrapper::after {
     content: "";
     position: absolute;
-    top: 30px;
-    left: -30px;
+    top: clamp(20px, 5vw, 30px);
+    left: clamp(-22px, -6vw, -30px);
     width: 100%;
     height: 100%;
     background-color: #f3eadd;
@@ -73,76 +74,82 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 330px;
-    margin: 0 auto;
 }
+
 .hero .hero_text_box p.hero_txt {
     text-align: center;
     letter-spacing: 2px;
-    font-family: TheSeasonsBold;
-    font-size: 28pt;
+    font-family: TheSeasonsBold, serif;
+    font-size: clamp(22pt, 7.5vw, 28pt);
 }
+
 .hero .hero_text_box .hero_hook {
-    font-family: TheSeasonsBold;
-    font-size: 20pt;
+    font-family: TheSeasonsBold, serif;
+    font-size: clamp(15pt, 5.5vw, 20pt);
     text-align: center;
     color: #1a1a1a;
     margin-top: 8px;
     line-height: 1.4;
     background-color: #d4bdad;
-    padding: 8px 22px;
+    padding: 8px clamp(14px, 5vw, 22px);
     border-radius: 4px;
 }
+
 .hero .hero_text_box .hero_tagline {
-    font-family: CormorantGaramond;
-    font-size: 10pt;
-    letter-spacing: 3px;
+    font-family: CormorantGaramond, serif;
+    font-size: clamp(8.5pt, 2.5vw, 10pt);
+    letter-spacing: clamp(1px, 0.8vw, 3px);
     color: #7b6853;
     margin-top: 14px;
     text-align: center;
 }
+
 .hero .hero_text_box p.description_txt {
     text-align: center;
     margin: 16px 0 24px;
-    font-size: 13pt;
+    font-size: clamp(12pt, 3.5vw, 13pt);
     letter-spacing: 0.5px;
-    font-family: CormorantGaramond;
-    line-height: 1.5;
+    font-family: CormorantGaramond, serif;
+    line-height: 1.55;
 }
 
 /* ---------- BENEFITS ---------- */
 .hero_benefits {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 4px;
     width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     background-color: #f3eadd;
-    padding: 10px;
+    padding: 8px;
     border-radius: 10px;
 }
+
 .hero_benefit {
     display: flex;
     align-items: center;
     gap: 12px;
     padding: 10px;
 }
+
 .hero_benefit img {
-    width: 35px;
-    height: 35px;
+    width: clamp(28px, 8vw, 35px);
+    height: clamp(28px, 8vw, 35px);
     flex-shrink: 0;
 }
+
 .hero_benefit .benefit_title {
-    font-family: TheSeasonsBold;
-    font-size: 13pt;
+    font-family: TheSeasonsBold, serif;
+    font-size: clamp(11pt, 3.2vw, 13pt);
     color: #1a1a1a;
     line-height: 1.3;
 }
+
 .hero_benefit .benefit_desc {
-    font-family: CormorantGaramond;
-    font-size: 11pt;
+    font-family: CormorantGaramond, serif;
+    font-size: clamp(10pt, 2.8vw, 11pt);
     color: #7b6853;
-    margin-top: 1px;
+    margin-top: 2px;
     line-height: 1.3;
 }
 
@@ -151,180 +158,249 @@ body {
     width: 100%;
     background-color: #f3eadd;
     border-radius: 16px;
-    padding: 22px 20px;
+    padding: clamp(18px, 5vw, 24px) clamp(16px, 5vw, 28px);
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
+
 .hero_cta_box .cta_headline {
-    font-family: TheSeasonsBold;
-    font-size: 15pt;
+    font-family: TheSeasonsBold, serif;
+    font-size: clamp(13pt, 4vw, 15pt);
     color: #000;
     margin-bottom: 4px;
 }
+
 .hero_cta_box .cta_sub {
-    font-family: CormorantGaramond;
-    font-size: 11pt;
+    font-family: CormorantGaramond, serif;
+    font-size: clamp(10pt, 3vw, 11pt);
     color: #000;
     margin-bottom: 16px;
 }
+
 .hero_cta_box .cta_button {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-family: TheSeasonsBold;
-    font-size: 10.5pt;
+    font-family: TheSeasonsBold, serif;
+    font-size: clamp(9pt, 2.8vw, 10.5pt);
     letter-spacing: 2px;
     color: #fff;
     background-color: #d4bdad;
-    padding: 13px 30px;
+    padding: 12px clamp(20px, 5vw, 30px);
     border-radius: 4px;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 .hero_cta_box .cta_button:hover {
     background-color: #3e2f1b;
     transform: translateY(-1px);
 }
+
 .hero_cta_box .cta_button:active {
     transform: translateY(0);
 }
 
-/* ---------- CONTACT GROUP ---------- */
+/* ---------- CONTACT GROUP — full-width strip outside page_wrapper ---------- */
 .contact_group {
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #e8ddd4;
+    border-bottom: 1px solid #e8ddd4;
+    border-radius: 0;
+    box-shadow: 0 -2px 14px rgba(87, 67, 42, 0.06), 0 2px 14px rgba(87, 67, 42, 0.06);
+    overflow: hidden;
+}
+
+.contact_group .contact_me {
+    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    width: 100%;
-    margin-bottom: 20px;
-    padding-left: 4px;
-}
-.hero .hero_text_box .contact_me {
-    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     text-decoration: none;
     color: #57432a;
-    font-family: CormorantGaramond;
-    padding: 4px 0;
-    transition: color 0.2s ease;
+    font-family: CormorantGaramond, serif;
+    padding: 22px 10px;
+    position: relative;
+    transition: background 0.25s ease, color 0.25s ease;
 }
-.hero .hero_text_box .contact_me img {
-    width: 35px;
-    height: 35px;
+
+/* vertical separator */
+.contact_group .contact_me + .contact_me::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: #e8ddd4;
 }
-.hero .hero_text_box .contact_me p {
+
+.contact_group .contact_me img {
+    width: 36px;
+    height: 36px;
+    opacity: 0.75;
+    flex-shrink: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.contact_group .contact_me p {
     margin: 0;
     font-size: 12pt;
     color: inherit;
-    font-family: CormorantGaramond;
-}
-.hero .hero_text_box a.contact_me:hover,
-.hero .hero_text_box a.contact_me:hover p {
-    color: #7b6853;
+    font-family: CormorantGaramond, serif;
+    letter-spacing: 0.02em;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    padding: 0 4px;
 }
 
-/* ---------- ARROW (dekorativna, pokazuje ka highlights) ---------- */
+.contact_group a.contact_me:hover {
+    background: #faf6f1;
+    color: #3e2f1b;
+}
+
+.contact_group a.contact_me:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ---------- ARROW (decorative) ---------- */
 .arrow-to-highlight {
-    position: absolute;
-    top: 60px;
-    left: 200px;
-    width: 80px;
-    height: 80px;
-    rotate: 180deg;
-    transform: scaleX(-1);
-    pointer-events: none;
+    display: none;
 }
 
 /* ---------- INSTAGRAM HIGHLIGHTS ---------- */
-.hero .hero_text_box .instagram_highlights {
+.hero .instagram_highlights {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 24px auto 0;
+    gap: 14px;
+    width: 100%;
+    margin: 16px auto 0;
+    background: #fff;
+    border: 1px solid #e8ddd4;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(87, 67, 42, 0.07);
+    padding: 18px clamp(10px, 4vw, 20px) 14px;
 }
-.hero .hero_text_box .instagram_highlights .highlights {
+
+.hero .instagram_highlights .highlights {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100%;
 }
-.hero .hero_text_box .instagram_highlights .highlights a {
+
+.hero .instagram_highlights .highlights a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     text-decoration: none;
     color: #1a1a1a;
-    font-family: CormorantGaramond;
-    transition: transform 0.2s ease;
+    font-family: CormorantGaramond, serif;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.hero .hero_text_box .instagram_highlights .highlights a:hover {
-    transform: scale(1.08);
+
+.hero .instagram_highlights .highlights a:hover {
+    transform: translateY(-2px) scale(1.01);
 }
-.hero .hero_text_box .instagram_highlights .highlights a .highlight_circle {
-    width: 72px;
-    height: 72px;
+
+.hero .instagram_highlights .highlights a .highlight_circle {
+    width: clamp(54px, 15vw, 68px);
+    height: clamp(54px, 15vw, 68px);
     border-radius: 50%;
     background-color: #f3eadd;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 0 2.5px #e8ddd4;
+    transition: box-shadow 0.35s ease, background-color 0.35s ease;
 }
-.hero .hero_text_box .instagram_highlights .highlights a .highlight_circle img {
-    width: 35px;
-    height: 35px;
+
+.hero .instagram_highlights .highlights a:hover .highlight_circle {
+    box-shadow: 0 0 0 3px #c4a57a, 0 6px 18px rgba(87, 67, 42, 0.14);
+    background-color: #ede3d5;
 }
-.hero .hero_text_box .instagram_highlights .highlights a p {
-    font-family: CormorantGaramond;
-    font-size: 1.05em;
-    color: #1a1a1a;
+
+.hero .instagram_highlights .highlights a .highlight_circle img {
+    width: clamp(24px, 6.5vw, 32px);
+    height: clamp(24px, 6.5vw, 32px);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.hero .hero_text_box .instagram_highlights .typewriter {
+
+.hero .instagram_highlights .highlights a:hover .highlight_circle img {
+    transform: scale(1.12);
+}
+
+.hero .instagram_highlights .highlights a p {
+    font-family: CormorantGaramond, serif;
+    font-size: clamp(0.8rem, 2.4vw, 0.95rem);
+    color: #57432a;
+    letter-spacing: 0.03em;
+}
+
+.hero .instagram_highlights .typewriter {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    border-top: 1px solid #ede8e2;
+    width: 100%;
+    padding-top: 12px;
 }
-.hero .hero_text_box .instagram_highlights p.highlight_desc {
-    padding: 14px 10px 0;
+
+.hero .instagram_highlights p.highlight_desc {
     text-align: center;
-    font-family: RomateHood;
-    font-size: 13pt;
-    color: #57432a;
+    font-family: CormorantGaramond, serif;
+    font-size: clamp(9pt, 2.6vw, 10.5pt);
+    color: #9b8b78;
+    letter-spacing: 0.04em;
 }
 
 /* ============================================================
-   TABLET  (768px+)  ── i dalje složeno vertikalno, ali šire;
-   benefiti idu u red, sadržaj centriran
+   TABLET  (768px+)
    ============================================================ */
 @media (min-width: 768px) {
     .page_wrapper {
         max-width: 750px;
     }
+
     .hero .profile_wrapper {
-        max-width: 300px;
+        width: 300px;
     }
+
     .hero .hero_text_box {
         max-width: 560px;
     }
+
     .hero .hero_text_box p.hero_txt {
         font-size: 30pt;
     }
+
     .hero .hero_text_box .hero_hook {
         font-size: 22pt;
     }
+
     .hero .hero_text_box .hero_tagline {
         font-size: 11pt;
     }
 
-    /* benefiti u red */
     .hero_benefits {
         flex-direction: row;
         justify-content: center;
         gap: 20px;
     }
+
     .hero_benefit {
         flex-direction: column;
         align-items: center;
@@ -333,19 +409,42 @@ body {
         flex: 1;
     }
 
-    /* kontakt centriran na tabletu */
+    /* contained card on tablet */
     .contact_group {
-        align-items: center;
-        padding-left: 0;
+        max-width: 700px;
+        margin: 28px auto 0;
+        border: 1px solid #e8ddd4;
+        border-top: 1px solid #e8ddd4;
+        border-bottom: 1px solid #e8ddd4;
+        border-radius: 14px;
+        box-shadow: 0 2px 16px rgba(87, 67, 42, 0.07);
     }
-    /* na tabletu strelica bi smetala u centriranom layoutu -> sakrij */
-    .arrow-to-highlight {
-        display: none;
+
+    .contact_group .contact_me p {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        font-size: 11pt;
+    }
+
+    .hero .instagram_highlights .highlights {
+        justify-content: center;
+        gap: 28px;
+    }
+
+    .hero .instagram_highlights .highlights a .highlight_circle {
+        width: 72px;
+        height: 72px;
+    }
+
+    .hero .instagram_highlights .highlights a .highlight_circle img {
+        width: 34px;
+        height: 34px;
     }
 }
 
 /* ============================================================
-   LAPTOP / DESKTOP  (1200px+)  ── profil levo, tekst desno
+   DESKTOP  (1200px+)  — profile left, text right
    ============================================================ */
 @media (min-width: 1200px) {
     .page_wrapper {
@@ -354,42 +453,44 @@ body {
 
     .hero {
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: flex-start;
         justify-content: center;
         gap: 40px;
-        padding: 20px 0;
+        padding: 20px 0 0;
     }
 
-    /* PROFIL — levo, fiksne širine, ne skuplja se */
     .hero .profile_wrapper {
-        flex-shrink: 0;
-        max-width: 400px;
-        min-width: 320px;
-        margin: 20px 0;
+        width: 420px;
+        margin: 80px 50px;
     }
+
     .hero .profile_wrapper::after {
         top: 50px;
         left: -50px;
     }
 
-    /* TEKST — desno, popunjava ostatak */
     .hero .hero_text_box {
         flex: 1;
         max-width: 600px;
         align-items: center;
     }
+
     .hero .hero_text_box p.hero_txt {
         font-size: 38pt;
         letter-spacing: 5px;
     }
+
     .hero .hero_text_box .hero_hook {
         font-size: 24pt;
         padding: 10px 28px;
     }
+
     .hero .hero_text_box .hero_tagline {
         font-size: 11pt;
         letter-spacing: 4px;
     }
+
     .hero .hero_text_box p.description_txt {
         font-size: 14pt;
         max-width: 480px;
@@ -404,32 +505,61 @@ body {
     .hero_cta_box {
         padding: 24px 30px;
     }
+
     .hero_cta_box .cta_button {
         font-size: 11pt;
         padding: 14px 34px;
     }
 
-    /* kontakt nazad u kolonu, levo poravnat */
+    /* contact_group on desktop — centered below hero */
     .contact_group {
-        align-items: flex-start;
-        padding-left: 0;
-    }
-    .hero .hero_text_box .contact_me p {
-        font-size: 15pt;
+        max-width: 1000px;
+        margin: 20px auto 0;
+        border-radius: 16px;
     }
 
-    /* highlights veći */
-    .hero .hero_text_box .instagram_highlights {
-        margin-top: 30px;
+    .contact_group .contact_me {
+        padding: 20px 20px;
+        gap: 8px;
     }
-    .hero .hero_text_box .instagram_highlights .highlights a .highlight_circle {
-        width: 80px;
-        height: 80px;
+
+    .contact_group .contact_me img {
+        width: 28px;
+        height: 28px;
     }
-    .hero .hero_text_box .instagram_highlights .highlights a {
-        font-size: 1.15em;
+
+    .contact_group .contact_me p {
+        font-size: 12pt;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
     }
-    .hero .hero_text_box .instagram_highlights p.highlight_desc {
-        font-size: 14pt;
+
+    .hero .instagram_highlights {
+        padding: 22px 20px 18px;
+        gap: 16px;
+    }
+
+    .hero .instagram_highlights .highlights {
+        gap: 32px;
+        justify-content: center;
+    }
+
+    .hero .instagram_highlights .highlights a .highlight_circle {
+        width: 78px;
+        height: 78px;
+    }
+
+    .hero .instagram_highlights .highlights a .highlight_circle img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hero .instagram_highlights .highlights a p {
+        font-size: 1.05rem;
+    }
+
+    .hero .instagram_highlights p.highlight_desc {
+        font-size: 11pt;
     }
 }
