@@ -98,7 +98,7 @@ p.comment_txt {
   100% {
     transform: translateX(0%);
     opacity: 1;
-    display: flex; 
+    display: flex;
   }
 }
 @keyframes comment_off_stage {
