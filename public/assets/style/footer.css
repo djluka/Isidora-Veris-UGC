@@ -2,6 +2,7 @@ footer {
     background: #f4eade;
     /*padding-top: 50px;*/
     /*padding-bottom: 50px;*/
+    padding: 0;
 }
 
 footer img {
@@ -10,10 +11,12 @@ footer img {
 
 footer .footer_desktop {
     display: none;
+    padding: 0;
 }
 
 footer .footer_mobile {
     display: block;
+    padding: 0;
 }
 
 .footer_mobile {

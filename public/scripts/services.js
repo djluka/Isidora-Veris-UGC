@@ -70,15 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Zakaži konsultaciju',
             desc: 'Ostavi email i u roku od nekoliko minuta dobijaš detaljan opis paketa i sledeće korake.'
         },
-        'ugc': {
+        'izrada-reklama': {
             title: 'Započni sa video sadržajem',
             desc: 'Ostavi email i javljam ti se sa detaljima paketa, procesom snimanja i sledećim koracima.'
         },
-        'kontent-strategija': {
-            title: 'Pokreni kontent strategiju',
-            desc: 'Ostavi email i šaljem ti detaljan opis paketa, način saradnje i kako zakazujemo prvi korak.'
-        },
-        'vodjenje-profila': {
+        'creative-partner': {
             title: 'Pokreni vođenje profila',
             desc: 'Ostavi email i šaljem ti detaljan opis paketa, proces saradnje i kako započinjemo.'
         }

@@ -254,9 +254,9 @@
     <img src="assets/arrow-directions.webp" loading="lazy" alt="Loading..."/>
 </div>
 <!--Slider-->
-<div class="page_wrapper">
+<div class="page_wrapper" id="content">
 <div class="slider_section" >
-    <div class="ugc" id="content">
+    <div class="ugc" >
         <div class="header_txt">
             <p>UGC |</p>
             <p>User Generated Content</p>
@@ -639,7 +639,8 @@
     </div>
     <div class="Product">
         <div class="header_txt">
-            <p>PRODUCT</p>
+            <p>PRODUCT |</p>
+            <p>studio</p>
         </div>
         <div class="slider_wrap">
             <button class="pre_btn">
@@ -830,16 +831,16 @@
     </div>
 </div>
 <!--SERVICES-->
-<div class="services" id="services">
-    <h1 class="title">usluge</h1>
-    <p class="services_subtitle">
+    <div class="services" id="services">
+        <h1 class="title">usluge</h1>
+        <p class="services_subtitle">
             Sve što ti treba za autentičan sadržaj koji privlači pažnju i donosi rezultate.
         </p>
-    <div class="services-box">
+        <div class="services-box">
             <!-- KONSULTACIJE -->
             <div class="service-card" data-service="konsultacije">
                 <div class="service-card-icon">
-                    <img src="assets/user.webp">
+                    <img src="assets/user.webp" alt="" loading="lazy">
                 </div>
                 <h2 class="service-card-title">Konsultacije</h2>
                 <p class="service-card-desc">
@@ -852,7 +853,7 @@
                             <span class="package-bullet"></span>
                             <strong>Jednokratna konsultacija</strong>
                         </div>
-                        <p class="package-detail">Analiza profila + 6-mesečni plan sadržaja</p>
+                        <p class="package-detail">Analiza profila + šestomesečni plan sadržaja</p>
                         <p class="package-price">15.000 RSD</p>
                     </div>
                     <div class="package-item">
@@ -885,22 +886,22 @@
                                     placeholder="vaš@email.com"
                                     required
                             />
-                            <div class="cf-turnstile" data-sitekey="0x4AAAAAADAPXg_XGdPminYh" data-size="invisible"></div>
-                            <button type="submit" class="expand-submit" >Pošalji upit</button>
+                            <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-appearance="interaction-only" data-execution="execute"></div>
+                            <button type="submit" class="expand-submit">Pošalji upit</button>
                         </form>
                         <p class="expand-form-message"></p>
                     </div>
                 </div>
 
-                <p class="service-card-footnote"  >Zoom sastanak • 60 min</p>
+                <p class="service-card-footnote">Zoom sastanak • 60 min</p>
             </div>
 
-            <!-- VIDEO SADRŽAJ -->
-            <div class="service-card" data-service="ugc">
+            <!-- IZRADA REKLAMA -->
+            <div class="service-card" data-service="izrada-reklama">
                 <div class="service-card-icon">
-                    <img src="assets/play.webp">
+                    <img src="assets/play.webp" alt="" loading="lazy">
                 </div>
-                <h2 class="service-card-title">VIDEO sadržaj</h2>
+                <h2 class="service-card-title">Izrada Reklama</h2>
                 <p class="service-card-desc">
                     UGC i branding video koji izgleda autentično, a prodaje tvoje proizvode.
                 </p>
@@ -924,27 +925,27 @@
                     </div>
                 </div>
 
-                <button type="button" class="service-card-cta" data-target="expand-ugc">
+                <button type="button" class="service-card-cta" data-target="expand-izrada-reklama">
                     Saznaj više <span class="cta-arrow">→</span>
                 </button>
 
-                <div class="card-expand" id="expand-ugc">
+                <div class="card-expand" id="expand-izrada-reklama">
                     <div class="card-expand-inner">
                         <h3 class="expand-title">Započni sa video sadržajem</h3>
                         <p class="expand-desc">
                             Ostavi email i javljam ti se sa detaljima paketa, procesom snimanja i sledećim koracima.
                         </p>
-                        <form class="expand-form" data-service="ugc" autocomplete="on">
-                            <label class="visually_hidden" for="email-ugc">Email</label>
+                        <form class="expand-form" data-service="izrada-reklama" autocomplete="on">
+                            <label class="visually_hidden" for="email-izrada-reklama">Email</label>
                             <input
-                                    id="email-ugc"
+                                    id="email-izrada-reklama"
                                     type="email"
                                     class="expand-input"
                                     name="email"
                                     placeholder="vaš@email.com"
                                     required
                             />
-                            <div class="cf-turnstile" data-sitekey="0x4AAAAAADAPXg_XGdPminYh" data-size="invisible"></div>
+                            <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-appearance="interaction-only" data-execution="execute"></div>
                             <button type="submit" class="expand-submit">Pošalji upit</button>
                         </form>
                         <p class="expand-form-message"></p>
@@ -954,148 +955,91 @@
                 <p class="service-card-footnote">Snimanje • Montaža • Hook • 2 revizije uključene</p>
             </div>
 
-            <!-- KONTENT STRATEGIJA -->
-            <div class="service-card" data-service="kontent-strategija">
-                <div class="service-card-icon">
-                    <img src="assets/planning.webp" alt="Loading..." loading="lazy"/>
+            <!-- CREATIVE PARTNER — PREMIUM -->
+            <div class="service-card service-card--premium" data-service="creative-partner">
+                <span class="premium-badge">limited</span>
+                <div class="service-card-icon service-card-icon--premium">
+                    <img src="assets/premium_star.webp" alt="Creative Partner" loading="lazy"/>
                 </div>
-                <h2 class="service-card-title">Kontent strategija</h2>
+                <h2 class="service-card-title">Creative Partner</h2>
                 <p class="service-card-desc">
-                    Plan objava koji gradi poverenje, održava doslednost i donosi rezultate.
+                    Kompletno upravljanje tvojim prisustvom — od strategije i kreiranja sadržaja do objava i mesečnog izveštaja.
                 </p>
 
                 <div class="service-card-packages">
                     <div class="package-item">
                         <div class="package-header">
                             <span class="package-bullet"></span>
-                            <strong>9 objava</strong>
+                            <strong>Starter</strong>
                         </div>
-                        <p class="package-detail">mesečni plan sadržaja</p>
-                        <p class="package-price">90.000 RSD</p>
+                        <p class="package-detail">12 objava mesečno + strategija + izveštaj</p>
+                        <p class="package-price">150.000 RSD</p>
                     </div>
                     <div class="package-item">
                         <div class="package-header">
                             <span class="package-bullet"></span>
-                            <strong>12 objava</strong>
+                            <strong>Full Management</strong>
                         </div>
-                        <p class="package-detail">mesečni plan sadržaja</p>
-                        <p class="package-price">105.000 RSD</p>
+                        <p class="package-detail">20 objava + reels + stories + community</p>
+                        <p class="package-price">220.000 RSD</p>
                     </div>
                 </div>
 
-                <button type="button" class="service-card-cta" data-target="expand-kontent-strategija">
+                <button type="button" class="service-card-cta" data-target="expand-creative-partner">
                     Saznaj više <span class="cta-arrow">→</span>
                 </button>
 
-                <div class="card-expand" id="expand-kontent-strategija">
+                <div class="card-expand" id="expand-creative-partner">
                     <div class="card-expand-inner">
-                        <h3 class="expand-title">Pokreni kontent strategiju</h3>
+                        <h3 class="expand-title">Pokreni vođenje profila</h3>
                         <p class="expand-desc">
-                            Ostavi email i šaljem ti detaljan opis paketa, način saradnje i kako zakazujemo prvi korak.
+                            Ostavi email i šaljem ti detaljan opis paketa, proces saradnje i kako započinjemo.
                         </p>
-                        <form class="expand-form" data-service="kontent-strategija" autocomplete="on">
-                            <label class="visually_hidden" for="email-kontent">Email</label>
+                        <form class="expand-form" data-service="creative-partner" autocomplete="on">
+                            <label class="visually_hidden" for="email-creative-partner">Email</label>
                             <input
-                                    id="email-kontent"
+                                    id="email-creative-partner"
                                     type="email"
                                     class="expand-input"
                                     name="email"
                                     placeholder="vaš@email.com"
                                     required
                             />
-                            <div class="cf-turnstile" data-sitekey="0x4AAAAAADAPXg_XGdPminYh" data-size="invisible"></div>
+                            <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-appearance="interaction-only" data-execution="execute"></div>
                             <button type="submit" class="expand-submit">Pošalji upit</button>
                         </form>
                         <p class="expand-form-message"></p>
                     </div>
                 </div>
 
-                <p class="service-card-footnote">Istraživanje • Plan • Ideje • Smernice</p>
-            </div>
-            <!-- VOĐENJE PROFILA — PREMIUM -->
-            <div class="service-card service-card--premium" data-service="vodjenje-profila">
-            <span class="premium-badge">Premium</span>
-            <div class="service-card-icon service-card-icon--premium">
-                <img src="assets/premium_star.webp" alt="Vođenje profila" loading="lazy"/>
-            </div>
-            <h2 class="service-card-title">Vođenje profila</h2>
-            <p class="service-card-desc">
-                Kompletno upravljanje tvojim prisustvom — od strategije i kreiranja sadržaja do objava i mesečnog izveštaja.
-            </p>
-
-            <div class="service-card-packages">
-                <div class="package-item">
-                    <div class="package-header">
-                        <span class="package-bullet"></span>
-                        <strong>Starter</strong>
-                    </div>
-                    <p class="package-detail">12 objava mesečno + strategija + izveštaj</p>
-                    <p class="package-price">150.000 RSD</p>
-                </div>
-                <div class="package-item">
-                    <div class="package-header">
-                        <span class="package-bullet"></span>
-                        <strong>Full Management</strong>
-                    </div>
-                    <p class="package-detail">20 objava + reels + stories + community</p>
-                    <p class="package-price">220.000 RSD</p>
-                </div>
+                <p class="service-card-footnote">Sve uključeno • Mesečna saradnja</p>
             </div>
 
-            <button type="button" class="service-card-cta" data-target="expand-vodjenje-profila">
-                Saznaj više <span class="cta-arrow">→</span>
-            </button>
-
-            <div class="card-expand" id="expand-vodjenje-profila">
-                <div class="card-expand-inner">
-                    <h3 class="expand-title">Pokreni vođenje profila</h3>
-                    <p class="expand-desc">
-                        Ostavi email i šaljem ti detaljan opis paketa, proces saradnje i kako započinjemo.
-                    </p>
-                    <form class="expand-form" data-service="vodjenje-profila" autocomplete="on">
-                        <label class="visually_hidden" for="email-vodjenje">Email</label>
-                        <input
-                                id="email-vodjenje"
-                                type="email"
-                                class="expand-input"
-                                name="email"
-                                placeholder="vaš@email.com"
-                                required
-                        />
-                        <div class="cf-turnstile" data-sitekey="0x4AAAAAADAPXg_XGdPminYh" data-size="invisible"></div>
-                        <button type="submit" class="expand-submit">Pošalji upit</button>
-                    </form>
-                    <p class="expand-form-message"></p>
-                </div>
-            </div>
-
-            <p class="service-card-footnote">Sve uključeno • Mesečna saradnja</p>
         </div>
-    </div>
-    <!-- DESKTOP EXPAND PANEL (ispod kartica) -->
-    <div class="desktop-expand-panel" id="desktopExpandPanel">
-        <div class="desktop-expand-inner">
-            <button type="button" class="desktop-expand-close" id="desktopExpandClose">✕</button>
-            <h3 class="expand-title" id="desktopExpandTitle"></h3>
-            <p class="expand-desc" id="desktopExpandDesc"></p>
-            <form class="expand-form" id="desktopExpandForm" autocomplete="on">
-                <label class="visually_hidden" for="email-desktop">Email</label>
-                <input
-                        id="email-desktop"
-                        type="email"
-                        class="expand-input"
-                        name="email"
-                        placeholder="vaš@email.com"
-                        required
-                />
-                <div class="cf-turnstile" data-sitekey="0x4AAAAAADAPXg_XGdPminYh" data-size="invisible"></div>
-                <button type="submit" class="expand-submit">Pošalji upit</button>
-            </form>
-            <p class="expand-form-message" id="desktopExpandMessage"></p>
+        <!-- DESKTOP EXPAND PANEL (ispod kartica) -->
+        <div class="desktop-expand-panel" id="desktopExpandPanel">
+            <div class="desktop-expand-inner">
+                <button type="button" class="desktop-expand-close" id="desktopExpandClose">✕</button>
+                <h3 class="expand-title" id="desktopExpandTitle"></h3>
+                <p class="expand-desc" id="desktopExpandDesc"></p>
+                <form class="expand-form" id="desktopExpandForm" autocomplete="on">
+                    <label class="visually_hidden" for="email-desktop">Email</label>
+                    <input
+                            id="email-desktop"
+                            type="email"
+                            class="expand-input"
+                            name="email"
+                            placeholder="vaš@email.com"
+                            required
+                    />
+                    <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-appearance="interaction-only" data-execution="execute"></div>
+                    <button type="submit" class="expand-submit">Pošalji upit</button>
+                </form>
+                <p class="expand-form-message" id="desktopExpandMessage"></p>
+            </div>
         </div>
-    </div>
-    <!-- TRUST / SOCIAL PROOF -->
-    <div class="trust-section">
+        <!-- TRUST / SOCIAL PROOF -->
+        <div class="trust-section">
             <div class="trust-item">
                 <div class="trust-icon">
                     <img src="assets/premium_star.webp" alt="star" loading="lazy">
@@ -1125,11 +1069,11 @@
                 <span class="trust-sub">Kvalitet na svakom kadru</span>
             </div>
         </div>
-    <!-- NISI SIGURAN CTA -->
-    <div class="unsure-cta">
+        <!-- NISI SIGURAN CTA -->
+        <div class="unsure-cta">
             <div class="unsure-cta-inner">
                 <div class="unsure-icon">
-                    <img src="assets/question.webp" alt="Loading..." loading="lazy"/>
+                    <img src="assets/question.webp" alt="" loading="lazy"/>
                 </div>
                 <div class="unsure-text">
                     <p class="unsure-heading">Nisi siguran/a šta ti je trenutno najpotrebnije?</p>
@@ -1137,16 +1081,16 @@
                 </div>
                 <a href="mailto:info@isidoraverisugc.com" class="unsure-btn">
                     Piši mi
-                    <img src="assets/send.webp" alt="Loading...">
+                    <img src="assets/send.webp" alt="" loading="lazy">
                 </a>
             </div>
         </div>
     </div>
 <!--Rezultati-->
-    <div class="clients" id="clients">
+<div class="clients" id="clients">
         <div class="clients_text">
             <p class="client_header">rezultati</p>
-            <p class="clients_title1">PREKO 70</p>
+            <p class="clients_title1">PREKO 100</p>
             <p class="clients_title2">zadovoljnih klijenata</p>
         </div>
         <div class="clients_box">
@@ -1539,7 +1483,7 @@
 
         </div>
     </div>
-    <!-- FAQ -->
+<!-- FAQ -->
 <section class="faq_section" id="faq" aria-labelledby="faq-heading">
     <h2 class="faq_title" id="faq-heading">Često postavljana pitanja</h2>
     <details class="faq_item">
@@ -1612,10 +1556,16 @@
                 potrošača. Moj cilj je da svaki brend sa kojim radim pronađe svoju
                 priču i postane prepoznatljiv i jedinstven na tržištu.
             </p>
-            <a href="/assets/zvucni_efekti.pdf" class="pdf-section" download="Zvučni efekti-Isidora Veriš UGC">
-                <p>Preuzmi pdf vodič za zvučne efekte</p>
-                <img src="assets/file-download.webp" alt="Loading..." loading="lazy"/>
-            </a>
+            <div class="dowload-section">
+                <a href="/assets/zvucni_efekti.pdf" class="pdf-section" download="Zvučni efekti-Isidora Veriš UGC">
+                    <p>Preuzmi pdf vodič za zvučne efekte</p>
+                    <img src="assets/file-download.webp" alt="Loading..." loading="lazy"/>
+                </a>
+                <a href="/assets/HOOK-ovi-vodič.pdf" class="pdf-section" download="HOOK-ovi vodič-Isidora Veriš UGC">
+                    <p>Preuzmi pdf vodič za HOOK-ove</p>
+                    <img src="assets/file-download.webp" alt="Loading..." loading="lazy"/>
+                </a>
+            </div>
         </div>
     </div>
 </div>

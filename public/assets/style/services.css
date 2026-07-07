@@ -302,7 +302,7 @@
     transition: background 0.3s ease, transform 0.2s ease;
 }
 .expand-submit:hover {
-    background: rgba(212, 189, 173, 0.55);
+    background: #c4a57a;
     transform: translateY(-1px);
 }
 .expand-submit:disabled {
@@ -592,7 +592,7 @@
 }
 
 /* ============================================================
-   PREMIUM KARTICA  ── tamna, elegantna, čitljiva
+   PREMIUM KARTICA  ── svetla, elegantna, čitljiva
    ============================================================ */
 .service-card--premium {
     background: linear-gradient(165deg, #f3eadd 0%, #f3eadd 100%);
@@ -650,15 +650,16 @@
 }
 
 /* Mobile expand unutar premium kartice */
-.service-card--premium .card-expand-inner { border-top-color: rgba(255, 255, 255, 0.18); }
+.service-card--premium .card-expand-inner { border-top-color: rgba(87, 67, 42, 0.15); }
 .service-card--premium .expand-title { color: #57432a; }
 .service-card--premium .expand-desc { color: #57432a; }
+/* FIX: input je bio svetao tekst na svetloj pozadini -> nečitljiv na mobilnom */
 .service-card--premium .expand-input {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(212, 184, 150, 0.35);
-    color: #f4eade;
+    background: #fff;
+    border-color: rgba(212, 184, 150, 0.5);
+    color: #57432a;
 }
-.service-card--premium .expand-input::placeholder { color: #b6a48f; }
+.service-card--premium .expand-input::placeholder { color: #b3a294; }
 .service-card--premium .expand-input:focus { border-color: #d4b896; }
 .service-card--premium .expand-submit {
     background: #d4b896;
@@ -683,7 +684,7 @@
 }
 
 /* ============================================================
-   DESKTOP / LAPTOP  (1200px+)  ── 4 kolone u redu
+   DESKTOP / LAPTOP  (1200px+)  ── 3 kolone u redu
    ============================================================ */
 @media (min-width: 1200px) {
     .services {
@@ -698,7 +699,7 @@
     }
 
     .services-box {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
         max-width: 1240px;
     }
