@@ -114,6 +114,79 @@
 }
 
 /* ---------- PAKETI ---------- */
+
+
+
+
+
+
+/* ---------- TIER HIGHLIGHT (Meta Creative Bundle) ---------- */
+.tier-highlight {
+    position: relative;
+    margin-top: 16px;
+    padding: 18px 18px 16px;
+    background: linear-gradient(135deg, #ede1d3, #d9c3ab);
+    border: 1px solid #c4a57a;
+    border-radius: 10px;
+    text-align: center;
+    overflow: visible;
+    box-shadow: 0 4px 14px rgba(87, 67, 42, 0.1);
+}
+.tier-highlight-badge {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: CormorantGaramond, serif;
+    font-size: 0.72em;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #3a2a18;
+    background: linear-gradient(135deg, #f4eade, #c4a57a);
+    padding: 4px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+.tier-highlight-text {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.95em;
+    color: #57432a;
+    line-height: 1.45;
+    margin: 8px 0 12px;
+}
+.tier-highlight-text strong {
+    color: #3a2a18;
+    font-weight: 700;
+}
+.tier-highlight-price {
+    display: inline-block;
+    font-family: CormorantGaramond, serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #3a2a18;
+    letter-spacing: 0.02em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .service-card-packages {
     width: 100%;
     margin-bottom: 24px;

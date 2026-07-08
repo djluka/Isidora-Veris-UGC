@@ -124,7 +124,16 @@ p.about_me_header {
     max-width: 60ch;
     margin: 0 auto;
     color: #57432a;
-}
+}.text-scroll p:nth-child(2) {
+     font-family: CormorantGaramond, serif;
+     font-size: 1.2em;
+     line-height: 1.6;
+    font-weight: 600;
+     padding: 20px;
+     max-width: 60ch;
+     margin: 0 auto;
+     color: #57432a;
+ }
 
 @keyframes text_scroll_on_stage {
     from { opacity: 0; transform: scale(0.5); }
@@ -142,7 +151,7 @@ p.about_me_header {
 .text-scroll .dowload-section a.pdf-section {
     display: inline-flex;
     align-items: center;
-    margin: 10px;
+    margin: 20px;
     padding: 12px;
 
     font-family: CormorantGaramond, serif;
