@@ -1,2 +1,7 @@
 .idea
 .env
+/public/media/videos/
+node_modules/
+*.mp4
+*.mov
+*.webm

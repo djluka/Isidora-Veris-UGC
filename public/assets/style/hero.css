@@ -252,10 +252,10 @@ body {
 
 .contact_group .contact_me p {
     margin: 0;
-    font-size: 12pt;
+    font-size: 8pt;
     color: inherit;
     font-family: CormorantGaramond, serif;
-    letter-spacing: 0.02em;
+    letter-spacing: 0;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
