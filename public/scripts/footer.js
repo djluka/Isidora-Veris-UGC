@@ -1,33 +1,27 @@
 const footer = document.querySelector('footer');
 
-const footerMobile = document.querySelector('.footer_mobile');
-const arrowBody = document.querySelector('#arrowBodyMobile');
-const drawHead1 = document.querySelector('#arrowHead1Mobile');
-const drawHead2 = document.querySelector('#arrowHead2Mobile');
-const mailIconFooter = document.querySelector('#mailIconFooterMobile');
+const animateEls = [
+    ['.footer_mobile',        'animate-footer'],
+    ['#arrowBodyMobile',      'animate-arrow'],
+    ['#arrowHead1Mobile',     'animate-arrow-head'],
+    ['#arrowHead2Mobile',     'animate-arrow-head'],
+    ['#mailIconFooterMobile', 'animate_footer_img'],
+    ['#arrowBodyDesktop',      'animate-arrow-desktop'],
+    ['#arrowHead1Desktop',     'animate-arrow-head-desktop'],
+    ['#arrowHead2Desktop',     'animate-arrow-head-desktop'],
+    ['#mailIconFooterDesktop', 'animate_footer_img-desktop'],
+];
 
-const arrowBodyDesktop = document.querySelector('#arrowBodyDesktop');
-const drawHead1Desktop = document.querySelector('#arrowHead1Desktop');
-const drawHead2Desktop = document.querySelector('#arrowHead2Desktop');
-const mailIconFooterDesktop = document.querySelector('#mailIconFooterDesktop');
-
-const io = new IntersectionObserver((entries) => {
+const io = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (!entry.isIntersecting) return;
 
-            footerMobile.classList.add('animate-footer');
-            arrowBody.classList.add('animate-arrow');
-            drawHead1.classList.add('animate-arrow-head');
-            drawHead2.classList.add('animate-arrow-head');
-            mailIconFooter.classList.add('animate_footer_img');
+        animateEls.forEach(([selector, className]) => {
+            document.querySelector(selector)?.classList.add(className);
+        });
 
-
-            arrowBodyDesktop.classList.add('animate-arrow-desktop');
-            drawHead1Desktop.classList.add('animate-arrow-head-desktop');
-            drawHead2Desktop.classList.add('animate-arrow-head-desktop');
-            mailIconFooterDesktop.classList.add('animate_footer_img-desktop');
-        }
+        observer.unobserve(entry.target); // pokreni samo jednom
     });
-}, {threshold: 0.5});
+}, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
 
-io.observe(footer);
+if (footer) io.observe(footer);

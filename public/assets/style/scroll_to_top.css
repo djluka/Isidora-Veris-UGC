@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 @keyframes bouncing {
   0% {
     top: 0px;

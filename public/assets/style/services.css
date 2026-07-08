@@ -1,255 +1,841 @@
+/* ============================================================
+   SERVICES SECTION
+   ============================================================ */
 .services {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    padding: 50px 0;
+    align-items: center;
+    padding: 60px 20px 40px;
 }
 
-.service-flip-card {
-    /* Scroll-driven animation (shows final state when unsupported) */
-    animation: service_apper 0.5s ease;
-    animation-timeline: view();
-    animation-range: entry -10% cover 30%;
-    padding: 0;
-    margin: 20px auto;
-}
-/* ===== ANIMATIONS ===== */
-@keyframes service_apper {
-    from {
-        scale: 0.5;
-    }
-    to {
-        scale: 1;
-    }
-}
-
+/* ---------- NASLOV + PODNASLOV ---------- */
 .services h1.title {
-    font-size: 40pt;
+    font-size: 36pt;
     font-family: RomateHood;
     font-weight: 600;
     color: #57432a;
-    margin-bottom: 20px;
+    margin-bottom: 4px;
+    text-align: center;
+    line-height: 1.1;
+}
+/* mali zlatni ukras ispod naslova */
+.services h1.title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    margin: 14px auto 0;
+    background: linear-gradient(90deg, transparent, #c4a57a, transparent);
 }
 
+.services_subtitle {
+    font-family: CormorantGaramond, serif;
+    font-size: 1.15em;
+    color: #7b6b61;
+    text-align: center;
+    max-width: 540px;
+    margin: 20px auto 40px;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   CARDS GRID  (mobile-first: 1 kolona)
+   ============================================================ */
 .services-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+/* ---------- POJEDINAČNA KARTICA ---------- */
+.service-card {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 40px 28px 30px;
+    background: #fff;
+    border: 1px solid #e8ddd4;
+    border-radius: 8px;
+    box-shadow: 0 2px 14px rgba(87, 67, 42, 0.05);
+    position: relative;
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+.service-card:hover {
+    box-shadow: 0 10px 34px rgba(87, 67, 42, 0.12);
+    transform: translateY(-5px);
+}
+
+/* reveal animacija — samo ako browser podržava scroll timeline,
+   inače kartice ostaju normalno vidljive */
+@supports (animation-timeline: view()) {
+    .service-card {
+        animation: cardReveal 0.6s ease both;
+        animation-timeline: view();
+        animation-range: entry -10% cover 30%;
+    }
+}
+@keyframes cardReveal {
+    from { opacity: 0; transform: translateY(30px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* ---------- IKONICA ---------- */
+.service-card-icon {
+    margin-bottom: 20px;
+    border-radius: 100px;
+    background-color: #d4bdad;
+    padding: 20px;
+}
+.service-card-icon img {
+    width: 60px;
+    display: block;
+}
+
+/* ---------- NASLOV / OPIS KARTICE ---------- */
+.service-card-title {
+    font-family: CormorantGaramond, serif;
+    font-size: 1.65em;
+    font-weight: 700;
+    color: #57432a;
+    margin-bottom: 10px;
+}
+.service-card-desc {
+    font-family: CormorantGaramond, serif;
+    font-size: 1.05em;
+    color: #7b6b61;
+    line-height: 1.55;
+    margin-bottom: 24px;
+    max-width: 280px;
+}
+
+/* ---------- PAKETI ---------- */
+
+
+
+
+
+
+/* ---------- TIER HIGHLIGHT (Meta Creative Bundle) ---------- */
+.tier-highlight {
+    position: relative;
+    margin-top: 16px;
+    padding: 18px 18px 16px;
+    background: linear-gradient(135deg, #ede1d3, #d9c3ab);
+    border: 1px solid #c4a57a;
+    border-radius: 10px;
+    text-align: center;
+    overflow: visible;
+    box-shadow: 0 4px 14px rgba(87, 67, 42, 0.1);
+}
+.tier-highlight-badge {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: CormorantGaramond, serif;
+    font-size: 0.72em;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #3a2a18;
+    background: linear-gradient(135deg, #f4eade, #c4a57a);
+    padding: 4px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+.tier-highlight-text {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.95em;
+    color: #57432a;
+    line-height: 1.45;
+    margin: 8px 0 12px;
+}
+.tier-highlight-text strong {
+    color: #3a2a18;
+    font-weight: 700;
+}
+.tier-highlight-price {
+    display: inline-block;
+    font-family: CormorantGaramond, serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #3a2a18;
+    letter-spacing: 0.02em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.service-card-packages {
+    width: 100%;
+    margin-bottom: 24px;
+    border-top: 1px solid #ede5dc;
+    padding-top: 20px;
+}
+.package-item {
+    text-align: left;
+    margin-bottom: 16px;
+}
+.package-item:last-child {
+    margin-bottom: 0;
+}
+.package-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: CormorantGaramond, serif;
+    font-size: 1em;
+    color: #57432a;
+    margin-bottom: 2px;
+}
+.package-bullet {
+    width: 7px;
+    height: 7px;
+    background: #57432a;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.package-detail {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.92em;
+    color: #9a8a7e;
+    margin-left: 15px;
+    margin-bottom: 2px;
+}
+.package-price {
+    font-family: CormorantGaramond, serif;
+    font-size: 1.05em;
+    font-weight: 700;
+    color: #57432a;
+    margin-left: 15px;
+}
+
+/* ---------- VIDEO TIERS ---------- */
+.video-tier {
+    text-align: left;
+    margin-bottom: 18px;
+}
+.video-tier:last-child {
+    margin-bottom: 0;
+}
+.tier-title {
+    font-family: CormorantGaramond, serif;
+    font-size: 1em;
+    font-weight: 700;
+    color: #57432a;
+    margin-bottom: 6px;
+}
+.tier-tag {
+    font-weight: 400;
+    color: #9a8a7e;
+    font-size: 0.9em;
+}
+.tier-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tier-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: CormorantGaramond, serif;
+    font-size: 0.95em;
+    color: #7b6b61;
+    padding: 3px 0;
+}
+.tier-price {
+    font-weight: 700;
+    color: #57432a;
+}
+
+/* ---------- CTA DUGME ---------- */
+.service-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    font-family: CormorantGaramond, serif;
+    font-size: 1.05em;
+    color: #57432a;
+    background: transparent;
+    border: 1px solid #57432a;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-top: auto;   /* gura CTA na dno -> jednako poravnanje */
+    margin-bottom: 14px;
+}
+.service-card-cta:hover {
+    background: #d4bdad;
+    color: #fff;
+}
+.cta-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.service-card-cta:hover .cta-arrow {
+    transform: translateX(4px);
+}
+
+/* ---------- CARD EXPAND (mobile inline forma) ---------- */
+.card-expand {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease,
+    margin 0.4s ease;
+    margin-bottom: 0;
+}
+.card-expand.open {
+    max-height: 340px;
+    opacity: 1;
+    margin-bottom: 20px;
+}
+.card-expand-inner {
+    border-top: 1px solid #ede5dc;
+    padding: 24px 0 8px;
+    text-align: center;
+}
+.expand-title {
+    font-family: CormorantGaramond, serif;
+    font-size: 1.15em;
+    font-weight: 700;
+    color: #57432a;
+    margin-bottom: 6px;
+}
+.expand-desc {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.95em;
+    color: #57432a;
+    line-height: 1.5;
+    margin: 0 auto 18px;
+    max-width: 280px;
+}
+.expand-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.expand-input {
+    width: 100%;
+    max-width: 260px;
+    padding: 12px 16px;
+    font-family: CormorantGaramond, serif;
+    font-size: 1em;
+    color: #57432a;
+    background: #fff;
+    border: 1px solid #d5c8bb;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+.expand-input:focus {
+    outline: none;
+    border-color: #57432a;
+}
+.expand-input::placeholder {
+    font-family: CormorantGaramond, serif;
+    color: #b3a294;
+}
+.expand-submit {
+    padding: 12px 32px;
+    font-family: CormorantGaramond, serif;
+    font-size: 1em;
+    font-weight: 600;
+    color: #fff;
+    background: #d4bdad;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.expand-submit:hover {
+    background: #c4a57a;
+    transform: translateY(-1px);
+}
+.expand-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+.expand-form-message {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.95em;
+    color: #57432a;
+    min-height: 20px;
+}
+
+/* ---------- FOOTNOTE ---------- */
+.service-card-footnote {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.85em;
+    color: #b3a294;
+    letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   DESKTOP EXPAND PANEL (ispod kartica)
+   ============================================================ */
+.desktop-expand-panel {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease,
+    margin 0.4s ease;
+    margin-top: 0;
+}
+.desktop-expand-panel.open {
+    max-height: 340px;
+    opacity: 1;
+    margin-top: 36px;
+}
+.desktop-expand-inner {
+    position: relative;
+    background: #f3eadd;
+    border: 1px solid #e8ddd4;
+    border-radius: 8px;
+    padding: 36px 48px;
+    text-align: center;
+}
+.desktop-expand-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    color: #9a8a7e;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s ease;
+}
+.desktop-expand-close:hover {
+    color: #57432a;
+}
+.desktop-expand-inner .expand-form {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+}
+.desktop-expand-inner .expand-input {
+    max-width: 280px;
+}
+
+/* ============================================================
+   TRUST / SOCIAL PROOF
+   ============================================================ */
+.trust-section {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-}
-
-.service-flip-card {
-    background-color: transparent;
-    margin: 10px;
-    width: 300px;
-    height: 500px;
-    perspective: 1000px;
-}
-
-.flip-card-inner {
-    position: relative;
     width: 100%;
-    height: 100%;
+    max-width: 1000px;
+    margin-top: 56px;
+    padding: 36px 20px;
+    border-top: 1px solid #ede5dc;
+    border-bottom: 1px solid #ede5dc;
+}
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    gap: 6px;
+    width: 140px;
+}
+.trust-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #d4bdad;
+    display: grid;
+    place-items: center;
+    margin-bottom: 4px;
+}
+.trust-icon img {
+    width: 24px;
+    height: 24px;
+}
+.trust-title {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.95em;
+    color: #57432a;
+    line-height: 1.3;
+}
+.trust-sub {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.82em;
+    color: #b3a294;
 }
 
-.service-flip-card .flip-card-inner {
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-
-
-.service-flip-card.flip .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-.flipped {
-    transform: rotateY(180deg);
-    transition: transform 0.3s;
-
-}
-
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
+/* ============================================================
+   UNSURE CTA
+   ============================================================ */
+.unsure-cta {
     width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    background-color: #d5bdaf;
+    max-width: 800px;
+    margin-top: 48px;
+    padding: 0 20px;
 }
-
-.flip-card-front {
+.unsure-cta-inner {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     flex-direction: column;
-
-    padding: 50px;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    background: #f3eadd;
+    border-radius: 12px;
+    padding: 36px 28px;
+}
+.unsure-icon {
+    flex-shrink: 0;
+}
+.unsure-icon img {
+    width: 55px;
+}
+.unsure-heading {
+    font-family: CormorantGaramond, serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #57432a;
+    margin: 0;
+}
+.unsure-sub {
+    font-family: CormorantGaramond, serif;
+    font-size: 1em;
+    color: #7b6b61;
+    margin: 0;
+    line-height: 1.5;
+}
+.unsure-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    font-family: CormorantGaramond, serif;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #fff;
+    background: #d4bdad;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.unsure-btn:hover {
+    background: #3e2f1d;
+    transform: translateY(-1px);
+}
+.unsure-btn img {
+    width: 20px;
 }
 
-.flip-card-front h2.service_header {
-    font-family: CormorantGaramond;
+/* ============================================================
+   LEAD SECTION  (zadržano iz originala)
+   ============================================================ */
+.lead_section {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 56px;
+    padding: 40px 20px;
+    text-align: center;
+}
+.lead_title {
+    font-family: CormorantGaramond, serif;
     font-size: 1.8em;
+    font-weight: 700;
     color: #57432a;
+    margin-bottom: 10px;
 }
-
-.flip-card-front p.service-desc {
-    font-family: CormorantGaramond;
-    font-size: 1.2em;
-    color: #57432a;
-}
-
-.flip-card-front button.learn_more {
-    padding: 10px 20px;
+.lead_intro {
+    font-family: CormorantGaramond, serif;
     font-size: 1em;
-    background-color: #f4eade;;
-    color: #57432a;
-    border: none;
-    cursor: pointer;
-    font-family: CormorantGaramond;
-     /*display: none;*/
-}
-
-.flip-card-front a {
-    text-decoration: none;
-}
-
-
-
-
-.flip-card-front small {
-    margin-top: 1em;
-    font-family: CormorantGaramond;
     color: #7b6b61;
-    text-decoration: none;
+    line-height: 1.6;
+    margin-bottom: 24px;
 }
-
-.flip-card-back {
-    transform: rotateY(180deg);
-
+.lead_form {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     flex-direction: column;
-}
-
-
-.flip-card-back h2 {
-    font-family: CormorantGaramond;
-    font-size: 1.3em;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 30px;
-    color: #57432a;
-
-}
-
-.flip-card-back form.emailForm {
-    display: flex;
-    flex-direction: row;
+    gap: 12px;
     align-items: center;
-    justify-content: center;
-    height: 40px;
 }
-
-.flip-card-back input[type="email"] {
-    padding: 10px;
-    width: 70%;
-    height: 100%;
-    margin-bottom: 15px;
-    border: 1px solid transparent;
-    border-bottom: 1px solid black;
-    font-family: CormorantGaramond;
-    background-color: transparent;
+.service_select,
+.lead_form .emailInput {
+    width: 100%;
+    max-width: 380px;
+    padding: 14px 16px;
+    font-family: CormorantGaramond, serif;
     font-size: 1em;
-    align-self: baseline;
-    transition: 0.3s all ease-in-out;
-}
-
-.flip-card-back input[type="email"]::placeholder {
-    font-family: CormorantGaramond;
-    color: #7b6b61;
-}
-
-.flip-card-back input[type="email"]:focus {
-    outline: none;
-    border: 1px solid black;
-    transition: 0.5s all;
-}
-
-.flip-card-back button[type="submit"] {
-    width: 30%;
-    height: 100%;
-
-    font-size: 1.2em;
-    margin: 3px;
-    background-color: #f4eade;;
-
     color: #57432a;
-    border: none;
+    background: #fff;
+    border: 1px solid #d5c8bb;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+}
+.service_select {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2357432a' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
     cursor: pointer;
-    font-family: CormorantGaramond;
 }
-
+.service_select:focus,
+.lead_form .emailInput:focus {
+    outline: none;
+    border-color: #57432a;
+}
+.lead_form .emailInput::placeholder {
+    font-family: CormorantGaramond, serif;
+    color: #b3a294;
+}
+.lead_form button[type="submit"] {
+    padding: 14px 36px;
+    font-family: CormorantGaramond, serif;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #fff;
+    background: #57432a;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 4px;
+}
+.lead_form button[type="submit"]:hover {
+    background: #3e2f1d;
+    transform: translateY(-1px);
+}
+.lead_form button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
 .formMessage {
-    font-family: CormorantGaramond;
-    font-size: 1.2em;
+    font-family: CormorantGaramond, serif;
+    font-size: 1.1em;
     color: #57432a;
-    padding: 20px;
+    padding: 16px 0 0;
 }
 
+/* ---------- a11y helper ---------- */
+.visually_hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ============================================================
+   PREMIUM KARTICA  ── svetla, elegantna, čitljiva
+   ============================================================ */
+.service-card--premium {
+    background: linear-gradient(165deg, #f3eadd 0%, #f3eadd 100%);
+    border: 1px solid #a6845c;
+    overflow: visible;
+
+}
+.service-card--premium:hover {
+    box-shadow: 0 12px 38px rgba(46, 33, 20, 0.35);
+}
+
+/* Badge */
+.premium-badge {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: CormorantGaramond, serif;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #3a2a18;
+    background: linear-gradient(135deg, #f4eade, #c4a57a);
+    padding: 4px 20px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Ikonica */
+.service-card-icon--premium {
+    background-color: #d4bdad;
+    border: 1px solid rgba(212, 184, 150, 0.35);
+}
+
+/* Tekst */
+.service-card--premium .service-card-title { color: #57432a; }
+.service-card--premium .service-card-desc { color: #57432a; }
+.service-card--premium .service-card-packages { border-top-color: #d4b896}
+.service-card--premium .package-header { color: #57432a; }
+.service-card--premium .package-bullet { background: #57432a; }
+.service-card--premium .package-detail { color: #57432a; }
+.service-card--premium .package-price { color: #57432a; }
+.service-card--premium .service-card-footnote { color: #57432a; }
+
+/* CTA */
+.service-card--premium .service-card-cta {
+    color: #57432a;
+    border-color: #d4b896;
+}
+.service-card--premium .service-card-cta:hover {
+    background: #d4b896;
+    color: #3a2a18;
+}
+
+/* Mobile expand unutar premium kartice */
+.service-card--premium .card-expand-inner { border-top-color: rgba(87, 67, 42, 0.15); }
+.service-card--premium .expand-title { color: #57432a; }
+.service-card--premium .expand-desc { color: #57432a; }
+/* FIX: input je bio svetao tekst na svetloj pozadini -> nečitljiv na mobilnom */
+.service-card--premium .expand-input {
+    background: #fff;
+    border-color: rgba(212, 184, 150, 0.5);
+    color: #57432a;
+}
+.service-card--premium .expand-input::placeholder { color: #b3a294; }
+.service-card--premium .expand-input:focus { border-color: #d4b896; }
+.service-card--premium .expand-submit {
+    background: #d4b896;
+    color: #3a2a18;
+}
+.service-card--premium .expand-submit:hover { background: #c4a57a; }
+
+/* ============================================================
+   TABLET  (768px+)  ── 2 kolone
+   ============================================================ */
+@media (min-width: 768px) {
+    .services-box {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 720px;
+    }
+    .trust-section {
+        gap: 32px;
+    }
+    .trust-item {
+        width: 160px;
+    }
+}
+
+/* ============================================================
+   DESKTOP / LAPTOP  (1200px+)  ── 3 kolone u redu
+   ============================================================ */
 @media (min-width: 1200px) {
-
-
+    .services {
+        padding: 50px 24px 60px;
+    }
     .services h1.title {
-        font-size: 40pt;
-        font-family: TheSeasonsBold;
-
-        font-weight: 600;
-        margin-bottom: 20px;
+        font-size: 42pt;
+    }
+    .services_subtitle {
+        font-size: 1.2em;
+        margin-bottom: 50px;
     }
 
     .services-box {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1240px;
+    }
+    .service-card {
+        padding: 40px 22px 28px;
+    }
+
+    /* sakrij inline expand, prikaži zajednički desktop panel */
+    .card-expand {
+        display: none !important;
+    }
+    .desktop-expand-panel {
+        display: block;
+    }
+
+    .trust-section {
+        gap: 48px;
+        margin-top: 64px;
+        padding: 44px 20px;
+    }
+    .trust-item {
+        width: 180px;
+    }
+
+    .unsure-cta {
+        margin-top: 56px;
+    }
+    .unsure-cta-inner {
+        flex-direction: row;
+        text-align: left;
+        gap: 24px;
+        padding: 40px 48px;
+    }
+    .unsure-text {
+        flex: 1;
+    }
+    .unsure-btn {
+        flex-shrink: 0;
+    }
+
+    .lead_form {
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
+        gap: 10px;
     }
-
-    .service-flip-card {
-        margin: 0;
-        width: 350px;
-        height: 500px;
-        perspective: 1000px;
+    .service_select,
+    .lead_form .emailInput {
+        max-width: 260px;
     }
+}
 
-
-    .services-box {
-        flex-direction: row;
-    }
-
-    .flip-card-front button.learn_more {
-        padding: 10px 20px;
-        font-size: 1.2em;
-        border: none;
-        cursor: pointer;
-        font-family: CormorantGaramond;
-    }
-
-    .flip-card-front a {
-        text-decoration: none;
-    }
-
-    .flip-card-front small {
-        margin-top: 15px;
-        font-family: CormorantGaramond;
-        text-decoration: none;
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .service-card,
+    .service-card:hover,
+    .service-card-cta,
+    .unsure-btn,
+    .expand-submit {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
     }
 }

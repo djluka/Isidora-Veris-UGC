@@ -1,4 +1,5 @@
-/* ===== RESET ===== */
+/* ===== RESET =====
+   (ako već imaš globalni reset u hero/glavnom fajlu, ovaj blok slobodno obriši) */
 *,
 *::before,
 *::after {
@@ -6,55 +7,39 @@
     margin: 0;
     padding: 0;
 }
-
 html,
 body {
     max-width: 100%;
 }
 
-/* ===== ABOUT ME ===== */
+/* ============================================================
+   ABOUT ME  ── sticky video + tekst koji klizi preko njega
+   ============================================================ */
 .about_me {
-    /*without including scrollbar width */
     --header-height: 100px;
     --video-txt-width: 100%;
     --video-txt-height: 100svh;
 
     width: 100%;
-    margin: 0px auto;
-    background: #f4eade;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #f3eadd;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     scroll-margin-top: calc(var(--header-height) + 20px);
-}
 
-.about_me {
-    /* Scroll-driven animation (shows final state when unsupported) */
+    /* Scroll-driven animacija (prikazuje finalno stanje kad nije podržana) */
     animation: about_me_apper 0.5s ease;
     animation-timeline: view();
     animation-range: entry -10% cover 25%;
-    padding: 0;
-    margin: 0 auto;
 }
 
-/* ===== ANIMATIONS ===== */
 @keyframes about_me_apper {
-    from {
-        opacity: 0;
-        scale: 0.8;
-    }
-    to {
-        opacity: 1;
-        scale: 1;
-    }
+    from { opacity: 0; scale: 0.8; }
+    to   { opacity: 1; scale: 1;   }
 }
-
-/* @supports not (height: 100svh) {
-  .about_me {
-    --video-txt-height: 100vh;
-  }
-} */
 
 .about_me_content {
     width: 100%;
@@ -64,6 +49,7 @@ body {
     padding: 10px;
 }
 
+/* ---------- STICKY NASLOV ---------- */
 p.about_me_header {
     position: sticky;
     top: 0;
@@ -74,19 +60,20 @@ p.about_me_header {
 
     display: grid;
     place-items: center;
+
     font-family: RomateHood;
     font-weight: 800;
     font-size: 3em;
+    letter-spacing: 1px;
     color: #57432a;
-
-
     text-align: center;
-    align-self: center;
-    backdrop-filter: blur(3px);
-    background: rgba(244, 234, 222, 0.473);
 
+    background: rgba(244, 234, 222, 0.55);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
+/* ---------- STICKY VIDEO ---------- */
 .profile_loop_video {
     position: sticky;
     top: var(--header-height);
@@ -96,20 +83,23 @@ p.about_me_header {
     width: var(--video-txt-width);
     max-width: 100%;
     height: var(--video-txt-height);
-    object-fit: cover;
-    object-position: center;
-
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
     margin: 0 auto;
     padding: 1px;
+
+    object-fit:cover;
+    object-position: center;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* ---------- TEKST PREKO VIDEA ---------- */
 .text-scroll {
     position: relative;
     z-index: 2;
 
     width: var(--video-txt-width);
     min-height: var(--video-txt-height);
+    margin: 0 auto;
+    padding: clamp(24px, 6vh, 48px) 16px;
 
     display: flex;
     flex-direction: column;
@@ -118,16 +108,12 @@ p.about_me_header {
     text-align: center;
 
     color: #57432a;
-    background: rgba(255, 248, 241, 0.9);
+    background: rgba(244, 234, 222, 0.9);   /* = #f4eade sa 0.9 */
 
-    padding-block: clamp(24px, 6vh, 48px);
-
-    /* Scroll-driven animation (shows final state when unsupported) */
+    /* Scroll-driven animacija (prikazuje finalno stanje kad nije podržana) */
     animation: text_scroll_on_stage 0.5s ease both;
     animation-timeline: view();
     animation-range: entry 0% cover 50%;
-    padding: 0;
-    margin: 0 auto;
 }
 
 .text-scroll p {
@@ -138,107 +124,103 @@ p.about_me_header {
     max-width: 60ch;
     margin: 0 auto;
     color: #57432a;
-}
+}.text-scroll p:nth-child(2) {
+     font-family: CormorantGaramond, serif;
+     font-size: 1.2em;
+     line-height: 1.6;
+    font-weight: 600;
+     padding: 20px;
+     max-width: 60ch;
+     margin: 0 auto;
+     color: #57432a;
+ }
 
-.text-scroll a {
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    border-bottom: 2px solid transparent;
-    transition: 0.3s all ease-in-out;
-    opacity: 1;
-    font-size: 1em;
-
-    transform: translateY(10px);
-}
-
-.text-scroll a.pdf-section:hover,
-.text-scroll a.pdf-section:focus,
-.text-scroll a.pdf-section:visited{
-
-    border-bottom: 2px solid #57432a;
-    transform: translateY(0px);
-}
-.text-scroll a.pdf-section p{
-    padding: 0;
-}
-.text-scroll a.pdf-section img{
-    width: 40px;
-}
-
-/* ===== ANIMATIONS ===== */
 @keyframes text_scroll_on_stage {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.5); }
+    to   { opacity: 1; transform: scale(1);   }
 }
 
-/* ===== ACCESSIBILITY ===== */
-@media (prefers-reduced-motion: reduce) {
-    .text-scroll {
-        animation: none;
-    }
+/* ---------- PDF DOWNLOAD (pill dugme) ---------- */
+.text-scroll .dowload-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.text-scroll .dowload-section a.pdf-section {
+    display: inline-flex;
+    align-items: center;
+    margin: 20px;
+    padding: 12px;
+
+    font-family: CormorantGaramond, serif;
+    font-size: 1em;
+    color: #57432a;
+    text-decoration: none;
+
+    background: transparent;
+    border: 1px solid #57432a;
+    border-radius: 30px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.text-scroll .dowload-section a.pdf-section p {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+}
+.text-scroll .dowload-section a.pdf-section img {
+    width: 26px;
+    transition: filter 0.3s ease;
+}
+.text-scroll .dowload-section a.pdf-section:hover,
+.text-scroll .dowload-section a.pdf-section:focus-visible {
+    background: #d4bdad;
+    color: #fff;
+    transform: translateY(-2px);
+}
+/* ako je ikonica jednobojna (tamna), ovo je pretvara u belu na hover;
+   obriši ako ti ikonica nije monohromna */
+.text-scroll .dowload-section a.pdf-section:hover img,
+.text-scroll .dowload-section a.pdf-section:focus-visible img {
+    filter: brightness(0) invert(1);
 }
 
-/* ===== DESKTOP TWEAKS ===== */
+/* ============================================================
+   DESKTOP / LAPTOP  (1200px+)  ── video i tekst 70% širine
+   ============================================================ */
 @media (min-width: 1200px) {
     .about_me {
-        --video-txt-width: 70%;
-        --video-txt-height: 70svh;
-        margin: 0 auto;
+        --video-txt-width: 90%;
+        --video-txt-height: 90svh;
+    position: relative;
+        top: 10px;
     }
-
     .about_me_header {
         font-size: 3.2em;
     }
-
     .text-scroll p {
         font-size: 1.5em;
     }
+    .text-scroll .dowload-section{
+        flex-direction: row;
 
-    .profile_loop_video {
-        position: sticky;
-        top: var(--header-height);
-        z-index: 0;
+    }
+}
 
-        display: block;
-        width: var(--video-txt-width);
-        max-width: 100%;
-        height: var(--video-txt-height);
-        object-fit: cover;
-        object-position: center;
-
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-        margin: 0 auto;
-        padding: 1px;
-
-    }.text-scroll a {
-         text-decoration: none;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         padding: 5px;
-         border-bottom: 2px solid transparent;
-         transition: 0.3s all ease-in-out;
-         opacity: 0.8;
-         font-size: 1em;
-
-         transform: translateY(10px);
-     }
-
-    .text-scroll a.pdf-section:hover,
-    .text-scroll a.pdf-section:focus,
-    .text-scroll a.pdf-section:visited{
-
-        border-bottom: 2px solid #57432a;
-        opacity: 1;
-        transform: translateY(0px);
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .about_me,
+    .text-scroll {
+        animation: none;
+    }
+    .text-scroll .dowload-section a.pdf-section {
+        transition: none;
+    }
+    .text-scroll .dowload-section a.pdf-section:hover,
+    .text-scroll .dowload-section a.pdf-section:focus-visible {
+        transform: none;
     }
 }
