@@ -127,14 +127,14 @@
     animation-play-state: paused; /* stopira animaciju dok je miš preko */
 }
 .clients .clients_box .logo_strip:nth-child(1) {
-    --dur: 8s;
+    --dur: 12s;
 }
 .clients .clients_box .logo_strip:nth-child(2) {
-    --dur: 5s;
+    --dur: 9s;
     animation-direction: alternate-reverse;
 }
 .clients .clients_box .logo_strip:nth-child(3) {
-    --dur: 10s;
+    --dur: 14s;
 }
 .clients .clients_box .logo_strip .logo {
     width: 80px;

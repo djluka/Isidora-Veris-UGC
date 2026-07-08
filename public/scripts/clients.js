@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Rezervno vreme (ms). Osigurač: ako se izlazna animacija ne okine,
     // čišćenje se svejedno izvrši posle ovog vremena da komentar ne ostane zaglavljen.
-    const CLOSE_FALLBACK_MS = 400;
+    const CLOSE_FALLBACK_MS = 900;
 
     // ===== POMOĆNE FUNKCIJE =====
 
