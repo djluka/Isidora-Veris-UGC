@@ -1,7 +1,7 @@
 // video render fix
 window.addEventListener('load', () => {
   const video = document.querySelector('.profile');
-  video.src = 'media/videos/profile_video.mp4';
+  video.src = 'https://res.cloudinary.com/fmhclk2o/video/upload/v1783505854/profile_video_buyrej.mp4';
   setTimeout(() => video.play().catch(()=>{}), 200);
 });
 
