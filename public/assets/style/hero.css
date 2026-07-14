@@ -366,7 +366,47 @@ body {
     color: #9b8b78;
     letter-spacing: 0.04em;
 }
+/* ---------- CLIENTS BADGE (sticker) ---------- */
+.clients_badge {
+    position: absolute;
+    top: -18px;
+    left: -28px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #d4bdad;
+    border: 5px dashed #faf9f8;
+    box-shadow: 0 4px 14px rgba(87, 67, 42, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: rotate(0deg);
+    z-index: 2;
+    animation: badge_pulse 2s ease-in-out infinite;
+}
 
+.clients_badge .badge_number {
+    font-family: TheSeasonsBold, serif;
+    font-size: 1.2em;
+    color: #fff;
+    line-height: 1;
+}
+
+.clients_badge .badge_text {
+    font-family: CormorantGaramond, serif;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+    color: #fff;
+    line-height: 1.2;
+    margin-top: 2px;
+}
+
+@keyframes badge_pulse {
+    0%, 100% { transform:  scale(1); }
+    50%      { transform:  scale(1.09); }
+}
 /* ============================================================
    TABLET  (768px+)
    ============================================================ */
@@ -441,6 +481,15 @@ body {
         width: 34px;
         height: 34px;
     }
+    /* @media (min-width: 768px) */
+    .clients_badge {
+        width: 118px;
+        height: 118px;
+        top: -26px;
+        left: -52px;
+    }
+    .clients_badge .badge_number { font-size: 1.5em; }
+    .clients_badge .badge_text { font-size: 1em; }
 }
 
 /* ============================================================
@@ -562,4 +611,13 @@ body {
     .hero .instagram_highlights p.highlight_desc {
         font-size: 11pt;
     }
+    /* @media (min-width: 1200px) */
+    .clients_badge {
+        width: 135px;
+        height: 135px;
+        top: -40px;
+        left: -64px;
+    }
+    .clients_badge .badge_number { font-size:1.8em;}
+    .clients_badge .badge_text { font-size: 1.3em; }
 }
