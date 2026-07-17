@@ -375,7 +375,7 @@ body {
     height: 100px;
     border-radius: 50%;
     background-color: #d4bdad;
-    border: 5px dashed #faf9f8;
+    border: 5px solid #faf9f8;
     box-shadow: 0 4px 14px rgba(87, 67, 42, 0.25);
     display: flex;
     flex-direction: column;

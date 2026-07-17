@@ -1,15 +1,13 @@
-const footer = document.querySelector('footer');
+// Posmatramo samo .icons (strelica + koverta), ne ceo footer — tako
+// animacija kreće tek kad TA konkretna oblast uđe u ekran, ne čim se
+// footer uopšte pomoli.
+const arrowTarget = document.querySelector('.icons');
 
 const animateEls = [
-    ['.footer_mobile',        'animate-footer'],
-    ['#arrowBodyMobile',      'animate-arrow'],
-    ['#arrowHead1Mobile',     'animate-arrow-head'],
-    ['#arrowHead2Mobile',     'animate-arrow-head'],
-    ['#mailIconFooterMobile', 'animate_footer_img'],
-    ['#arrowBodyDesktop',      'animate-arrow-desktop'],
-    ['#arrowHead1Desktop',     'animate-arrow-head-desktop'],
-    ['#arrowHead2Desktop',     'animate-arrow-head-desktop'],
-    ['#mailIconFooterDesktop', 'animate_footer_img-desktop'],
+    ['#arrowBody',      'animate-arrow'],
+    ['#arrowHead1',     'animate-arrow-head'],
+    ['#arrowHead2',     'animate-arrow-head'],
+    ['#mailIconFooter', 'animate_footer_img'],
 ];
 
 const io = new IntersectionObserver((entries, observer) => {
@@ -22,6 +20,9 @@ const io = new IntersectionObserver((entries, observer) => {
 
         observer.unobserve(entry.target); // pokreni samo jednom
     });
-}, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+}, {
+    threshold: 1,                    // mora CELA strelica da bude vidljiva
+    rootMargin: '0px 0px -15% 0px',  // + malo viška skrola posle toga
+});
 
-if (footer) io.observe(footer);
+if (arrowTarget) io.observe(arrowTarget);
