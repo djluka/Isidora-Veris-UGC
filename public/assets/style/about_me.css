@@ -203,6 +203,13 @@ p.about_me_header {
         font-size: 1.5em;
     }
     .text-scroll .dowload-section{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .text-scroll .dowload-section{
         flex-direction: row;
 
     }
