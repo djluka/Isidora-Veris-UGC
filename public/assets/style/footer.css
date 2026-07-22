@@ -1,7 +1,6 @@
 footer {
     background: #f4eade;
     padding: 0;
-    overflow-x: hidden; /* rotirana strelica (scaleX/rotate) inače ume da napravi horizontalni scroll na uskim ekranima */
 }
 
 .footer_inner {
@@ -14,7 +13,6 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px 24px;
-    box-sizing: border-box;
 }
 
 .footer_text {
@@ -57,6 +55,7 @@ footer {
     text-decoration: none;
     margin-top: 28px;
     position: relative;
+
 }
 
 .footer_icons p.email {
@@ -83,16 +82,14 @@ footer {
        ga "vidi" kao odmah ispunjen, pa animacija puca prerano.
        margin-bottom poništava taj prostor u flow-u da slika ostane
        gde je bila (i da je strelica/koverta i dalje mogu preklopiti). */
-    min-height: 220px;
-    margin-bottom: -220px;
 }
 
 .arrow-container {
     position: absolute;
     top: 20px;
-    left: 0;
+    left: -150px;
     width: clamp(120px, 111px + 2.42vw, 140px);
-    transform: rotate(-70deg) scaleX(-1);
+    transform: rotate(50deg) scaleX(1);
     z-index: 1;
 }
 
@@ -104,9 +101,9 @@ footer {
 #mailIconFooter {
     width: clamp(80px, 66px + 3.64vw, 110px);
     position: absolute;
-    top: 110px;
-    left: 0;
-    transform: rotate(20deg);
+    top: 90px;
+    left: -50px;
+    transform: rotate(-20deg);
     opacity: 0;
     margin-left: -10px;
     z-index: 1;
@@ -114,26 +111,13 @@ footer {
 
 .footer_img {
     width: 100%;
-    max-width: 380px;
+    max-width: 400px;
     border-radius: 6px;
     display: block;
     object-fit: cover;
     z-index: 0;
 }
 
-.footer_bottom {
-    background-color: #4a4038;
-    padding: 16px 20px;
-    text-align: center;
-}
-
-.footer_bottom p {
-    font-family: CormorantGaramond;
-    color: #f4eade;
-    font-size: 0.85em;
-    letter-spacing: 0.5px;
-    margin: 0;
-}
 
 /* ==== animacije (jedna verzija, za oba layout-a) ==== */
 
@@ -213,7 +197,19 @@ footer {
         flex-shrink: 0;
     }
 
-    .footer_bottom p {
-        font-size: 1em;
+    .arrow-container {
+        top: -50px;
+        left: 130px;
+        transform: rotate(-30deg) scaleX(1);
+
+    }
+
+
+    #mailIconFooter {
+
+        top: -130px;
+        left: 250px;
+        transform: rotate(-20deg);
+
     }
 }
