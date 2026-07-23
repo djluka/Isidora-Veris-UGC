@@ -367,4 +367,24 @@ footer {
         max-width: 44%;
         margin-bottom: 0px;
     }
+
+
+
+
+    .arrow-container {
+        top: -200px;
+        left: 500px;
+        width: 170px;
+        z-index: 3;
+
+        transform: rotate(10deg) scaleX(1) scaleY(-1);
+    }
+
+    #mailIconFooter {
+        width: 130px;
+        top: -180px;
+        left: 660px;
+        z-index: 3;
+        transform: rotate(-20deg);
+    }
 }
