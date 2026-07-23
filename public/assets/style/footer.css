@@ -1,6 +1,21 @@
+/* =========================================================
+   FOOTER + CREDITS
+   - MOBILE (base, ispod 768px): NETAKNUTO, radi kako treba.
+   - TABLET (768–1023): kolona, uvećane veličine, devojka sedi na credits baru.
+   - DESKTOP (1024+): red (tekst levo / slika desno), devojka sedi na credits baru.
+   - LARGE (1600+): samo uvećane veličine.
+
+   Kako "sedi na credits sekciji":
+   .credits je zaseban div ODMAH ispod </footer>. Slika dobija negativan
+   donji margin (uvuče se u credits) + veći z-index od credits-a, pa
+   izgleda kao da doslovno sedi na tamnom baru. Zato je i credits-u dat
+   position:relative sa nižim z-index-om.
+   ========================================================= */
+
 footer {
     background: #f4eade;
     padding: 0;
+    overflow-x: clip; /* strelica/mail ne smeju da naprave horizontalni scroll */
 }
 
 .footer_inner {
@@ -10,12 +25,11 @@ footer {
     justify-content: center;
     gap: 30px;
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 50px 24px;
 }
 
 .footer_text {
+    margin-top: 40px;
     max-width: 320px;
     text-align: center;
 }
@@ -28,7 +42,7 @@ footer {
     text-align: center;
 }
 
-.footer_text p.script {
+.footer_text p.footer_script {
     font-family: RomateHood;
     color: #745852;
     font-size: clamp(1.9em, 1.55em + 2vw, 2.8em);
@@ -36,16 +50,15 @@ footer {
     text-align: left;
 }
 
-.footer_text p.desc {
+.footer_text p.footer_desc {
     font-family: CormorantGaramond;
+    font-size: 1em;
     color: #745852;
-    font-size: clamp(1.05em, 0.95em + 0.55vw, 1.25em);
-    margin: 6px 0;
 }
 
-.footer_text p.desc.italic {
+.footer_text p.footer_desc.italic {
     font-style: italic;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .footer_icons {
@@ -55,7 +68,6 @@ footer {
     text-decoration: none;
     margin-top: 28px;
     position: relative;
-
 }
 
 .footer_icons p.email {
@@ -77,19 +89,14 @@ footer {
     display: flex;
     align-items: center;
     position: relative;
-    /* Deca su position:absolute pa ne guraju visinu roditelja —
-       bez min-height, .icons ima visinu 0 i IntersectionObserver
-       ga "vidi" kao odmah ispunjen, pa animacija puca prerano.
-       margin-bottom poništava taj prostor u flow-u da slika ostane
-       gde je bila (i da je strelica/koverta i dalje mogu preklopiti). */
 }
 
 .arrow-container {
     position: absolute;
-    top: 20px;
-    left: -150px;
+    top: 10px;
+    left: 70px;
     width: clamp(120px, 111px + 2.42vw, 140px);
-    transform: rotate(50deg) scaleX(1);
+    transform: rotate(-90deg) scaleX(-1);
     z-index: 1;
 }
 
@@ -101,8 +108,8 @@ footer {
 #mailIconFooter {
     width: clamp(80px, 66px + 3.64vw, 110px);
     position: absolute;
-    top: 90px;
-    left: -50px;
+    top: 110px;
+    left: 80px;
     transform: rotate(-20deg);
     opacity: 0;
     margin-left: -10px;
@@ -112,17 +119,20 @@ footer {
 .footer_img {
     width: 100%;
     max-width: 400px;
-    border-radius: 6px;
     display: block;
     object-fit: cover;
     z-index: 0;
 }
 
+/* credits: baza + priprema za "sedenje" slike preko njega */
+.credits {
+    position: relative;
+    z-index: 1; /* niže od slike (koja na tablet/desktop dobija z-index:2) */
+}
 
-/* ==== animacije (jedna verzija, za oba layout-a) ==== */
 
-/* OVO je falilo — bez dasharray/dashoffset linija nema šta da "otkriva",
-   pa je odmah cela nacrtana i animacija se vizuelno ne vidi. */
+/* ==== animacije (nepromenjeno) ==== */
+
 #arrowBody {
     stroke-dasharray: 2500;
     stroke-dashoffset: 2500;
@@ -134,8 +144,6 @@ footer {
     stroke-dashoffset: 300;
 }
 
-/* Glava strelice kreće TEK kad telo (2s animacija) stigne do vrha krive —
-   bez ovog delay-a glava i telo kreću istovremeno i efekat izgleda razbacano. */
 #arrowHead1 {
     animation-delay: 1s;
 }
@@ -172,44 +180,190 @@ footer {
     }
 }
 
-/* ==== desktop (samo strukturna promena: kolona -> red; veličine su već fluid) ==== */
 
-@media (min-width: 1000px) {
+/* =========================================================
+   TABLET (768–1023): i dalje kolona, samo veće i devojka sedi na credits
+   ========================================================= */
+@media (min-width: 768px) and (max-width: 1023.98px) {
     .footer_inner {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        padding: 50px 24px;
+        gap: 20px;
+        padding: 60px 32px 0; /* bez donjeg paddinga -> slika dodiruje dno footera */
     }
 
     .footer_text {
-        max-width: 460px;
+        max-width: 620px;
+        padding: 0 10px;
+    }
+
+    .footer_text h1 {
+        font-size: 2.4em;
+    }
+
+    .footer_text p.footer_script {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .footer_text p.footer_desc {
+        font-size: 1.5em;
+    }
+
+    .footer_text p.footer_desc.italic {
+        margin-top: 14px;
     }
 
     .footer_icons {
-        margin-top: 40px;
+        margin-top: 36px;
     }
 
-    .footer_img {
-        width: clamp(300px, 26vw, 380px);
-        max-width: none;
-        flex-shrink: 0;
+    .footer_icons p.email {
+        font-size: 2em;
+        padding: 18px 32px;
     }
 
     .arrow-container {
-        top: -50px;
-        left: 130px;
-        transform: rotate(-30deg) scaleX(1);
+        top: 6px;
+        left: 90px;
+        width: 150px;
+    }
 
+    #mailIconFooter {
+        width: 120px;
+        top: 120px;
+        left: 100px;
+    }
+
+    /* devojka: centrirana, sedi na credits baru (uvuče se ~28px) */
+    .footer_img {
+        max-width: 460px;
+        width: 70%;
+        position: relative;
+        z-index: 2;
+        margin: 10px auto -28px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP (1024+): red — tekst levo, slika desno, sedi na credits
+   ========================================================= */
+@media (min-width: 1024px) {
+    footer {
+        position: relative; /* bez z-index-a -> slika i dalje može preko credits-a */
+    }
+
+    .footer_inner {
+        flex-direction: row;
+        align-items: flex-end;      /* i tekst i slika poravnati na dno */
+        justify-content: center;
+        gap: 40px;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 70px 40px 0;        /* bez donjeg paddinga -> slika dodiruje dno footera */
+    }
+
+    .footer_text {
+        flex: 1 1 520px;
+        max-width: 620px;
+        align-self: center;          /* tekst vertikalno centriran u redu */
+        text-align: left;
+        padding: 0;
+    }
+
+    .footer_text h1 {
+        font-size: 2.2em;
+        text-align: left;
+    }
+
+    .footer_text p.footer_script {
+        font-size: 2.6em;
+        margin: 12px 0;
+        text-align: left;
+    }
+
+    .footer_text p.footer_desc {
+        font-size: 1.4em;
+        margin-top: 30px;
+    }
+
+    .footer_text p.footer_desc.italic {
+        margin-top: 14px;
+    }
+
+    .footer_icons {
+        align-items: flex-start;     /* email dugme levo, uz tekst */
+        margin-top: 40px;
+    }
+
+    .footer_icons p.email {
+        font-size: 1.9em;
+        padding: 18px 34px;
+        margin:50px
+    }
+
+    .arrow-container {
+        top: -180px;
+        left: 420px;
+        width: 170px;
+        transform: rotate(10deg) scaleX(1) scaleY(-1);
+    }
+
+    #mailIconFooter {
+        width: 130px;
+        top: -180px;
+        left: 600px;
+        transform: rotate(-20deg);
+    }
+
+    /* devojka: desno, poravnata na dno, uvuče se u credits ~40px */
+    .footer_img {
+        flex: 0 1 500px;
+        width: clamp(320px, 34vw, 520px);
+        max-width: 46%;
+        align-self: flex-end;
+        position: relative;
+        z-index: 2;
+        margin: 0 0 0px 0;
+    }
+}
+
+
+/* =========================================================
+   LARGE (1600+): iste proporcije, samo veće
+   ========================================================= */
+@media (min-width: 1600px) {
+    .footer_inner {
+        max-width: 1500px;
+        gap: 60px;
+        padding: 90px 60px 0;
+    }
+
+    .footer_text {
+        flex: 1 1 640px;
+        max-width: 760px;
+    }
+
+    .footer_text h1 {
+        font-size: 2.8em;
+    }
+
+    .footer_text p.footer_script {
+        font-size: 3.4em;
+    }
+
+    .footer_text p.footer_desc {
+        font-size: 1.7em;
+    }
+
+    .footer_icons p.email {
+        font-size: 2.3em;
+        padding: 22px 40px;
     }
 
 
-    #mailIconFooter {
-
-        top: -130px;
-        left: 250px;
-        transform: rotate(-20deg);
-
+    .footer_img {
+        width: clamp(480px, 34vw, 640px);
+        max-width: 44%;
+        margin-bottom: 0px;
     }
 }

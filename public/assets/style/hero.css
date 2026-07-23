@@ -383,7 +383,7 @@ body {
     justify-content: center;
     text-align: center;
     transform: rotate(0deg);
-    z-index: 2;
+    z-index: 0;
     animation: badge_pulse 2s ease-in-out infinite;
 }
 
