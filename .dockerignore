@@ -1,0 +1,12 @@
+node_modules
+.git
+.github
+.env
+.idea
+*.md
+.gitignore
+.gitattributes
+*.mp4
+*.mov
+*.webm
+public/media/videos/
