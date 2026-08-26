@@ -9,10 +9,16 @@ services:
     environment:
       TRUST_PROXY: "0"
       MYSQL_PASSWORD: local_dev_password
-      ADMIN_HOST: localhost
+      ALLOWED_ORIGINS: http://localhost:8080,http://127.0.0.1:8080
+
+  admin:
+    ports:
+      - "127.0.0.1:3001:3000"
+    environment:
+      TRUST_PROXY: "0"
+      MYSQL_PASSWORD: local_dev_password
       ADMIN_USERNAME: admin
       ADMIN_PASSWORD: local_dev_admin_password
-      ALLOWED_ORIGINS: http://localhost:8080,http://127.0.0.1:8080
 
   mysql:
     ports:
