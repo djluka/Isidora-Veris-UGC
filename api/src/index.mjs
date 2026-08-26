@@ -23,9 +23,6 @@ const app = createApp({
     emailService,
     verifyTurnstile: createTurnstileVerifier(config.turnstileSecret),
     allowedOrigins: config.allowedOrigins,
-    adminHost: config.adminHost,
-    adminUsername: config.adminUsername,
-    adminPassword: config.adminPassword,
     trustProxy: config.trustProxy,
 });
 

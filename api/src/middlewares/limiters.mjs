@@ -2,6 +2,18 @@ import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
 
 export const VALID_SERVICES = ['konsultacije', 'izrada-reklama', 'creative-partner'];
 
+export function createAdminLimiter() {
+    return rateLimit({
+        standardHeaders: true,
+        legacyHeaders: false,
+        windowMs: 15 * 60 * 1000,
+        max: 10,
+        keyGenerator: (request) => ipKeyGenerator(request.ip),
+        skipSuccessfulRequests: true,
+        message: 'Too many authentication attempts; try again later.',
+    });
+}
+
 export function createLimiters() {
     const common = { standardHeaders: true, legacyHeaders: false };
 
@@ -31,14 +43,6 @@ export function createLimiters() {
             max: 15,
             keyGenerator: (request) => ipKeyGenerator(request.ip),
             message: { message: 'Dostigli ste ukupni limit, pokušajte za 24h.' },
-        }),
-        adminLimiter: rateLimit({
-            ...common,
-            windowMs: 15 * 60 * 1000,
-            max: 10,
-            keyGenerator: (request) => ipKeyGenerator(request.ip),
-            skipSuccessfulRequests: true,
-            message: 'Too many authentication attempts; try again later.',
         }),
     };
 }

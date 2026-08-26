@@ -1,5 +1,4 @@
 import express from 'express';
-import { createAdminHandler, requireBasicAuth } from './admin.mjs';
 import { createLimiters, VALID_SERVICES } from './middlewares/limiters.mjs';
 import { DuplicateSubscriberError } from './repositories/subscribers.mjs';
 
@@ -10,14 +9,11 @@ export function createApp({
     verifyTurnstile,
     emailService,
     allowedOrigins,
-    adminHost,
-    adminUsername,
-    adminPassword,
     trustProxy = 1,
 }) {
     const app = express();
     const allowedOriginSet = new Set(allowedOrigins);
-    const { verificationLimiter, ipServiceLimiter, ipTotalLimiter, adminLimiter } = createLimiters();
+    const { verificationLimiter, ipServiceLimiter, ipTotalLimiter } = createLimiters();
 
     app.disable('x-powered-by');
     app.set('trust proxy', trustProxy);
@@ -138,16 +134,6 @@ export function createApp({
         },
     );
 
-    const admin = [
-        (request, response, next) => {
-            if (request.hostname.toLowerCase() !== adminHost.toLowerCase()) return next('route');
-            next();
-        },
-        adminLimiter,
-        requireBasicAuth(adminUsername, adminPassword),
-        createAdminHandler(repository),
-    ];
-    app.get('/', ...admin);
     app.get('/', (_request, response) => response.json({
         service: 'isidora-veris-api',
         status: 'ok',
