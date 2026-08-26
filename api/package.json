@@ -1,0 +1,39 @@
+{
+  "name": "isidora-veris-api",
+  "version": "1.0.0",
+  "description": "Subscription API for isidoraverisugc.com",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test",
+    "start:dev": "nodemon ./src/index.mjs",
+    "start": "node ./src/index.mjs",
+    "db:migrate": "node ./scripts/migrate-schema.mjs",
+    "migrate:mongodb": "node ./scripts/migrate-mongodb-to-mysql.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djluka/Isidora-Veris-UGC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djluka/Isidora-Veris-UGC/issues"
+  },
+  "homepage": "https://github.com/djluka/Isidora-Veris-UGC#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.3.2",
+    "mongodb": "^7.1.0",
+    "mysql2": "^3.15.3",
+    "resend": "^6.9.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "type": "module"
+}
