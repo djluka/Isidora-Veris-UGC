@@ -48,6 +48,9 @@ Never commit real credentials. The following values belong in Coolify's environm
 | `EMAIL_FROM` | optional | Verified Resend sender |
 | `NOTIFICATION_EMAIL` | optional | Destination for new-subscription alerts |
 | `LEGACY_MONGODB_URI` | migration only | Temporary read-only MongoDB source connection |
+| `MEDIA_VIDEOS_PATH` | optional | Host path for `website/media/videos` (default `./website/media/videos`) |
+| `MEDIA_IMAGES_PATH` | optional | Host path for `website/media/images` (default `./website/media/images`) |
+| `MEDIA_CLIENTS_PATH` | optional | Host path for `website/media/clients` (default `./website/media/clients`) |
 
 Coolify generates and persists the MySQL root password, MySQL application password, and admin password through the Compose `SERVICE_PASSWORD_64_*` variables, including `SERVICE_PASSWORD_64_ADMIN` for the admin container. Do not manually expose MySQL port 3306.
 
@@ -107,7 +110,8 @@ After applying, compare the migration summary with the admin record count. Inves
 
 1. Create one Git-based Docker Compose Service pointing at `/docker-compose.yml` in the repository root.
 2. Set the replacement `RESEND_API_KEY` and `TURNSTILE_SECRET_KEY`; optionally change the email and admin username variables. Coolify generates the `SERVICE_PASSWORD_64_*` values.
-3. Assign the Coolify component domains as follows:
+3. Put large media on the Coolify host (or a persistent volume) and set `MEDIA_VIDEOS_PATH`, `MEDIA_IMAGES_PATH`, and `MEDIA_CLIENTS_PATH` if they are not under `website/media/`. Videos are gitignored and excluded from the website image; images and client stills are bind-mounted at runtime so they can be updated without rebuilding.
+4. Assign the Coolify component domains as follows:
 
    ```text
    website -> https://isidoraverisugc.devbox.zone
@@ -116,8 +120,8 @@ After applying, compare the migration summary with the admin record count. Inves
    ```
 
    For the admin mapping, `:3000` is the internal container port and is not typed by visitors.
-4. Point direct-DNS A/AAAA records for the website, API (when assigned), and admin names to the Coolify server. Keep proxying disabled at any external DNS/CDN provider so `TRUST_PROXY=1` remains correct.
-5. Deploy and confirm the `website`, `api`, `admin`, and `mysql` health checks pass. Test a real form submission, both emails, API readiness, and admin authentication.
+5. Point direct-DNS A/AAAA records for the website, API (when assigned), and admin names to the Coolify server. Keep proxying disabled at any external DNS/CDN provider so `TRUST_PROXY=1` remains correct.
+6. Deploy and confirm the `website`, `api`, `admin`, and `mysql` health checks pass. Test a real form submission, both emails, API readiness, and admin authentication.
 
 The database data lives in the named `mysql_data` volume and survives container replacement. A volume is not a backup.
 
