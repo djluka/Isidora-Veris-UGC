@@ -33,7 +33,7 @@ services:
       MYSQL_DATABASE: isidora_veris
       MYSQL_USER: isidora
       MYSQL_PASSWORD: ${SERVICE_PASSWORD_64_MYSQL}
-      ALLOWED_ORIGINS: https://isidoraverisugc.com,https://www.isidoraverisugc.com
+      ALLOWED_ORIGINS: https://isidoraverisugc.com,https://www.isidoraverisugc.com,https://dev.isidoraverisugc.com
       RESEND_API_KEY: ${RESEND_API_KEY:?Set RESEND_API_KEY in Coolify}
       TURNSTILE_SECRET_KEY: ${TURNSTILE_SECRET_KEY:?Set TURNSTILE_SECRET_KEY in Coolify}
       EMAIL_FROM: ${EMAIL_FROM:-Isidora Veris <info@isidoraverisugc.com>}
