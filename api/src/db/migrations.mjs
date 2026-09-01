@@ -14,6 +14,13 @@ const migrations = [
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
         `,
     },
+    {
+        version: '002_subscriber_filter_indexes',
+        sql: `
+            ALTER TABLE subscribers
+                ADD KEY subscribers_service_created_at_index (service, created_at)
+        `,
+    },
 ];
 
 export async function runMigrations(pool) {

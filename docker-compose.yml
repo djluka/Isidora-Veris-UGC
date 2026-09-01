@@ -52,7 +52,7 @@ services:
   admin:
     build:
       context: ./api
-    command: ["node", "./src/admin-index.mjs"]
+    command: ["node", "./src/admin/index.mjs"]
     restart: unless-stopped
     read_only: true
     security_opt:

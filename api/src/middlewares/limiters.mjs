@@ -1,6 +1,5 @@
 import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
-
-export const VALID_SERVICES = ['konsultacije', 'izrada-reklama', 'creative-partner'];
+import { isValidService } from '../domain/services.mjs';
 
 export function createAdminLimiter() {
     return rateLimit({
@@ -30,7 +29,7 @@ export function createLimiters() {
             windowMs: 24 * 60 * 60 * 1000,
             max: 5,
             keyGenerator: (request) => {
-                const service = VALID_SERVICES.includes(request.body?.service)
+                const service = isValidService(request.body?.service)
                     ? request.body.service
                     : 'unknown';
                 return `${ipKeyGenerator(request.ip)}:${service}`;

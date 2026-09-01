@@ -7,8 +7,8 @@
     "node": ">=24"
   },
   "scripts": {
-    "start:dev": "nodemon ./src/index.mjs",
-    "start": "node ./src/index.mjs",
+    "start:dev": "nodemon ./src/public/index.mjs",
+    "start": "node ./src/public/index.mjs",
     "db:migrate": "node ./scripts/migrate-schema.mjs",
     "migrate:mongodb": "node ./scripts/migrate-mongodb-to-mysql.mjs"
   },

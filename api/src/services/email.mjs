@@ -2,22 +2,15 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Resend } from 'resend';
+import { SERVICES } from '../domain/services.mjs';
+import { escapeHtml } from '../lib/escape-html.mjs';
 
 const templatesDirectory = path.resolve(
     path.dirname(fileURLToPath(import.meta.url)),
     '../../templates',
 );
 
-const SERVICE_DETAILS = {
-    konsultacije: { name: 'Konsultacije', template: 'konsultacije-cenovnik' },
-    'izrada-reklama': { name: 'Izrada Reklama', template: 'izrada-videa-cenovnik' },
-    'creative-partner': { name: 'Creative Partner', template: 'creative-partner-cenovnik' },
-};
-
 const templateCache = new Map();
-const escapeHtml = (value) => String(value ?? '').replace(/[<>&"']/g, (character) => ({
-    '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&#39;',
-}[character]));
 
 async function loadTemplate(folder) {
     if (!templateCache.has(folder)) {
@@ -27,12 +20,16 @@ async function loadTemplate(folder) {
     return templateCache.get(folder);
 }
 
-export function createEmailService({ apiKey, from, notificationEmail, repository }) {
+/**
+ * Sends mail and nothing else -- it owns no database access. Callers pass in
+ * whatever figures the message needs.
+ */
+export function createEmailService({ apiKey, from, notificationEmail }) {
     const resend = new Resend(apiKey);
 
     return {
         async sendConfirmation(email, service) {
-            const details = SERVICE_DETAILS[service];
+            const details = SERVICES[service];
             if (!details) throw new Error(`Unknown service: ${service}`);
 
             await resend.emails.send({
@@ -43,8 +40,7 @@ export function createEmailService({ apiKey, from, notificationEmail, repository
             });
         },
 
-        async sendOwnerNotification(subscriber) {
-            const total = await repository.count();
+        async sendOwnerNotification(subscriber, total) {
             await resend.emails.send({
                 from,
                 to: notificationEmail,

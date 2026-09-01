@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const localHostnames = new Set(['localhost', '127.0.0.1']);
     const apiBaseUrl = localHostnames.has(window.location.hostname)
         ? 'http://localhost:3000'
-        : 'https://api.isidoraverisugc.com';
+        : 'https://api.dev.isidoraverisugc.com';
 
     /* ===== HELPERS ===== */
     const isDesktop = () => window.innerWidth >= 1200;
