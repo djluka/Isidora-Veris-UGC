@@ -1,7 +1,10 @@
 .idea
 .env
 /public/media/videos/
+/website/media/videos/
 node_modules/
+npm-debug.log*
+.DS_Store
 *.mp4
 *.mov
 *.webm
