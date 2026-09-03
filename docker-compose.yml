@@ -5,10 +5,6 @@ services:
     restart: unless-stopped
     expose:
       - "80"
-    volumes:
-      - ${MEDIA_VIDEOS_PATH:-./website/media/videos}:/usr/share/nginx/html/media/videos:ro
-      - ${MEDIA_IMAGES_PATH:-./website/media/images}:/usr/share/nginx/html/media/images:ro
-      - ${MEDIA_CLIENTS_PATH:-./website/media/clients}:/usr/share/nginx/html/media/clients:ro
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--spider", "http://127.0.0.1/health"]
       interval: 30s

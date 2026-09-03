@@ -1,6 +1,2 @@
 .DS_Store
 Dockerfile
-*.mp4
-*.mov
-*.webm
-media/videos/
